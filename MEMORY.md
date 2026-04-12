@@ -11,7 +11,8 @@
 ## Primerica Business
 - **Current focus:** Recruiting, FNAs, warm market pipeline, building toward RVP
 - **Goals:** 2-4 new reps/month, 10+ FNAs/week, RVP promotion ASAP
-- **Products:** Term life, investments (PFSI), debt solutions, auto/home, health, legal, ID theft, mortgage
+- **Products:** Term life, investments (PFSL), debt solutions, auto/home (Surex), health (Primerica Enhance™ / Edge Benefits), legal (PLPP / LegalShield), ID theft (IDTheftDefense™), mortgage referrals (8Twelve)
+- **Full product reference:** See `PRIMERICA_CANADA.md` in workspace
 - **Key philosophy:** "Just do what's right" — relationship-based business
 - **Mission:** Help families get properly protected, debt-free, financially independent
 - **Canadian regulatory context** — not US FINRA/SEC
@@ -44,6 +45,16 @@
 - Never collect financial info or sensitive personal data
 - Must use Primerica.com email for scheduling tool setup
 - Scheduling tool = booking only, not a promo/profile page
+
+## Ideas Parked for Later
+
+### Primerica Agent AI Kit (2026-04-12)
+Tony wants to eventually build/sell an AI agent setup to other Primerica reps. Three options discussed:
+1. **Done-For-You Service** — set up OpenClaw for reps, charge setup + monthly retainer
+2. **Productized Template** — package SOUL.md, USER.md, scripts into a deployable "Primerica Agent Kit"
+3. **White-Label SaaS** — branded web product on Claude/OpenAI API for Primerica reps (biggest upside, needs dev)
+
+Recommended starting point: Option 1 with 2-3 pilot reps ($200-500 setup + $50-100/mo). Compliance check needed before anything client-facing or rep-to-rep sales.
 
 ## Ongoing Goals
 - Build script library: recruiting texts, FNA follow-up sequences, objection handling
