@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "google-calendar-api": {
+      "version": "1.0.5",
+      "installedAt": 1775762565202
+    },
+    "openclaw-github-assistant": {
+      "version": "2.0.1",
+      "installedAt": 1775997442405
+    },
+    "linkedin-writer": {
+      "version": "1.0.0",
+      "installedAt": 1775997450084
+    },
+    "cold-email-outreach": {
+      "version": "1.0.0",
+      "installedAt": 1775997459472
+    },
+    "notion-cli": {
+      "version": "0.0.1",
+      "installedAt": 1775997472172
+    },
+    "pdf-generator": {
+      "version": "1.0.1",
+      "installedAt": 1775997484115
+    }
+  }
+}

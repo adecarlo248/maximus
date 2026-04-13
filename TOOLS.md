@@ -38,3 +38,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+---
+
+## Google Calendar (via Maton)
+- **Maton API Key:** stored in openclaw.json as MATON_API_KEY env
+- **Connection ID:** 67fe69f2-0cce-4807-8a5b-9184f861d35b
+- **Skill:** google-calendar-api (installed in workspace/skills/)

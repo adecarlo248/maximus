@@ -38,6 +38,16 @@
   - CLAUDE.md — my identity and behavior rules
   - Context.md — Tony's goals and project context
   - REFERENCES.md — Primerica background, compliance rules, examples
+- (2026-04-12) PRIMERICA_CANADA.md — full product/company reference doc, pushed to GitHub
+- (2026-04-12) Workspace pushed to GitHub: adecarlo248/maximus
+- (2026-04-12) Google Calendar connected via Maton (connection ID: 67fe69f2-0cce-4807-8a5b-9184f861d35b)
+- (2026-04-12) GHL fully set up: calendar, booking link, phone number (705-468-0203), Missed Call Text Back, Voice AI agent — all confirmed working as of 2026-04-13
+
+## Tony's Key Links & Tools
+- **GHL Booking Link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-fna
+- **GHL Phone Number:** 705-468-0203
+- **Calendly:** being replaced by GHL calendar
+- **GHL:** app.gohighlevel.com (paid on Starter $97/mo — confirmed working as of 2026-04-13)
 
 ## Compliance Notes (Scheduling Tools)
 - Only generic meeting names (no product references)
