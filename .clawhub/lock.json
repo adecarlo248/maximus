@@ -24,6 +24,18 @@
     "pdf-generator": {
       "version": "1.0.1",
       "installedAt": 1775997484115
+    },
+    "social-media-agent": {
+      "version": "1.0.0",
+      "installedAt": 1776092800118
+    },
+    "sales-pipeline-tracker": {
+      "version": "1.0.0",
+      "installedAt": 1776092800725
+    },
+    "sales-mastery": {
+      "version": "1.0.0",
+      "installedAt": 1776092808233
     }
   }
 }
