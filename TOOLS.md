@@ -1,47 +1,59 @@
-# TOOLS.md - Local Notes
+# TOOLS.md — Local Setup Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+Skills define *how* tools work. This file is for Tony's specifics — the stuff unique to his setup.
 
-## What Goes Here
+## Environment
 
-Things like:
+- **OS:** Windows 11 + WSL2 (Ubuntu, hostname: Maximus)
+- **VS Code workspace:** `/mnt/c/Users/tony/Desktop/claude-learning-lab/`
+- **OpenClaw workspace:** `~/.openclaw/workspace/`
+- **GitHub backup:** github.com/adecarlo248/maximus
+- **Obsidian vault:** linked to VS Code claude-learning-lab folder
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+## Communication Channels
 
-## Examples
+- **WhatsApp:** Tony's primary channel to reach Maximus (+17058082248)
+- **OpenClaw gateway:** ws://127.0.0.1:18789
 
-```markdown
-### Cameras
+## Primerica Tools & Resources
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+- **Rep finder:** reps.primerica.com/en-ca (clients find Tony here)
+- **Business opportunity site:** primericabusinessopportunity.com (recruiting landing page)
+- **MyPrimerica portal:** client account access and policy management
+- **Scheduling tool:** Must use Primerica.com email — see compliance rules in AGENTS.md
 
-### SSH
+## AI Stack
 
-- home-server → 192.168.1.100, user: admin
+- **Claude Code** (VS Code extension + CLI) — primary coding/drafting tool
+- **OpenClaw / Maximus** — always-on agent via WhatsApp
+- **Model:** Claude Sonnet 4.6
 
-### TTS
+## GHL (GoHighLevel)
 
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
-
----
+- **Account:** app.gohighlevel.com (Starter $97/mo)
+- **Booking link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-fna
+- **Phone number:** 705-468-0203
+- **Features active:** Missed Call Text Back, Voice AI agent, booking calendar, confirmation + reminder sequences
 
 ## Google Calendar (via Maton)
+
 - **Maton API Key:** stored in openclaw.json as MATON_API_KEY env
 - **Connection ID:** 67fe69f2-0cce-4807-8a5b-9184f861d35b
 - **Skill:** google-calendar-api (installed in workspace/skills/)
+
+## AI Agency — Demo Account
+
+- **Sub-account:** Ironclad Builders (construction company demo)
+- **Booking link:** https://api.leadconnectorhq.com/widget/booking/MWBqZXMwf8YMTSC48S7a
+- **Workflows:** Missed Call Text Back (3-step), Appointment Confirmation, 24hr + 1hr Reminders
+- **Status:** Tier 1 complete and tested. Tier 2 (Voice AI) in progress.
+
+## Notes on WhatsApp Formatting
+
+- No markdown tables — use bullet lists
+- No headers — use **bold** or CAPS for emphasis
+- Keep messages short — Tony reads on mobile
+
+---
+
+*Add device details, SSH hosts, or other local specifics here as the setup grows.*

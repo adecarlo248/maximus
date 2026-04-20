@@ -56,6 +56,48 @@
 - Must use Primerica.com email for scheduling tool setup
 - Scheduling tool = booking only, not a promo/profile page
 
+## AI Agency Side Project (2026-04-17)
+- **Concept:** Separate AI/automation agency targeting tradespeople (plumbers, electricians, HVAC, roofers, landscapers)
+- **Stack:** GHL agency account (white-label sub-accounts at $297/mo), Missed Call Text Back, Voice AI, booking calendar, review automation, lead nurture sequences
+- **Offer structure:**
+  - Setup fee: $500–$800 one-time
+  - Monthly retainer: $150–$300/mo
+  - Fully managed (Tony runs it himself)
+- **Core pitch:** "You're losing $500-2000 every time you miss a call. We fix that."
+- **Compliance note:** Keep completely separate from Primerica — different brand, no cross-promotion
+
+### Tier Structure (finalized 2026-04-18)
+- **Tier 1 — "Never Miss a Lead" — $197/mo:** Missed Call Text Back (3-step SMS sequence), booking calendar, confirmation + reminder sequence
+- **Tier 2 — "Always Open" — $397/mo:** Everything in Tier 1 + AI Voice agent (24/7 call answering, qualifies leads, books calendar)
+- **Tier 3 — "Full Autopilot" — $597/mo:** Everything in Tier 2 + review request automation, lead nurture (48h follow-up), monthly performance report
+
+### Demo Account — Ironclad Builders (built 2026-04-18)
+- **GHL Sub-account:** Ironclad Builders (construction company demo)
+- **Placeholder email:** ironcladbuilders@gmail.com
+- **Booking link:** https://api.leadconnectorhq.com/widget/booking/MWBqZXMwf8YMTSC48S7a
+- **Workflows built & tested:**
+  - ✅ Missed Call Text Back (3-step SMS follow-up, stops when booked)
+  - ✅ Appointment Confirmation (immediate SMS + email)
+  - ✅ 24hr Reminder SMS
+  - ✅ 1hr Reminder SMS
+- **Snapshot:** Created and tested — can deploy full Tier 1 to new sub-account in minutes
+
+### Tier 2 — Voice AI (in progress 2026-04-18)
+- GHL Voice AI confirmed available on agency plan
+- Agent name: Ironclad Assistant
+- Voice: professional male (to be selected)
+- System prompt written — greets caller, qualifies need, books free estimate, collects name + callback number
+- Calendar to link: Free Estimate — Ironclad Builders
+- Phone number to assign: Ironclad sub-account number
+- **Status: Setting up Voice AI agent in GHL — stopped at Step 1-4 setup, test call not done yet**
+
+### Full Service Menu (planned)
+- Tier 1 — $197/mo, Tier 2 — $397/mo, Tier 3 — $597/mo
+- Website Build — $800–1,500 one-time (GHL builder)
+- Social Media Management — $300–500/mo
+- Google/Meta Ads — $500/mo + ad spend (future)
+- **Next session:** Complete Voice AI setup, test call, then build Tier 3 (review requests + lead nurture)
+
 ## Ideas Parked for Later
 
 ### Primerica Agent AI Kit (2026-04-12)
