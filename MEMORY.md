@@ -7,6 +7,14 @@
 - **Contact:** WhatsApp +17058082248
 - **Occupation:** Primerica life insurance & financial services representative
 - **Tech level:** Comfortable with terminal, VS Code, ChatGPT basics — new to Claude
+- **Deep context:** See `TONY_SOUL.md` — full Alchemy of Self profile (story, values, dream life, future self, the gap)
+- **Italian-Canadian heritage** — extended family in Italy he's never met
+- **Hometown:** Just outside Peterborough, Ontario
+- **Recovery:** Sober, lost 65 lbs, rebuilt health through fitness and nutrition
+- **Family:** Wife (anchor/partner, her business also growing), son, brother (guide/spiritual mentor), father (recovered from addiction, now helps others in NA)
+- **Core drive:** Prove that pain doesn't get the final word. Build a life that can't be taken apart. $20K/month goal.
+- **Inspirations:** Tony Robbins, his brother, Yeshua
+- **Signed a personal transformation agreement (Alchemy of Self) — April 2026**
 
 ## Primerica Business
 - **Current focus:** Recruiting, FNAs, warm market pipeline, building toward RVP
@@ -44,7 +52,7 @@
 - (2026-04-12) GHL fully set up: calendar, booking link, phone number (705-468-0203), Missed Call Text Back, Voice AI agent — all confirmed working as of 2026-04-13
 
 ## Tony's Key Links & Tools
-- **GHL Booking Link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-fna
+- **GHL Booking Link (Primerica):** https://api.leadconnectorhq.com/widget/bookings/free-fna
 - **GHL Phone Number:** 705-468-0203
 - **Calendly:** being replaced by GHL calendar
 - **GHL:** app.gohighlevel.com (paid on Starter $97/mo — confirmed working as of 2026-04-13)
@@ -70,6 +78,11 @@
 - **Tier 1 — "Never Miss a Lead" — $197/mo:** Missed Call Text Back (3-step SMS sequence), booking calendar, confirmation + reminder sequence
 - **Tier 2 — "Always Open" — $397/mo:** Everything in Tier 1 + AI Voice agent (24/7 call answering, qualifies leads, books calendar)
 - **Tier 3 — "Full Autopilot" — $597/mo:** Everything in Tier 2 + review request automation, lead nurture (48h follow-up), monthly performance report
+
+### GHL Sub-accounts — Phone Numbers
+- **Primerica (Tony's personal):** +1 705-304-7921
+- **Tony's Business Solutions (AI Agency):** +1 705-243-7767
+- **Tony's Business Solutions booking link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo
 
 ### Demo Account — Ironclad Builders (built 2026-04-18)
 - **GHL Sub-account:** Ironclad Builders (construction company demo)
