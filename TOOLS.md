@@ -31,9 +31,18 @@ Skills define *how* tools work. This file is for Tony's specifics — the stuff 
 ## GHL (GoHighLevel)
 
 - **Account:** app.gohighlevel.com (Starter $97/mo)
-- **Booking link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-fna
-- **Phone number:** 705-468-0203
+
+### Primerica Sub-account (Tony's personal)
+- **Booking link:** https://api.leadconnectorhq.com/widget/bookings/free-fna
+- **Phone number:** +1 705-304-7921
 - **Features active:** Missed Call Text Back, Voice AI agent, booking calendar, confirmation + reminder sequences
+- **Workflows:** FNA Booking Confirmation, Recruiting Nurture Sequence (4 SMS/2 weeks), Post-FNA Follow-up (4 SMS/10 days)
+
+### Tony's Business Solutions Sub-account (AI Agency)
+- **Phone number:** +1 705-243-7767
+- **Booking link:** https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo
+- **Website:** tonysbusinesssolutions.ca
+- **Workflows:** Missed Call Text Back (Tier 1), Appointment Confirmation, 24hr + 1hr Reminders
 
 ## Google Calendar (via Maton)
 
