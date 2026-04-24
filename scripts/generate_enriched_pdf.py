@@ -110,7 +110,7 @@ html_content = f"""<!DOCTYPE html>
 <body>
 <div class="header">
   <h1>Ontario Insurance Agent Lead List</h1>
-  <p>Expired &amp; Lapsed Agents — Peterborough Region &nbsp;|&nbsp; Source: FSRA Ontario &nbsp;|&nbsp; April 24, 2026</p>
+  <p>Expired &amp; Lapsed Agents — Central Ontario ({len(by_city)} Cities) &nbsp;|&nbsp; Source: FSRA Ontario &nbsp;|&nbsp; April 24, 2026</p>
 </div>
 
 <div class="summary">
@@ -118,7 +118,7 @@ html_content = f"""<!DOCTYPE html>
   <div class="summary-box"><span class="num">{expired_total}</span><span class="lbl">Fully Expired</span></div>
   <div class="summary-box"><span class="num">{sponsor_total}</span><span class="lbl">No Sponsor</span></div>
   <div class="summary-box"><span class="num">{found}</span><span class="lbl">Phone Numbers Found</span></div>
-  <div class="summary-box"><span class="num">5</span><span class="lbl">Cities Covered</span></div>
+  <div class="summary-box"><span class="num">{len(by_city)}</span><span class="lbl">Cities Covered</span></div>
 </div>
 
 <div class="pitch-box">
