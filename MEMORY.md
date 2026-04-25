@@ -121,6 +121,47 @@ Tony wants to eventually build/sell an AI agent setup to other Primerica reps. T
 
 Recommended starting point: Option 1 with 2-3 pilot reps ($200-500 setup + $50-100/mo). Compliance check needed before anything client-facing or rep-to-rep sales.
 
+## FSRA Lead List Project (2026-04-24 to 2026-04-25)
+
+### What It Is
+- Automated system to scrape expired/lapsed insurance agents from FSRA Ontario public registry
+- Enriches with phone numbers via 411.ca + Canada411 + Bing
+- Generates PDFs and CSVs for recruiting outreach
+
+### Current State (as of 2026-04-25)
+- **2,966 total expired/no-sponsor agents — 139 cities — 100% phone coverage**
+- **1,444 No Sponsor agents (hottest bucket)** — licensed, no company, ready to recruit
+- All files in `~/.openclaw/workspace/scripts/`
+- GitHub: `adecarlo248/maximus` (all committed)
+
+### Key Files
+- `ontario_agent_leads_with_contacts.pdf` — full province master PDF
+- `no_sponsor_ontario.pdf` — hot call sheet (No Sponsor only)
+- `no_sponsor_ontario.csv` — filterable spreadsheet
+- `enriched_contacts_20260425_155413.csv` — latest master CSV
+
+### Scripts
+- `fsra_scraper.py` — scrapes a single city
+- `scrape_ontario_all.py` — province-wide batch scraper (auto-skips done cities)
+- `enrich_all_missing.py` — enriches all agents missing phones, merges with master
+- `enrich_new_cities.py` — enriches specific new city CSVs
+- `build_no_sponsor_list.py` — builds No Sponsor filtered CSV + PDF
+- `generate_city_pdf.py --city [CityName]` — individual city PDF
+- `retry_missing.py` — retry phone lookup for agents with no number
+
+### No Sponsor Recruiting Script
+- Full call script written 2026-04-25 (in session transcript)
+- Opening pitch, objection handlers, follow-up text
+- Key message: "You're already licensed — you just need the right home."
+- Tony's pitch: reference FSRA registry, ask what happened with last company, pivot to Primerica opportunity
+
+### Top Cities for No Sponsor Leads
+- Toronto (40), Windsor (40), Bradford (32), Ottawa (32), Richmond Hill (32)
+- Mississauga (27), Newmarket (27), Whitby (27), Guelph (25), Hamilton (25)
+
+### Access from Windows
+`\\wsl$\Ubuntu\home\maximus\.openclaw\workspace\scripts\`
+
 ## Ongoing Goals
 - Build script library: recruiting texts, FNA follow-up sequences, objection handling
 - Social media posts for recruiting and brand awareness
