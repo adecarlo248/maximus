@@ -13,19 +13,37 @@ from weasyprint import HTML
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_no_sponsor():
+    from datetime import datetime
+    # Load from enriched master CSV (has phone numbers)
+    enriched_files = sorted(glob.glob(os.path.join(SCRIPTS_DIR, "enriched_contacts_*.csv")))
+    if not enriched_files:
+        print("[!] No enriched CSV found — falling back to raw FSRA files")
+        return [], defaultdict(int)
+    latest = enriched_files[-1]
+    print(f"[+] Loading from: {os.path.basename(latest)}")
+    today = datetime.today()
     agents = []
-    csv_files = sorted(glob.glob(os.path.join(SCRIPTS_DIR, "fsra_expired_*.csv")))
     city_counts = defaultdict(int)
-    for f in csv_files:
-        city_slug = os.path.basename(f).replace("fsra_expired_","").split("_2026")[0]
-        city = city_slug.replace("_"," ").title()
-        with open(f, newline="", encoding="utf-8") as fh:
-            for row in csv.DictReader(fh):
-                if "no sponsor" in row.get("Status","").lower():
-                    row["Source City"] = city
-                    agents.append(row)
-                    city_counts[city] += 1
-    print(f"[+] Found {len(agents)} No Sponsor agents across {len(city_counts)} cities")
+    skipped = 0
+    with open(latest, newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if "no sponsor" not in row.get("Status","").lower():
+                continue
+            if not row.get("Name","").strip():
+                continue
+            # Filter: only keep agents with active (non-expired) licence
+            expiry_str = row.get("Expiry Date","").strip()
+            try:
+                expiry = datetime.strptime(expiry_str, "%B %d, %Y")
+                if expiry < today:
+                    skipped += 1
+                    continue
+            except:
+                pass  # unknown date — keep it
+            agents.append(row)
+            city = row.get("Source City","").strip() or row.get("City","").strip()
+            city_counts[city] += 1
+    print(f"[+] Found {len(agents)} ACTIVE No Sponsor agents ({skipped} expired licences excluded)")
     return agents, city_counts
 
 def save_csv(agents):
@@ -48,8 +66,14 @@ def build_pdf(agents, city_counts):
         city_agents = by_city[city]
         rows = ""
         for a in city_agents:
+            phone = a.get('Phone 1','')
+            phone2 = a.get('Phone 2','')
+            phones = phone
+            if phone2 and phone2 != phone:
+                phones += f" / {phone2}"
             rows += f"""<tr>
                 <td>{a.get('Name','')}</td>
+                <td>{phones or '<em style="color:#bbb">—</em>'}</td>
                 <td>{a.get('Expiry Date','')}</td>
                 <td>{a.get('Licence Class','')}</td>
             </tr>"""
@@ -57,7 +81,7 @@ def build_pdf(agents, city_counts):
         <div class="city-section">
           <h2>{city} <span class="city-count">{len(city_agents)} agents</span></h2>
           <table>
-            <thead><tr><th>Name</th><th>Expiry</th><th>Licence Class</th></tr></thead>
+            <thead><tr><th>Name</th><th>Phone</th><th>Expiry</th><th>Licence Class</th></tr></thead>
             <tbody>{rows}</tbody>
           </table>
         </div>"""
