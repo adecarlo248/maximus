@@ -5,34 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Needs Analysis — Your Financial Blueprint</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
 
     :root {
-      --navy: #0d2b4e;
-      --navy-mid: #1a4a7a;
-      --gold: #f0c040;
-      --gold-dark: #c9a020;
-      --green: #27ae60;
-      --red: #e74c3c;
-      --bg: #f4f7fb;
+      --navy: #0a1628;
+      --navy-mid: #1a3a6e;
+      --cobalt: #1e4d9e;
+      --electric: #2d7dd2;
+      --sky: #4fa3e0;
+      --chrome: #8ab4d4;
+      --ice: #c8dff0;
+      --frost: #e8f4fd;
+      --gold: #8ab4d4;
+      --gold-dark: #4fa3e0;
+      --green: #2d7dd2;
+      --red: #c0392b;
+      --bg: #f0f6ff;
       --white: #ffffff;
-      --text: #1a1a2e;
-      --muted: #6b7280;
-      --border: #e0e8f0;
+      --text: #0a1628;
+      --muted: #5a7a9a;
+      --border: #d0e4f4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background: linear-gradient(135deg,#eaf4fd,#f4f9ff);
       color: var(--text);
       min-height: 100vh;
     }
 
     /* ── Header ── */
     .app-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
       padding: 20px 24px;
       display: flex;
       align-items: center;
@@ -45,7 +51,7 @@
       color: var(--white);
     }
 
-    .app-logo span { color: var(--gold); }
+    .app-logo span { color: #8ab4d4; }
 
     .progress-bar-wrap {
       flex: 1;
@@ -69,7 +75,7 @@
       transition: color 0.2s;
     }
 
-    .progress-label.active { color: var(--gold); }
+    .progress-label.active { color: #8ab4d4; }
     .progress-label.done { color: rgba(255,255,255,0.75); }
 
     .progress-track {
@@ -81,7 +87,7 @@
 
     .progress-fill {
       height: 100%;
-      background: var(--gold);
+      background: linear-gradient(90deg, #2d7dd2, #8ab4d4);
       border-radius: 2px;
       transition: width 0.4s ease;
     }
@@ -121,14 +127,14 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold-dark);
+      color: #2d7dd2;
       margin-bottom: 8px;
     }
 
     .step-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.75rem;
-      color: var(--navy);
+      color: #0a1628;
       margin-bottom: 8px;
       line-height: 1.2;
     }
@@ -154,7 +160,7 @@
       display: block;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--navy);
+      color: white;
       margin-bottom: 6px;
       letter-spacing: 0.3px;
     }
@@ -203,8 +209,8 @@
     .has-suffix input { padding-right: 36px; }
 
     input:focus, select:focus {
-      border-color: var(--navy-mid);
-      box-shadow: 0 0 0 3px rgba(26,74,122,0.1);
+      border-color: #2d7dd2;
+      box-shadow: 0 0 0 3px rgba(45,125,210,0.12);
       background: white;
     }
 
@@ -212,7 +218,7 @@
     .debt-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
 
     .debt-table th {
-      background: var(--navy);
+      background: linear-gradient(135deg, #0a1628, #1a3a6e);
       color: white;
       padding: 8px 10px;
       font-size: 0.75rem;
@@ -247,7 +253,7 @@
     .btn-remove {
       background: none;
       border: none;
-      color: var(--red);
+      color: #c0392b;
       cursor: pointer;
       font-size: 1.1rem;
       padding: 4px 8px;
@@ -256,7 +262,7 @@
 
     /* ── Live calc preview ── */
     .calc-preview {
-      background: linear-gradient(135deg, #f0f6ff 0%, #fafbff 100%);
+      background: linear-gradient(135deg, #e8f4fd 0%, #f0f7ff 100%);
       border: 1.5px solid var(--border);
       border-radius: 10px;
       padding: 16px 20px;
@@ -268,7 +274,7 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--navy);
+      color: white;
       margin-bottom: 12px;
     }
 
@@ -283,9 +289,9 @@
 
     .calc-row:last-child { border-bottom: none; }
     .calc-row .calc-label { color: var(--muted); }
-    .calc-row .calc-val { font-weight: 700; color: var(--navy); }
-    .calc-row .calc-val.good { color: var(--green); }
-    .calc-row .calc-val.bad { color: var(--red); }
+    .calc-row .calc-val { font-weight: 700; color: #0a1628; }
+    .calc-row .calc-val.good { color: #2d7dd2; }
+    .calc-row .calc-val.bad { color: #c0392b; }
     .calc-row .calc-val.warn { color: #e67e22; }
 
     /* ── Nav buttons ── */
@@ -310,11 +316,11 @@
     }
 
     .btn-primary {
-      background: var(--navy);
+      background: linear-gradient(135deg, #0a1628, #1a3a6e);
       color: white;
     }
 
-    .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(13,43,78,0.2); }
+    .btn-primary:hover { background: #1e4d9e; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(13,43,78,0.2); }
 
     .btn-secondary {
       background: transparent;
@@ -325,18 +331,18 @@
     .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
 
     .btn-gold {
-      background: var(--gold);
+      background: linear-gradient(135deg, #2d7dd2, #4fa3e0);
       color: var(--navy);
     }
 
-    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(240,192,64,0.35); }
+    .btn-gold:hover { background: #1e4d9e; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(240,192,64,0.35); }
 
     /* ── Results page ── */
     #step-results { display: none; }
     #step-results.active { display: block; }
 
     .results-hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
       border-radius: 12px;
       padding: 28px 32px;
       color: white;
@@ -372,8 +378,8 @@
 
     .result-card.danger { border-left-color: var(--red); }
     .result-card.warning { border-left-color: #e67e22; }
-    .result-card.success { border-left-color: var(--green); }
-    .result-card.gold { border-left-color: var(--gold); }
+    .result-card.success { border-left-color: #2d7dd2; }
+    .result-card.gold { border-left-color: #8ab4d4; }
 
     .result-card-label {
       font-size: 0.7rem;
@@ -394,7 +400,7 @@
 
     .result-card-value.danger { color: var(--red); }
     .result-card-value.warning { color: #e67e22; }
-    .result-card-value.success { color: var(--green); }
+    .result-card-value.success { color: #2d7dd2; }
 
     .result-card-sub {
       font-size: 0.78rem;
@@ -433,11 +439,11 @@
     .result-line:last-child { border-bottom: none; }
     .result-line .rl-label { color: var(--muted); }
     .result-line .rl-val { font-weight: 600; color: var(--navy); }
-    .result-line .rl-val.good { color: var(--green); }
-    .result-line .rl-val.bad { color: var(--red); }
+    .result-line .rl-val.good { color: #2d7dd2; }
+    .result-line .rl-val.bad { color: #c0392b; }
 
     .result-highlight {
-      background: var(--navy);
+      background: linear-gradient(135deg,#0a1628,#1a3a6e);
       color: white;
       border-radius: 8px;
       padding: 12px 16px;
@@ -448,31 +454,31 @@
     }
 
     .result-highlight .rh-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
-    .result-highlight .rh-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+    .result-highlight .rh-val { font-size: 1.1rem; font-weight: 700; color: #8ab4d4; }
 
     /* ── Debt results table ── */
     .debt-results-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-    .debt-results-table th { background: var(--navy); color: white; padding: 8px 12px; text-align: left; font-size: 0.75rem; }
+    .debt-results-table th { background: linear-gradient(135deg, #0a1628, #1a3a6e); color: white; padding: 8px 12px; text-align: left; font-size: 0.75rem; }
     .debt-results-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
-    .debt-results-table tr:nth-child(even) td { background: #f5f8ff; }
+    .debt-results-table tr:nth-child(even) td { background: #eaf4fd; }
     .debt-results-table .priority-1 td { background: #fff8e1 !important; font-weight: 600; }
 
     /* ── CTA box ── */
     .cta-box {
-      background: linear-gradient(135deg, #f0fff4 0%, #e8f5e9 100%);
-      border: 1.5px solid var(--green);
+      background: linear-gradient(135deg, #e8f4fd 0%, #d8eaf8 100%);
+      border: 1.5px solid #2d7dd2;
       border-radius: 12px;
       padding: 24px 28px;
       margin-top: 20px;
       text-align: center;
     }
 
-    .cta-box h3 { color: #1a5c35; font-size: 1.1rem; margin-bottom: 8px; }
-    .cta-box p { color: #2d7a4f; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+    .cta-box h3 { color: #0a1628; font-size: 1.1rem; margin-bottom: 8px; }
+    .cta-box p { color: #2d7dd2; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
 
     /* ── Print / PDF ── */
     .print-btn {
-      background: var(--gold);
+      background: linear-gradient(135deg, #2d7dd2, #4fa3e0);
       color: var(--navy);
       border: none;
       padding: 13px 30px;
@@ -487,7 +493,7 @@
       transition: all 0.2s;
     }
 
-    .print-btn:hover { background: var(--gold-dark); transform: translateY(-1px); }
+    .print-btn:hover { background: #1e4d9e; transform: translateY(-1px); }
 
     .restart-btn {
       background: none;
@@ -539,7 +545,7 @@
     /* ── Spouse Toggle ── */
     .toggle-row {
       display: flex; align-items: center; gap: 12px;
-      padding: 14px 16px; background: #f5f8ff;
+      padding: 14px 16px; background: #eaf4fd;
       border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 20px; cursor: pointer;
     }
     .toggle-label { font-size:0.88rem; font-weight:600; color:var(--navy); flex:1; }
@@ -557,14 +563,14 @@
       left:3px; top:3px; background:white; border-radius:50%;
       transition:transform 0.25s; box-shadow:0 1px 4px rgba(0,0,0,0.2);
     }
-    .toggle-switch input:checked + .toggle-slider { background:var(--navy); }
+    .toggle-switch input:checked + .toggle-slider { background:linear-gradient(135deg,#0a1628,#1e4d9e); }
     .toggle-switch input:checked + .toggle-slider:before { transform:translateX(20px); }
     .spouse-fields { display:none; }
     .spouse-fields.visible { display:block; }
     .spouse-header {
-      font-family:'Open Sans',Arial,sans-serif; font-size:0.72rem; font-weight:700;
-      letter-spacing:1.5px; text-transform:uppercase; color:var(--navy-mid);
-      padding: 10px 0 6px; border-top:2px dashed var(--border); margin:8px 0 16px;
+      font-family:'Inter',Arial,sans-serif; font-size:0.72rem; font-weight:700;
+      letter-spacing:1.5px; text-transform:uppercase; color:#2d7dd2;
+      padding: 10px 0 6px; border-top:2px dashed #c8dff0; margin:8px 0 16px;
     }
     /* ── Progress Tracker ── */
     .tracker-section {
@@ -580,10 +586,10 @@
       margin-bottom:12px; border-left:4px solid var(--red);
       transition:border-left-color 0.4s;
     }
-    .debt-track-card.p25 { border-left-color:#e67e22; }
-    .debt-track-card.p50 { border-left-color:var(--gold); }
-    .debt-track-card.p75 { border-left-color:#85c1e9; }
-    .debt-track-card.p100 { border-left-color:var(--green); background:#f0fff4; }
+    .debt-track-card.p25 { border-left-color:#2d7dd2; }
+    .debt-track-card.p50 { border-left-color:#4fa3e0; }
+    .debt-track-card.p75 { border-left-color:#8ab4d4; }
+    .debt-track-card.p100 { border-left-color:#c8dff0; background:#eaf4fd; }
     .dtc-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
     .dtc-name { font-size:0.9rem; font-weight:700; color:var(--navy); }
     .dtc-rate { font-size:0.75rem; color:var(--muted); }
@@ -607,13 +613,13 @@
     }
     .dtc-pmt-input.visible { display:block; }
     .btn-log-pmt {
-      background:var(--navy); color:white; border:none; padding:7px 14px;
+      background:linear-gradient(135deg,#0a1628,#1a3a6e); color:white; border:none; padding:7px 14px;
       border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
       font-family:'Inter',sans-serif; transition:background 0.2s; white-space:nowrap;
     }
     .btn-log-pmt:hover { background:var(--navy-mid); }
     .btn-confirm-pmt {
-      background:var(--green); color:white; border:none; padding:7px 12px;
+      background:#2d7dd2; color:white; border:none; padding:7px 12px;
       border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
       font-family:'Inter',sans-serif; display:none;
     }
@@ -624,20 +630,20 @@
     }
     .paid-off-banner.visible { display:block; }
     .tracker-summary {
-      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+      background:linear-gradient(135deg,#050d1a 0%,#0a1628 50%,#1a3a6e 100%);
       border-radius:10px; padding:16px 20px; margin-bottom:16px;
       display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; text-align:center;
     }
-    .ts-item .ts-val { font-size:1.2rem; font-weight:700; color:var(--gold); }
+    .ts-item .ts-val { font-size:1.2rem; font-weight:700; color:#8ab4d4; }
     .ts-item .ts-label { font-size:0.68rem; color:rgba(255,255,255,0.65); margin-top:2px; }
     .retire-track-card {
       border:1.5px solid var(--border); border-radius:10px; padding:18px;
-      margin-bottom:12px; border-left:4px solid var(--gold);
+      margin-bottom:12px; border-left:4px solid #8ab4d4;
     }
     .rtc-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
     .rtc-item .rtc-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:2px; }
     .rtc-item .rtc-val { font-size:1rem; font-weight:700; color:var(--navy); }
-    .rtc-item .rtc-val.good { color:var(--green); }
+    .rtc-item .rtc-val.good { color:#2d7dd2; }
     /* ── Mobile ── */
     @media (max-width: 600px) {
       .step-card { padding: 24px 20px; }
@@ -663,7 +669,7 @@
     .chat-fab {
       position: fixed; bottom: 24px; right: 24px;
       width: 58px; height: 58px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
       color: white; border: none;
       box-shadow: 0 4px 20px rgba(13,43,78,0.35);
       cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -673,7 +679,7 @@
     .chat-fab:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(13,43,78,0.45); }
     .chat-fab .chat-badge {
       position: absolute; top: -2px; right: -2px;
-      background: var(--gold); color: var(--navy);
+      background: linear-gradient(135deg,#2d7dd2,#4fa3e0); color: var(--navy);
       font-size: 0.6rem; font-weight: 700;
       padding: 2px 5px; border-radius: 10px; line-height: 1.4;
     }
@@ -695,7 +701,7 @@
     }
     .chat-avatar {
       width: 34px; height: 34px; border-radius: 50%;
-      background: var(--gold); display: flex; align-items: center;
+      background: linear-gradient(135deg, #2d7dd2, #4fa3e0); display: flex; align-items: center;
       justify-content: center; font-size: 1rem; flex-shrink: 0;
     }
     .chat-header-info { flex: 1; }
@@ -731,11 +737,11 @@
       padding: 0 12px 10px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
     }
     .suggestion-chip {
-      background: #f0f6ff; border: 1px solid var(--border); color: var(--navy);
+      background: linear-gradient(135deg,#eaf4fd,#f0f7ff); border: 1px solid #c8dff0; color: #0a1628;
       padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 500;
       cursor: pointer; transition: all 0.15s; white-space: nowrap;
     }
-    .suggestion-chip:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .suggestion-chip:hover { background: linear-gradient(135deg,#0a1628,#1a3a6e); color: white; border-color: #2d7dd2; }
     .chat-input-row {
       display: flex; padding: 10px 12px 14px; gap: 8px;
       border-top: 1px solid var(--border); flex-shrink: 0;
@@ -752,7 +758,7 @@
       cursor: pointer; display: flex; align-items: center; justify-content: center;
       font-size: 1rem; flex-shrink: 0; transition: background 0.2s; align-self: flex-end;
     }
-    .chat-send:hover { background: var(--navy-mid); }
+    .chat-send:hover { background: #1e4d9e; }
     .chat-send:disabled { background: var(--border); cursor: not-allowed; }
     .api-key-setup {
       padding: 20px; display: flex; flex-direction: column;
@@ -1120,7 +1126,7 @@
       <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); margin-bottom:12px;">🔥 Minimum Payments vs. Debt Stacking</div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <!-- Left: minimum payments only -->
-        <div style="background:#fff5f5; border:2px solid var(--red); border-radius:10px; padding:16px;">
+        <div style="background:linear-gradient(135deg,#fdf0ee,#fae8e6); border:2px solid #c0392b; border-radius:10px; padding:16px;">
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--red); margin-bottom:10px;">❌ Minimum Payments Only</div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--red); margin-bottom:10px;" id="cmp-min-years">—</div>
@@ -1128,7 +1134,7 @@
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.1rem; font-weight:700; color:var(--red);" id="cmp-min-interest">—</div>
         </div>
         <!-- Right: debt stacking -->
-        <div style="background:#f0fff4; border:2px solid var(--green); border-radius:10px; padding:16px;">
+        <div style="background:linear-gradient(135deg,#e8f4fd,#dceefa); border:2px solid #2d7dd2; border-radius:10px; padding:16px;">
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--green); margin-bottom:10px;">✅ With Debt Stacking</div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--green); margin-bottom:10px;" id="cmp-stack-years">—</div>
@@ -1137,7 +1143,7 @@
         </div>
       </div>
       <!-- Savings banner -->
-      <div style="background:var(--navy); border-radius:8px; padding:14px 18px; margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="background:linear-gradient(135deg,#0a1628,#1a3a6e); border-radius:8px; padding:14px 18px; margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
         <div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.7); margin-bottom:3px;">Debt Stacking saves you</div>
           <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.3rem; font-weight:700; color:var(--gold);" id="cmp-savings">—</div>
@@ -1226,7 +1232,7 @@
           <div class="rtc-item"><div class="rtc-label">Gap Remaining</div><div class="rtc-val" id="rtc-gap">—</div></div>
         </div>
         <div class="progress-bar-track" style="margin-bottom:12px;">
-          <div class="progress-bar-fill" id="rtc-progress" style="width:0%;background:var(--gold);"></div>
+          <div class="progress-bar-fill" id="rtc-progress" style="width:0%;background:linear-gradient(90deg,#2d7dd2,#8ab4d4);"></div>
         </div>
         <div class="dtc-log-row">
           <input type="number" class="dtc-pmt-input visible" id="retire-contrib-input" placeholder="Contribution amount..." style="display:block;">
