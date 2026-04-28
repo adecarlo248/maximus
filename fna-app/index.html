@@ -262,8 +262,8 @@
 
     /* ── Live calc preview ── */
     .calc-preview {
-      background: linear-gradient(135deg, #e8f4fd 0%, #f0f7ff 100%);
-      border: 1.5px solid var(--border);
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 100%);
+      border: 1px solid rgba(45,125,210,0.3);
       border-radius: 10px;
       padding: 16px 20px;
       margin-top: 20px;
@@ -274,9 +274,15 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: white;
+      color: #8ab4d4;
       margin-bottom: 12px;
     }
+
+    .calc-preview .calc-label { color: rgba(200,223,240,0.65); }
+    .calc-preview .calc-val { color: #c8dff0; }
+    .calc-preview .calc-val.good { color: #4fa3e0; }
+    .calc-preview .calc-val.bad { color: #e87c7c; }
+    .calc-preview .calc-row { border-bottom-color: rgba(45,125,210,0.2); }
 
     .calc-row {
       display: flex;
