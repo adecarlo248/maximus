@@ -552,7 +552,120 @@
       .step-card:not(.active) { display: none; }
       .step-nav { display: none; }
       .print-btn, .restart-btn { display: none; }
+      .chat-fab, .chat-window { display: none !important; }
     }
+
+    /* ── Chatbot ── */
+    .chat-fab {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white; border: none;
+      box-shadow: 0 4px 20px rgba(13,43,78,0.35);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; z-index: 1000;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .chat-fab:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(13,43,78,0.45); }
+    .chat-fab .chat-badge {
+      position: absolute; top: -2px; right: -2px;
+      background: var(--gold); color: var(--navy);
+      font-size: 0.6rem; font-weight: 700;
+      padding: 2px 5px; border-radius: 10px; line-height: 1.4;
+    }
+    .chat-window {
+      position: fixed; bottom: 92px; right: 24px;
+      width: 360px; max-width: calc(100vw - 32px);
+      height: 520px; max-height: calc(100vh - 120px);
+      background: white; border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(13,43,78,0.2);
+      display: flex; flex-direction: column;
+      z-index: 999; overflow: hidden;
+      transform: scale(0.95) translateY(10px); opacity: 0; pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    .chat-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 14px 18px; display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .chat-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--gold); display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; flex-shrink: 0;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-size: 0.85rem; font-weight: 700; color: white; line-height: 1.2; }
+    .chat-header-status { font-size: 0.7rem; color: rgba(255,255,255,0.65); }
+    .chat-close {
+      background: none; border: none; color: rgba(255,255,255,0.7);
+      font-size: 1.2rem; cursor: pointer; padding: 4px; line-height: 1; transition: color 0.2s;
+    }
+    .chat-close:hover { color: white; }
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .msg {
+      max-width: 88%; padding: 10px 14px; border-radius: 12px;
+      font-size: 0.84rem; line-height: 1.55; animation: msgIn 0.2s ease;
+    }
+    @keyframes msgIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    .msg.bot { background: #f0f6ff; color: var(--text); border-bottom-left-radius: 4px; align-self: flex-start; }
+    .msg.user { background: var(--navy); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+    .msg.typing { background: #f0f6ff; align-self: flex-start; }
+    .typing-dots span {
+      display: inline-block; width: 6px; height: 6px; background: var(--muted);
+      border-radius: 50%; margin: 0 2px; animation: bounce 1.2s infinite;
+    }
+    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce { 0%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-5px); } }
+    .chat-suggestions {
+      padding: 0 12px 10px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
+    }
+    .suggestion-chip {
+      background: #f0f6ff; border: 1px solid var(--border); color: var(--navy);
+      padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    }
+    .suggestion-chip:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .chat-input-row {
+      display: flex; padding: 10px 12px 14px; gap: 8px;
+      border-top: 1px solid var(--border); flex-shrink: 0;
+    }
+    .chat-input {
+      flex: 1; border: 1.5px solid var(--border); border-radius: 20px;
+      padding: 9px 14px; font-family: 'Inter', sans-serif; font-size: 0.84rem;
+      outline: none; resize: none; transition: border-color 0.2s; line-height: 1.4;
+    }
+    .chat-input:focus { border-color: var(--navy-mid); }
+    .chat-send {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--navy); color: white; border: none;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; transition: background 0.2s; align-self: flex-end;
+    }
+    .chat-send:hover { background: var(--navy-mid); }
+    .chat-send:disabled { background: var(--border); cursor: not-allowed; }
+    .api-key-setup {
+      padding: 20px; display: flex; flex-direction: column;
+      gap: 12px; flex: 1; justify-content: center;
+    }
+    .api-key-setup p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; text-align: center; }
+    .api-key-setup input {
+      padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: 0.85rem; font-family: 'Inter', sans-serif; outline: none; width: 100%;
+    }
+    .api-key-setup input:focus { border-color: var(--navy-mid); }
+    .btn-setup {
+      background: var(--navy); color: white; border: none; padding: 10px;
+      border-radius: 8px; font-family: 'Inter', sans-serif;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-setup:hover { background: var(--navy-mid); }
   </style>
 </head>
 <body>
@@ -878,6 +991,49 @@
   </div>
 
 </main>
+
+<!-- CHAT FAB -->
+<button class="chat-fab" onclick="toggleChat()" id="chat-fab" title="Ask a financial question">
+  💬
+  <span class="chat-badge">AI</span>
+</button>
+
+<!-- CHAT WINDOW -->
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-avatar">💡</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Financial Blueprint AI</div>
+      <div class="chat-header-status">Financial education assistant</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">&times;</button>
+  </div>
+  <div class="api-key-setup" id="api-key-setup">
+    <div style="text-align:center;font-size:1.5rem;">🔑</div>
+    <p><strong>Connect your OpenAI API key</strong> to enable the AI assistant.</p>
+    <p>Get a free key at <strong>platform.openai.com</strong> &rarr; API Keys</p>
+    <input type="password" id="api-key-input" placeholder="sk-..." />
+    <button class="btn-setup" onclick="saveApiKey()">Save &amp; Start Chatting</button>
+    <p style="font-size:0.72rem;">Key stored in your browser only. Never sent anywhere except OpenAI.</p>
+  </div>
+  <div id="chat-ui" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-suggestions" id="chat-suggestions">
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is term life insurance?</span>
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">How does debt stacking work?</span>
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">RRSP vs TFSA?</span>
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is the Rule of 72?</span>
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">How much life insurance do I need?</span>
+      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is dollar-cost averaging?</span>
+    </div>
+    <div class="chat-input-row">
+      <textarea class="chat-input" id="chat-input" placeholder="Ask a financial question..." rows="1"
+        onkeydown="handleChatKey(event)"
+        oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,90)+'px'"></textarea>
+      <button class="chat-send" id="chat-send" onclick="sendMessage()">&#10148;</button>
+    </div>
+  </div>
+</div>
 
 <script>
   // ── STATE ──
@@ -1222,11 +1378,161 @@
 
   // ── INIT ──
   window.addEventListener('DOMContentLoaded', () => {
-    // Pre-populate 3 debt rows
     addDebtRow('Credit Card', '', '', '');
     addDebtRow('Car Loan', '', '', '');
     addDebtRow('', '', '', '');
+    initChat();
   });
+
+  // ══ CHATBOT ══
+
+  const SYSTEM_PROMPT = `You are a friendly, knowledgeable financial education assistant called "Financial Blueprint AI".
+
+Your purpose is to help Canadians understand personal finance concepts clearly and confidently.
+
+You have deep knowledge of:
+- Life insurance: term vs. whole life vs. universal life, how much coverage is needed, the 10x rule, group vs. personal policies, the theory of decreasing responsibility
+- Debt management: compound interest, revolving vs. fixed debt, debt stacking/avalanche method, credit scores, the real cost of minimum payments
+- Compound interest and the Rule of 72: how money doubles, the cost of waiting, rate of return comparisons
+- Retirement planning: RRSP vs. TFSA, CPP, OAS, FHSA, the 4% withdrawal rule, nest egg calculations, dollar-cost averaging, diversification
+- Budgeting: pay yourself first, the three savings accounts (emergency, short-term, wealth-building), surplus/shortfall analysis
+- Investment basics: mutual funds, equities vs. bonds, owner vs. loaner mentality, tax-deferred vs. tax-free growth
+- Canadian context: RRSP, TFSA, CPP, OAS, FHSA, provincial tax brackets, Equifax/TransUnion credit bureaus
+
+Communication style:
+- Plain, conversational language — no jargon without a clear explanation
+- Use real numbers and examples to illustrate concepts
+- Direct and confident — give clear answers, not wishy-washy non-answers
+- Concise: 3–6 sentences for simple questions, structured lists for multi-step concepts
+- Warm and encouraging — financial stress is real, acknowledge it when appropriate
+
+Strict limits — NEVER:
+- Recommend specific financial products, companies, insurers, or advisors by name
+- Give personalized investment or tax advice
+- Discuss topics outside personal finance
+- Guarantee investment returns
+
+If asked for specific personal advice ("should I buy X?", "what should I invest in?"), explain the relevant concept, then close with: "For decisions specific to your situation, a licensed financial advisor can help you apply these principles to your exact numbers."
+`;
+
+  let chatHistory = [];
+  let chatOpen = false;
+  let apiKey = '';
+
+  function initChat() {
+    apiKey = localStorage.getItem('fb_api_key') || '';
+    if (apiKey) showChatUI();
+  }
+
+  function saveApiKey() {
+    const val = document.getElementById('api-key-input').value.trim();
+    if (!val.startsWith('sk-')) { alert('Please enter a valid OpenAI API key (starts with sk-)'); return; }
+    apiKey = val;
+    localStorage.setItem('fb_api_key', apiKey);
+    showChatUI();
+  }
+
+  function showChatUI() {
+    document.getElementById('api-key-setup').style.display = 'none';
+    const ui = document.getElementById('chat-ui');
+    ui.style.display = 'flex';
+    if (chatHistory.length === 0) {
+      appendMsg('bot', "Hi! I'm your Financial Blueprint AI. Ask me anything about life insurance, debt, retirement, or investing. What's on your mind?");
+    }
+  }
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    document.getElementById('chat-window').classList.toggle('open', chatOpen);
+    if (chatOpen) {
+      setTimeout(() => document.getElementById('chat-input')?.focus(), 300);
+      const badge = document.querySelector('.chat-badge');
+      if (badge) badge.style.display = 'none';
+    }
+  }
+
+  function appendMsg(role, text) {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.className = 'msg ' + role;
+    div.innerHTML = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n/g, '<br>');
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function showTyping() {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.className = 'msg typing';
+    div.id = 'typing-indicator';
+    div.innerHTML = '<span class="typing-dots"><span></span><span></span><span></span></span>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function hideTyping() { document.getElementById('typing-indicator')?.remove(); }
+
+  function sendSuggestion(el) {
+    document.getElementById('chat-suggestions').style.display = 'none';
+    sendMessageText(el.textContent);
+  }
+
+  function handleChatKey(e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    input.style.height = 'auto';
+    sendMessageText(text);
+  }
+
+  async function sendMessageText(text) {
+    if (!apiKey) { toggleChat(); return; }
+    document.getElementById('chat-suggestions').style.display = 'none';
+    appendMsg('user', text);
+    chatHistory.push({ role: 'user', content: text });
+    const sendBtn = document.getElementById('chat-send');
+    sendBtn.disabled = true;
+    showTyping();
+
+    try {
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...chatHistory],
+          max_tokens: 500,
+          temperature: 0.7
+        })
+      });
+      if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || 'API error'); }
+      const data = await res.json();
+      const reply = data.choices[0].message.content;
+      hideTyping();
+      appendMsg('bot', reply);
+      chatHistory.push({ role: 'assistant', content: reply });
+      if (chatHistory.length > 20) chatHistory = chatHistory.slice(-20);
+    } catch (err) {
+      hideTyping();
+      let msg = 'Something went wrong. ';
+      if (err.message.includes('401') || err.message.includes('Incorrect API')) {
+        msg += 'Invalid API key — close the chat, reopen, and re-enter your key.';
+        localStorage.removeItem('fb_api_key'); apiKey = '';
+      } else if (err.message.includes('429')) {
+        msg += 'Rate limit hit — wait a moment and try again.';
+      } else { msg += err.message; }
+      appendMsg('bot', msg);
+    }
+    sendBtn.disabled = false;
+    document.getElementById('chat-input')?.focus();
+  }
 </script>
 </body>
 </html>
