@@ -142,20 +142,20 @@
 
     .toc-page h2 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 22pt;
+      font-size: 20pt;
       font-weight: 800;
       color: #0a1628;
       border-bottom: 2px solid;
       border-image: linear-gradient(90deg, #2d7dd2, #8ab4d4, transparent) 1;
-      padding-bottom: 10px;
-      margin-bottom: 24px;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
     }
 
     .toc-entry {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 7px 0;
+      padding: 4px 0;
       border-bottom: 1px solid #e0eaf4;
     }
 
@@ -689,6 +689,171 @@
 
     h2, h3, h4 { page-break-after: avoid; }
     .callout, .stat-row, .principle, .action-box, table { page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+
+    /* ====== TWO-COLUMN LAYOUT ====== */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      align-items: start;
+      margin: 18px 0;
+      page-break-inside: avoid;
+    }
+    .two-col-equal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin: 18px 0;
+      page-break-inside: avoid;
+    }
+    .two-col-wide {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 20px;
+      align-items: start;
+      margin: 18px 0;
+      page-break-inside: avoid;
+    }
+
+    /* ====== PULL STAT CARD ====== */
+    .stat-pull {
+      background: linear-gradient(135deg, #0a1628, #1a3a6e);
+      border-radius: 10px;
+      padding: 22px 16px;
+      text-align: center;
+      border: 1px solid rgba(79,163,224,0.25);
+      page-break-inside: avoid;
+    }
+    .stat-big {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 32pt;
+      font-weight: 800;
+      color: #8ab4d4;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-big.danger { color: rgba(192,57,43,0.85); }
+    .stat-big.bright { color: #c8dff0; }
+    .stat-desc {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 8pt;
+      color: rgba(200,223,240,0.65);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      line-height: 1.4;
+    }
+    .stat-sub {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 7.5pt;
+      color: rgba(200,223,240,0.4);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ====== SECTION BANNER (HMW-style topic intro) ====== */
+    .section-banner {
+      background:
+        linear-gradient(rgba(45,125,210,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,125,210,0.1) 1px, transparent 1px),
+        linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
+      background-size: 20pt 20pt, 20pt 20pt, 100% 100%;
+      border-radius: 0;
+      padding: 32px 36px;
+      margin: -1.8cm -2cm 28px;
+      border-bottom: 3px solid #2d7dd2;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 28px;
+      align-items: center;
+      page-break-inside: avoid;
+      position: relative;
+    }
+    .section-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 120pt;
+      height: 3px;
+      background: linear-gradient(90deg, #4fa3e0, transparent);
+    }
+    .section-banner-text .chapter-number { color: #4fa3e0; }
+    .section-banner-text h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28pt;
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .section-banner-text .chapter-intro {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 10pt;
+      color: rgba(200,223,240,0.8);
+      line-height: 1.6;
+    }
+    .section-banner-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ====== TIMELINE VISUAL ====== */
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 18px 0;
+      page-break-inside: avoid;
+    }
+    .timeline-node {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .timeline-node::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: -1px;
+      width: 2px;
+      height: 36px;
+      background: rgba(79,163,224,0.2);
+    }
+    .timeline-node:last-child::after { display: none; }
+    .tn-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0a1628, #1a3a6e);
+      border: 2px solid #2d7dd2;
+      margin: 0 auto 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #8ab4d4;
+    }
+    .tn-label {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #1a3a6e;
+    }
+    .tn-sub {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 7pt;
+      color: #6a8aaa;
+    }
+    .timeline-bar {
+      flex: 0 0 20px;
+      height: 2px;
+      background: rgba(45,125,210,0.3);
+      margin-top: -20px;
+    }
   </style>
 </head>
 <body>
@@ -802,63 +967,54 @@
     <div>
       <div class="toc-chapter">Chapter 1</div>
       <div class="toc-title">Take Control — Your Financial Starting Point</div>
-      <div class="toc-sub">Mindset, want vs. need, goal setting, realign assets, earn more</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 2</div>
       <div class="toc-title">Pay Yourself First</div>
-      <div class="toc-sub">The three accounts every family needs</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 3</div>
       <div class="toc-title">Crush Your Debt</div>
-      <div class="toc-sub">The Debt Stacking method, credit scores, compound interest traps</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 4</div>
       <div class="toc-title">The Rule of 72 &amp; the Power of Compound Interest</div>
-      <div class="toc-sub">Doubling time, $20 vs $100/mo table, rate of return matters</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 5</div>
       <div class="toc-title">Protect Your Income — Life Insurance Done Right</div>
-      <div class="toc-sub">Theory of Decreasing Responsibility, buy term &amp; invest the difference, cash value warning</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 6</div>
       <div class="toc-title">Defer Your Taxes — RRSP &amp; TFSA</div>
-      <div class="toc-sub">The government tools most Canadians underuse</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 7</div>
       <div class="toc-title">Be an Owner, Not a Loaner</div>
-      <div class="toc-sub">The broken three-legged stool, guaranteed loss in buying power, rate of return is the key</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 8</div>
       <div class="toc-title">Invest with Professional Management</div>
-      <div class="toc-sub">What mutual funds are, saving vs. investing, DCA investor A vs. B example</div>
     </div>
   </div>
   <div class="toc-entry">
     <div>
       <div class="toc-chapter">Chapter 9</div>
       <div class="toc-title">Your Financial Needs Snapshot</div>
-      <div class="toc-sub">Understanding your real numbers: retirement, debt, protection</div>
     </div>
   </div>
   <div class="toc-entry">
@@ -871,7 +1027,6 @@
     <div>
       <div class="toc-chapter">Bonus: Your Personal FNA</div>
       <div class="toc-title">Financial Needs Analysis Worksheet</div>
-      <div class="toc-sub">Calculate your income protection gap, retirement gap, and debt payoff plan</div>
     </div>
   </div>
 </div>
@@ -880,15 +1035,14 @@
      INTRODUCTION
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Introduction</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Introduction</div>
     <h2>The Truth About Financial Independence</h2>
     <div class="chapter-intro">Most people believe financial freedom is only for the wealthy. It's not. Here's the truth.</div>
-  </div>
-
-  <!-- Intro illustration: 3 bold statement cards -->
-  <div class="chapter-illustration">
-    <svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="ic0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#ic0)" stroke="rgba(79,163,224,0.2)" stroke-width="1"/>
       <text x="60" y="36" text-anchor="middle" font-family="Inter,Arial" font-size="28" font-weight="800" fill="#c8dff0">GET</text>
@@ -904,6 +1058,7 @@
       <text x="340" y="64" text-anchor="middle" font-family="Inter,Arial" font-size="10" font-weight="700" fill="#8ab4d4" letter-spacing="1">INDEPENDENCE</text>
       <rect x="280" y="74" width="120" height="4" rx="2" fill="#8ab4d4"/>
     </svg>
+    </div>
   </div>
 
   <p>There's a common misunderstanding that only people with high incomes, large inheritances, or lucky breaks can become financially independent. That couldn't be further from the truth.</p>
@@ -935,15 +1090,14 @@
      CHAPTER 1: TAKE CONTROL
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 1</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 1</div>
     <h2>Take Control</h2>
     <div class="chapter-intro">One of the biggest financial mistakes people make is dependence. Financial security starts when you take control of what you actually can control.</div>
-  </div>
-
-  <!-- Ch1: bold problem/solution split -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="c1g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- PROBLEM side -->
       <rect x="0" y="0" width="185" height="72" rx="10" fill="url(#c1g)" stroke="rgba(192,57,43,0.35)" stroke-width="1"/>
@@ -961,6 +1115,7 @@
       <path d="M185,36 L215,36" stroke="rgba(138,180,212,0.5)" stroke-width="2" marker-end="url(#c1ar)"/>
       <defs><marker id="c1ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(138,180,212,0.5)"/></marker></defs>
     </svg>
+    </div>
   </div>
 
   <h3>What You Can and Can't Control</h3>
@@ -1020,15 +1175,14 @@
      CHAPTER 2: PAY YOURSELF FIRST
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 2</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 2</div>
     <h2>Pay Yourself First</h2>
     <div class="chapter-intro">Most people pay everyone else first — and save whatever's left over. There's never anything left over. Here's the fix.</div>
-  </div>
-
-  <!-- Ch2: bold 10% hero + 3 account labels -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="p2g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- Hero card: 10% -->
       <rect x="0" y="0" width="130" height="72" rx="10" fill="url(#p2g)" stroke="rgba(138,180,212,0.4)" stroke-width="1"/>
@@ -1051,10 +1205,20 @@
       <text x="359" y="48" text-anchor="middle" font-family="Inter,Arial" font-size="8" font-weight="700" fill="rgba(200,223,240,0.6)">WEALTH</text>
       <text x="359" y="62" text-anchor="middle" font-family="Inter,Arial" font-size="7.5" fill="rgba(200,223,240,0.4)">Retirement</text>
     </svg>
+    </div>
   </div>
 
-  <p>At the end of the month, most people have nothing left to save. The solution is radical in its simplicity: <strong>before you pay anyone else, set aside 10% of your income for yourself.</strong></p>
-  <p>Treat your savings like a recurring bill — one you pay first, no exceptions. Most people don't hesitate to send large payments to credit card companies every month. Give yourself the same commitment.</p>
+  <div class="two-col">
+    <div class="stat-pull">
+      <div class="stat-big">10%</div>
+      <div class="stat-desc">Set this aside FIRST — before any other bill</div>
+      <div class="stat-sub">Treat it like a mandatory payment to yourself</div>
+    </div>
+    <div>
+      <p>At the end of the month, most people have nothing left to save. The solution is radical in its simplicity: <strong>before you pay anyone else, set aside 10% of your income for yourself.</strong></p>
+      <p>Treat your savings like a recurring bill — one you pay first, no exceptions. Most people send large payments to credit card companies every month without hesitation. Give yourself the same commitment.</p>
+    </div>
+  </div>
 
   <div class="principle">
     <h4>Core Principle</h4>
@@ -1090,15 +1254,14 @@
      CHAPTER 3: CRUSH YOUR DEBT
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 3</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 3</div>
     <h2>Crush Your Debt</h2>
     <div class="chapter-intro">Of all the threats to your financial security, none is more dangerous than debt. And none is more fixable once you understand how it actually works.</div>
-  </div>
-
-  <!-- Ch3: Debt — bold before/after numbers -->
-  <div class="chapter-illustration">
-    <svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="d3g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- Without debt stacking -->
       <rect x="0" y="0" width="180" height="80" rx="10" fill="url(#d3g)" stroke="rgba(192,57,43,0.35)" stroke-width="1"/>
@@ -1118,6 +1281,7 @@
       <text x="310" y="50" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#8ab4d4">10.5 yrs</text>
       <text x="310" y="68" text-anchor="middle" font-family="Inter,Arial" font-size="9" fill="rgba(200,223,240,0.6)">Save $112,000+ in interest</text>
     </svg>
+    </div>
   </div>
 
   <h3>The Hidden Enemy: Compound Interest Working Against You</h3>
@@ -1144,6 +1308,21 @@
   </table>
 
   <h3>Debt Stacking: The Systematic Way Out</h3>
+  <div class="two-col">
+    <div>
+      <div class="stat-pull">
+        <div class="stat-big danger">25 yrs</div>
+        <div class="stat-desc">Minimum payments only</div>
+        <div class="stat-sub">$205,279 in interest paid</div>
+      </div>
+      <div style="text-align:center;padding:8px 0;font-family:'Inter',Arial;font-size:10pt;font-weight:800;color:#4fa3e0;">vs.</div>
+      <div class="stat-pull">
+        <div class="stat-big bright">10.5 yrs</div>
+        <div class="stat-desc">With Debt Stacking</div>
+        <div class="stat-sub">Save $112,000+ in interest</div>
+      </div>
+    </div>
+    <div>
   <div class="callout callout-green">
     <strong>How Debt Stacking Works</strong>
     <ol style="margin-top:8px;margin-left:20px;">
@@ -1154,22 +1333,23 @@
       <li>When all debts are gone, redirect that entire payment into wealth building</li>
     </ol>
   </div>
-  <p>Example: Without debt stacking, a family paying $2,567/month takes 25 years and pays $205,279 in interest. With debt stacking — done in 10.5 years, saving over $112,000.</p>
+    <p>Same total monthly payment. Same debts. Just a smarter order of attack. Every payment on a cleared debt gets rolled into the next one — accelerating payoff exponentially.</p>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════════════════════════
      CHAPTER 4: RULE OF 72
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 4</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 4</div>
     <h2>The Rule of 72 &amp; The Power of Compound Interest</h2>
     <div class="chapter-intro">Albert Einstein reportedly called compound interest "the most powerful force in the universe." Once you understand it, you'll never think about money the same way again.</div>
-  </div>
-
-  <!-- Ch4: Rule of 72 — bold doubling cards -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="r4g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- Card 1: 3% -->
       <rect x="0" y="0" width="86" height="72" rx="10" fill="url(#r4g)" stroke="rgba(192,57,43,0.3)" stroke-width="1"/>
@@ -1196,6 +1376,7 @@
       <text x="357" y="46" text-anchor="middle" font-family="Inter,Arial" font-size="9" fill="rgba(200,223,240,0.6)">years to double</text>
       <text x="357" y="64" text-anchor="middle" font-family="Inter,Arial" font-size="11" font-weight="700" fill="#c8dff0">@ 12%</text>
     </svg>
+    </div>
   </div>
 
   <h3>The Rule of 72</h3>
@@ -1225,7 +1406,14 @@
   </div>
 
   <h3>The Power of Just a Little More</h3>
-  <p>Most people feel they can't invest enough to make a real difference. But small increases in monthly contributions have a dramatic impact over time. Look at the difference between saving $20 a month versus $100 a month at a hypothetical 9% return:</p>
+  <div class="two-col">
+    <div class="stat-pull">
+      <div class="stat-big bright">5x</div>
+      <div class="stat-desc">More wealth from $100/mo vs $20/mo</div>
+      <div class="stat-sub">Over 40 years at 9% return: $471,650 vs $94,330</div>
+    </div>
+    <p>Most people feel they can't invest enough to make a real difference. But small increases in monthly contributions have a dramatic impact over time. Look at the difference between saving $20 a month versus $100 a month at a hypothetical 9% return:</p>
+  </div>
 
   <table>
     <thead><tr><th>Monthly Contribution</th><th>After 10 Years</th><th>After 20 Years</th><th>After 30 Years</th><th>After 40 Years</th></tr></thead>
@@ -1258,15 +1446,14 @@
      CHAPTER 5: LIFE INSURANCE
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 5</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 5</div>
     <h2>Protect Your Income — Life Insurance Done Right</h2>
     <div class="chapter-intro">Life insurance is one of the most important — and most misunderstood — financial tools available to families. Getting this wrong can cost your family everything.</div>
-  </div>
-
-  <!-- Ch5: bold 10x rule hero + term vs whole -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="l5g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- 10x hero -->
       <rect x="0" y="0" width="140" height="72" rx="10" fill="url(#l5g)" stroke="rgba(138,180,212,0.4)" stroke-width="1"/>
@@ -1288,15 +1475,23 @@
       <text x="343" y="54" text-anchor="middle" font-family="Inter,Arial" font-size="8" fill="rgba(200,223,240,0.6)">3–5x higher cost</text>
       <text x="343" y="66" text-anchor="middle" font-family="Inter,Arial" font-size="8" font-weight="700" fill="rgba(192,57,43,0.7)">✗ AVOID MIXING</text>
     </svg>
+    </div>
   </div>
 
   <h3>What Life Insurance Actually Is</h3>
   <p>Think of life insurance less as "death coverage" and more as <strong>income protection</strong>. Your ability to earn income is your most valuable financial asset — far more valuable than your house or your car. Yet most people insure their car carefully and underinsure their income.</p>
 
-  <div class="callout callout-gold">
-    <strong>The Value of Your Earning Power</strong>
-    <p>Annual income × years until retirement = your earning power<br><br>
-    At $70,000/year with 30 working years left, that's <strong>$2.1 million</strong> in income your family is counting on. That's what life insurance protects.</p>
+  <div class="two-col">
+    <div class="stat-pull">
+      <div class="stat-big">$2.1M</div>
+      <div class="stat-desc">Earning power at risk without coverage</div>
+      <div class="stat-sub">$70,000/yr × 30 years = the income your family depends on</div>
+    </div>
+    <div class="callout callout-gold">
+      <strong>The Value of Your Earning Power</strong>
+      <p>Annual income × years until retirement = your earning power.</p>
+      <p style="margin-top:8px;">Most people insure their car carefully and underinsure their income. Your ability to earn is your most valuable asset — by far.</p>
+    </div>
   </div>
 
   <h3>Term vs. Cash Value Life Insurance</h3>
@@ -1364,15 +1559,14 @@
      CHAPTER 6: DEFER TAXES
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 6</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 6</div>
     <h2>Defer Your Taxes — RRSP &amp; TFSA</h2>
     <div class="chapter-intro">The federal government has given every Canadian two powerful wealth-building tools. Most families dramatically underuse them.</div>
-  </div>
-
-  <!-- Ch6: bold RRSP vs TFSA cards -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="r6g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <rect x="0" y="0" width="185" height="72" rx="10" fill="url(#r6g)" stroke="rgba(79,163,224,0.3)" stroke-width="1"/>
       <rect x="0" y="0" width="185" height="5" rx="3" fill="#2d7dd2"/>
@@ -1388,6 +1582,7 @@
       <text x="307" y="50" text-anchor="middle" font-family="Inter,Arial" font-size="9" fill="rgba(200,223,240,0.7)" font-weight="600">NEVER taxed — ever</text>
       <text x="307" y="64" text-anchor="middle" font-family="Inter,Arial" font-size="8" fill="#8ab4d4" font-weight="700">★ Best for most Canadians</text>
     </svg>
+    </div>
   </div>
 
   <h3>The Power of Tax-Deferred Savings</h3>
@@ -1420,15 +1615,14 @@
      CHAPTER 7: OWNER NOT LOANER
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 7</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 7</div>
     <h2>Be an Owner, Not a Loaner</h2>
     <div class="chapter-intro">Most Canadians believe their money is "safe" in the bank. Here's why that belief is costing them their financial future.</div>
-  </div>
-
-  <!-- Ch7: bold Loaner vs Owner -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="o7g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <rect x="0" y="0" width="185" height="72" rx="10" fill="url(#o7g)" stroke="rgba(192,57,43,0.35)" stroke-width="1"/>
       <rect x="0" y="0" width="185" height="5" rx="3" fill="#c0392b" opacity="0.6"/>
@@ -1444,6 +1638,7 @@
       <text x="307" y="50" text-anchor="middle" font-family="Inter,Arial" font-size="11" fill="rgba(200,223,240,0.7)">You earn 7–9% directly</text>
       <text x="307" y="64" text-anchor="middle" font-family="Inter,Arial" font-size="9" fill="#8ab4d4" font-weight="700">★ RRSP • TFSA • Mutual Funds</text>
     </svg>
+    </div>
   </div>
 
   <h3>The Banking Reality</h3>
@@ -1462,9 +1657,31 @@
   <p>Instead of lending your money to financial institutions at low rates, become a part-owner of the economy. Equity investments — broadly diversified funds — have historically outperformed savings accounts by a wide margin over long periods.</p>
 
   <h3>The Broken Three-Legged Stool</h3>
-  <p>For decades, financial experts described retirement security as a three-legged stool: <strong>government benefits</strong> (CPP/OAS), <strong>company pensions</strong>, and <strong>personal savings</strong>. When all three legs were strong, retirement was stable.</p>
-
-  <p>That stool is broken. Company pensions have largely disappeared outside the public sector. Government benefits cover a modest baseline — not a comfortable retirement. The only leg you can truly rely on? <strong>Personal savings.</strong></p>
+  <div class="two-col-equal">
+    <div>
+      <svg width="180" height="120" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="stoolG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
+        <!-- Seat -->
+        <rect x="20" y="20" width="140" height="20" rx="4" fill="url(#stoolG)" stroke="rgba(79,163,224,0.3)" stroke-width="1"/>
+        <!-- Leg 1: CPP/OAS - cracked -->
+        <rect x="30" y="40" width="28" height="70" rx="2" fill="rgba(192,57,43,0.3)" stroke="rgba(192,57,43,0.5)" stroke-width="1"/>
+        <line x1="30" y1="65" x2="58" y2="75" stroke="#c0392b" stroke-width="2"/>
+        <text x="44" y="88" text-anchor="middle" font-family="Inter,Arial" font-size="6.5" fill="rgba(192,57,43,0.8)" font-weight="700">CPP/OAS</text>
+        <!-- Leg 2: Pension - cracked -->
+        <rect x="76" y="40" width="28" height="70" rx="2" fill="rgba(192,57,43,0.2)" stroke="rgba(192,57,43,0.4)" stroke-width="1"/>
+        <line x1="76" y1="60" x2="104" y2="72" stroke="#c0392b" stroke-width="2"/>
+        <text x="90" y="88" text-anchor="middle" font-family="Inter,Arial" font-size="6.5" fill="rgba(192,57,43,0.7)" font-weight="700">PENSION</text>
+        <!-- Leg 3: Savings - solid blue -->
+        <rect x="122" y="40" width="28" height="70" rx="2" fill="#2d7dd2" stroke="#4fa3e0" stroke-width="1"/>
+        <text x="136" y="88" text-anchor="middle" font-family="Inter,Arial" font-size="6.5" fill="white" font-weight="700">SAVINGS</text>
+        <text x="136" y="115" text-anchor="middle" font-family="Inter,Arial" font-size="7" fill="#4fa3e0" font-weight="700">← YOUR CONTROL</text>
+      </svg>
+    </div>
+    <div>
+      <p>For decades, financial experts described retirement security as a three-legged stool: <strong>government benefits</strong> (CPP/OAS), <strong>company pensions</strong>, and <strong>personal savings</strong>. When all three legs were strong, retirement was stable.</p>
+      <p>That stool is broken. Company pensions have largely disappeared. Government benefits cover a modest baseline — not a comfortable retirement. The only leg you can truly rely on? <strong>Personal savings.</strong></p>
+    </div>
+  </div>
 
   <div class="callout callout-red">
     <strong>The Reality of Retirement in Canada</strong>
@@ -1503,15 +1720,14 @@
      CHAPTER 8: PROFESSIONAL MANAGEMENT
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 8</div>
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 8</div>
     <h2>Invest With Professional Management</h2>
     <div class="chapter-intro">You don't need to be a financial expert to benefit from professional investment management. Here's how ordinary families access it.</div>
-  </div>
-
-  <!-- Ch8: bold 3Ds of investing -->
-  <div class="chapter-illustration">
-    <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
+    </div>
+    <div class="section-banner-visual">
+      <svg width="400" height="72" viewBox="0 0 400 72" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="d8g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <rect x="0" y="0" width="120" height="72" rx="10" fill="url(#d8g)" stroke="rgba(79,163,224,0.3)" stroke-width="1"/>
       <rect x="0" y="0" width="120" height="5" rx="3" fill="#2d7dd2"/>
@@ -1529,6 +1745,7 @@
       <text x="340" y="52" text-anchor="middle" font-family="Inter,Arial" font-size="10" font-weight="700" fill="#c8dff0">DOLLAR-COST</text>
       <text x="340" y="65" text-anchor="middle" font-family="Inter,Arial" font-size="7.5" fill="rgba(200,223,240,0.4)">Fixed monthly</text>
     </svg>
+    </div>
   </div>
 
   <h3>The Three Ds of Successful Investing</h3>
@@ -1560,7 +1777,14 @@
   <h3>Dollar-Cost Averaging: Why Falling Markets Can Be Your Friend</h3>
   <p>One of the most counterintuitive — and powerful — concepts in investing is dollar-cost averaging. When you invest a fixed amount every month, a falling market actually works in your favour.</p>
 
-  <p>Consider two investors, each investing $100/month for 6 months ($600 total) in the same fund:</p>
+  <div class="two-col">
+    <div class="stat-pull">
+      <div class="stat-big bright">3x</div>
+      <div class="stat-desc">More units bought by the investor who kept investing through a dip</div>
+      <div class="stat-sub">Same $600. Same fund. Smarter timing through DCA.</div>
+    </div>
+    <p>Consider two investors, each investing $100/month for 6 months ($600 total) in the same fund:</p>
+  </div>
 
   <table>
     <thead><tr><th>Month</th><th>Investor A — Rising Market</th><th>Investor B — Falling Then Recovering</th></tr></thead>
@@ -1597,16 +1821,15 @@
      CHAPTER 9: FINANCIAL SNAPSHOT
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Chapter 9</div>
-    <h2>Your Financial Needs Snapshot</h2>
-    <div class="chapter-intro">Understanding your real numbers — retirement gap, debt load, and income protection — is the foundation of a real financial plan.</div>
-  </div>
-
-  <h3>The Financial House — Your Four Priorities</h3>
-
-  <!-- Ch9: bold 4-priority staircase -->
-  <div class="chapter-illustration">
+  <div class="section-banner">
+    <div class="section-banner-text">
+      <div class="chapter-number">Chapter 9</div>
+      <h2>Your Financial Needs Snapshot</h2>
+      <div class="chapter-intro">Your real numbers — retirement gap, debt load, and protection — are the foundation of a real financial plan.</div>
+    </div>
+    <div class="section-banner-visual">
+      <!-- Ch9: bold 4-priority staircase -->
+      <div class="chapter-illustration" style="margin:0;">
     <svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="f9g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#1a3a6e"/></linearGradient></defs>
       <!-- Foundation: widest -->
@@ -1626,6 +1849,8 @@
       <rect x="110" y="2" width="180" height="3" fill="#8ab4d4"/>
       <text x="200" y="14" text-anchor="middle" font-family="Inter,Arial" font-size="8.5" font-weight="800" fill="#c8dff0">4 — INCOME MANAGEMENT</text>
     </svg>
+  </div>
+    </div>
   </div>
 
   <div class="callout">
@@ -1650,10 +1875,12 @@
      CONCLUSION
 ════════════════════════════════════════ -->
 <div class="chapter">
-  <div class="chapter-header">
-    <div class="chapter-number">Conclusion</div>
-    <h2>You Can Do This</h2>
-    <div class="chapter-intro">Financial independence isn't a secret. It's a set of principles — applied consistently, over time.</div>
+  <div class="section-banner" style="grid-template-columns:1fr;">
+    <div class="section-banner-text">
+      <div class="chapter-number">Conclusion</div>
+      <h2>You Can Do This</h2>
+      <div class="chapter-intro">Financial independence isn't a secret. It's a set of principles — applied consistently, over time. You now have the knowledge. The only question is: will you use it?</div>
+    </div>
   </div>
 
   <div class="principle">
