@@ -111,6 +111,15 @@
 - Google/Meta Ads — $500/mo + ad spend (future)
 - **Next session:** Complete Voice AI setup, test call, then build Tier 3 (review requests + lead nurture)
 
+## Digital Product Business (2026-04-28)
+- Built a standalone financial education ebook (financial-blueprint.pdf) — 30 pages, no Primerica branding
+- Built a standalone FNA web app (fna-app/index.html) — interactive 4-step calculator, mobile responsive, zero Primerica branding
+- Plan: sell on Whop.com — ebook as lead magnet, FNA app as paid product ($27–47 one-time or $9–19/mo)
+- Hosting needed: Netlify or GitHub Pages → URL locked behind Whop paywall
+- Completely separate income stream from Primerica
+- Tony considering Iman Gadzhi's course ($1,995 USD) which includes Synthesise AI tool — decision pending
+- Files: `~/.openclaw/workspace/ebook/financial-blueprint.pdf` and `~/.openclaw/workspace/fna-app/index.html`
+
 ## Ideas Parked for Later
 
 ### Primerica Agent AI Kit (2026-04-12)
