@@ -930,7 +930,7 @@
     <button class="btn-add-debt" onclick="addDebtRow()">+ Add Another Debt</button>
 
     <div class="calc-preview" style="margin-top:20px;" id="preview-4">
-      <div class="calc-preview-title">⚡ Debt Stacking Summary</div>
+      <div class="calc-preview-title">⚡ Quick Summary</div>
       <div class="calc-row">
         <span class="calc-label">Total debt</span>
         <span class="calc-val" id="prev-total-debt">—</span>
@@ -943,6 +943,41 @@
         <span class="calc-label">Monthly surplus available to stack</span>
         <span class="calc-val" id="prev-surplus-for-debt">—</span>
       </div>
+    </div>
+
+    <!-- DEBT COMPARISON PANEL -->
+    <div id="debt-comparison" style="display:none; margin-top:20px;">
+      <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); margin-bottom:12px;">🔥 Minimum Payments vs. Debt Stacking</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <!-- Left: minimum payments only -->
+        <div style="background:#fff5f5; border:2px solid var(--red); border-radius:10px; padding:16px;">
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--red); margin-bottom:10px;">❌ Minimum Payments Only</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--red); margin-bottom:10px;" id="cmp-min-years">—</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Total interest paid:</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.1rem; font-weight:700; color:var(--red);" id="cmp-min-interest">—</div>
+        </div>
+        <!-- Right: debt stacking -->
+        <div style="background:#f0fff4; border:2px solid var(--green); border-radius:10px; padding:16px;">
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--green); margin-bottom:10px;">✅ With Debt Stacking</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--green); margin-bottom:10px;" id="cmp-stack-years">—</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Total interest paid:</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.1rem; font-weight:700; color:var(--green);" id="cmp-stack-interest">—</div>
+        </div>
+      </div>
+      <!-- Savings banner -->
+      <div style="background:var(--navy); border-radius:8px; padding:14px 18px; margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.7); margin-bottom:3px;">Debt Stacking saves you</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.3rem; font-weight:700; color:var(--gold);" id="cmp-savings">—</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.7); margin-bottom:3px;">And pays off</div>
+          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.3rem; font-weight:700; color:var(--gold);" id="cmp-time-saved">— faster</div>
+        </div>
+      </div>
+      <p style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:var(--muted); margin-top:8px; line-height:1.5;">* Stacking calculation assumes your monthly surplus is applied to the highest-rate debt first. When it's paid off, that payment rolls to the next debt.</p>
     </div>
 
     <div class="step-nav">
@@ -1207,6 +1242,165 @@
     const sEl = document.getElementById('prev-surplus-for-debt');
     sEl.textContent = fmt(extra);
     sEl.className = 'calc-val' + (extra > 0 ? ' good' : extra < 0 ? ' bad' : '');
+
+    // Run comparison if we have enough data
+    if (debts.length > 0 && minPayments > 0) {
+      updateDebtComparison(debts, extra);
+    }
+  }
+
+  // Simulate minimum-payments-only payoff across all debts independently
+  function simMinPayments(debts) {
+    // Each debt paid independently at its minimum — no rolling
+    let loans = debts.map(d => ({ balance: d.balance, rate: d.rate / 100 / 12, payment: d.payment }));
+    let totalInterest = 0;
+    let months = 0;
+    const MAX_MONTHS = 600; // 50 years cap
+
+    while (loans.some(l => l.balance > 0.01) && months < MAX_MONTHS) {
+      months++;
+      loans = loans.map(l => {
+        if (l.balance <= 0.01) return l;
+        const interest = l.balance * l.rate;
+        totalInterest += interest;
+        const pay = Math.min(l.payment, l.balance + interest);
+        return { ...l, balance: l.balance + interest - pay };
+      });
+    }
+    return { months, totalInterest };
+  }
+
+  // Simulate debt stacking: sort by rate desc, roll payments when a debt is cleared
+  function simDebtStacking(debts, extraMonthly) {
+    // Sort highest rate first
+    let loans = [...debts]
+      .sort((a, b) => b.rate - a.rate)
+      .map(d => ({ balance: d.balance, rate: d.rate / 100 / 12, minPayment: d.payment }));
+
+    let totalInterest = 0;
+    let months = 0;
+    let rolledPayment = extraMonthly; // starts with surplus
+    const MAX_MONTHS = 600;
+
+    while (loans.some(l => l.balance > 0.01) && months < MAX_MONTHS) {
+      months++;
+      // Accrue interest on all
+      loans = loans.map(l => ({
+        ...l,
+        balance: l.balance > 0.01 ? l.balance + l.balance * l.rate : 0
+      }));
+      // Track interest this month
+      totalInterest += loans.reduce((s, l) => {
+        return l.balance > 0.01 ? s + l.balance * l.rate / (1 + l.rate) * l.rate : s;
+      }, 0);
+
+      // Pay minimums on all except target (index 0 of active)
+      let activeIdx = loans.findIndex(l => l.balance > 0.01);
+      loans = loans.map((l, i) => {
+        if (l.balance <= 0.01) return l;
+        const pay = i === activeIdx
+          ? Math.min(l.minPayment + rolledPayment, l.balance)
+          : Math.min(l.minPayment, l.balance);
+        return { ...l, balance: l.balance - pay };
+      });
+
+      // If target paid off, roll its payment to next
+      if (activeIdx >= 0 && loans[activeIdx].balance <= 0.01) {
+        rolledPayment += loans[activeIdx].minPayment;
+      }
+    }
+
+    // More accurate interest: recalculate simply
+    // Re-run with proper interest tracking
+    return simDebtStackingAccurate(debts, extraMonthly);
+  }
+
+  function simDebtStackingAccurate(debts, extraMonthly) {
+    let loans = [...debts]
+      .sort((a, b) => b.rate - a.rate)
+      .map(d => ({ name: d.name, bal: d.balance, monthlyRate: d.rate / 100 / 12, minPmt: d.payment }));
+
+    let totalInterest = 0;
+    let months = 0;
+    let bonusPmt = extraMonthly;
+    const MAX_MONTHS = 600;
+
+    while (loans.some(l => l.bal > 0.005) && months < MAX_MONTHS) {
+      months++;
+      // Find first active loan (target)
+      const targetIdx = loans.findIndex(l => l.bal > 0.005);
+
+      loans = loans.map((l, i) => {
+        if (l.bal <= 0.005) return l;
+        const interest = l.bal * l.monthlyRate;
+        totalInterest += interest;
+        const pmt = i === targetIdx
+          ? Math.min(l.minPmt + bonusPmt, l.bal + interest)
+          : Math.min(l.minPmt, l.bal + interest);
+        return { ...l, bal: l.bal + interest - pmt };
+      });
+
+      // If target just paid off, roll its min payment into bonus
+      if (targetIdx >= 0 && loans[targetIdx].bal <= 0.005) {
+        bonusPmt += loans[targetIdx].minPmt;
+      }
+    }
+
+    return { months, totalInterest };
+  }
+
+  function simMinPaymentsAccurate(debts) {
+    let loans = debts.map(d => ({
+      bal: d.balance,
+      monthlyRate: d.rate / 100 / 12,
+      minPmt: d.payment
+    }));
+    let totalInterest = 0;
+    let months = 0;
+    const MAX_MONTHS = 600;
+
+    while (loans.some(l => l.bal > 0.005) && months < MAX_MONTHS) {
+      months++;
+      loans = loans.map(l => {
+        if (l.bal <= 0.005) return l;
+        const interest = l.bal * l.monthlyRate;
+        totalInterest += interest;
+        const pmt = Math.min(l.minPmt, l.bal + interest);
+        return { ...l, bal: l.bal + interest - pmt };
+      });
+    }
+    return { months, totalInterest };
+  }
+
+  function fmtMonths(m) {
+    if (m >= 600) return '50+ years';
+    const yrs = Math.floor(m / 12);
+    const mo = m % 12;
+    if (yrs === 0) return mo + ' months';
+    if (mo === 0) return yrs + (yrs === 1 ? ' year' : ' years');
+    return yrs + 'y ' + mo + 'mo';
+  }
+
+  function updateDebtComparison(debts, extraMonthly) {
+    const panel = document.getElementById('debt-comparison');
+    // Need at least one debt with a rate and payment
+    const valid = debts.filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0);
+    if (valid.length === 0) { panel.style.display = 'none'; return; }
+
+    const minResult = simMinPaymentsAccurate(valid);
+    const stackResult = simDebtStackingAccurate(valid, extraMonthly);
+
+    const interestSaved = minResult.totalInterest - stackResult.totalInterest;
+    const monthsSaved = minResult.months - stackResult.months;
+
+    document.getElementById('cmp-min-years').textContent = fmtMonths(minResult.months);
+    document.getElementById('cmp-min-interest').textContent = fmt(minResult.totalInterest) + ' in interest';
+    document.getElementById('cmp-stack-years').textContent = fmtMonths(stackResult.months);
+    document.getElementById('cmp-stack-interest').textContent = fmt(stackResult.totalInterest) + ' in interest';
+    document.getElementById('cmp-savings').textContent = interestSaved > 0 ? fmt(interestSaved) + ' in interest' : 'Already optimized!';
+    document.getElementById('cmp-time-saved').textContent = monthsSaved > 0 ? fmtMonths(monthsSaved) + ' faster' : 'Already efficient!';
+
+    panel.style.display = 'block';
   }
 
   // ── SHOW RESULTS ──
