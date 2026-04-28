@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Needs Analysis — Your Financial Blueprint</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+      --navy: #0d2b4e;
+      --navy-mid: #1a4a7a;
+      --gold: #f0c040;
+      --gold-dark: #c9a020;
+      --green: #27ae60;
+      --red: #e74c3c;
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --border: #e0e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .app-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .app-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+
+    .app-logo span { color: var(--gold); }
+
+    .progress-bar-wrap {
+      flex: 1;
+      max-width: 400px;
+      margin: 0 24px;
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .progress-label {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .progress-label.active { color: var(--gold); }
+    .progress-label.done { color: rgba(255,255,255,0.75); }
+
+    .progress-track {
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .step-counter {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+    }
+
+    /* ── Main container ── */
+    .app-main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
+
+    /* ── Step card ── */
+    .step-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(13,43,78,0.08);
+      padding: 36px 40px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .step-card.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── Form fields ── */
+    .field-group { margin-bottom: 20px; }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-prefix {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .input-suffix {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #fafbff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .has-prefix input { padding-left: 26px; }
+    .has-suffix input { padding-right: 36px; }
+
+    input:focus, select:focus {
+      border-color: var(--navy-mid);
+      box-shadow: 0 0 0 3px rgba(26,74,122,0.1);
+      background: white;
+    }
+
+    /* ── Debt table ── */
+    .debt-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+
+    .debt-table th {
+      background: var(--navy);
+      color: white;
+      padding: 8px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .debt-table td { padding: 6px 4px; }
+
+    .debt-table td input {
+      padding: 7px 10px;
+      font-size: 0.85rem;
+    }
+
+    .btn-add-debt {
+      background: none;
+      border: 1.5px dashed var(--navy-mid);
+      color: var(--navy-mid);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-add-debt:hover { background: #f0f6ff; }
+
+    .btn-remove {
+      background: none;
+      border: none;
+      color: var(--red);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+
+    /* ── Live calc preview ── */
+    .calc-preview {
+      background: linear-gradient(135deg, #f0f6ff 0%, #fafbff 100%);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+
+    .calc-preview-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      font-size: 0.85rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row .calc-label { color: var(--muted); }
+    .calc-row .calc-val { font-weight: 700; color: var(--navy); }
+    .calc-row .calc-val.good { color: var(--green); }
+    .calc-row .calc-val.bad { color: var(--red); }
+    .calc-row .calc-val.warn { color: #e67e22; }
+
+    /* ── Nav buttons ── */
+    .step-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(13,43,78,0.2); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(240,192,64,0.35); }
+
+    /* ── Results page ── */
+    #step-results { display: none; }
+    #step-results.active { display: block; }
+
+    .results-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 12px;
+      padding: 28px 32px;
+      color: white;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .results-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .results-hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px 24px;
+      box-shadow: 0 2px 12px rgba(13,43,78,0.07);
+      border-left: 4px solid var(--navy);
+    }
+
+    .result-card.danger { border-left-color: var(--red); }
+    .result-card.warning { border-left-color: #e67e22; }
+    .result-card.success { border-left-color: var(--green); }
+    .result-card.gold { border-left-color: var(--gold); }
+
+    .result-card-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .result-card-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .result-card-value.danger { color: var(--red); }
+    .result-card-value.warning { color: #e67e22; }
+    .result-card-value.success { color: var(--green); }
+
+    .result-card-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .result-section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(13,43,78,0.07);
+      margin-bottom: 16px;
+    }
+
+    .result-section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .result-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 0;
+      font-size: 0.85rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .result-line:last-child { border-bottom: none; }
+    .result-line .rl-label { color: var(--muted); }
+    .result-line .rl-val { font-weight: 600; color: var(--navy); }
+    .result-line .rl-val.good { color: var(--green); }
+    .result-line .rl-val.bad { color: var(--red); }
+
+    .result-highlight {
+      background: var(--navy);
+      color: white;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .result-highlight .rh-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+    .result-highlight .rh-val { font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+
+    /* ── Debt results table ── */
+    .debt-results-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .debt-results-table th { background: var(--navy); color: white; padding: 8px 12px; text-align: left; font-size: 0.75rem; }
+    .debt-results-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+    .debt-results-table tr:nth-child(even) td { background: #f5f8ff; }
+    .debt-results-table .priority-1 td { background: #fff8e1 !important; font-weight: 600; }
+
+    /* ── CTA box ── */
+    .cta-box {
+      background: linear-gradient(135deg, #f0fff4 0%, #e8f5e9 100%);
+      border: 1.5px solid var(--green);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .cta-box h3 { color: #1a5c35; font-size: 1.1rem; margin-bottom: 8px; }
+    .cta-box p { color: #2d7a4f; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── Print / PDF ── */
+    .print-btn {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 13px 30px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+    .restart-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.2s;
+    }
+
+    .restart-btn:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── Tooltip ── */
+    .tooltip-wrap { position: relative; display: inline-block; margin-left: 5px; cursor: help; }
+    .tooltip-icon { color: var(--muted); font-size: 0.75rem; }
+    .tooltip-text {
+      display: none;
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    .tooltip-wrap:hover .tooltip-text { display: block; }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: #fafbff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .step-card { padding: 24px 20px; }
+      .field-row { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .progress-bar-wrap { display: none; }
+      .app-header { flex-wrap: wrap; gap: 8px; }
+    }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: white; }
+      .app-header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .step-card:not(.active) { display: none; }
+      .step-nav { display: none; }
+      .print-btn, .restart-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="app-header">
+  <div class="app-logo">Financial <span>Blueprint</span></div>
+  <div class="progress-bar-wrap">
+    <div class="progress-labels">
+      <span class="progress-label active" onclick="goToStep(1)" id="lbl-1">Basics</span>
+      <span class="progress-label" onclick="goToStep(2)" id="lbl-2">Protection</span>
+      <span class="progress-label" onclick="goToStep(3)" id="lbl-3">Retirement</span>
+      <span class="progress-label" onclick="goToStep(4)" id="lbl-4">Debt</span>
+      <span class="progress-label" onclick="goToStep(5)" id="lbl-5">Results</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+  </div>
+  <div class="step-counter" id="step-counter">Step 1 of 4</div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="app-main">
+
+  <!-- ══ STEP 1: HOUSEHOLD BASICS ══ -->
+  <div class="step-card active" id="step-1">
+    <div class="step-eyebrow">Step 1 of 4</div>
+    <h1 class="step-title">Your Household Basics</h1>
+    <p class="step-desc">Let's start with the foundation — your income, expenses, and a few key details that power all the calculations ahead.</p>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>Your Age</label>
+        <input type="number" id="age" placeholder="e.g. 35" min="18" max="75" oninput="liveCalc()">
+      </div>
+      <div class="field-group">
+        <label>Target Retirement Age</label>
+        <input type="number" id="retireAge" placeholder="e.g. 65" min="45" max="80" oninput="liveCalc()">
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Combined Annual Household Income
+        <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Before tax. Include all earners in household.</span></span>
+      </label>
+      <div class="input-wrap has-prefix">
+        <span class="input-prefix">$</span>
+        <input type="number" id="annualIncome" placeholder="e.g. 80000" oninput="liveCalc()">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>Monthly Take-Home Pay (after tax)</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="monthlyTakeHome" placeholder="e.g. 5200" oninput="liveCalc()">
+        </div>
+      </div>
+      <div class="field-group">
+        <label>Total Monthly Expenses</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="monthlyExpenses" placeholder="e.g. 4200" oninput="liveCalc()">
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-preview" id="preview-1">
+      <div class="calc-preview-title">⚡ Live Snapshot</div>
+      <div class="calc-row">
+        <span class="calc-label">Monthly surplus / shortfall</span>
+        <span class="calc-val" id="prev-surplus">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Years to retirement</span>
+        <span class="calc-val" id="prev-years">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Earnings protection value (income × yrs)</span>
+        <span class="calc-val" id="prev-earning-power">—</span>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <div></div>
+      <button class="btn btn-primary" onclick="nextStep(1)">Next: Income Protection →</button>
+    </div>
+  </div>
+
+  <!-- ══ STEP 2: INCOME PROTECTION ══ -->
+  <div class="step-card" id="step-2">
+    <div class="step-eyebrow">Step 2 of 4</div>
+    <h1 class="step-title">Income Protection</h1>
+    <p class="step-desc">Your income is your most valuable asset. Life insurance exists to protect it. Let's find out how much coverage you actually need — and whether you have a gap.</p>
+
+    <div class="field-group">
+      <label>Primary Earner Annual Income
+        <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Used for the 10x coverage rule of thumb.</span></span>
+      </label>
+      <div class="input-wrap has-prefix">
+        <span class="input-prefix">$</span>
+        <input type="number" id="primaryIncome" placeholder="e.g. 70000" oninput="liveCalc2()">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>Employer (Group) Life Insurance</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="groupCoverage" placeholder="e.g. 140000" oninput="liveCalc2()">
+        </div>
+      </div>
+      <div class="field-group">
+        <label>Personal Life Insurance Policy</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="personalCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Other Coverage (spouse policy, etc.)</label>
+      <div class="input-wrap has-prefix">
+        <span class="input-prefix">$</span>
+        <input type="number" id="otherCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
+      </div>
+    </div>
+
+    <div class="calc-preview" id="preview-2">
+      <div class="calc-preview-title">⚡ Coverage Analysis</div>
+      <div class="calc-row">
+        <span class="calc-label">Coverage recommended (10× rule)</span>
+        <span class="calc-val" id="prev-coverage-needed">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Your total coverage today</span>
+        <span class="calc-val" id="prev-coverage-have">—</span>
+      </div>
+      <div class="calc-row" style="padding-top:8px;">
+        <span class="calc-label" style="font-weight:700;">Coverage gap</span>
+        <span class="calc-val" id="prev-coverage-gap">—</span>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
+      <button class="btn btn-primary" onclick="nextStep(2)">Next: Retirement →</button>
+    </div>
+  </div>
+
+  <!-- ══ STEP 3: RETIREMENT GAP ══ -->
+  <div class="step-card" id="step-3">
+    <div class="step-eyebrow">Step 3 of 4</div>
+    <h1 class="step-title">Retirement Gap</h1>
+    <p class="step-desc">How much will you need saved to retire on your terms — and are you on track to get there? Let's find out.</p>
+
+    <div class="field-group">
+      <label>Target Monthly Income in Retirement
+        <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Most people target 70–80% of current take-home pay.</span></span>
+      </label>
+      <div class="input-wrap has-prefix">
+        <span class="input-prefix">$</span>
+        <input type="number" id="retirementIncome" placeholder="e.g. 4000" oninput="liveCalc3()">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>Estimated Monthly CPP
+          <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Check My Service Canada. Average is ~$758/mo.</span></span>
+        </label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="cpp" placeholder="e.g. 758" oninput="liveCalc3()">
+        </div>
+      </div>
+      <div class="field-group">
+        <label>Estimated Monthly OAS
+          <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Available at 65. Current max is ~$700/mo.</span></span>
+        </label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="oas" placeholder="e.g. 700" oninput="liveCalc3()">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label>Current RRSP + TFSA Balance</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="currentSavings" placeholder="e.g. 45000" oninput="liveCalc3()">
+        </div>
+      </div>
+      <div class="field-group">
+        <label>Other Retirement Savings</label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">$</span>
+          <input type="number" id="otherSavings" placeholder="e.g. 0" oninput="liveCalc3()">
+        </div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Monthly Contribution to Retirement</label>
+      <div class="input-wrap has-prefix">
+        <span class="input-prefix">$</span>
+        <input type="number" id="monthlyContrib" placeholder="e.g. 300" oninput="liveCalc3()">
+      </div>
+    </div>
+
+    <div class="calc-preview" id="preview-3">
+      <div class="calc-preview-title">⚡ Retirement Projection (at 9% avg. return)</div>
+      <div class="calc-row">
+        <span class="calc-label">Monthly income needed from savings</span>
+        <span class="calc-val" id="prev-income-from-savings">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Nest egg required (4% withdrawal rule)</span>
+        <span class="calc-val" id="prev-nest-egg">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Projected savings at retirement</span>
+        <span class="calc-val" id="prev-projected">—</span>
+      </div>
+      <div class="calc-row" style="padding-top:8px;">
+        <span class="calc-label" style="font-weight:700;">Retirement gap</span>
+        <span class="calc-val" id="prev-retire-gap">—</span>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
+      <button class="btn btn-primary" onclick="nextStep(3)">Next: Debt Plan →</button>
+    </div>
+  </div>
+
+  <!-- ══ STEP 4: DEBT STACKING ══ -->
+  <div class="step-card" id="step-4">
+    <div class="step-eyebrow">Step 4 of 4</div>
+    <h1 class="step-title">Your Debt Payoff Plan</h1>
+    <p class="step-desc">List your debts below — highest interest rate first. We'll calculate your total interest cost and build your Debt Stacking strategy.</p>
+
+    <table class="debt-table" id="debt-table">
+      <thead>
+        <tr>
+          <th>Debt Name</th>
+          <th>Balance ($)</th>
+          <th>Rate (%)</th>
+          <th>Min. Payment ($)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="debt-rows">
+        <!-- rows injected by JS -->
+      </tbody>
+    </table>
+
+    <button class="btn-add-debt" onclick="addDebtRow()">+ Add Another Debt</button>
+
+    <div class="calc-preview" style="margin-top:20px;" id="preview-4">
+      <div class="calc-preview-title">⚡ Debt Stacking Summary</div>
+      <div class="calc-row">
+        <span class="calc-label">Total debt</span>
+        <span class="calc-val" id="prev-total-debt">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Total minimum monthly payments</span>
+        <span class="calc-val" id="prev-min-payments">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Monthly surplus available to stack</span>
+        <span class="calc-val" id="prev-surplus-for-debt">—</span>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="btn btn-secondary" onclick="prevStep(4)">← Back</button>
+      <button class="btn btn-gold" onclick="showResults()">See My Full Results →</button>
+    </div>
+  </div>
+
+  <!-- ══ RESULTS ══ -->
+  <div class="step-card" id="step-results">
+    <div class="results-hero">
+      <h2>Your Financial Needs Analysis</h2>
+      <p>Here's your complete financial picture — income protection, retirement, and debt — in one place.</p>
+    </div>
+
+    <!-- Summary cards -->
+    <div class="results-grid" id="results-summary-cards">
+      <!-- injected -->
+    </div>
+
+    <!-- Protection section -->
+    <div class="result-section" id="results-protection"></div>
+
+    <!-- Retirement section -->
+    <div class="result-section" id="results-retirement"></div>
+
+    <!-- Debt section -->
+    <div class="result-section" id="results-debt"></div>
+
+    <!-- Action plan -->
+    <div class="result-section" id="results-actions"></div>
+
+    <div class="cta-box">
+      <h3>📋 What These Numbers Mean for You</h3>
+      <p>This analysis gives you the full picture of where you stand financially. The next step is sitting down with a qualified financial advisor who can help you build a personalized plan to close these gaps — and get you moving toward financial freedom.</p>
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <button class="restart-btn" onclick="restart()">Start Over</button>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This tool provides general financial education estimates only. All calculations are illustrative and based on assumptions (9% investment return, 4% withdrawal rate). This is not financial, tax, or investment advice. Results may vary. Please consult a qualified and licensed financial professional in your province before making any financial decisions.
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // ── STATE ──
+  let currentStep = 1;
+  const TOTAL_STEPS = 4;
+
+  // ── NAVIGATION ──
+  function goToStep(n) {
+    if (n < 1 || n > TOTAL_STEPS + 1) return;
+    document.getElementById('step-' + currentStep)?.classList.remove('active');
+    if (n === 5) {
+      showResults();
+      return;
+    }
+    currentStep = n;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function nextStep(from) {
+    document.getElementById('step-' + from).classList.remove('active');
+    currentStep = from + 1;
+    if (currentStep > TOTAL_STEPS) { showResults(); return; }
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function prevStep(from) {
+    document.getElementById('step-' + from).classList.remove('active');
+    currentStep = from - 1;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress(step) {
+    const pct = (step / TOTAL_STEPS) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('step-counter').textContent = step <= TOTAL_STEPS ? `Step ${step} of ${TOTAL_STEPS}` : 'Your Results';
+    for (let i = 1; i <= TOTAL_STEPS + 1; i++) {
+      const lbl = document.getElementById('lbl-' + i);
+      if (!lbl) continue;
+      lbl.classList.remove('active', 'done');
+      if (i === step) lbl.classList.add('active');
+      else if (i < step) lbl.classList.add('done');
+    }
+  }
+
+  function restart() {
+    document.getElementById('step-results').classList.remove('active');
+    currentStep = 1;
+    document.getElementById('step-1').classList.add('active');
+    updateProgress(1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── HELPERS ──
+  function v(id) { return parseFloat(document.getElementById(id)?.value) || 0; }
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
+  function fmtDiff(n) {
+    if (n === 0) return '<span class="calc-val good">$0 — On track ✓</span>';
+    if (n > 0) return `<span class="calc-val bad">${fmt(n)} gap ⚠️</span>`;
+    return `<span class="calc-val good">${fmt(Math.abs(n))} surplus ✓</span>`;
+  }
+
+  // ── LIVE CALC: STEP 1 ──
+  function liveCalc() {
+    const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
+    const yrs = v('retireAge') - v('age');
+    const ep = v('annualIncome') * Math.max(yrs, 0);
+
+    const sEl = document.getElementById('prev-surplus');
+    sEl.textContent = v('monthlyTakeHome') && v('monthlyExpenses') ? fmt(surplus) : '—';
+    sEl.className = 'calc-val' + (surplus < 0 ? ' bad' : surplus > 0 ? ' good' : '');
+
+    document.getElementById('prev-years').textContent = yrs > 0 ? yrs + ' years' : '—';
+    document.getElementById('prev-earning-power').textContent = ep > 0 ? fmt(ep) : '—';
+  }
+
+  // ── LIVE CALC: STEP 2 ──
+  function liveCalc2() {
+    const needed = v('primaryIncome') * 10;
+    const have = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
+    const gap = needed - have;
+
+    document.getElementById('prev-coverage-needed').textContent = needed > 0 ? fmt(needed) : '—';
+    document.getElementById('prev-coverage-have').textContent = have > 0 ? fmt(have) : '—';
+
+    const gEl = document.getElementById('prev-coverage-gap');
+    if (needed > 0) {
+      gEl.innerHTML = fmtDiff(gap);
+    } else {
+      gEl.textContent = '—';
+    }
+  }
+
+  // ── LIVE CALC: STEP 3 ──
+  function liveCalc3() {
+    const govt = v('cpp') + v('oas');
+    const target = v('retirementIncome');
+    const fromSavings = Math.max(target - govt, 0);
+    const nestEgg = fromSavings > 0 ? (fromSavings * 12) / 0.04 : 0;
+    const yrs = Math.max(v('retireAge') - v('age'), 0);
+    const rate = 0.09;
+
+    // Future value of current savings + monthly contributions
+    const fvCurrent = (v('currentSavings') + v('otherSavings')) * Math.pow(1 + rate, yrs);
+    const fvContrib = yrs > 0 ? v('monthlyContrib') * 12 * ((Math.pow(1 + rate, yrs) - 1) / rate) : 0;
+    const projected = fvCurrent + fvContrib;
+    const gap = nestEgg - projected;
+
+    document.getElementById('prev-income-from-savings').textContent = fromSavings > 0 ? fmt(fromSavings) + '/mo' : '—';
+    document.getElementById('prev-nest-egg').textContent = nestEgg > 0 ? fmt(nestEgg) : '—';
+    document.getElementById('prev-projected').textContent = projected > 0 ? fmt(projected) : '—';
+
+    const gEl = document.getElementById('prev-retire-gap');
+    if (nestEgg > 0) {
+      gEl.innerHTML = fmtDiff(gap);
+    } else {
+      gEl.textContent = '—';
+    }
+  }
+
+  // ── DEBT ROWS ──
+  let debtCount = 0;
+
+  function addDebtRow(name = '', balance = '', rate = '', payment = '') {
+    debtCount++;
+    const tbody = document.getElementById('debt-rows');
+    const tr = document.createElement('tr');
+    tr.id = 'debt-row-' + debtCount;
+    tr.innerHTML = `
+      <td><input type="text" placeholder="e.g. Credit Card" value="${name}" oninput="liveCalc4()"></td>
+      <td><input type="number" placeholder="0" value="${balance}" oninput="liveCalc4()"></td>
+      <td><input type="number" placeholder="0" value="${rate}" oninput="liveCalc4()"></td>
+      <td><input type="number" placeholder="0" value="${payment}" oninput="liveCalc4()"></td>
+      <td><button class="btn-remove" onclick="removeDebtRow('debt-row-${debtCount}')">×</button></td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  function removeDebtRow(id) {
+    document.getElementById(id)?.remove();
+    liveCalc4();
+  }
+
+  function getDebts() {
+    const rows = document.querySelectorAll('#debt-rows tr');
+    return Array.from(rows).map(row => {
+      const inputs = row.querySelectorAll('input');
+      return {
+        name: inputs[0]?.value || 'Unnamed',
+        balance: parseFloat(inputs[1]?.value) || 0,
+        rate: parseFloat(inputs[2]?.value) || 0,
+        payment: parseFloat(inputs[3]?.value) || 0
+      };
+    }).filter(d => d.balance > 0);
+  }
+
+  function liveCalc4() {
+    const debts = getDebts();
+    const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
+    const minPayments = debts.reduce((s, d) => s + d.payment, 0);
+    const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
+    const extra = Math.max(surplus - minPayments, 0);
+
+    document.getElementById('prev-total-debt').textContent = totalDebt > 0 ? fmt(totalDebt) : '$0';
+    document.getElementById('prev-min-payments').textContent = fmt(minPayments);
+    const sEl = document.getElementById('prev-surplus-for-debt');
+    sEl.textContent = fmt(extra);
+    sEl.className = 'calc-val' + (extra > 0 ? ' good' : extra < 0 ? ' bad' : '');
+  }
+
+  // ── SHOW RESULTS ──
+  function showResults() {
+    // Hide current step
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
+      document.getElementById('step-' + i)?.classList.remove('active');
+    }
+    document.getElementById('step-results').classList.add('active');
+    updateProgress(5);
+
+    // Gather all values
+    const age = v('age');
+    const retireAge = v('retireAge');
+    const yrs = Math.max(retireAge - age, 0);
+    const annualIncome = v('annualIncome');
+    const takeHome = v('monthlyTakeHome');
+    const expenses = v('monthlyExpenses');
+    const surplus = takeHome - expenses;
+
+    // Protection
+    const primaryIncome = v('primaryIncome') || annualIncome;
+    const coverageNeeded = primaryIncome * 10;
+    const coverageHave = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
+    const coverageGap = coverageNeeded - coverageHave;
+
+    // Retirement
+    const retirementIncome = v('retirementIncome') || takeHome * 0.75;
+    const govtIncome = v('cpp') + v('oas');
+    const fromSavings = Math.max(retirementIncome - govtIncome, 0);
+    const nestEgg = (fromSavings * 12) / 0.04;
+    const rate = 0.09;
+    const totalCurrentSavings = v('currentSavings') + v('otherSavings');
+    const fvCurrent = totalCurrentSavings * Math.pow(1 + rate, yrs);
+    const fvContrib = yrs > 0 ? v('monthlyContrib') * 12 * ((Math.pow(1 + rate, yrs) - 1) / rate) : 0;
+    const projectedSavings = fvCurrent + fvContrib;
+    const retireGap = nestEgg - projectedSavings;
+
+    // Debt
+    const debts = getDebts().sort((a, b) => b.rate - a.rate);
+    const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
+    const minPayments = debts.reduce((s, d) => s + d.payment, 0);
+    const extraPayment = Math.max(surplus - minPayments, 0);
+
+    // ── Summary cards ──
+    const coverageClass = coverageGap > 0 ? 'danger' : 'success';
+    const coverageValClass = coverageGap > 0 ? 'danger' : 'success';
+    const retireClass = retireGap > 100000 ? 'danger' : retireGap > 0 ? 'warning' : 'success';
+    const retireValClass = retireGap > 100000 ? 'danger' : retireGap > 0 ? 'warning' : 'success';
+    const surplusClass = surplus < 0 ? 'danger' : surplus > 0 ? 'success' : 'gold';
+    const debtClass = totalDebt > 50000 ? 'warning' : 'gold';
+
+    document.getElementById('results-summary-cards').innerHTML = `
+      <div class="result-card ${coverageClass}">
+        <div class="result-card-label">Coverage Gap</div>
+        <div class="result-card-value ${coverageValClass}">${coverageGap > 0 ? fmt(coverageGap) : 'Covered ✓'}</div>
+        <div class="result-card-sub">${coverageGap > 0 ? 'Your family needs more protection' : 'Your coverage meets the 10× rule'}</div>
+      </div>
+      <div class="result-card ${retireClass}">
+        <div class="result-card-label">Retirement Gap</div>
+        <div class="result-card-value ${retireValClass}">${retireGap > 0 ? fmt(retireGap) : 'On Track ✓'}</div>
+        <div class="result-card-sub">${retireGap > 0 ? 'Additional savings needed' : 'Projected to hit your target'}</div>
+      </div>
+      <div class="result-card ${surplusClass}">
+        <div class="result-card-label">Monthly Surplus</div>
+        <div class="result-card-value ${surplus < 0 ? 'danger' : 'success'}">${fmt(surplus)}</div>
+        <div class="result-card-sub">${surplus < 0 ? 'Expenses exceed income — priority #1' : 'Available for debt & savings'}</div>
+      </div>
+      <div class="result-card ${debtClass}">
+        <div class="result-card-label">Total Debt</div>
+        <div class="result-card-value">${totalDebt > 0 ? fmt(totalDebt) : '$0'}</div>
+        <div class="result-card-sub">${totalDebt > 0 ? fmt(minPayments) + '/mo in minimum payments' : 'Debt free ✓'}</div>
+      </div>
+    `;
+
+    // ── Protection section ──
+    document.getElementById('results-protection').innerHTML = `
+      <h3>🛡️ Income Protection Analysis</h3>
+      <div class="result-line"><span class="rl-label">Primary earner annual income</span><span class="rl-val">${fmt(primaryIncome)}</span></div>
+      <div class="result-line"><span class="rl-label">Years to retirement</span><span class="rl-val">${yrs} years</span></div>
+      <div class="result-line"><span class="rl-label">Total earning power (income × yrs)</span><span class="rl-val">${fmt(primaryIncome * yrs)}</span></div>
+      <div class="result-line"><span class="rl-label">Coverage recommended (10× income)</span><span class="rl-val">${fmt(coverageNeeded)}</span></div>
+      <div class="result-line"><span class="rl-label">Employer group insurance</span><span class="rl-val">${fmt(v('groupCoverage'))}</span></div>
+      <div class="result-line"><span class="rl-label">Personal life insurance</span><span class="rl-val">${fmt(v('personalCoverage'))}</span></div>
+      <div class="result-line"><span class="rl-label">Other coverage</span><span class="rl-val">${fmt(v('otherCoverage'))}</span></div>
+      <div class="result-line"><span class="rl-label">Total current coverage</span><span class="rl-val">${fmt(coverageHave)}</span></div>
+      <div class="result-highlight">
+        <span class="rh-label">${coverageGap > 0 ? '⚠️ Coverage Gap' : '✓ Coverage Status'}</span>
+        <span class="rh-val">${coverageGap > 0 ? fmt(coverageGap) + ' gap' : 'Fully covered'}</span>
+      </div>
+      ${coverageGap > 0 ? `<p style="font-size:0.8rem;color:#888;margin-top:10px;">💡 <strong>Term life insurance</strong> is typically the most cost-effective way to close this gap. A qualified advisor can help you find the right coverage for your situation.</p>` : ''}
+    `;
+
+    // ── Retirement section ──
+    const monthlyShortfall = retireGap > 0 ? (retireGap * 0.04) / 12 : 0;
+    document.getElementById('results-retirement').innerHTML = `
+      <h3>💰 Retirement Gap Analysis</h3>
+      <div class="result-line"><span class="rl-label">Target monthly retirement income</span><span class="rl-val">${fmt(retirementIncome)}/mo</span></div>
+      <div class="result-line"><span class="rl-label">CPP + OAS (government benefits)</span><span class="rl-val">${fmt(govtIncome)}/mo</span></div>
+      <div class="result-line"><span class="rl-label">Monthly income needed from savings</span><span class="rl-val">${fmt(fromSavings)}/mo</span></div>
+      <div class="result-line"><span class="rl-label">Nest egg required (4% rule)</span><span class="rl-val">${fmt(nestEgg)}</span></div>
+      <div class="result-line"><span class="rl-label">Current savings (RRSP/TFSA/other)</span><span class="rl-val">${fmt(totalCurrentSavings)}</span></div>
+      <div class="result-line"><span class="rl-label">Monthly contribution</span><span class="rl-val">${fmt(v('monthlyContrib'))}/mo</span></div>
+      <div class="result-line"><span class="rl-label">Projected savings at retirement (9% avg)</span><span class="rl-val ${projectedSavings >= nestEgg ? 'good' : ''}">${fmt(projectedSavings)}</span></div>
+      <div class="result-highlight">
+        <span class="rh-label">${retireGap > 0 ? '⚠️ Retirement Gap' : '✓ Retirement Status'}</span>
+        <span class="rh-val">${retireGap > 0 ? fmt(retireGap) + ' gap' : 'On track ✓'}</span>
+      </div>
+      ${retireGap > 0 ? `<p style="font-size:0.8rem;color:#888;margin-top:10px;">💡 To close this gap, you'd need to save an additional <strong>${fmt(monthlyShortfall)}/mo</strong> starting today (at 9% avg. return over ${yrs} years). RRSP and TFSA contributions grow tax-advantaged — use these first.</p>` : ''}
+    `;
+
+    // ── Debt section ──
+    let debtTableHTML = '';
+    if (debts.length > 0) {
+      debtTableHTML = `
+        <table class="debt-results-table">
+          <thead><tr><th>Priority</th><th>Debt Name</th><th>Balance</th><th>Rate</th><th>Min. Payment</th></tr></thead>
+          <tbody>
+            ${debts.map((d, i) => `
+              <tr class="${i === 0 ? 'priority-1' : ''}">
+                <td>${i === 0 ? '⭐ #1 — Target First' : '#' + (i + 1)}</td>
+                <td>${d.name}</td>
+                <td>${fmt(d.balance)}</td>
+                <td>${d.rate}%</td>
+                <td>${fmt(d.payment)}/mo</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    document.getElementById('results-debt').innerHTML = `
+      <h3>📉 Debt Stacking Plan</h3>
+      ${debts.length === 0 ? '<p style="color:#27ae60;font-weight:600;">🎉 No debts entered — great position to be in!</p>' : debtTableHTML}
+      ${debts.length > 0 ? `
+        <div class="result-line" style="margin-top:12px;"><span class="rl-label">Total debt load</span><span class="rl-val">${fmt(totalDebt)}</span></div>
+        <div class="result-line"><span class="rl-label">Total minimum monthly payments</span><span class="rl-val">${fmt(minPayments)}/mo</span></div>
+        <div class="result-line"><span class="rl-label">Extra payment available (from surplus)</span><span class="rl-val ${extraPayment > 0 ? 'good' : 'bad'}">${fmt(extraPayment)}/mo</span></div>
+        <div class="result-highlight">
+          <span class="rh-label">💡 Debt Stacking Strategy</span>
+          <span class="rh-val">Target ${debts[0]?.name} first</span>
+        </div>
+        <p style="font-size:0.8rem;color:#888;margin-top:10px;">Pay the minimum on all debts except your #1 priority. Throw every extra dollar at the highest-rate debt. When it's paid off, roll that payment to #2. Repeat until debt-free — then redirect everything to retirement savings.</p>
+      ` : ''}
+    `;
+
+    // ── Action plan ──
+    const actions = [];
+    if (surplus < 0) actions.push({ icon: '🚨', text: 'Reduce monthly expenses immediately — you\'re spending more than you earn. This is the foundation everything else rests on.' });
+    if (coverageGap > 50000) actions.push({ icon: '🛡️', text: `Close your ${fmt(coverageGap)} coverage gap. Review term life insurance options — it's typically more affordable than people expect.` });
+    if (retireGap > 100000) actions.push({ icon: '💰', text: `Increase retirement contributions to close your ${fmt(retireGap)} gap. Even ${fmt(monthlyShortfall)}/mo more makes a significant difference over ${yrs} years.` });
+    if (totalDebt > 0) actions.push({ icon: '📉', text: `Start Debt Stacking today. Target ${debts[0]?.name || 'your highest-rate debt'} first. Every extra dollar accelerates your payoff timeline.` });
+    if (v('currentSavings') === 0) actions.push({ icon: '🏦', text: 'Open a TFSA if you haven\'t already — tax-free growth, no contribution deadline pressure, and withdrawals are always tax-free.' });
+    actions.push({ icon: '📋', text: 'Bring this analysis to a qualified financial advisor. You now have your numbers — they can help you build the specific plan to close each gap.' });
+
+    document.getElementById('results-actions').innerHTML = `
+      <h3>🚀 Your Priority Action Plan</h3>
+      ${actions.map((a, i) => `
+        <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border);">
+          <span style="font-size:1.1rem;">${a.icon}</span>
+          <span style="font-size:0.85rem;color:#444;line-height:1.5;"><strong>Priority ${i + 1}:</strong> ${a.text}</span>
+        </div>
+      `).join('')}
+    `;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── INIT ──
+  window.addEventListener('DOMContentLoaded', () => {
+    // Pre-populate 3 debt rows
+    addDebtRow('Credit Card', '', '', '');
+    addDebtRow('Car Loan', '', '', '');
+    addDebtRow('', '', '', '');
+  });
+</script>
+</body>
+</html>
