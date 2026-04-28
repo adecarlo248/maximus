@@ -536,6 +536,108 @@
       margin-top: 20px;
     }
 
+    /* ── Spouse Toggle ── */
+    .toggle-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px; background: #f5f8ff;
+      border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 20px; cursor: pointer;
+    }
+    .toggle-label { font-size:0.88rem; font-weight:600; color:var(--navy); flex:1; }
+    .toggle-sub { font-size:0.75rem; color:var(--muted); display:block; }
+    .toggle-switch {
+      position:relative; width:44px; height:24px; flex-shrink:0;
+    }
+    .toggle-switch input { opacity:0; width:0; height:0; }
+    .toggle-slider {
+      position:absolute; inset:0; background:var(--border); border-radius:24px;
+      transition:background 0.25s;
+    }
+    .toggle-slider:before {
+      content:''; position:absolute; width:18px; height:18px;
+      left:3px; top:3px; background:white; border-radius:50%;
+      transition:transform 0.25s; box-shadow:0 1px 4px rgba(0,0,0,0.2);
+    }
+    .toggle-switch input:checked + .toggle-slider { background:var(--navy); }
+    .toggle-switch input:checked + .toggle-slider:before { transform:translateX(20px); }
+    .spouse-fields { display:none; }
+    .spouse-fields.visible { display:block; }
+    .spouse-header {
+      font-family:'Open Sans',Arial,sans-serif; font-size:0.72rem; font-weight:700;
+      letter-spacing:1.5px; text-transform:uppercase; color:var(--navy-mid);
+      padding: 10px 0 6px; border-top:2px dashed var(--border); margin:8px 0 16px;
+    }
+    /* ── Progress Tracker ── */
+    .tracker-section {
+      background:white; border-radius:12px; padding:24px 28px;
+      box-shadow:0 2px 12px rgba(13,43,78,0.07); margin-bottom:16px;
+    }
+    .tracker-section h3 {
+      font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:14px;
+      padding-bottom:10px; border-bottom:2px solid var(--border);
+    }
+    .debt-track-card {
+      border:1.5px solid var(--border); border-radius:10px; padding:16px 18px;
+      margin-bottom:12px; border-left:4px solid var(--red);
+      transition:border-left-color 0.4s;
+    }
+    .debt-track-card.p25 { border-left-color:#e67e22; }
+    .debt-track-card.p50 { border-left-color:var(--gold); }
+    .debt-track-card.p75 { border-left-color:#85c1e9; }
+    .debt-track-card.p100 { border-left-color:var(--green); background:#f0fff4; }
+    .dtc-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
+    .dtc-name { font-size:0.9rem; font-weight:700; color:var(--navy); }
+    .dtc-rate { font-size:0.75rem; color:var(--muted); }
+    .dtc-balances { display:flex; gap:16px; margin-bottom:10px; }
+    .dtc-bal-item { flex:1; }
+    .dtc-bal-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:2px; }
+    .dtc-bal-val { font-size:1rem; font-weight:700; color:var(--navy); }
+    .dtc-bal-val.paid { color:var(--green); }
+    .progress-bar-track {
+      height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-bottom:10px;
+    }
+    .progress-bar-fill {
+      height:100%; background:var(--red); border-radius:4px;
+      transition:width 0.5s ease, background 0.4s;
+    }
+    .dtc-log-row { display:flex; gap:8px; align-items:center; }
+    .dtc-pmt-input {
+      flex:1; padding:7px 10px; border:1.5px solid var(--border); border-radius:6px;
+      font-family:'Inter',sans-serif; font-size:0.85rem; outline:none;
+      display:none;
+    }
+    .dtc-pmt-input.visible { display:block; }
+    .btn-log-pmt {
+      background:var(--navy); color:white; border:none; padding:7px 14px;
+      border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
+      font-family:'Inter',sans-serif; transition:background 0.2s; white-space:nowrap;
+    }
+    .btn-log-pmt:hover { background:var(--navy-mid); }
+    .btn-confirm-pmt {
+      background:var(--green); color:white; border:none; padding:7px 12px;
+      border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
+      font-family:'Inter',sans-serif; display:none;
+    }
+    .btn-confirm-pmt.visible { display:block; }
+    .paid-off-banner {
+      text-align:center; font-size:0.9rem; font-weight:700; color:var(--green);
+      padding:8px; display:none;
+    }
+    .paid-off-banner.visible { display:block; }
+    .tracker-summary {
+      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+      border-radius:10px; padding:16px 20px; margin-bottom:16px;
+      display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; text-align:center;
+    }
+    .ts-item .ts-val { font-size:1.2rem; font-weight:700; color:var(--gold); }
+    .ts-item .ts-label { font-size:0.68rem; color:rgba(255,255,255,0.65); margin-top:2px; }
+    .retire-track-card {
+      border:1.5px solid var(--border); border-radius:10px; padding:18px;
+      margin-bottom:12px; border-left:4px solid var(--gold);
+    }
+    .rtc-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+    .rtc-item .rtc-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:2px; }
+    .rtc-item .rtc-val { font-size:1rem; font-weight:700; color:var(--navy); }
+    .rtc-item .rtc-val.good { color:var(--green); }
     /* ── Mobile ── */
     @media (max-width: 600px) {
       .step-card { padding: 24px 20px; }
@@ -543,6 +645,8 @@
       .results-grid { grid-template-columns: 1fr; }
       .progress-bar-wrap { display: none; }
       .app-header { flex-wrap: wrap; gap: 8px; }
+      .tracker-summary { grid-template-columns:1fr; }
+      .rtc-grid { grid-template-columns:1fr; }
     }
 
     /* ── Print styles ── */
@@ -706,9 +810,39 @@
       </div>
     </div>
 
+    <!-- Spouse Toggle -->
+    <label class="toggle-row" for="spouse-toggle">
+      <div class="toggle-label">
+        Add spouse / partner
+        <span class="toggle-sub">Calculate coverage and income for two people</span>
+      </div>
+      <div class="toggle-switch">
+        <input type="checkbox" id="spouse-toggle" onchange="toggleSpouse()">
+        <span class="toggle-slider"></span>
+      </div>
+    </label>
+
+    <!-- Spouse Fields -->
+    <div class="spouse-fields" id="spouse-fields">
+      <div class="spouse-header">👥 Partner / Spouse Details</div>
+      <div class="field-row">
+        <div class="field-group">
+          <label>Partner's Age</label>
+          <input type="number" id="partnerAge" placeholder="e.g. 33" min="18" max="75" oninput="liveCalc()">
+        </div>
+        <div class="field-group">
+          <label>Partner's Annual Income</label>
+          <div class="input-wrap has-prefix">
+            <span class="input-prefix">$</span>
+            <input type="number" id="partnerIncome" placeholder="e.g. 55000" oninput="liveCalc()">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="field-group">
       <label>Combined Annual Household Income
-        <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Before tax. Include all earners in household.</span></span>
+        <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Before tax. Auto-fills from above if using spouse mode.</span></span>
       </label>
       <div class="input-wrap has-prefix">
         <span class="input-prefix">$</span>
@@ -789,17 +923,38 @@
     </div>
 
     <div class="field-group">
-      <label>Other Coverage (spouse policy, etc.)</label>
+      <label>Other Coverage (additional policies, etc.)</label>
       <div class="input-wrap has-prefix">
         <span class="input-prefix">$</span>
         <input type="number" id="otherCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
       </div>
     </div>
 
+    <!-- Partner coverage fields (shown when spouse mode on) -->
+    <div class="spouse-fields" id="spouse-coverage-fields">
+      <div class="spouse-header">👥 Partner Coverage</div>
+      <div class="field-row">
+        <div class="field-group">
+          <label>Partner's Group Life Insurance</label>
+          <div class="input-wrap has-prefix">
+            <span class="input-prefix">$</span>
+            <input type="number" id="partnerGroupCoverage" placeholder="e.g. 110000" oninput="liveCalc2()">
+          </div>
+        </div>
+        <div class="field-group">
+          <label>Partner's Personal Life Insurance</label>
+          <div class="input-wrap has-prefix">
+            <span class="input-prefix">$</span>
+            <input type="number" id="partnerPersonalCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="calc-preview" id="preview-2">
       <div class="calc-preview-title">⚡ Coverage Analysis</div>
       <div class="calc-row">
-        <span class="calc-label">Coverage recommended (10× rule)</span>
+        <span class="calc-label">Coverage recommended — You (10× rule)</span>
         <span class="calc-val" id="prev-coverage-needed">—</span>
       </div>
       <div class="calc-row">
@@ -807,8 +962,23 @@
         <span class="calc-val" id="prev-coverage-have">—</span>
       </div>
       <div class="calc-row" style="padding-top:8px;">
-        <span class="calc-label" style="font-weight:700;">Coverage gap</span>
+        <span class="calc-label" style="font-weight:700;">Your coverage gap</span>
         <span class="calc-val" id="prev-coverage-gap">—</span>
+      </div>
+      <!-- Partner rows shown dynamically -->
+      <div id="partner-coverage-preview" style="display:none;">
+        <div class="calc-row" style="padding-top:8px;">
+          <span class="calc-label">Coverage recommended — Partner (10×)</span>
+          <span class="calc-val" id="prev-partner-coverage-needed">—</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label">Partner's total coverage today</span>
+          <span class="calc-val" id="prev-partner-coverage-have">—</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label" style="font-weight:700;">Partner's coverage gap</span>
+          <span class="calc-val" id="prev-partner-coverage-gap">—</span>
+        </div>
       </div>
     </div>
 
@@ -1016,12 +1186,58 @@
     </div>
 
     <div style="text-align:center; margin-top:24px;">
+      <button class="btn btn-gold" onclick="showTracker()" style="margin-right:10px;padding:13px 24px;">📊 Track My Progress →</button>
       <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
       <button class="restart-btn" onclick="restart()">Start Over</button>
     </div>
 
     <div class="disclaimer">
       <strong>Disclaimer:</strong> This tool provides general financial education estimates only. All calculations are illustrative and based on assumptions (9% investment return, 4% withdrawal rate). This is not financial, tax, or investment advice. Results may vary. Please consult a qualified and licensed financial professional in your province before making any financial decisions.
+    </div>
+  </div>
+
+  <!-- ══ STEP 6: PROGRESS TRACKER ══ -->
+  <div class="step-card" id="step-tracker">
+    <div class="step-eyebrow">My Progress</div>
+    <h1 class="step-title">Live Progress Tracker</h1>
+    <p class="step-desc">Log payments and contributions in real time. Your progress saves automatically so you can come back anytime.</p>
+
+    <!-- Summary bar -->
+    <div class="tracker-summary" id="tracker-summary">
+      <div class="ts-item"><div class="ts-val" id="ts-total-paid">$0</div><div class="ts-label">Total Debt Paid Off</div></div>
+      <div class="ts-item"><div class="ts-val" id="ts-interest-saved">$0</div><div class="ts-label">Interest Saved</div></div>
+      <div class="ts-item"><div class="ts-val" id="ts-retire-balance">$0</div><div class="ts-label">Retirement Balance</div></div>
+    </div>
+
+    <!-- Debt tracker -->
+    <div class="tracker-section">
+      <h3>📉 Debt Paydown Tracker</h3>
+      <div id="debt-tracker-cards"><p style="color:var(--muted);font-size:0.85rem;">Complete Step 4 first to see your debts here.</p></div>
+    </div>
+
+    <!-- Retirement tracker -->
+    <div class="tracker-section">
+      <h3>💰 Retirement Savings Tracker</h3>
+      <div class="retire-track-card" id="retire-track-card">
+        <div class="rtc-grid">
+          <div class="rtc-item"><div class="rtc-label">Current Balance</div><div class="rtc-val" id="rtc-balance">$0</div></div>
+          <div class="rtc-item"><div class="rtc-label">Last Contribution</div><div class="rtc-val" id="rtc-last-contrib">—</div></div>
+          <div class="rtc-item"><div class="rtc-label">Projected at Retirement</div><div class="rtc-val good" id="rtc-projected">—</div></div>
+          <div class="rtc-item"><div class="rtc-label">Gap Remaining</div><div class="rtc-val" id="rtc-gap">—</div></div>
+        </div>
+        <div class="progress-bar-track" style="margin-bottom:12px;">
+          <div class="progress-bar-fill" id="rtc-progress" style="width:0%;background:var(--gold);"></div>
+        </div>
+        <div class="dtc-log-row">
+          <input type="number" class="dtc-pmt-input visible" id="retire-contrib-input" placeholder="Contribution amount..." style="display:block;">
+          <button class="btn-confirm-pmt visible" id="retire-contrib-btn" onclick="logRetireContrib()" style="display:block;background:var(--gold);color:var(--navy);">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:8px;">
+      <button class="btn btn-secondary" onclick="goBackToResults()">← Back to Results</button>
+      <button class="restart-btn" onclick="resetTracker()" style="margin-left:auto;">Reset Tracker</button>
     </div>
   </div>
 
@@ -1567,6 +1783,227 @@
       `).join('')}
     `;
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── SPOUSE TOGGLE ──
+  let hasSpouse = false;
+
+  function toggleSpouse() {
+    hasSpouse = document.getElementById('spouse-toggle').checked;
+    document.querySelectorAll('.spouse-fields').forEach(el => {
+      el.classList.toggle('visible', hasSpouse);
+    });
+    if (hasSpouse) {
+      // Auto-sum incomes into combined field
+      const p1 = v('primaryIncome') || 0;
+      const p2 = v('partnerIncome') || 0;
+      if (p1 + p2 > 0) document.getElementById('annualIncome').value = p1 + p2;
+    }
+    liveCalc();
+    liveCalc2();
+  }
+
+  // ── UPDATED liveCalc2 with partner support ──
+  function liveCalc2() {
+    const needed = v('primaryIncome') * 10;
+    const have = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
+    const gap = needed - have;
+
+    document.getElementById('prev-coverage-needed').textContent = needed > 0 ? fmt(needed) : '—';
+    document.getElementById('prev-coverage-have').textContent = have > 0 ? fmt(have) : '—';
+    const gEl = document.getElementById('prev-coverage-gap');
+    if (needed > 0) { gEl.innerHTML = fmtDiff(gap); } else { gEl.textContent = '—'; }
+
+    // Partner
+    const ppEl = document.getElementById('partner-coverage-preview');
+    if (hasSpouse) {
+      ppEl.style.display = 'block';
+      const pNeeded = v('partnerIncome') * 10;
+      const pHave = v('partnerGroupCoverage') + v('partnerPersonalCoverage');
+      const pGap = pNeeded - pHave;
+      document.getElementById('prev-partner-coverage-needed').textContent = pNeeded > 0 ? fmt(pNeeded) : '—';
+      document.getElementById('prev-partner-coverage-have').textContent = pHave > 0 ? fmt(pHave) : '—';
+      const pgEl = document.getElementById('prev-partner-coverage-gap');
+      if (pNeeded > 0) { pgEl.innerHTML = fmtDiff(pGap); } else { pgEl.textContent = '—'; }
+    } else {
+      ppEl.style.display = 'none';
+    }
+  }
+
+  // ══ PROGRESS TRACKER ══
+  let trackerData = {};
+
+  function showTracker() {
+    // Hide results
+    document.getElementById('step-results').classList.remove('active');
+    // Build tracker from current debt data + saved progress
+    const saved = JSON.parse(localStorage.getItem('fb_progress') || '{}');
+    const debts = getDebts();
+    const yrs = Math.max(v('retireAge') - v('age'), 0);
+    const nestEgg = (() => {
+      const govtIncome = v('cpp') + v('oas');
+      const fromSavings = Math.max((v('retirementIncome') || v('monthlyTakeHome') * 0.75) - govtIncome, 0);
+      return (fromSavings * 12) / 0.04;
+    })();
+
+    // Init tracker data
+    trackerData = saved;
+    if (!trackerData.debts) trackerData.debts = {};
+    if (trackerData.retireBalance === undefined) {
+      trackerData.retireBalance = v('currentSavings') + v('otherSavings');
+    }
+    trackerData.nestEgg = nestEgg;
+    trackerData.yrsToRetire = yrs;
+    if (!trackerData.totalPaidByDebt) trackerData.totalPaidByDebt = {};
+
+    // Build debt cards
+    const container = document.getElementById('debt-tracker-cards');
+    if (debts.length === 0) {
+      container.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;">No debts entered in Step 4.</p>';
+    } else {
+      // Compute min-payments baseline for interest saved calc
+      const minResult = simMinPaymentsAccurate(debts.filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0));
+      trackerData.minInterestBaseline = minResult.totalInterest;
+
+      container.innerHTML = debts.map((d, i) => {
+        const key = 'debt_' + i;
+        if (trackerData.debts[key] === undefined) trackerData.debts[key] = d.balance;
+        if (trackerData.totalPaidByDebt[key] === undefined) trackerData.totalPaidByDebt[key] = 0;
+        const cur = trackerData.debts[key];
+        const pct = Math.min(100, Math.round((1 - cur / d.balance) * 100));
+        const pctClass = pct >= 100 ? 'p100' : pct >= 75 ? 'p75' : pct >= 50 ? 'p50' : pct >= 25 ? 'p25' : '';
+        const barColor = pct >= 100 ? 'var(--green)' : pct >= 75 ? '#85c1e9' : pct >= 50 ? 'var(--gold)' : pct >= 25 ? '#e67e22' : 'var(--red)';
+        const paidOff = cur <= 0;
+        return `
+          <div class="debt-track-card ${pctClass}" id="dtc-${key}">
+            <div class="dtc-header">
+              <div class="dtc-name">${d.name || 'Debt ' + (i+1)}</div>
+              <div class="dtc-rate">${d.rate}% interest</div>
+            </div>
+            <div class="dtc-balances">
+              <div class="dtc-bal-item"><div class="dtc-bal-label">Original</div><div class="dtc-bal-val">${fmt(d.balance)}</div></div>
+              <div class="dtc-bal-item"><div class="dtc-bal-label">Current Balance</div><div class="dtc-bal-val ${paidOff ? 'paid' : ''}" id="dtc-bal-${key}">${paidOff ? 'PAID OFF 🎉' : fmt(cur)}</div></div>
+              <div class="dtc-bal-item"><div class="dtc-bal-label">Paid Off</div><div class="dtc-bal-val" id="dtc-pct-${key}">${pct}%</div></div>
+            </div>
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" id="dtc-bar-${key}" style="width:${pct}%;background:${barColor};"></div>
+            </div>
+            ${paidOff ? `<div class="paid-off-banner visible">🎉 Debt cleared! Roll this payment to your next debt.</div>` : `
+            <div class="dtc-log-row">
+              <input type="number" class="dtc-pmt-input" id="dtc-input-${key}" placeholder="Payment amount...">
+              <button class="btn-log-pmt" onclick="togglePayInput('${key}')">Log Payment</button>
+              <button class="btn-confirm-pmt" id="dtc-confirm-${key}" onclick="confirmPayment('${key}', ${d.balance}, ${d.rate})">Confirm</button>
+            </div>`}
+          </div>`;
+      }).join('');
+    }
+
+    // Retirement tracker
+    updateRetireTracker();
+    saveTrackerData();
+
+    document.getElementById('step-tracker').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function togglePayInput(key) {
+    const inp = document.getElementById('dtc-input-' + key);
+    const btn = document.getElementById('dtc-confirm-' + key);
+    const showing = inp.classList.contains('visible');
+    inp.classList.toggle('visible', !showing);
+    btn.classList.toggle('visible', !showing);
+    if (!showing) inp.focus();
+  }
+
+  function confirmPayment(key, origBalance, rate) {
+    const inp = document.getElementById('dtc-input-' + key);
+    const amount = parseFloat(inp.value) || 0;
+    if (amount <= 0) return;
+    inp.value = '';
+
+    const cur = trackerData.debts[key] || 0;
+    const newBal = Math.max(0, cur - amount);
+    trackerData.debts[key] = newBal;
+    trackerData.totalPaidByDebt[key] = (trackerData.totalPaidByDebt[key] || 0) + amount;
+
+    // Update card UI
+    const pct = Math.min(100, Math.round((1 - newBal / origBalance) * 100));
+    const barColor = pct >= 100 ? 'var(--green)' : pct >= 75 ? '#85c1e9' : pct >= 50 ? 'var(--gold)' : pct >= 25 ? '#e67e22' : 'var(--red)';
+    const card = document.getElementById('dtc-' + key);
+    document.getElementById('dtc-bar-' + key).style.width = pct + '%';
+    document.getElementById('dtc-bar-' + key).style.background = barColor;
+    document.getElementById('dtc-bal-' + key).textContent = newBal <= 0 ? 'PAID OFF 🎉' : fmt(newBal);
+    document.getElementById('dtc-pct-' + key).textContent = pct + '%';
+
+    if (newBal <= 0) {
+      card.className = 'debt-track-card p100';
+      card.querySelector('.dtc-log-row').innerHTML = '<div class="paid-off-banner visible">🎉 Debt cleared! Roll this payment to your next debt.</div>';
+    }
+
+    inp.classList.remove('visible');
+    document.getElementById('dtc-confirm-' + key)?.classList.remove('visible');
+
+    updateTrackerSummary();
+    saveTrackerData();
+  }
+
+  function logRetireContrib() {
+    const amount = parseFloat(document.getElementById('retire-contrib-input').value) || 0;
+    if (amount <= 0) return;
+    document.getElementById('retire-contrib-input').value = '';
+    trackerData.retireBalance = (trackerData.retireBalance || 0) + amount;
+    trackerData.lastContrib = amount;
+    updateRetireTracker();
+    updateTrackerSummary();
+    saveTrackerData();
+  }
+
+  function updateRetireTracker() {
+    const bal = trackerData.retireBalance || 0;
+    const yrs = trackerData.yrsToRetire || 0;
+    const nestEgg = trackerData.nestEgg || 0;
+    const projected = bal * Math.pow(1.09, yrs);
+    const gap = Math.max(nestEgg - projected, 0);
+    const pct = nestEgg > 0 ? Math.min(100, Math.round((projected / nestEgg) * 100)) : 0;
+
+    document.getElementById('rtc-balance').textContent = fmt(bal);
+    document.getElementById('rtc-last-contrib').textContent = trackerData.lastContrib ? fmt(trackerData.lastContrib) : '—';
+    document.getElementById('rtc-projected').textContent = projected > 0 ? fmt(projected) : '—';
+    document.getElementById('rtc-gap').textContent = gap > 0 ? fmt(gap) + ' gap' : 'On track ✓';
+    document.getElementById('rtc-gap').className = 'rtc-val' + (gap > 0 ? '' : ' good');
+    document.getElementById('rtc-progress').style.width = pct + '%';
+  }
+
+  function updateTrackerSummary() {
+    const totalPaid = Object.values(trackerData.totalPaidByDebt || {}).reduce((s, v) => s + v, 0);
+    // Rough interest saved: proportional to amount paid vs original min-payments baseline
+    const debts = getDebts().filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0);
+    const totalOrig = debts.reduce((s, d) => s + d.balance, 0);
+    const baseline = trackerData.minInterestBaseline || 0;
+    const interestSaved = totalOrig > 0 ? Math.round((totalPaid / totalOrig) * baseline * 0.4) : 0;
+
+    document.getElementById('ts-total-paid').textContent = fmt(totalPaid);
+    document.getElementById('ts-interest-saved').textContent = fmt(interestSaved);
+    document.getElementById('ts-retire-balance').textContent = fmt(trackerData.retireBalance || 0);
+  }
+
+  function saveTrackerData() {
+    localStorage.setItem('fb_progress', JSON.stringify(trackerData));
+    updateTrackerSummary();
+  }
+
+  function resetTracker() {
+    if (confirm('Reset all tracker progress? This cannot be undone.')) {
+      localStorage.removeItem('fb_progress');
+      trackerData = {};
+      showTracker();
+    }
+  }
+
+  function goBackToResults() {
+    document.getElementById('step-tracker').classList.remove('active');
+    document.getElementById('step-results').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
