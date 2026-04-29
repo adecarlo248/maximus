@@ -3,173 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Financial Needs Analysis — Your Financial Blueprint</title>
+  <title>Your Financial Blueprint — Personal FNA Calculator</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
     :root {
-      --navy: #0a1628;
-      --navy-mid: #1a3a6e;
-      --cobalt: #1e4d9e;
-      --electric: #2d7dd2;
-      --sky: #4fa3e0;
-      --chrome: #8ab4d4;
-      --ice: #c8dff0;
-      --frost: #e8f4fd;
-      --gold: #8ab4d4;
-      --gold-dark: #4fa3e0;
-      --green: #2d7dd2;
-      --red: #c0392b;
-      --bg: #f0f6ff;
+      --navy: #071525;
+      --navy2: #0a1e3d;
+      --cobalt: #102a52;
+      --teal: #4fa3e0;
+      --teal-bright: #00c8ff;
+      --teal-glow: rgba(79,163,224,0.25);
+      --gold: #e8b84b;
+      --gold-light: #f5d98e;
+      --red: #e05252;
+      --green: #2ecc71;
       --white: #ffffff;
-      --text: #0a1628;
+      --bg: #f0f4f8;
+      --card: #ffffff;
+      --border: rgba(79,163,224,0.2);
+      --text: #071525;
       --muted: #5a7a9a;
-      --border: #d0e4f4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg,#eaf4fd,#f4f9ff);
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
       color: var(--text);
       min-height: 100vh;
     }
 
-    /* ── Header ── */
-    .app-header {
-      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
-      padding: 20px 24px;
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 0 24px;
+    }
+
+    /* Circuit board pattern */
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,163,224,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,163,224,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Glow radial */
+    .header::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 160%;
+      background: radial-gradient(ellipse, rgba(26,74,150,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 18px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
-    .app-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--white);
-    }
-
-    .app-logo span { color: #8ab4d4; }
-
-    .progress-bar-wrap {
-      flex: 1;
-      max-width: 400px;
-      margin: 0 24px;
-    }
-
-    .progress-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 6px;
-    }
-
-    .progress-label {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.5);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .progress-label.active { color: #8ab4d4; }
-    .progress-label.done { color: rgba(255,255,255,0.75); }
-
-    .progress-track {
-      height: 4px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #2d7dd2, #8ab4d4);
-      border-radius: 2px;
-      transition: width 0.4s ease;
-    }
-
-    .step-counter {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.6);
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
       white-space: nowrap;
     }
 
-    /* ── Main container ── */
-    .app-main {
-      max-width: 720px;
+    .logo span { color: var(--teal); }
+
+    /* Step dots */
+    .step-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(79,163,224,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .step-dot.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(79,163,224,0.5);
+    }
+
+    .step-dot.done {
+      background: rgba(79,163,224,0.2);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .step-connector {
+      width: 18px;
+      height: 1px;
+      background: rgba(79,163,224,0.2);
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 760px;
       margin: 0 auto;
       padding: 32px 16px 80px;
     }
 
-    /* ── Step card ── */
-    .step-card {
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(13,43,78,0.08);
-      padding: 36px 40px;
+    /* ── STEP CARD ── */
+    .step {
       display: none;
-      animation: fadeIn 0.3s ease;
+      animation: slideIn 0.3s ease;
     }
 
-    .step-card.active { display: block; }
+    .step.active { display: block; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .step-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #2d7dd2;
-      margin-bottom: 8px;
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(7,21,37,0.07), 0 0 0 1px rgba(79,163,224,0.08);
+      overflow: hidden;
+      margin-bottom: 20px;
     }
 
-    .step-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      color: #0a1628;
-      margin-bottom: 8px;
+    .card-header {
+      background: var(--navy);
+      padding: 18px 24px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,163,224,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,163,224,0.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .card-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), rgba(79,163,224,0.2), transparent);
+    }
+
+    .card-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      position: relative;
       line-height: 1.2;
     }
 
-    .step-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.6;
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: rgba(200,223,240,0.65);
+      margin-top: 6px;
+      position: relative;
     }
 
-    /* ── Form fields ── */
-    .field-group { margin-bottom: 20px; }
+    .card-body { padding: 28px 24px; }
 
+    /* ── FORM ELEMENTS ── */
     .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
+
+    .field-row.thirds {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .field { margin-bottom: 18px; }
 
     label {
       display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0a1628;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
       margin-bottom: 6px;
       letter-spacing: 0.3px;
     }
 
-    .input-wrap {
-      position: relative;
-    }
+    .input-wrap { position: relative; }
 
-    .input-prefix {
+    .prefix {
       position: absolute;
       left: 12px;
       top: 50%;
@@ -180,1997 +248,1576 @@
       pointer-events: none;
     }
 
-    .input-suffix {
+    .suffix {
       position: absolute;
       right: 12px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--muted);
       pointer-events: none;
     }
 
     input[type="number"],
-    input[type="text"],
-    select {
+    input[type="text"] {
       width: 100%;
-      padding: 11px 14px;
-      border: 1.5px solid var(--border);
+      padding: 10px 14px;
+      border: 1.5px solid #d4e4f4;
       border-radius: 8px;
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       font-size: 0.95rem;
       color: var(--text);
-      background: #fafbff;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fafcff;
       outline: none;
-    }
-
-    .has-prefix input { padding-left: 26px; }
-    .has-suffix input { padding-right: 36px; }
-
-    input:focus, select:focus {
-      border-color: #2d7dd2;
-      box-shadow: 0 0 0 3px rgba(45,125,210,0.12);
-      background: white;
-    }
-
-    /* ── Debt table ── */
-    .debt-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
-
-    .debt-table th {
-      background: linear-gradient(135deg, #0a1628, #1a3a6e);
-      color: white;
-      padding: 8px 10px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-align: left;
-    }
-
-    .debt-table td { padding: 6px 4px; }
-
-    .debt-table td input {
-      padding: 7px 10px;
-      font-size: 0.85rem;
-    }
-
-    .btn-add-debt {
-      background: none;
-      border: 1.5px dashed var(--navy-mid);
-      color: var(--navy-mid);
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
       transition: all 0.2s;
     }
 
-    .btn-add-debt:hover { background: #f0f6ff; }
+    .has-prefix input { padding-left: 24px; }
+    .has-suffix input { padding-right: 32px; }
+
+    input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(79,163,224,0.15);
+      background: #fff;
+    }
+
+    input.error { border-color: var(--red); }
+
+    .field-error {
+      font-size: 0.72rem;
+      color: var(--red);
+      margin-top: 4px;
+      display: none;
+    }
+
+    .field-error.show { display: block; }
+
+    /* ── LIVE RESULT CARDS ── */
+    .result-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .result-card {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--cobalt) 100%);
+      border: 1px solid rgba(79,163,224,0.2);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(138,180,212,0.5), transparent);
+    }
+
+    .result-card.gold { border-color: rgba(232,184,75,0.3); }
+    .result-card.red  { border-color: rgba(224,82,82,0.3); }
+    .result-card.green { border-color: rgba(46,204,113,0.3); }
+
+    .result-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(200,223,240,0.5);
+      margin-bottom: 6px;
+    }
+
+    .result-value {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .result-value.gold-val { color: var(--gold); }
+    .result-value.red-val  { color: var(--red); }
+    .result-value.green-val { color: var(--green); }
+
+    .result-sub {
+      font-size: 0.68rem;
+      color: rgba(200,223,240,0.4);
+      margin-top: 4px;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding-left: 12px;
+      border-left: 3px solid var(--teal);
+      margin: 24px 0 16px;
+    }
+
+    /* ── DEBT TABLE ── */
+    .debt-table-wrap { overflow-x: auto; }
+
+    .debt-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    .debt-table th {
+      background: var(--navy);
+      color: rgba(200,223,240,0.8);
+      padding: 9px 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-align: left;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .debt-table th:first-child { border-radius: 8px 0 0 0; }
+    .debt-table th:last-child  { border-radius: 0 8px 0 0; }
+
+    .debt-table td {
+      padding: 5px 4px;
+      border-bottom: 1px solid #eaf2fc;
+    }
+
+    .debt-table td input { padding: 7px 10px; font-size: 0.85rem; }
 
     .btn-remove {
       background: none;
       border: none;
-      color: #c0392b;
+      color: var(--red);
       cursor: pointer;
       font-size: 1.1rem;
       padding: 4px 8px;
-      line-height: 1;
+      border-radius: 4px;
+      transition: background 0.15s;
     }
 
-    /* ── Live calc preview ── */
-    .calc-preview {
-      background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 100%);
-      border: 1px solid rgba(45,125,210,0.3);
+    .btn-remove:hover { background: #fff0f0; }
+
+    .btn-add {
+      background: none;
+      border: 1.5px dashed rgba(79,163,224,0.4);
+      color: var(--teal);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-add:hover { background: rgba(79,163,224,0.06); border-color: var(--teal); }
+
+    /* ── DEBT COMPARISON CHART ── */
+    .chart-wrap {
+      background: linear-gradient(160deg, var(--navy), var(--cobalt));
+      border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px 20px;
+      padding: 20px;
       margin-top: 20px;
     }
 
-    .calc-preview-title {
+    .chart-title {
       font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #8ab4d4;
-      margin-bottom: 12px;
+      color: rgba(200,223,240,0.5);
+      margin-bottom: 16px;
     }
 
-    .calc-preview .calc-label { color: rgba(200,223,240,0.65); }
-    .calc-preview .calc-val { color: #c8dff0; }
-    .calc-preview .calc-val.good { color: #4fa3e0; }
-    .calc-preview .calc-val.bad { color: #e87c7c; }
-    .calc-preview .calc-row { border-bottom-color: rgba(45,125,210,0.2); }
+    .chart-bars { display: flex; flex-direction: column; gap: 14px; }
 
-    .calc-row {
+    .chart-bar-wrap { }
+
+    .chart-bar-label {
+      font-size: 0.75rem;
+      color: rgba(200,223,240,0.6);
+      margin-bottom: 4px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 5px 0;
-      font-size: 0.85rem;
-      border-bottom: 1px dashed var(--border);
     }
 
-    .calc-row:last-child { border-bottom: none; }
-    .calc-row .calc-label { color: var(--muted); }
-    .calc-row .calc-val { font-weight: 700; color: #0a1628; }
-    .calc-row .calc-val.good { color: #2d7dd2; }
-    .calc-row .calc-val.bad { color: #c0392b; }
-    .calc-row .calc-val.warn { color: #e67e22; }
+    .chart-bar-track {
+      height: 22px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-    /* ── Nav buttons ── */
-    .step-nav {
+    .chart-bar-fill {
+      height: 100%;
+      border-radius: 4px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-top: 32px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+      padding-left: 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      transition: width 0.8s ease;
+      min-width: 40px;
+    }
+
+    .bar-bad  { background: linear-gradient(90deg, var(--red), #c0392b); }
+    .bar-good { background: linear-gradient(90deg, var(--teal), var(--teal-bright)); }
+
+    /* ── BUTTONS ── */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      justify-content: flex-end;
     }
 
     .btn {
       padding: 12px 28px;
       border-radius: 8px;
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s;
       border: none;
+      transition: all 0.2s;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #0a1628, #1a3a6e);
-      color: white;
+    .btn-back {
+      background: none;
+      border: 1.5px solid rgba(79,163,224,0.3);
+      color: var(--teal);
     }
 
-    .btn-primary:hover { background: #1e4d9e; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(13,43,78,0.2); }
+    .btn-back:hover { background: rgba(79,163,224,0.06); }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--muted);
-      border: 1.5px solid var(--border);
+    .btn-next {
+      background: linear-gradient(135deg, var(--teal), #2d7dd2);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(79,163,224,0.35);
     }
 
-    .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-next:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79,163,224,0.45); }
 
-    .btn-gold {
-      background: linear-gradient(135deg, #2d7dd2, #4fa3e0);
-      color: var(--navy);
+    .btn-results {
+      background: linear-gradient(135deg, var(--gold), #c8921a);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(232,184,75,0.35);
+      font-size: 1rem;
+      padding: 14px 36px;
     }
 
-    .btn-gold:hover { background: #1e4d9e; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(240,192,64,0.35); }
+    .btn-results:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,184,75,0.45); }
 
-    /* ── Results page ── */
-    #step-results { display: none; }
-    #step-results.active { display: block; }
-
-    .results-hero {
-      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
-      border-radius: 12px;
-      padding: 28px 32px;
-      color: white;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .results-hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-    }
-
-    .results-hero p {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.9rem;
-    }
-
-    .results-grid {
+    /* ── RESULTS STEP ── */
+    .snapshot-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
+      gap: 14px;
+      margin-bottom: 28px;
     }
 
-    .result-card {
-      background: white;
+    .snap-card {
+      background: linear-gradient(160deg, var(--navy), var(--cobalt));
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 22px 24px;
-      box-shadow: 0 2px 12px rgba(13,43,78,0.07);
-      border-left: 4px solid var(--navy);
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .result-card.danger { border-left-color: var(--red); }
-    .result-card.warning { border-left-color: #e67e22; }
-    .result-card.success { border-left-color: #2d7dd2; }
-    .result-card.gold { border-left-color: #8ab4d4; }
+    .snap-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+    }
 
-    .result-card-label {
-      font-size: 0.7rem;
+    .snap-card.teal::before  { background: linear-gradient(90deg, var(--teal), transparent); }
+    .snap-card.gold::before  { background: linear-gradient(90deg, var(--gold), transparent); }
+    .snap-card.red::before   { background: linear-gradient(90deg, var(--red), transparent); }
+    .snap-card.green::before { background: linear-gradient(90deg, var(--green), transparent); }
+
+    .snap-icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .snap-label {
+      font-size: 0.65rem;
       font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--muted);
+      color: rgba(200,223,240,0.45);
       margin-bottom: 6px;
     }
 
-    .result-card-value {
+    .snap-value {
       font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.1;
+      font-weight: 900;
+      line-height: 1;
       margin-bottom: 4px;
     }
 
-    .result-card-value.danger { color: var(--red); }
-    .result-card-value.warning { color: #e67e22; }
-    .result-card-value.success { color: #2d7dd2; }
+    .snap-value.teal  { color: var(--teal); }
+    .snap-value.gold  { color: var(--gold); }
+    .snap-value.red   { color: var(--red); }
+    .snap-value.green { color: var(--green); }
 
-    .result-card-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.4;
+    .snap-sub {
+      font-size: 0.7rem;
+      color: rgba(200,223,240,0.35);
     }
 
-    .result-section {
-      background: white;
-      border-radius: 12px;
-      padding: 24px 28px;
-      box-shadow: 0 2px 12px rgba(13,43,78,0.07);
-      margin-bottom: 16px;
+    /* ── AI COACH CHAT ── */
+    .chat-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(7,21,37,0.07);
+      overflow: hidden;
     }
 
-    .result-section h3 {
+    .chat-header {
+      background: var(--navy);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chat-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,163,224,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,163,224,0.07) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .coach-avatar {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--teal), #2d7dd2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      flex-shrink: 0;
+      position: relative;
+      box-shadow: 0 0 12px rgba(79,163,224,0.5);
     }
 
-    .result-line {
-      display: flex;
-      justify-content: space-between;
-      padding: 7px 0;
-      font-size: 0.85rem;
-      border-bottom: 1px dashed var(--border);
-    }
+    .chat-header-text { position: relative; }
 
-    .result-line:last-child { border-bottom: none; }
-    .result-line .rl-label { color: var(--muted); }
-    .result-line .rl-val { font-weight: 600; color: var(--navy); }
-    .result-line .rl-val.good { color: #2d7dd2; }
-    .result-line .rl-val.bad { color: #c0392b; }
-
-    .result-highlight {
-      background: linear-gradient(135deg,#0a1628,#1a3a6e);
-      color: white;
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .result-highlight .rh-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
-    .result-highlight .rh-val { font-size: 1.1rem; font-weight: 700; color: #8ab4d4; }
-
-    /* ── Debt results table ── */
-    .debt-results-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-    .debt-results-table th { background: linear-gradient(135deg, #0a1628, #1a3a6e); color: white; padding: 8px 12px; text-align: left; font-size: 0.75rem; }
-    .debt-results-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
-    .debt-results-table tr:nth-child(even) td { background: #eaf4fd; }
-    .debt-results-table .priority-1 td { background: #fff8e1 !important; font-weight: 600; }
-
-    /* ── CTA box ── */
-    .cta-box {
-      background: linear-gradient(135deg, #e8f4fd 0%, #d8eaf8 100%);
-      border: 1.5px solid #2d7dd2;
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .cta-box h3 { color: #0a1628; font-size: 1.1rem; margin-bottom: 8px; }
-    .cta-box p { color: #2d7dd2; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
-
-    /* ── Print / PDF ── */
-    .print-btn {
-      background: linear-gradient(135deg, #2d7dd2, #4fa3e0);
-      color: var(--navy);
-      border: none;
-      padding: 13px 30px;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
+    .chat-coach-name {
       font-size: 0.9rem;
       font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
+      color: #fff;
+    }
+
+    .chat-coach-sub {
+      font-size: 0.72rem;
+      color: var(--teal);
+    }
+
+    .chat-online {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      border: 1.5px solid var(--navy);
+    }
+
+    .chat-messages {
+      height: 360px;
+      overflow-y: auto;
+      padding: 20px;
+      background: #f8fbff;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      scroll-behavior: smooth;
+    }
+
+    .msg {
+      max-width: 82%;
+      animation: msgIn 0.2s ease;
+    }
+
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.coach { align-self: flex-start; }
+    .msg.user  { align-self: flex-end; }
+
+    .msg-bubble {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .msg.coach .msg-bubble {
+      background: var(--navy);
+      color: rgba(200,223,240,0.9);
+      border-radius: 4px 12px 12px 12px;
+      border-left: 3px solid var(--teal);
+    }
+
+    .msg.user .msg-bubble {
+      background: linear-gradient(135deg, var(--teal), #2d7dd2);
+      color: #fff;
+      border-radius: 12px 4px 12px 12px;
+    }
+
+    .msg-time {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 4px;
+      padding: 0 4px;
+    }
+
+    .msg.user .msg-time { text-align: right; }
+
+    /* Typing indicator */
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+    }
+
+    .typing-indicator.show { display: flex; }
+
+    .typing-dots {
+      background: var(--navy);
+      border-radius: 4px 12px 12px 12px;
+      border-left: 3px solid var(--teal);
+      padding: 14px 18px;
+      display: flex;
+      gap: 5px;
       align-items: center;
-      gap: 8px;
+    }
+
+    .typing-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: typingBounce 1.4s ease infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .chat-input-row {
+      display: flex;
+      gap: 10px;
+      padding: 14px 20px;
+      background: #fff;
+      border-top: 1px solid #eaf2fc;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1.5px solid #d4e4f4;
+      border-radius: 24px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
       transition: all 0.2s;
     }
 
-    .print-btn:hover { background: #1e4d9e; transform: translateY(-1px); }
+    .chat-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(79,163,224,0.12);
+    }
 
-    .restart-btn {
-      background: none;
-      border: 1.5px solid var(--border);
-      color: var(--muted);
-      padding: 13px 24px;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+    .btn-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), #2d7dd2);
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(79,163,224,0.4);
+    }
+
+    .btn-send:hover { transform: scale(1.08); }
+
+    /* Quick question chips */
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 20px 0;
+      background: #f8fbff;
+      border-top: 1px solid #eaf2fc;
+    }
+
+    .chip {
+      background: rgba(79,163,224,0.08);
+      border: 1px solid rgba(79,163,224,0.25);
+      color: #1a4a96;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
       font-weight: 600;
       cursor: pointer;
-      margin-left: 12px;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
 
-    .restart-btn:hover { border-color: var(--navy); color: var(--navy); }
-
-    /* ── Tooltip ── */
-    .tooltip-wrap { position: relative; display: inline-block; margin-left: 5px; cursor: help; }
-    .tooltip-icon { color: var(--muted); font-size: 0.75rem; }
-    .tooltip-text {
-      display: none;
-      position: absolute;
-      bottom: 120%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--navy);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      z-index: 10;
-    }
-    .tooltip-wrap:hover .tooltip-text { display: block; }
-
-    /* ── Disclaimer ── */
-    .disclaimer {
-      background: #fafbff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-top: 20px;
+    .chip:hover {
+      background: rgba(79,163,224,0.16);
+      border-color: var(--teal);
     }
 
-    /* ── Spouse Toggle ── */
-    .toggle-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 16px; background: #eaf4fd;
-      border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 20px; cursor: pointer;
+    /* ── PRIORITY BADGE ── */
+    .priority-box {
+      background: linear-gradient(135deg, #fffbf0, #fff8e0);
+      border: 1.5px solid rgba(232,184,75,0.4);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
     }
-    .toggle-label { font-size:0.88rem; font-weight:600; color:var(--navy); flex:1; }
-    .toggle-sub { font-size:0.75rem; color:var(--muted); display:block; }
-    .toggle-switch {
-      position:relative; width:44px; height:24px; flex-shrink:0;
+
+    .priority-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9a6b00;
+      margin-bottom: 6px;
     }
-    .toggle-switch input { opacity:0; width:0; height:0; }
-    .toggle-slider {
-      position:absolute; inset:0; background:var(--border); border-radius:24px;
-      transition:background 0.25s;
+
+    .priority-text {
+      font-size: 0.92rem;
+      color: #5a3a00;
+      line-height: 1.5;
     }
-    .toggle-slider:before {
-      content:''; position:absolute; width:18px; height:18px;
-      left:3px; top:3px; background:white; border-radius:50%;
-      transition:transform 0.25s; box-shadow:0 1px 4px rgba(0,0,0,0.2);
+
+    /* ── INFO BOX ── */
+    .info-box {
+      background: linear-gradient(135deg, #eaf4fd, #f4f9ff);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: 0.85rem;
+      color: #1a2c42;
+      line-height: 1.55;
     }
-    .toggle-switch input:checked + .toggle-slider { background:linear-gradient(135deg,#0a1628,#1e4d9e); }
-    .toggle-switch input:checked + .toggle-slider:before { transform:translateX(20px); }
-    .spouse-fields { display:none; }
-    .spouse-fields.visible { display:block; }
-    .spouse-header {
-      font-family:'Inter',Arial,sans-serif; font-size:0.72rem; font-weight:700;
-      letter-spacing:1.5px; text-transform:uppercase; color:#2d7dd2;
-      padding: 10px 0 6px; border-top:2px dashed #c8dff0; margin:8px 0 16px;
-    }
-    /* ── Progress Tracker ── */
-    .tracker-section {
-      background:white; border-radius:12px; padding:24px 28px;
-      box-shadow:0 2px 12px rgba(13,43,78,0.07); margin-bottom:16px;
-    }
-    .tracker-section h3 {
-      font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:14px;
-      padding-bottom:10px; border-bottom:2px solid var(--border);
-    }
-    .debt-track-card {
-      border:1.5px solid var(--border); border-radius:10px; padding:16px 18px;
-      margin-bottom:12px; border-left:4px solid var(--red);
-      transition:border-left-color 0.4s;
-    }
-    .debt-track-card.p25 { border-left-color:#2d7dd2; }
-    .debt-track-card.p50 { border-left-color:#4fa3e0; }
-    .debt-track-card.p75 { border-left-color:#8ab4d4; }
-    .debt-track-card.p100 { border-left-color:#c8dff0; background:#eaf4fd; }
-    .dtc-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
-    .dtc-name { font-size:0.9rem; font-weight:700; color:var(--navy); }
-    .dtc-rate { font-size:0.75rem; color:var(--muted); }
-    .dtc-balances { display:flex; gap:16px; margin-bottom:10px; }
-    .dtc-bal-item { flex:1; }
-    .dtc-bal-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:2px; }
-    .dtc-bal-val { font-size:1rem; font-weight:700; color:var(--navy); }
-    .dtc-bal-val.paid { color:var(--green); }
-    .progress-bar-track {
-      height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-bottom:10px;
-    }
-    .progress-bar-fill {
-      height:100%; background:var(--red); border-radius:4px;
-      transition:width 0.5s ease, background 0.4s;
-    }
-    .dtc-log-row { display:flex; gap:8px; align-items:center; }
-    .dtc-pmt-input {
-      flex:1; padding:7px 10px; border:1.5px solid var(--border); border-radius:6px;
-      font-family:'Inter',sans-serif; font-size:0.85rem; outline:none;
-      display:none;
-    }
-    .dtc-pmt-input.visible { display:block; }
-    .btn-log-pmt {
-      background:linear-gradient(135deg,#0a1628,#1a3a6e); color:white; border:none; padding:7px 14px;
-      border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
-      font-family:'Inter',sans-serif; transition:background 0.2s; white-space:nowrap;
-    }
-    .btn-log-pmt:hover { background:var(--navy-mid); }
-    .btn-confirm-pmt {
-      background:#2d7dd2; color:white; border:none; padding:7px 12px;
-      border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;
-      font-family:'Inter',sans-serif; display:none;
-    }
-    .btn-confirm-pmt.visible { display:block; }
-    .paid-off-banner {
-      text-align:center; font-size:0.9rem; font-weight:700; color:var(--green);
-      padding:8px; display:none;
-    }
-    .paid-off-banner.visible { display:block; }
-    .tracker-summary {
-      background:linear-gradient(135deg,#050d1a 0%,#0a1628 50%,#1a3a6e 100%);
-      border-radius:10px; padding:16px 20px; margin-bottom:16px;
-      display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; text-align:center;
-    }
-    .ts-item .ts-val { font-size:1.2rem; font-weight:700; color:#8ab4d4; }
-    .ts-item .ts-label { font-size:0.68rem; color:rgba(255,255,255,0.65); margin-top:2px; }
-    .retire-track-card {
-      border:1.5px solid var(--border); border-radius:10px; padding:18px;
-      margin-bottom:12px; border-left:4px solid #8ab4d4;
-    }
-    .rtc-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
-    .rtc-item .rtc-label { font-size:0.68rem; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:2px; }
-    .rtc-item .rtc-val { font-size:1rem; font-weight:700; color:var(--navy); }
-    .rtc-item .rtc-val.good { color:#2d7dd2; }
-    /* ── Mobile ── */
-    @media (max-width: 600px) {
-      .step-card { padding: 24px 20px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 540px) {
       .field-row { grid-template-columns: 1fr; }
-      .results-grid { grid-template-columns: 1fr; }
-      .progress-bar-wrap { display: none; }
-      .app-header { flex-wrap: wrap; gap: 8px; }
-      .tracker-summary { grid-template-columns:1fr; }
-      .rtc-grid { grid-template-columns:1fr; }
+      .field-row.thirds { grid-template-columns: 1fr; }
+      .snapshot-grid { grid-template-columns: 1fr; }
+      .card-body { padding: 20px 16px; }
+      .step-dot { width: 26px; height: 26px; font-size: 0.65rem; }
+      .step-connector { width: 10px; }
+      .logo { font-size: 0.9rem; }
     }
-
-    /* ── Print styles ── */
-    @media print {
-      body { background: white; }
-      .app-header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .step-card:not(.active) { display: none; }
-      .step-nav { display: none; }
-      .print-btn, .restart-btn { display: none; }
-      .chat-fab, .chat-window { display: none !important; }
-    }
-
-    /* ── Chatbot ── */
-    .chat-fab {
-      position: fixed; bottom: 24px; right: 24px;
-      width: 58px; height: 58px; border-radius: 50%;
-      background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #1a3a6e 100%);
-      color: white; border: none;
-      box-shadow: 0 4px 20px rgba(13,43,78,0.35);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; z-index: 1000;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .chat-fab:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(13,43,78,0.45); }
-    .chat-fab .chat-badge {
-      position: absolute; top: -2px; right: -2px;
-      background: linear-gradient(135deg,#2d7dd2,#4fa3e0); color: var(--navy);
-      font-size: 0.6rem; font-weight: 700;
-      padding: 2px 5px; border-radius: 10px; line-height: 1.4;
-    }
-    .chat-window {
-      position: fixed; bottom: 92px; right: 24px;
-      width: 360px; max-width: calc(100vw - 32px);
-      height: 520px; max-height: calc(100vh - 120px);
-      background: white; border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(13,43,78,0.2);
-      display: flex; flex-direction: column;
-      z-index: 999; overflow: hidden;
-      transform: scale(0.95) translateY(10px); opacity: 0; pointer-events: none;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-    .chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
-    .chat-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 14px 18px; display: flex; align-items: center; gap: 10px; flex-shrink: 0;
-    }
-    .chat-avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: linear-gradient(135deg, #2d7dd2, #4fa3e0); display: flex; align-items: center;
-      justify-content: center; font-size: 1rem; flex-shrink: 0;
-    }
-    .chat-header-info { flex: 1; }
-    .chat-header-name { font-size: 0.85rem; font-weight: 700; color: white; line-height: 1.2; }
-    .chat-header-status { font-size: 0.7rem; color: rgba(255,255,255,0.65); }
-    .chat-close {
-      background: none; border: none; color: rgba(255,255,255,0.7);
-      font-size: 1.2rem; cursor: pointer; padding: 4px; line-height: 1; transition: color 0.2s;
-    }
-    .chat-close:hover { color: white; }
-    .chat-messages {
-      flex: 1; overflow-y: auto; padding: 16px;
-      display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
-    }
-    .chat-messages::-webkit-scrollbar { width: 4px; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-    .msg {
-      max-width: 88%; padding: 10px 14px; border-radius: 12px;
-      font-size: 0.84rem; line-height: 1.55; animation: msgIn 0.2s ease;
-    }
-    @keyframes msgIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
-    .msg.bot { background: #f0f6ff; color: var(--text); border-bottom-left-radius: 4px; align-self: flex-start; }
-    .msg.user { background: var(--navy); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
-    .msg.typing { background: #f0f6ff; align-self: flex-start; }
-    .typing-dots span {
-      display: inline-block; width: 6px; height: 6px; background: var(--muted);
-      border-radius: 50%; margin: 0 2px; animation: bounce 1.2s infinite;
-    }
-    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes bounce { 0%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-5px); } }
-    .chat-suggestions {
-      padding: 0 12px 10px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
-    }
-    .suggestion-chip {
-      background: linear-gradient(135deg,#eaf4fd,#f0f7ff); border: 1px solid #c8dff0; color: #0a1628;
-      padding: 5px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 500;
-      cursor: pointer; transition: all 0.15s; white-space: nowrap;
-    }
-    .suggestion-chip:hover { background: linear-gradient(135deg,#0a1628,#1a3a6e); color: white; border-color: #2d7dd2; }
-    .chat-input-row {
-      display: flex; padding: 10px 12px 14px; gap: 8px;
-      border-top: 1px solid var(--border); flex-shrink: 0;
-    }
-    .chat-input {
-      flex: 1; border: 1.5px solid var(--border); border-radius: 20px;
-      padding: 9px 14px; font-family: 'Inter', sans-serif; font-size: 0.84rem;
-      outline: none; resize: none; transition: border-color 0.2s; line-height: 1.4;
-    }
-    .chat-input:focus { border-color: var(--navy-mid); }
-    .chat-send {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: var(--navy); color: white; border: none;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0; transition: background 0.2s; align-self: flex-end;
-    }
-    .chat-send:hover { background: #1e4d9e; }
-    .chat-send:disabled { background: var(--border); cursor: not-allowed; }
-    .api-key-setup {
-      padding: 20px; display: flex; flex-direction: column;
-      gap: 12px; flex: 1; justify-content: center;
-    }
-    .api-key-setup p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; text-align: center; }
-    .api-key-setup input {
-      padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px;
-      font-size: 0.85rem; font-family: 'Inter', sans-serif; outline: none; width: 100%;
-    }
-    .api-key-setup input:focus { border-color: var(--navy-mid); }
-    .btn-setup {
-      background: var(--navy); color: white; border: none; padding: 10px;
-      border-radius: 8px; font-family: 'Inter', sans-serif;
-      font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
-    }
-    .btn-setup:hover { background: var(--navy-mid); }
   </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
-<header class="app-header">
-  <div class="app-logo">Financial <span>Blueprint</span></div>
-  <div class="progress-bar-wrap">
-    <div class="progress-labels">
-      <span class="progress-label active" onclick="goToStep(1)" id="lbl-1">Basics</span>
-      <span class="progress-label" onclick="goToStep(2)" id="lbl-2">Protection</span>
-      <span class="progress-label" onclick="goToStep(3)" id="lbl-3">Retirement</span>
-      <span class="progress-label" onclick="goToStep(4)" id="lbl-4">Debt</span>
-      <span class="progress-label" onclick="goToStep(5)" id="lbl-5">Results</span>
-    </div>
-    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">Your Financial <span>Blueprint</span></div>
+    <nav class="step-nav" id="stepNav">
+      <div class="step-dot active" id="dot1" onclick="goToStep(1)">1</div>
+      <div class="step-connector"></div>
+      <div class="step-dot" id="dot2" onclick="goToStep(2)">2</div>
+      <div class="step-connector"></div>
+      <div class="step-dot" id="dot3" onclick="goToStep(3)">3</div>
+      <div class="step-connector"></div>
+      <div class="step-dot" id="dot4" onclick="goToStep(4)">4</div>
+      <div class="step-connector"></div>
+      <div class="step-dot" id="dot5" onclick="goToStep(5)">5</div>
+    </nav>
   </div>
-  <div class="step-counter" id="step-counter">Step 1 of 4</div>
 </header>
 
-<!-- ── MAIN ── -->
-<main class="app-main">
+<main class="main">
 
-  <!-- ══ STEP 1: HOUSEHOLD BASICS ══ -->
-  <div class="step-card active" id="step-1">
-    <div class="step-eyebrow">Step 1 of 4</div>
-    <h1 class="step-title">Your Household Basics</h1>
-    <p class="step-desc">Let's start with the foundation — your income, expenses, and a few key details that power all the calculations ahead.</p>
-
-    <div class="field-row">
-      <div class="field-group">
-        <label>Your Age</label>
-        <input type="number" id="age" placeholder="e.g. 35" min="18" max="75" oninput="liveCalc()">
+  <!-- ═══════ STEP 1: HOUSEHOLD BASICS ═══════ -->
+  <div class="step active" id="step1">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Step 1 of 5</div>
+        <div class="card-title">Your Household Basics</div>
+        <div class="card-subtitle">Let's start with the fundamentals — your income, expenses, and monthly picture.</div>
       </div>
-      <div class="field-group">
-        <label>Target Retirement Age</label>
-        <input type="number" id="retireAge" placeholder="e.g. 65" min="45" max="80" oninput="liveCalc()">
+      <div class="card-body">
+        <div class="field-row">
+          <div class="field">
+            <label>Your First Name *</label>
+            <input type="text" id="firstName" placeholder="e.g. Sarah">
+            <div class="field-error" id="err-firstName">Please enter your name</div>
+          </div>
+          <div class="field">
+            <label>Partner's Name (optional)</label>
+            <input type="text" id="partnerName" placeholder="e.g. Michael">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Your Current Age *</label>
+            <input type="number" id="currentAge" placeholder="e.g. 35" min="18" max="80" oninput="liveCalc()">
+            <div class="field-error" id="err-currentAge">Required</div>
+          </div>
+          <div class="field">
+            <label>Target Retirement Age *</label>
+            <input type="number" id="retirementAge" placeholder="e.g. 65" min="40" max="80" oninput="liveCalc()">
+            <div class="field-error" id="err-retirementAge">Required</div>
+          </div>
+        </div>
+
+        <div class="section-label">Income & Cash Flow</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Combined Annual Household Income *</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="annualIncome" placeholder="80,000" min="0" oninput="liveCalc()">
+            </div>
+            <div class="field-error" id="err-annualIncome">Required</div>
+          </div>
+          <div class="field">
+            <label>Monthly Take-Home Pay *</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthlyTakeHome" placeholder="4,500" min="0" oninput="liveCalc()">
+            </div>
+            <div class="field-error" id="err-monthlyTakeHome">Required</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Total Monthly Expenses *</label>
+          <div class="input-wrap has-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="monthlyExpenses" placeholder="3,800" min="0" oninput="liveCalc()">
+          </div>
+          <div class="field-error" id="err-monthlyExpenses">Required</div>
+        </div>
+
+        <div class="result-row">
+          <div class="result-card" id="surplusCard">
+            <div class="result-label">Monthly Surplus</div>
+            <div class="result-value" id="surplusVal">$—</div>
+            <div class="result-sub">Take-home minus expenses</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Years to Retirement</div>
+            <div class="result-value" id="yearsToRetireVal">—</div>
+            <div class="result-sub">Based on your ages</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Annual Income</div>
+            <div class="result-value" id="incomeVal">$—</div>
+            <div class="result-sub">Combined household</div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-next" onclick="nextStep(1)">Income Protection →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 2: INCOME PROTECTION ═══════ -->
+  <div class="step" id="step2">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Step 2 of 5</div>
+        <div class="card-title">Income Protection Analysis</div>
+        <div class="card-subtitle">Your ability to earn is your most valuable asset. How protected is it?</div>
+      </div>
+      <div class="card-body">
+
+        <div class="info-box">
+          💡 <strong>The 10× Rule:</strong> Most financial experts recommend life insurance coverage equal to 10 times your annual income. This replaces your earning power for your family if the unexpected happens.
+        </div>
+
+        <div class="section-label">Your Coverage Today</div>
+
+        <div class="field-row thirds">
+          <div class="field">
+            <label>Employer Group Life Insurance</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="employerLife" placeholder="100,000" min="0" oninput="liveCalc2()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Personal Life Insurance</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="personalLife" placeholder="0" min="0" oninput="liveCalc2()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Other Coverage</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="otherLife" placeholder="0" min="0" oninput="liveCalc2()">
+            </div>
+          </div>
+        </div>
+
+        <div class="result-row">
+          <div class="result-card">
+            <div class="result-label">Earning Power at Risk</div>
+            <div class="result-value" id="earningPowerVal">$—</div>
+            <div class="result-sub">Income × years to retirement</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Coverage Needed (10×)</div>
+            <div class="result-value" id="coverageNeededVal">$—</div>
+            <div class="result-sub">Based on your income</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Current Coverage</div>
+            <div class="result-value" id="currentCoverageVal">$0</div>
+            <div class="result-sub">Total across all policies</div>
+          </div>
+          <div class="result-card" id="gapCard">
+            <div class="result-label">⚠️ Coverage Gap</div>
+            <div class="result-value" id="coverageGapVal">$—</div>
+            <div class="result-sub">Protection your family is missing</div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-back" onclick="prevStep(2)">← Back</button>
+          <button class="btn btn-next" onclick="nextStep(2)">Retirement Gap →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 3: RETIREMENT GAP ═══════ -->
+  <div class="step" id="step3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Step 3 of 5</div>
+        <div class="card-title">Retirement Gap Analysis</div>
+        <div class="card-subtitle">How much do you need to retire comfortably — and how far off are you today?</div>
+      </div>
+      <div class="card-body">
+
+        <div class="section-label">Your Retirement Income Target</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Target Monthly Retirement Income *</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="targetRetireIncome" placeholder="5,000" min="0" oninput="liveCalc3()">
+            </div>
+            <div class="field-error" id="err-targetRetireIncome">Required</div>
+          </div>
+          <div class="field">
+            <label>Estimated Monthly CPP</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="cppAmount" value="758" min="0" oninput="liveCalc3()">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Estimated Monthly OAS</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="oasAmount" value="700" min="0" oninput="liveCalc3()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Current RRSP + TFSA Balance *</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" placeholder="25,000" min="0" oninput="liveCalc3()">
+            </div>
+            <div class="field-error" id="err-currentSavings">Required</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          📐 <strong>The 4% Rule:</strong> To calculate how much you need to retire, we divide your annual income need from savings by 4%. This gives you a nest egg that lasts 25–30+ years.
+        </div>
+
+        <div class="result-row">
+          <div class="result-card">
+            <div class="result-label">Monthly from Savings</div>
+            <div class="result-value" id="monthlyFromSavingsVal">$—</div>
+            <div class="result-sub">After CPP + OAS</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Nest Egg Required</div>
+            <div class="result-value" id="nestEggVal">$—</div>
+            <div class="result-sub">Using the 4% rule</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Projected at Retirement</div>
+            <div class="result-value" id="projectedSavingsVal">$—</div>
+            <div class="result-sub">At 9% growth rate</div>
+          </div>
+          <div class="result-card" id="retirementGapCard">
+            <div class="result-label">🎯 Retirement Gap</div>
+            <div class="result-value" id="retirementGapVal">$—</div>
+            <div class="result-sub">Additional wealth needed</div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-back" onclick="prevStep(3)">← Back</button>
+          <button class="btn btn-next" onclick="nextStep(3)">Debt Plan →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 4: DEBT STACKING ═══════ -->
+  <div class="step" id="step4">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Step 4 of 5</div>
+        <div class="card-title">Debt Stacking Plan</div>
+        <div class="card-subtitle">See exactly how fast you can become debt-free — and how much interest you'll save.</div>
+      </div>
+      <div class="card-body">
+
+        <div class="info-box">
+          ⚡ <strong>Debt Stacking:</strong> List your debts, attack the highest interest rate first, then roll each cleared payment into the next. The result? You pay off all debts faster with the same total monthly payment.
+        </div>
+
+        <div class="section-label">Your Debts (Add All)</div>
+
+        <div class="debt-table-wrap">
+          <table class="debt-table" id="debtTable">
+            <thead>
+              <tr>
+                <th>Debt Name</th>
+                <th>Balance ($)</th>
+                <th>Interest Rate (%)</th>
+                <th>Min Payment ($)</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="debtRows">
+              <!-- rows added dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <button class="btn-add" onclick="addDebtRow()">+ Add Debt</button>
+
+        <div id="debtResults" style="display:none;">
+          <div class="result-row" style="margin-top:20px;">
+            <div class="result-card">
+              <div class="result-label">Total Debt</div>
+              <div class="result-value" id="totalDebtVal">$0</div>
+              <div class="result-sub">All debts combined</div>
+            </div>
+            <div class="result-card">
+              <div class="result-label">Monthly Minimums</div>
+              <div class="result-value" id="totalMinsVal">$0</div>
+              <div class="result-sub">Required each month</div>
+            </div>
+          </div>
+
+          <div class="chart-wrap" id="stackingChart">
+            <div class="chart-title">DEBT STACKING vs MINIMUM PAYMENTS</div>
+            <div class="chart-bars">
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-label">
+                  <span>Without Debt Stacking</span>
+                  <span id="noStackLabel">—</span>
+                </div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill bar-bad" id="noStackBar" style="width:100%">—</div>
+                </div>
+              </div>
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-label">
+                  <span>With Debt Stacking</span>
+                  <span id="stackLabel">—</span>
+                </div>
+                <div class="chart-bar-track">
+                  <div class="chart-bar-fill bar-good" id="stackBar" style="width:60%">—</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:14px; text-align:center;">
+              <span style="font-size:0.8rem;color:var(--gold);font-weight:700;" id="interestSavedLabel"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-back" onclick="prevStep(4)">← Back</button>
+          <button class="btn btn-results" onclick="nextStep(4)">See My Results ★</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ STEP 5: RESULTS + AI COACH ═══════ -->
+  <div class="step" id="step5">
+
+    <!-- Snapshot -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Your Financial Snapshot</div>
+        <div class="card-title" id="resultsTitle">Your Numbers, <span id="resultsName">—</span></div>
+        <div class="card-subtitle">Here's your complete financial picture at a glance.</div>
+      </div>
+      <div class="card-body">
+        <div class="snapshot-grid">
+          <div class="snap-card teal">
+            <span class="snap-icon">💰</span>
+            <div class="snap-label">Monthly Surplus</div>
+            <div class="snap-value teal" id="snap-surplus">$—</div>
+            <div class="snap-sub">Available to build wealth</div>
+          </div>
+          <div class="snap-card" id="snap-coverage-card">
+            <span class="snap-icon">🛡️</span>
+            <div class="snap-label">Coverage Gap</div>
+            <div class="snap-value" id="snap-coverage">$—</div>
+            <div class="snap-sub">Income protection shortfall</div>
+          </div>
+          <div class="snap-card" id="snap-retire-card">
+            <span class="snap-icon">📈</span>
+            <div class="snap-label">Retirement Gap</div>
+            <div class="snap-value" id="snap-retire">$—</div>
+            <div class="snap-sub">Additional wealth to build</div>
+          </div>
+          <div class="snap-card teal">
+            <span class="snap-icon">🏁</span>
+            <div class="snap-label">Debt-Free Date</div>
+            <div class="snap-value teal" id="snap-debt">—</div>
+            <div class="snap-sub">With Debt Stacking</div>
+          </div>
+        </div>
+
+        <div class="priority-box" id="priorityBox">
+          <div class="priority-label">⭐ Your #1 Priority Right Now</div>
+          <div class="priority-text" id="priorityText">—</div>
+        </div>
       </div>
     </div>
 
-    <!-- Spouse Toggle -->
-    <label class="toggle-row" for="spouse-toggle">
-      <div class="toggle-label">
-        Add spouse / partner
-        <span class="toggle-sub">Calculate coverage and income for two people</span>
-      </div>
-      <div class="toggle-switch">
-        <input type="checkbox" id="spouse-toggle" onchange="toggleSpouse()">
-        <span class="toggle-slider"></span>
-      </div>
-    </label>
-
-    <!-- Spouse Fields -->
-    <div class="spouse-fields" id="spouse-fields">
-      <div class="spouse-header">👥 Partner / Spouse Details</div>
-      <div class="field-row">
-        <div class="field-group">
-          <label>Partner's Age</label>
-          <input type="number" id="partnerAge" placeholder="e.g. 33" min="18" max="75" oninput="liveCalc()">
+    <!-- AI Coach -->
+    <div class="chat-card">
+      <div class="chat-header">
+        <div class="coach-avatar">
+          🧭
+          <div class="chat-online"></div>
         </div>
-        <div class="field-group">
-          <label>Partner's Annual Income</label>
-          <div class="input-wrap has-prefix">
-            <span class="input-prefix">$</span>
-            <input type="number" id="partnerIncome" placeholder="e.g. 55000" oninput="liveCalc()">
+        <div class="chat-header-text">
+          <div class="chat-coach-name">Your Financial Coach</div>
+          <div class="chat-coach-sub">Blueprint AI · Online</div>
+        </div>
+      </div>
+
+      <div class="quick-chips" id="quickChips">
+        <div class="chip" onclick="sendChip('How do I close my coverage gap?')">Coverage gap</div>
+        <div class="chip" onclick="sendChip('What should I invest monthly to retire on time?')">Retirement plan</div>
+        <div class="chip" onclick="sendChip('Tell me more about debt stacking')">Debt stacking</div>
+        <div class="chip" onclick="sendChip('What should I do first?')">My #1 priority</div>
+        <div class="chip" onclick="sendChip('How does compound interest work?')">Compound interest</div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="typing-indicator" id="typingIndicator">
+          <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field-group">
-      <label>Combined Annual Household Income<span class="tooltip-text">Before tax. Auto-fills from above if using spouse mode.</span></span>
-      </label>
-      <div class="input-wrap has-prefix">
-        <span class="input-prefix">$</span>
-        <input type="number" id="annualIncome" placeholder="e.g. 80000" oninput="liveCalc()">
+      <div class="chat-input-row">
+        <input class="chat-input" id="chatInput" type="text" placeholder="Ask your financial coach anything…" onkeydown="if(event.key==='Enter')sendMessage()">
+        <button class="btn-send" onclick="sendMessage()">➤</button>
       </div>
     </div>
 
-    <div class="field-row">
-      <div class="field-group">
-        <label>Monthly Take-Home Pay (after tax)</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="monthlyTakeHome" placeholder="e.g. 5200" oninput="liveCalc()">
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Total Monthly Expenses</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="monthlyExpenses" placeholder="e.g. 4200" oninput="liveCalc()">
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-preview" id="preview-1">
-      <div class="calc-preview-title">⚡ Live Snapshot</div>
-      <div class="calc-row">
-        <span class="calc-label">Monthly surplus / shortfall</span>
-        <span class="calc-val" id="prev-surplus">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Years to retirement</span>
-        <span class="calc-val" id="prev-years">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Earnings protection value (income × yrs)</span>
-        <span class="calc-val" id="prev-earning-power">—</span>
-      </div>
-    </div>
-
-    <div class="step-nav">
-      <div></div>
-      <button class="btn btn-primary" onclick="nextStep(1)">Next: Income Protection →</button>
-    </div>
-  </div>
-
-  <!-- ══ STEP 2: INCOME PROTECTION ══ -->
-  <div class="step-card" id="step-2">
-    <div class="step-eyebrow">Step 2 of 4</div>
-    <h1 class="step-title">Income Protection</h1>
-    <p class="step-desc">Your income is your most valuable asset. Life insurance exists to protect it. Let's find out how much coverage you actually need — and whether you have a gap.</p>
-
-    <div class="field-group">
-      <label>Primary Earner Annual Income<span class="tooltip-text">Used for the 10x coverage rule of thumb.</span></span>
-      </label>
-      <div class="input-wrap has-prefix">
-        <span class="input-prefix">$</span>
-        <input type="number" id="primaryIncome" placeholder="e.g. 70000" oninput="liveCalc2()">
-      </div>
-    </div>
-
-    <div class="field-row">
-      <div class="field-group">
-        <label>Employer (Group) Life Insurance</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="groupCoverage" placeholder="e.g. 140000" oninput="liveCalc2()">
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Personal Life Insurance Policy</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="personalCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
-        </div>
-      </div>
-    </div>
-
-    <div class="field-group">
-      <label>Other Coverage (additional policies, etc.)</label>
-      <div class="input-wrap has-prefix">
-        <span class="input-prefix">$</span>
-        <input type="number" id="otherCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
-      </div>
-    </div>
-
-    <!-- Partner coverage fields (shown when spouse mode on) -->
-    <div class="spouse-fields" id="spouse-coverage-fields">
-      <div class="spouse-header">👥 Partner Coverage</div>
-      <div class="field-row">
-        <div class="field-group">
-          <label>Partner's Group Life Insurance</label>
-          <div class="input-wrap has-prefix">
-            <span class="input-prefix">$</span>
-            <input type="number" id="partnerGroupCoverage" placeholder="e.g. 110000" oninput="liveCalc2()">
-          </div>
-        </div>
-        <div class="field-group">
-          <label>Partner's Personal Life Insurance</label>
-          <div class="input-wrap has-prefix">
-            <span class="input-prefix">$</span>
-            <input type="number" id="partnerPersonalCoverage" placeholder="e.g. 0" oninput="liveCalc2()">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-preview" id="preview-2">
-      <div class="calc-preview-title">⚡ Coverage Analysis</div>
-      <div class="calc-row">
-        <span class="calc-label">Coverage recommended — You (10× rule)</span>
-        <span class="calc-val" id="prev-coverage-needed">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Your total coverage today</span>
-        <span class="calc-val" id="prev-coverage-have">—</span>
-      </div>
-      <div class="calc-row" style="padding-top:8px;">
-        <span class="calc-label" style="font-weight:700;">Your coverage gap</span>
-        <span class="calc-val" id="prev-coverage-gap">—</span>
-      </div>
-      <!-- Partner rows shown dynamically -->
-      <div id="partner-coverage-preview" style="display:none;">
-        <div class="calc-row" style="padding-top:8px;">
-          <span class="calc-label">Coverage recommended — Partner (10×)</span>
-          <span class="calc-val" id="prev-partner-coverage-needed">—</span>
-        </div>
-        <div class="calc-row">
-          <span class="calc-label">Partner's total coverage today</span>
-          <span class="calc-val" id="prev-partner-coverage-have">—</span>
-        </div>
-        <div class="calc-row">
-          <span class="calc-label" style="font-weight:700;">Partner's coverage gap</span>
-          <span class="calc-val" id="prev-partner-coverage-gap">—</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="step-nav">
-      <button class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
-      <button class="btn btn-primary" onclick="nextStep(2)">Next: Retirement →</button>
-    </div>
-  </div>
-
-  <!-- ══ STEP 3: RETIREMENT GAP ══ -->
-  <div class="step-card" id="step-3">
-    <div class="step-eyebrow">Step 3 of 4</div>
-    <h1 class="step-title">Retirement Gap</h1>
-    <p class="step-desc">How much will you need saved to retire on your terms — and are you on track to get there? Let's find out.</p>
-
-    <div class="field-group">
-      <label>Target Monthly Income in Retirement<span class="tooltip-text">Most people target 70–80% of current take-home pay.</span></span>
-      </label>
-      <div class="input-wrap has-prefix">
-        <span class="input-prefix">$</span>
-        <input type="number" id="retirementIncome" placeholder="e.g. 4000" oninput="liveCalc3()">
-      </div>
-    </div>
-
-    <div class="field-row">
-      <div class="field-group">
-        <label>Estimated Monthly CPP<span class="tooltip-text">Check My Service Canada. Average is ~$758/mo.</span></span>
-        </label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="cpp" placeholder="e.g. 758" oninput="liveCalc3()">
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Estimated Monthly OAS<span class="tooltip-text">Available at 65. Current max is ~$700/mo.</span></span>
-        </label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="oas" placeholder="e.g. 700" oninput="liveCalc3()">
-        </div>
-      </div>
-    </div>
-
-    <div class="field-row">
-      <div class="field-group">
-        <label>Current RRSP + TFSA Balance</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="currentSavings" placeholder="e.g. 45000" oninput="liveCalc3()">
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Other Retirement Savings</label>
-        <div class="input-wrap has-prefix">
-          <span class="input-prefix">$</span>
-          <input type="number" id="otherSavings" placeholder="e.g. 0" oninput="liveCalc3()">
-        </div>
-      </div>
-    </div>
-
-    <div class="field-group">
-      <label>Monthly Contribution to Retirement</label>
-      <div class="input-wrap has-prefix">
-        <span class="input-prefix">$</span>
-        <input type="number" id="monthlyContrib" placeholder="e.g. 300" oninput="liveCalc3()">
-      </div>
-    </div>
-
-    <div class="calc-preview" id="preview-3">
-      <div class="calc-preview-title">⚡ Retirement Projection (at 9% avg. return)</div>
-      <div class="calc-row">
-        <span class="calc-label">Monthly income needed from savings</span>
-        <span class="calc-val" id="prev-income-from-savings">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Nest egg required (4% withdrawal rule)</span>
-        <span class="calc-val" id="prev-nest-egg">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Projected savings at retirement</span>
-        <span class="calc-val" id="prev-projected">—</span>
-      </div>
-      <div class="calc-row" style="padding-top:8px;">
-        <span class="calc-label" style="font-weight:700;">Retirement gap</span>
-        <span class="calc-val" id="prev-retire-gap">—</span>
-      </div>
-    </div>
-
-    <div class="step-nav">
-      <button class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
-      <button class="btn btn-primary" onclick="nextStep(3)">Next: Debt Plan →</button>
-    </div>
-  </div>
-
-  <!-- ══ STEP 4: DEBT STACKING ══ -->
-  <div class="step-card" id="step-4">
-    <div class="step-eyebrow">Step 4 of 4</div>
-    <h1 class="step-title">Your Debt Payoff Plan</h1>
-    <p class="step-desc">List your debts below — highest interest rate first. We'll calculate your total interest cost and build your Debt Stacking strategy.</p>
-
-    <table class="debt-table" id="debt-table">
-      <thead>
-        <tr>
-          <th>Debt Name</th>
-          <th>Balance ($)</th>
-          <th>Rate (%)</th>
-          <th>Min. Payment ($)</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="debt-rows">
-        <!-- rows injected by JS -->
-      </tbody>
-    </table>
-
-    <button class="btn-add-debt" onclick="addDebtRow()">+ Add Another Debt</button>
-
-    <div class="calc-preview" style="margin-top:20px;" id="preview-4">
-      <div class="calc-preview-title">⚡ Quick Summary</div>
-      <div class="calc-row">
-        <span class="calc-label">Total debt</span>
-        <span class="calc-val" id="prev-total-debt">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Total minimum monthly payments</span>
-        <span class="calc-val" id="prev-min-payments">—</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Monthly surplus available to stack</span>
-        <span class="calc-val" id="prev-surplus-for-debt">—</span>
-      </div>
-    </div>
-
-    <!-- DEBT COMPARISON PANEL -->
-    <div id="debt-comparison" style="display:none; margin-top:20px;">
-      <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); margin-bottom:12px;">🔥 Minimum Payments vs. Debt Stacking</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-        <!-- Left: minimum payments only -->
-        <div style="background:linear-gradient(135deg,#fdf0ee,#fae8e6); border:2px solid #c0392b; border-radius:10px; padding:16px;">
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--red); margin-bottom:10px;">❌ Minimum Payments Only</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--red); margin-bottom:10px;" id="cmp-min-years">—</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Total interest paid:</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.1rem; font-weight:700; color:var(--red);" id="cmp-min-interest">—</div>
-        </div>
-        <!-- Right: debt stacking -->
-        <div style="background:linear-gradient(135deg,#e8f4fd,#dceefa); border:2px solid #2d7dd2; border-radius:10px; padding:16px;">
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--green); margin-bottom:10px;">✅ With Debt Stacking</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Time to debt-free:</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.4rem; font-weight:700; color:var(--green); margin-bottom:10px;" id="cmp-stack-years">—</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.8rem; color:#555; margin-bottom:6px;">Total interest paid:</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.1rem; font-weight:700; color:var(--green);" id="cmp-stack-interest">—</div>
-        </div>
-      </div>
-      <!-- Savings banner -->
-      <div style="background:linear-gradient(135deg,#0a1628,#1a3a6e); border-radius:8px; padding:14px 18px; margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
-        <div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.7); margin-bottom:3px;">Debt Stacking saves you</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.3rem; font-weight:700; color:var(--gold);" id="cmp-savings">—</div>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.7); margin-bottom:3px;">And pays off</div>
-          <div style="font-family:'Open Sans',Arial,sans-serif; font-size:1.3rem; font-weight:700; color:var(--gold);" id="cmp-time-saved">— faster</div>
-        </div>
-      </div>
-      <p style="font-family:'Open Sans',Arial,sans-serif; font-size:0.75rem; color:var(--muted); margin-top:8px; line-height:1.5;">* Stacking calculation assumes your monthly surplus is applied to the highest-rate debt first. When it's paid off, that payment rolls to the next debt.</p>
-    </div>
-
-    <div class="step-nav">
-      <button class="btn btn-secondary" onclick="prevStep(4)">← Back</button>
-      <button class="btn btn-gold" onclick="showResults()">See My Full Results →</button>
-    </div>
-  </div>
-
-  <!-- ══ RESULTS ══ -->
-  <div class="step-card" id="step-results">
-    <div class="results-hero">
-      <h2>Your Financial Needs Analysis</h2>
-      <p>Here's your complete financial picture — income protection, retirement, and debt — in one place.</p>
-    </div>
-
-    <!-- Summary cards -->
-    <div class="results-grid" id="results-summary-cards">
-      <!-- injected -->
-    </div>
-
-    <!-- Protection section -->
-    <div class="result-section" id="results-protection"></div>
-
-    <!-- Retirement section -->
-    <div class="result-section" id="results-retirement"></div>
-
-    <!-- Debt section -->
-    <div class="result-section" id="results-debt"></div>
-
-    <!-- Action plan -->
-    <div class="result-section" id="results-actions"></div>
-
-    <div class="cta-box">
-      <h3>📋 What These Numbers Mean for You</h3>
-      <p>This analysis gives you the full picture of where you stand financially. The next step is sitting down with a qualified financial advisor who can help you build a personalized plan to close these gaps — and get you moving toward financial freedom.</p>
-    </div>
-
-    <div style="text-align:center; margin-top:24px;">
-      <button class="btn btn-gold" onclick="showTracker()" style="margin-right:10px;padding:13px 24px;">📊 Track My Progress →</button>
-      <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
-      <button class="restart-btn" onclick="restart()">Start Over</button>
-    </div>
-
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong> This tool provides general financial education estimates only. All calculations are illustrative and based on assumptions (9% investment return, 4% withdrawal rate). This is not financial, tax, or investment advice. Results may vary. Please consult a qualified and licensed financial professional in your province before making any financial decisions.
-    </div>
-  </div>
-
-  <!-- ══ STEP 6: PROGRESS TRACKER ══ -->
-  <div class="step-card" id="step-tracker">
-    <div class="step-eyebrow">My Progress</div>
-    <h1 class="step-title">Live Progress Tracker</h1>
-    <p class="step-desc">Log payments and contributions in real time. Your progress saves automatically so you can come back anytime.</p>
-
-    <!-- Summary bar -->
-    <div class="tracker-summary" id="tracker-summary">
-      <div class="ts-item"><div class="ts-val" id="ts-total-paid">$0</div><div class="ts-label">Total Debt Paid Off</div></div>
-      <div class="ts-item"><div class="ts-val" id="ts-interest-saved">$0</div><div class="ts-label">Interest Saved</div></div>
-      <div class="ts-item"><div class="ts-val" id="ts-retire-balance">$0</div><div class="ts-label">Retirement Balance</div></div>
-    </div>
-
-    <!-- Debt tracker -->
-    <div class="tracker-section">
-      <h3>📉 Debt Paydown Tracker</h3>
-      <div id="debt-tracker-cards"><p style="color:var(--muted);font-size:0.85rem;">Complete Step 4 first to see your debts here.</p></div>
-    </div>
-
-    <!-- Retirement tracker -->
-    <div class="tracker-section">
-      <h3>💰 Retirement Savings Tracker</h3>
-      <div class="retire-track-card" id="retire-track-card">
-        <div class="rtc-grid">
-          <div class="rtc-item"><div class="rtc-label">Current Balance</div><div class="rtc-val" id="rtc-balance">$0</div></div>
-          <div class="rtc-item"><div class="rtc-label">Last Contribution</div><div class="rtc-val" id="rtc-last-contrib">—</div></div>
-          <div class="rtc-item"><div class="rtc-label">Projected at Retirement</div><div class="rtc-val good" id="rtc-projected">—</div></div>
-          <div class="rtc-item"><div class="rtc-label">Gap Remaining</div><div class="rtc-val" id="rtc-gap">—</div></div>
-        </div>
-        <div class="progress-bar-track" style="margin-bottom:12px;">
-          <div class="progress-bar-fill" id="rtc-progress" style="width:0%;background:linear-gradient(90deg,#2d7dd2,#8ab4d4);"></div>
-        </div>
-        <div class="dtc-log-row">
-          <input type="number" class="dtc-pmt-input visible" id="retire-contrib-input" placeholder="Contribution amount..." style="display:block;">
-          <button class="btn-confirm-pmt visible" id="retire-contrib-btn" onclick="logRetireContrib()" style="display:block;background:var(--gold);color:var(--navy);">+ Add</button>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:10px;margin-top:8px;">
-      <button class="btn btn-secondary" onclick="goBackToResults()">← Back to Results</button>
-      <button class="restart-btn" onclick="resetTracker()" style="margin-left:auto;">Reset Tracker</button>
+    <div class="btn-row" style="justify-content:flex-start; margin-top:24px;">
+      <button class="btn btn-back" onclick="prevStep(5)">← Back</button>
+      <button class="btn btn-next" onclick="window.print()">🖨️ Print / Save PDF</button>
     </div>
   </div>
 
 </main>
 
-<!-- CHAT FAB -->
-<button class="chat-fab" onclick="toggleChat()" id="chat-fab" title="Ask a financial question">
-  💬
-  <span class="chat-badge">AI</span>
-</button>
-
-<!-- CHAT WINDOW -->
-<div class="chat-window" id="chat-window">
-  <div class="chat-header">
-    <div class="chat-avatar">💡</div>
-    <div class="chat-header-info">
-      <div class="chat-header-name">Financial Blueprint AI</div>
-      <div class="chat-header-status">Financial education assistant</div>
-    </div>
-    <button class="chat-close" onclick="toggleChat()">&times;</button>
-  </div>
-  <div class="api-key-setup" id="api-key-setup">
-    <div style="text-align:center;font-size:1.5rem;">🔑</div>
-    <p><strong>Connect your OpenAI API key</strong> to enable the AI assistant.</p>
-    <p>Get a free key at <strong>platform.openai.com</strong> &rarr; API Keys</p>
-    <input type="password" id="api-key-input" placeholder="sk-..." />
-    <button class="btn-setup" onclick="saveApiKey()">Save &amp; Start Chatting</button>
-    <p style="font-size:0.72rem;">Key stored in your browser only. Never sent anywhere except OpenAI.</p>
-  </div>
-  <div id="chat-ui" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
-    <div class="chat-messages" id="chat-messages"></div>
-    <div class="chat-suggestions" id="chat-suggestions">
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is term life insurance?</span>
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">How does debt stacking work?</span>
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">RRSP vs TFSA?</span>
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is the Rule of 72?</span>
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">How much life insurance do I need?</span>
-      <span class="suggestion-chip" onclick="sendSuggestion(this)">What is dollar-cost averaging?</span>
-    </div>
-    <div class="chat-input-row">
-      <textarea class="chat-input" id="chat-input" placeholder="Ask a financial question..." rows="1"
-        onkeydown="handleChatKey(event)"
-        oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,90)+'px'"></textarea>
-      <button class="chat-send" id="chat-send" onclick="sendMessage()">&#10148;</button>
-    </div>
-  </div>
-</div>
-
 <script>
-  // ── STATE ──
-  let currentStep = 1;
-  const TOTAL_STEPS = 4;
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let currentStep = 1;
+let debtRowCount = 0;
 
-  // ── NAVIGATION ──
-  function goToStep(n) {
-    if (n < 1 || n > TOTAL_STEPS + 1) return;
-    document.getElementById('step-' + currentStep)?.classList.remove('active');
-    if (n === 5) {
-      showResults();
-      return;
-    }
-    currentStep = n;
-    document.getElementById('step-' + currentStep).classList.add('active');
-    updateProgress(currentStep);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// ═══════════════════════════════════════════
+// STEP NAVIGATION
+// ═══════════════════════════════════════════
+function goToStep(n) {
+  if (n > currentStep) return; // can't skip forward
+  showStep(n);
+}
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+
+  for (let i = 1; i <= 5; i++) {
+    const dot = document.getElementById('dot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < n) dot.classList.add('done');
+    else if (i === n) dot.classList.add('active');
   }
 
-  function nextStep(from) {
-    document.getElementById('step-' + from).classList.remove('active');
-    currentStep = from + 1;
-    if (currentStep > TOTAL_STEPS) { showResults(); return; }
-    document.getElementById('step-' + currentStep).classList.add('active');
-    updateProgress(currentStep);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  currentStep = n;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  function prevStep(from) {
-    document.getElementById('step-' + from).classList.remove('active');
-    currentStep = from - 1;
-    document.getElementById('step-' + currentStep).classList.add('active');
-    updateProgress(currentStep);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+function nextStep(from) {
+  if (!validateStep(from)) return;
+  if (from === 4) buildResults();
+  if (from < 5) showStep(from + 1);
+  if (from === 4) initChat();
+}
 
-  function updateProgress(step) {
-    const pct = (step / TOTAL_STEPS) * 100;
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('step-counter').textContent = step <= TOTAL_STEPS ? `Step ${step} of ${TOTAL_STEPS}` : 'Your Results';
-    for (let i = 1; i <= TOTAL_STEPS + 1; i++) {
-      const lbl = document.getElementById('lbl-' + i);
-      if (!lbl) continue;
-      lbl.classList.remove('active', 'done');
-      if (i === step) lbl.classList.add('active');
-      else if (i < step) lbl.classList.add('done');
-    }
-  }
+function prevStep(from) {
+  if (from > 1) showStep(from - 1);
+}
 
-  function restart() {
-    document.getElementById('step-results').classList.remove('active');
-    currentStep = 1;
-    document.getElementById('step-1').classList.add('active');
-    updateProgress(1);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+// ═══════════════════════════════════════════
+// VALIDATION
+// ═══════════════════════════════════════════
+function validateStep(step) {
+  let ok = true;
+  const required = {
+    1: ['firstName', 'currentAge', 'retirementAge', 'annualIncome', 'monthlyTakeHome', 'monthlyExpenses'],
+    2: [],
+    3: ['targetRetireIncome', 'currentSavings'],
+    4: []
+  };
 
-  // ── HELPERS ──
-  function v(id) { return parseFloat(document.getElementById(id)?.value) || 0; }
-  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
-  function fmtDiff(n) {
-    if (n === 0) return '<span class="calc-val good">$0 — On track ✓</span>';
-    if (n > 0) return `<span class="calc-val bad">${fmt(n)} gap ⚠️</span>`;
-    return `<span class="calc-val good">${fmt(Math.abs(n))} surplus ✓</span>`;
-  }
-
-  // ── LIVE CALC: STEP 1 ──
-  function liveCalc() {
-    const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
-    const yrs = v('retireAge') - v('age');
-    const ep = v('annualIncome') * Math.max(yrs, 0);
-
-    const sEl = document.getElementById('prev-surplus');
-    sEl.textContent = v('monthlyTakeHome') && v('monthlyExpenses') ? fmt(surplus) : '—';
-    sEl.className = 'calc-val' + (surplus < 0 ? ' bad' : surplus > 0 ? ' good' : '');
-
-    document.getElementById('prev-years').textContent = yrs > 0 ? yrs + ' years' : '—';
-    document.getElementById('prev-earning-power').textContent = ep > 0 ? fmt(ep) : '—';
-  }
-
-  // ── LIVE CALC: STEP 2 ──
-  function liveCalc2() {
-    const needed = v('primaryIncome') * 10;
-    const have = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
-    const gap = needed - have;
-
-    document.getElementById('prev-coverage-needed').textContent = needed > 0 ? fmt(needed) : '—';
-    document.getElementById('prev-coverage-have').textContent = have > 0 ? fmt(have) : '—';
-
-    const gEl = document.getElementById('prev-coverage-gap');
-    if (needed > 0) {
-      gEl.innerHTML = fmtDiff(gap);
+  (required[step] || []).forEach(id => {
+    const el = document.getElementById(id);
+    const err = document.getElementById('err-' + id);
+    if (!el.value || el.value.trim() === '' || parseFloat(el.value) < 0) {
+      el.classList.add('error');
+      if (err) err.classList.add('show');
+      ok = false;
     } else {
-      gEl.textContent = '—';
+      el.classList.remove('error');
+      if (err) err.classList.remove('show');
     }
-  }
-
-  // ── LIVE CALC: STEP 3 ──
-  function liveCalc3() {
-    const govt = v('cpp') + v('oas');
-    const target = v('retirementIncome');
-    const fromSavings = Math.max(target - govt, 0);
-    const nestEgg = fromSavings > 0 ? (fromSavings * 12) / 0.04 : 0;
-    const yrs = Math.max(v('retireAge') - v('age'), 0);
-    const rate = 0.09;
-
-    // Future value of current savings + monthly contributions
-    const fvCurrent = (v('currentSavings') + v('otherSavings')) * Math.pow(1 + rate, yrs);
-    const fvContrib = yrs > 0 ? v('monthlyContrib') * 12 * ((Math.pow(1 + rate, yrs) - 1) / rate) : 0;
-    const projected = fvCurrent + fvContrib;
-    const gap = nestEgg - projected;
-
-    document.getElementById('prev-income-from-savings').textContent = fromSavings > 0 ? fmt(fromSavings) + '/mo' : '—';
-    document.getElementById('prev-nest-egg').textContent = nestEgg > 0 ? fmt(nestEgg) : '—';
-    document.getElementById('prev-projected').textContent = projected > 0 ? fmt(projected) : '—';
-
-    const gEl = document.getElementById('prev-retire-gap');
-    if (nestEgg > 0) {
-      gEl.innerHTML = fmtDiff(gap);
-    } else {
-      gEl.textContent = '—';
-    }
-  }
-
-  // ── DEBT ROWS ──
-  let debtCount = 0;
-
-  function addDebtRow(name = '', balance = '', rate = '', payment = '') {
-    debtCount++;
-    const tbody = document.getElementById('debt-rows');
-    const tr = document.createElement('tr');
-    tr.id = 'debt-row-' + debtCount;
-    tr.innerHTML = `
-      <td><input type="text" placeholder="e.g. Credit Card" value="${name}" oninput="liveCalc4()"></td>
-      <td><input type="number" placeholder="0" value="${balance}" oninput="liveCalc4()"></td>
-      <td><input type="number" placeholder="0" value="${rate}" oninput="liveCalc4()"></td>
-      <td><input type="number" placeholder="0" value="${payment}" oninput="liveCalc4()"></td>
-      <td><button class="btn-remove" onclick="removeDebtRow('debt-row-${debtCount}')">×</button></td>
-    `;
-    tbody.appendChild(tr);
-  }
-
-  function removeDebtRow(id) {
-    document.getElementById(id)?.remove();
-    liveCalc4();
-  }
-
-  function getDebts() {
-    const rows = document.querySelectorAll('#debt-rows tr');
-    return Array.from(rows).map(row => {
-      const inputs = row.querySelectorAll('input');
-      return {
-        name: inputs[0]?.value || 'Unnamed',
-        balance: parseFloat(inputs[1]?.value) || 0,
-        rate: parseFloat(inputs[2]?.value) || 0,
-        payment: parseFloat(inputs[3]?.value) || 0
-      };
-    }).filter(d => d.balance > 0);
-  }
-
-  function liveCalc4() {
-    const debts = getDebts();
-    const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
-    const minPayments = debts.reduce((s, d) => s + d.payment, 0);
-    const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
-    const extra = Math.max(surplus - minPayments, 0);
-
-    document.getElementById('prev-total-debt').textContent = totalDebt > 0 ? fmt(totalDebt) : '$0';
-    document.getElementById('prev-min-payments').textContent = fmt(minPayments);
-    const sEl = document.getElementById('prev-surplus-for-debt');
-    sEl.textContent = fmt(extra);
-    sEl.className = 'calc-val' + (extra > 0 ? ' good' : extra < 0 ? ' bad' : '');
-
-    // Run comparison if we have enough data
-    if (debts.length > 0 && minPayments > 0) {
-      updateDebtComparison(debts, extra);
-    }
-  }
-
-  // Simulate minimum-payments-only payoff across all debts independently
-  function simMinPayments(debts) {
-    // Each debt paid independently at its minimum — no rolling
-    let loans = debts.map(d => ({ balance: d.balance, rate: d.rate / 100 / 12, payment: d.payment }));
-    let totalInterest = 0;
-    let months = 0;
-    const MAX_MONTHS = 600; // 50 years cap
-
-    while (loans.some(l => l.balance > 0.01) && months < MAX_MONTHS) {
-      months++;
-      loans = loans.map(l => {
-        if (l.balance <= 0.01) return l;
-        const interest = l.balance * l.rate;
-        totalInterest += interest;
-        const pay = Math.min(l.payment, l.balance + interest);
-        return { ...l, balance: l.balance + interest - pay };
-      });
-    }
-    return { months, totalInterest };
-  }
-
-  // Simulate debt stacking: sort by rate desc, roll payments when a debt is cleared
-  function simDebtStacking(debts, extraMonthly) {
-    // Sort highest rate first
-    let loans = [...debts]
-      .sort((a, b) => b.rate - a.rate)
-      .map(d => ({ balance: d.balance, rate: d.rate / 100 / 12, minPayment: d.payment }));
-
-    let totalInterest = 0;
-    let months = 0;
-    let rolledPayment = extraMonthly; // starts with surplus
-    const MAX_MONTHS = 600;
-
-    while (loans.some(l => l.balance > 0.01) && months < MAX_MONTHS) {
-      months++;
-      // Accrue interest on all
-      loans = loans.map(l => ({
-        ...l,
-        balance: l.balance > 0.01 ? l.balance + l.balance * l.rate : 0
-      }));
-      // Track interest this month
-      totalInterest += loans.reduce((s, l) => {
-        return l.balance > 0.01 ? s + l.balance * l.rate / (1 + l.rate) * l.rate : s;
-      }, 0);
-
-      // Pay minimums on all except target (index 0 of active)
-      let activeIdx = loans.findIndex(l => l.balance > 0.01);
-      loans = loans.map((l, i) => {
-        if (l.balance <= 0.01) return l;
-        const pay = i === activeIdx
-          ? Math.min(l.minPayment + rolledPayment, l.balance)
-          : Math.min(l.minPayment, l.balance);
-        return { ...l, balance: l.balance - pay };
-      });
-
-      // If target paid off, roll its payment to next
-      if (activeIdx >= 0 && loans[activeIdx].balance <= 0.01) {
-        rolledPayment += loans[activeIdx].minPayment;
-      }
-    }
-
-    // More accurate interest: recalculate simply
-    // Re-run with proper interest tracking
-    return simDebtStackingAccurate(debts, extraMonthly);
-  }
-
-  function simDebtStackingAccurate(debts, extraMonthly) {
-    let loans = [...debts]
-      .sort((a, b) => b.rate - a.rate)
-      .map(d => ({ name: d.name, bal: d.balance, monthlyRate: d.rate / 100 / 12, minPmt: d.payment }));
-
-    let totalInterest = 0;
-    let months = 0;
-    let bonusPmt = extraMonthly;
-    const MAX_MONTHS = 600;
-
-    while (loans.some(l => l.bal > 0.005) && months < MAX_MONTHS) {
-      months++;
-      // Find first active loan (target)
-      const targetIdx = loans.findIndex(l => l.bal > 0.005);
-
-      loans = loans.map((l, i) => {
-        if (l.bal <= 0.005) return l;
-        const interest = l.bal * l.monthlyRate;
-        totalInterest += interest;
-        const pmt = i === targetIdx
-          ? Math.min(l.minPmt + bonusPmt, l.bal + interest)
-          : Math.min(l.minPmt, l.bal + interest);
-        return { ...l, bal: l.bal + interest - pmt };
-      });
-
-      // If target just paid off, roll its min payment into bonus
-      if (targetIdx >= 0 && loans[targetIdx].bal <= 0.005) {
-        bonusPmt += loans[targetIdx].minPmt;
-      }
-    }
-
-    return { months, totalInterest };
-  }
-
-  function simMinPaymentsAccurate(debts) {
-    let loans = debts.map(d => ({
-      bal: d.balance,
-      monthlyRate: d.rate / 100 / 12,
-      minPmt: d.payment
-    }));
-    let totalInterest = 0;
-    let months = 0;
-    const MAX_MONTHS = 600;
-
-    while (loans.some(l => l.bal > 0.005) && months < MAX_MONTHS) {
-      months++;
-      loans = loans.map(l => {
-        if (l.bal <= 0.005) return l;
-        const interest = l.bal * l.monthlyRate;
-        totalInterest += interest;
-        const pmt = Math.min(l.minPmt, l.bal + interest);
-        return { ...l, bal: l.bal + interest - pmt };
-      });
-    }
-    return { months, totalInterest };
-  }
-
-  function fmtMonths(m) {
-    if (m >= 600) return '50+ years';
-    const yrs = Math.floor(m / 12);
-    const mo = m % 12;
-    if (yrs === 0) return mo + ' months';
-    if (mo === 0) return yrs + (yrs === 1 ? ' year' : ' years');
-    return yrs + 'y ' + mo + 'mo';
-  }
-
-  function updateDebtComparison(debts, extraMonthly) {
-    const panel = document.getElementById('debt-comparison');
-    // Need at least one debt with a rate and payment
-    const valid = debts.filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0);
-    if (valid.length === 0) { panel.style.display = 'none'; return; }
-
-    const minResult = simMinPaymentsAccurate(valid);
-    const stackResult = simDebtStackingAccurate(valid, extraMonthly);
-
-    const interestSaved = minResult.totalInterest - stackResult.totalInterest;
-    const monthsSaved = minResult.months - stackResult.months;
-
-    document.getElementById('cmp-min-years').textContent = fmtMonths(minResult.months);
-    document.getElementById('cmp-min-interest').textContent = fmt(minResult.totalInterest) + ' in interest';
-    document.getElementById('cmp-stack-years').textContent = fmtMonths(stackResult.months);
-    document.getElementById('cmp-stack-interest').textContent = fmt(stackResult.totalInterest) + ' in interest';
-    document.getElementById('cmp-savings').textContent = interestSaved > 0 ? fmt(interestSaved) + ' in interest' : 'Already optimized!';
-    document.getElementById('cmp-time-saved').textContent = monthsSaved > 0 ? fmtMonths(monthsSaved) + ' faster' : 'Already efficient!';
-
-    panel.style.display = 'block';
-  }
-
-  // ── SHOW RESULTS ──
-  function showResults() {
-    // Hide current step
-    for (let i = 1; i <= TOTAL_STEPS; i++) {
-      document.getElementById('step-' + i)?.classList.remove('active');
-    }
-    document.getElementById('step-results').classList.add('active');
-    updateProgress(5);
-
-    // Gather all values
-    const age = v('age');
-    const retireAge = v('retireAge');
-    const yrs = Math.max(retireAge - age, 0);
-    const annualIncome = v('annualIncome');
-    const takeHome = v('monthlyTakeHome');
-    const expenses = v('monthlyExpenses');
-    const surplus = takeHome - expenses;
-
-    // Protection
-    const primaryIncome = v('primaryIncome') || annualIncome;
-    const coverageNeeded = primaryIncome * 10;
-    const coverageHave = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
-    const coverageGap = coverageNeeded - coverageHave;
-
-    // Retirement
-    const retirementIncome = v('retirementIncome') || takeHome * 0.75;
-    const govtIncome = v('cpp') + v('oas');
-    const fromSavings = Math.max(retirementIncome - govtIncome, 0);
-    const nestEgg = (fromSavings * 12) / 0.04;
-    const rate = 0.09;
-    const totalCurrentSavings = v('currentSavings') + v('otherSavings');
-    const fvCurrent = totalCurrentSavings * Math.pow(1 + rate, yrs);
-    const fvContrib = yrs > 0 ? v('monthlyContrib') * 12 * ((Math.pow(1 + rate, yrs) - 1) / rate) : 0;
-    const projectedSavings = fvCurrent + fvContrib;
-    const retireGap = nestEgg - projectedSavings;
-
-    // Debt
-    const debts = getDebts().sort((a, b) => b.rate - a.rate);
-    const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
-    const minPayments = debts.reduce((s, d) => s + d.payment, 0);
-    const extraPayment = Math.max(surplus - minPayments, 0);
-
-    // ── Summary cards ──
-    const coverageClass = coverageGap > 0 ? 'danger' : 'success';
-    const coverageValClass = coverageGap > 0 ? 'danger' : 'success';
-    const retireClass = retireGap > 100000 ? 'danger' : retireGap > 0 ? 'warning' : 'success';
-    const retireValClass = retireGap > 100000 ? 'danger' : retireGap > 0 ? 'warning' : 'success';
-    const surplusClass = surplus < 0 ? 'danger' : surplus > 0 ? 'success' : 'gold';
-    const debtClass = totalDebt > 50000 ? 'warning' : 'gold';
-
-    document.getElementById('results-summary-cards').innerHTML = `
-      <div class="result-card ${coverageClass}">
-        <div class="result-card-label">Coverage Gap</div>
-        <div class="result-card-value ${coverageValClass}">${coverageGap > 0 ? fmt(coverageGap) : 'Covered ✓'}</div>
-        <div class="result-card-sub">${coverageGap > 0 ? 'Your family needs more protection' : 'Your coverage meets the 10× rule'}</div>
-      </div>
-      <div class="result-card ${retireClass}">
-        <div class="result-card-label">Retirement Gap</div>
-        <div class="result-card-value ${retireValClass}">${retireGap > 0 ? fmt(retireGap) : 'On Track ✓'}</div>
-        <div class="result-card-sub">${retireGap > 0 ? 'Additional savings needed' : 'Projected to hit your target'}</div>
-      </div>
-      <div class="result-card ${surplusClass}">
-        <div class="result-card-label">Monthly Surplus</div>
-        <div class="result-card-value ${surplus < 0 ? 'danger' : 'success'}">${fmt(surplus)}</div>
-        <div class="result-card-sub">${surplus < 0 ? 'Expenses exceed income — priority #1' : 'Available for debt & savings'}</div>
-      </div>
-      <div class="result-card ${debtClass}">
-        <div class="result-card-label">Total Debt</div>
-        <div class="result-card-value">${totalDebt > 0 ? fmt(totalDebt) : '$0'}</div>
-        <div class="result-card-sub">${totalDebt > 0 ? fmt(minPayments) + '/mo in minimum payments' : 'Debt free ✓'}</div>
-      </div>
-    `;
-
-    // ── Protection section ──
-    document.getElementById('results-protection').innerHTML = `
-      <h3>🛡️ Income Protection Analysis</h3>
-      <div class="result-line"><span class="rl-label">Primary earner annual income</span><span class="rl-val">${fmt(primaryIncome)}</span></div>
-      <div class="result-line"><span class="rl-label">Years to retirement</span><span class="rl-val">${yrs} years</span></div>
-      <div class="result-line"><span class="rl-label">Total earning power (income × yrs)</span><span class="rl-val">${fmt(primaryIncome * yrs)}</span></div>
-      <div class="result-line"><span class="rl-label">Coverage recommended (10× income)</span><span class="rl-val">${fmt(coverageNeeded)}</span></div>
-      <div class="result-line"><span class="rl-label">Employer group insurance</span><span class="rl-val">${fmt(v('groupCoverage'))}</span></div>
-      <div class="result-line"><span class="rl-label">Personal life insurance</span><span class="rl-val">${fmt(v('personalCoverage'))}</span></div>
-      <div class="result-line"><span class="rl-label">Other coverage</span><span class="rl-val">${fmt(v('otherCoverage'))}</span></div>
-      <div class="result-line"><span class="rl-label">Total current coverage</span><span class="rl-val">${fmt(coverageHave)}</span></div>
-      <div class="result-highlight">
-        <span class="rh-label">${coverageGap > 0 ? '⚠️ Coverage Gap' : '✓ Coverage Status'}</span>
-        <span class="rh-val">${coverageGap > 0 ? fmt(coverageGap) + ' gap' : 'Fully covered'}</span>
-      </div>
-      ${coverageGap > 0 ? `<p style="font-size:0.8rem;color:#888;margin-top:10px;">💡 <strong>Term life insurance</strong> is typically the most cost-effective way to close this gap. A qualified advisor can help you find the right coverage for your situation.</p>` : ''}
-    `;
-
-    // ── Retirement section ──
-    const monthlyShortfall = retireGap > 0 ? (retireGap * 0.04) / 12 : 0;
-    document.getElementById('results-retirement').innerHTML = `
-      <h3>💰 Retirement Gap Analysis</h3>
-      <div class="result-line"><span class="rl-label">Target monthly retirement income</span><span class="rl-val">${fmt(retirementIncome)}/mo</span></div>
-      <div class="result-line"><span class="rl-label">CPP + OAS (government benefits)</span><span class="rl-val">${fmt(govtIncome)}/mo</span></div>
-      <div class="result-line"><span class="rl-label">Monthly income needed from savings</span><span class="rl-val">${fmt(fromSavings)}/mo</span></div>
-      <div class="result-line"><span class="rl-label">Nest egg required (4% rule)</span><span class="rl-val">${fmt(nestEgg)}</span></div>
-      <div class="result-line"><span class="rl-label">Current savings (RRSP/TFSA/other)</span><span class="rl-val">${fmt(totalCurrentSavings)}</span></div>
-      <div class="result-line"><span class="rl-label">Monthly contribution</span><span class="rl-val">${fmt(v('monthlyContrib'))}/mo</span></div>
-      <div class="result-line"><span class="rl-label">Projected savings at retirement (9% avg)</span><span class="rl-val ${projectedSavings >= nestEgg ? 'good' : ''}">${fmt(projectedSavings)}</span></div>
-      <div class="result-highlight">
-        <span class="rh-label">${retireGap > 0 ? '⚠️ Retirement Gap' : '✓ Retirement Status'}</span>
-        <span class="rh-val">${retireGap > 0 ? fmt(retireGap) + ' gap' : 'On track ✓'}</span>
-      </div>
-      ${retireGap > 0 ? `<p style="font-size:0.8rem;color:#888;margin-top:10px;">💡 To close this gap, you'd need to save an additional <strong>${fmt(monthlyShortfall)}/mo</strong> starting today (at 9% avg. return over ${yrs} years). RRSP and TFSA contributions grow tax-advantaged — use these first.</p>` : ''}
-    `;
-
-    // ── Debt section ──
-    let debtTableHTML = '';
-    if (debts.length > 0) {
-      debtTableHTML = `
-        <table class="debt-results-table">
-          <thead><tr><th>Priority</th><th>Debt Name</th><th>Balance</th><th>Rate</th><th>Min. Payment</th></tr></thead>
-          <tbody>
-            ${debts.map((d, i) => `
-              <tr class="${i === 0 ? 'priority-1' : ''}">
-                <td>${i === 0 ? '⭐ #1 — Target First' : '#' + (i + 1)}</td>
-                <td>${d.name}</td>
-                <td>${fmt(d.balance)}</td>
-                <td>${d.rate}%</td>
-                <td>${fmt(d.payment)}/mo</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      `;
-    }
-
-    document.getElementById('results-debt').innerHTML = `
-      <h3>📉 Debt Stacking Plan</h3>
-      ${debts.length === 0 ? '<p style="color:#27ae60;font-weight:600;">🎉 No debts entered — great position to be in!</p>' : debtTableHTML}
-      ${debts.length > 0 ? `
-        <div class="result-line" style="margin-top:12px;"><span class="rl-label">Total debt load</span><span class="rl-val">${fmt(totalDebt)}</span></div>
-        <div class="result-line"><span class="rl-label">Total minimum monthly payments</span><span class="rl-val">${fmt(minPayments)}/mo</span></div>
-        <div class="result-line"><span class="rl-label">Extra payment available (from surplus)</span><span class="rl-val ${extraPayment > 0 ? 'good' : 'bad'}">${fmt(extraPayment)}/mo</span></div>
-        <div class="result-highlight">
-          <span class="rh-label">💡 Debt Stacking Strategy</span>
-          <span class="rh-val">Target ${debts[0]?.name} first</span>
-        </div>
-        <p style="font-size:0.8rem;color:#888;margin-top:10px;">Pay the minimum on all debts except your #1 priority. Throw every extra dollar at the highest-rate debt. When it's paid off, roll that payment to #2. Repeat until debt-free — then redirect everything to retirement savings.</p>
-      ` : ''}
-    `;
-
-    // ── Action plan ──
-    const actions = [];
-    if (surplus < 0) actions.push({ icon: '🚨', text: 'Reduce monthly expenses immediately — you\'re spending more than you earn. This is the foundation everything else rests on.' });
-    if (coverageGap > 50000) actions.push({ icon: '🛡️', text: `Close your ${fmt(coverageGap)} coverage gap. Review term life insurance options — it's typically more affordable than people expect.` });
-    if (retireGap > 100000) actions.push({ icon: '💰', text: `Increase retirement contributions to close your ${fmt(retireGap)} gap. Even ${fmt(monthlyShortfall)}/mo more makes a significant difference over ${yrs} years.` });
-    if (totalDebt > 0) actions.push({ icon: '📉', text: `Start Debt Stacking today. Target ${debts[0]?.name || 'your highest-rate debt'} first. Every extra dollar accelerates your payoff timeline.` });
-    if (v('currentSavings') === 0) actions.push({ icon: '🏦', text: 'Open a TFSA if you haven\'t already — tax-free growth, no contribution deadline pressure, and withdrawals are always tax-free.' });
-    actions.push({ icon: '📋', text: 'Bring this analysis to a qualified financial advisor. You now have your numbers — they can help you build the specific plan to close each gap.' });
-
-    document.getElementById('results-actions').innerHTML = `
-      <h3>🚀 Your Priority Action Plan</h3>
-      ${actions.map((a, i) => `
-        <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border);">
-          <span style="font-size:1.1rem;">${a.icon}</span>
-          <span style="font-size:0.85rem;color:#444;line-height:1.5;"><strong>Priority ${i + 1}:</strong> ${a.text}</span>
-        </div>
-      `).join('')}
-    `;
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // ── SPOUSE TOGGLE ──
-  let hasSpouse = false;
-
-  function toggleSpouse() {
-    hasSpouse = document.getElementById('spouse-toggle').checked;
-    document.querySelectorAll('.spouse-fields').forEach(el => {
-      el.classList.toggle('visible', hasSpouse);
-    });
-    if (hasSpouse) {
-      // Auto-sum incomes into combined field
-      const p1 = v('primaryIncome') || 0;
-      const p2 = v('partnerIncome') || 0;
-      if (p1 + p2 > 0) document.getElementById('annualIncome').value = p1 + p2;
-    }
-    liveCalc();
-    liveCalc2();
-  }
-
-  // ── UPDATED liveCalc2 with partner support ──
-  function liveCalc2() {
-    const needed = v('primaryIncome') * 10;
-    const have = v('groupCoverage') + v('personalCoverage') + v('otherCoverage');
-    const gap = needed - have;
-
-    document.getElementById('prev-coverage-needed').textContent = needed > 0 ? fmt(needed) : '—';
-    document.getElementById('prev-coverage-have').textContent = have > 0 ? fmt(have) : '—';
-    const gEl = document.getElementById('prev-coverage-gap');
-    if (needed > 0) { gEl.innerHTML = fmtDiff(gap); } else { gEl.textContent = '—'; }
-
-    // Partner
-    const ppEl = document.getElementById('partner-coverage-preview');
-    if (hasSpouse) {
-      ppEl.style.display = 'block';
-      const pNeeded = v('partnerIncome') * 10;
-      const pHave = v('partnerGroupCoverage') + v('partnerPersonalCoverage');
-      const pGap = pNeeded - pHave;
-      document.getElementById('prev-partner-coverage-needed').textContent = pNeeded > 0 ? fmt(pNeeded) : '—';
-      document.getElementById('prev-partner-coverage-have').textContent = pHave > 0 ? fmt(pHave) : '—';
-      const pgEl = document.getElementById('prev-partner-coverage-gap');
-      if (pNeeded > 0) { pgEl.innerHTML = fmtDiff(pGap); } else { pgEl.textContent = '—'; }
-    } else {
-      ppEl.style.display = 'none';
-    }
-  }
-
-  // ══ PROGRESS TRACKER ══
-  let trackerData = {};
-
-  function showTracker() {
-    // Hide results
-    document.getElementById('step-results').classList.remove('active');
-    // Build tracker from current debt data + saved progress
-    const saved = JSON.parse(localStorage.getItem('fb_progress') || '{}');
-    const debts = getDebts();
-    const yrs = Math.max(v('retireAge') - v('age'), 0);
-    const nestEgg = (() => {
-      const govtIncome = v('cpp') + v('oas');
-      const fromSavings = Math.max((v('retirementIncome') || v('monthlyTakeHome') * 0.75) - govtIncome, 0);
-      return (fromSavings * 12) / 0.04;
-    })();
-
-    // Init tracker data
-    trackerData = saved;
-    if (!trackerData.debts) trackerData.debts = {};
-    if (trackerData.retireBalance === undefined) {
-      trackerData.retireBalance = v('currentSavings') + v('otherSavings');
-    }
-    trackerData.nestEgg = nestEgg;
-    trackerData.yrsToRetire = yrs;
-    if (!trackerData.totalPaidByDebt) trackerData.totalPaidByDebt = {};
-
-    // Build debt cards
-    const container = document.getElementById('debt-tracker-cards');
-    if (debts.length === 0) {
-      container.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;">No debts entered in Step 4.</p>';
-    } else {
-      // Compute min-payments baseline for interest saved calc
-      const minResult = simMinPaymentsAccurate(debts.filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0));
-      trackerData.minInterestBaseline = minResult.totalInterest;
-
-      container.innerHTML = debts.map((d, i) => {
-        const key = 'debt_' + i;
-        if (trackerData.debts[key] === undefined) trackerData.debts[key] = d.balance;
-        if (trackerData.totalPaidByDebt[key] === undefined) trackerData.totalPaidByDebt[key] = 0;
-        const cur = trackerData.debts[key];
-        const pct = Math.min(100, Math.round((1 - cur / d.balance) * 100));
-        const pctClass = pct >= 100 ? 'p100' : pct >= 75 ? 'p75' : pct >= 50 ? 'p50' : pct >= 25 ? 'p25' : '';
-        const barColor = pct >= 100 ? 'var(--green)' : pct >= 75 ? '#85c1e9' : pct >= 50 ? 'var(--gold)' : pct >= 25 ? '#e67e22' : 'var(--red)';
-        const paidOff = cur <= 0;
-        return `
-          <div class="debt-track-card ${pctClass}" id="dtc-${key}">
-            <div class="dtc-header">
-              <div class="dtc-name">${d.name || 'Debt ' + (i+1)}</div>
-              <div class="dtc-rate">${d.rate}% interest</div>
-            </div>
-            <div class="dtc-balances">
-              <div class="dtc-bal-item"><div class="dtc-bal-label">Original</div><div class="dtc-bal-val">${fmt(d.balance)}</div></div>
-              <div class="dtc-bal-item"><div class="dtc-bal-label">Current Balance</div><div class="dtc-bal-val ${paidOff ? 'paid' : ''}" id="dtc-bal-${key}">${paidOff ? 'PAID OFF 🎉' : fmt(cur)}</div></div>
-              <div class="dtc-bal-item"><div class="dtc-bal-label">Paid Off</div><div class="dtc-bal-val" id="dtc-pct-${key}">${pct}%</div></div>
-            </div>
-            <div class="progress-bar-track">
-              <div class="progress-bar-fill" id="dtc-bar-${key}" style="width:${pct}%;background:${barColor};"></div>
-            </div>
-            ${paidOff ? `<div class="paid-off-banner visible">🎉 Debt cleared! Roll this payment to your next debt.</div>` : `
-            <div class="dtc-log-row">
-              <input type="number" class="dtc-pmt-input" id="dtc-input-${key}" placeholder="Payment amount...">
-              <button class="btn-log-pmt" onclick="togglePayInput('${key}')">Log Payment</button>
-              <button class="btn-confirm-pmt" id="dtc-confirm-${key}" onclick="confirmPayment('${key}', ${d.balance}, ${d.rate})">Confirm</button>
-            </div>`}
-          </div>`;
-      }).join('');
-    }
-
-    // Retirement tracker
-    updateRetireTracker();
-    saveTrackerData();
-
-    document.getElementById('step-tracker').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function togglePayInput(key) {
-    const inp = document.getElementById('dtc-input-' + key);
-    const btn = document.getElementById('dtc-confirm-' + key);
-    const showing = inp.classList.contains('visible');
-    inp.classList.toggle('visible', !showing);
-    btn.classList.toggle('visible', !showing);
-    if (!showing) inp.focus();
-  }
-
-  function confirmPayment(key, origBalance, rate) {
-    const inp = document.getElementById('dtc-input-' + key);
-    const amount = parseFloat(inp.value) || 0;
-    if (amount <= 0) return;
-    inp.value = '';
-
-    const cur = trackerData.debts[key] || 0;
-    const newBal = Math.max(0, cur - amount);
-    trackerData.debts[key] = newBal;
-    trackerData.totalPaidByDebt[key] = (trackerData.totalPaidByDebt[key] || 0) + amount;
-
-    // Update card UI
-    const pct = Math.min(100, Math.round((1 - newBal / origBalance) * 100));
-    const barColor = pct >= 100 ? 'var(--green)' : pct >= 75 ? '#85c1e9' : pct >= 50 ? 'var(--gold)' : pct >= 25 ? '#e67e22' : 'var(--red)';
-    const card = document.getElementById('dtc-' + key);
-    document.getElementById('dtc-bar-' + key).style.width = pct + '%';
-    document.getElementById('dtc-bar-' + key).style.background = barColor;
-    document.getElementById('dtc-bal-' + key).textContent = newBal <= 0 ? 'PAID OFF 🎉' : fmt(newBal);
-    document.getElementById('dtc-pct-' + key).textContent = pct + '%';
-
-    if (newBal <= 0) {
-      card.className = 'debt-track-card p100';
-      card.querySelector('.dtc-log-row').innerHTML = '<div class="paid-off-banner visible">🎉 Debt cleared! Roll this payment to your next debt.</div>';
-    }
-
-    inp.classList.remove('visible');
-    document.getElementById('dtc-confirm-' + key)?.classList.remove('visible');
-
-    updateTrackerSummary();
-    saveTrackerData();
-  }
-
-  function logRetireContrib() {
-    const amount = parseFloat(document.getElementById('retire-contrib-input').value) || 0;
-    if (amount <= 0) return;
-    document.getElementById('retire-contrib-input').value = '';
-    trackerData.retireBalance = (trackerData.retireBalance || 0) + amount;
-    trackerData.lastContrib = amount;
-    updateRetireTracker();
-    updateTrackerSummary();
-    saveTrackerData();
-  }
-
-  function updateRetireTracker() {
-    const bal = trackerData.retireBalance || 0;
-    const yrs = trackerData.yrsToRetire || 0;
-    const nestEgg = trackerData.nestEgg || 0;
-    const projected = bal * Math.pow(1.09, yrs);
-    const gap = Math.max(nestEgg - projected, 0);
-    const pct = nestEgg > 0 ? Math.min(100, Math.round((projected / nestEgg) * 100)) : 0;
-
-    document.getElementById('rtc-balance').textContent = fmt(bal);
-    document.getElementById('rtc-last-contrib').textContent = trackerData.lastContrib ? fmt(trackerData.lastContrib) : '—';
-    document.getElementById('rtc-projected').textContent = projected > 0 ? fmt(projected) : '—';
-    document.getElementById('rtc-gap').textContent = gap > 0 ? fmt(gap) + ' gap' : 'On track ✓';
-    document.getElementById('rtc-gap').className = 'rtc-val' + (gap > 0 ? '' : ' good');
-    document.getElementById('rtc-progress').style.width = pct + '%';
-  }
-
-  function updateTrackerSummary() {
-    const totalPaid = Object.values(trackerData.totalPaidByDebt || {}).reduce((s, v) => s + v, 0);
-    // Rough interest saved: proportional to amount paid vs original min-payments baseline
-    const debts = getDebts().filter(d => d.balance > 0 && d.rate > 0 && d.payment > 0);
-    const totalOrig = debts.reduce((s, d) => s + d.balance, 0);
-    const baseline = trackerData.minInterestBaseline || 0;
-    const interestSaved = totalOrig > 0 ? Math.round((totalPaid / totalOrig) * baseline * 0.4) : 0;
-
-    document.getElementById('ts-total-paid').textContent = fmt(totalPaid);
-    document.getElementById('ts-interest-saved').textContent = fmt(interestSaved);
-    document.getElementById('ts-retire-balance').textContent = fmt(trackerData.retireBalance || 0);
-  }
-
-  function saveTrackerData() {
-    localStorage.setItem('fb_progress', JSON.stringify(trackerData));
-    updateTrackerSummary();
-  }
-
-  function resetTracker() {
-    if (confirm('Reset all tracker progress? This cannot be undone.')) {
-      localStorage.removeItem('fb_progress');
-      trackerData = {};
-      showTracker();
-    }
-  }
-
-  function goBackToResults() {
-    document.getElementById('step-tracker').classList.remove('active');
-    document.getElementById('step-results').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // ── INIT ──
-  window.addEventListener('DOMContentLoaded', () => {
-    addDebtRow('Credit Card', '', '', '');
-    addDebtRow('Car Loan', '', '', '');
-    addDebtRow('', '', '', '');
-    initChat();
   });
 
-  // ══ CHATBOT ══
+  return ok;
+}
 
-  const SYSTEM_PROMPT = `You are a friendly, knowledgeable financial education assistant called "Financial Blueprint AI".
+// ═══════════════════════════════════════════
+// LIVE CALCULATIONS
+// ═══════════════════════════════════════════
+function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
+function fmt(n) {
+  if (Math.abs(n) >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (Math.abs(n) >= 1000) return '$' + Math.round(n).toLocaleString();
+  return '$' + Math.round(n).toLocaleString();
+}
+function fmtYrs(months) {
+  const yrs = Math.floor(months / 12);
+  const m = months % 12;
+  if (yrs === 0) return m + 'mo';
+  if (m === 0) return yrs + ' yrs';
+  return yrs + 'y ' + m + 'mo';
+}
 
-Your purpose is to help Canadians understand personal finance concepts clearly and confidently.
+function liveCalc() {
+  const takeHome = v('monthlyTakeHome');
+  const expenses = v('monthlyExpenses');
+  const surplus = takeHome - expenses;
+  const income = v('annualIncome');
+  const age = v('currentAge');
+  const retire = v('retirementAge');
+  const years = Math.max(0, retire - age);
 
-You have deep knowledge of:
-- Life insurance: term vs. whole life vs. universal life, how much coverage is needed, the 10x rule, group vs. personal policies, the theory of decreasing responsibility
-- Debt management: compound interest, revolving vs. fixed debt, debt stacking/avalanche method, credit scores, the real cost of minimum payments
-- Compound interest and the Rule of 72: how money doubles, the cost of waiting, rate of return comparisons
-- Retirement planning: RRSP vs. TFSA, CPP, OAS, FHSA, the 4% withdrawal rule, nest egg calculations, dollar-cost averaging, diversification
-- Budgeting: pay yourself first, the three savings accounts (emergency, short-term, wealth-building), surplus/shortfall analysis
-- Investment basics: mutual funds, equities vs. bonds, owner vs. loaner mentality, tax-deferred vs. tax-free growth
-- Canadian context: RRSP, TFSA, CPP, OAS, FHSA, provincial tax brackets, Equifax/TransUnion credit bureaus
+  const sv = document.getElementById('surplusVal');
+  const sc = document.getElementById('surplusCard');
+  sv.textContent = surplus !== 0 ? fmt(surplus) : '$—';
+  sv.className = 'result-value ' + (surplus > 0 ? 'green-val' : surplus < 0 ? 'red-val' : '');
+  sc.className = 'result-card ' + (surplus > 0 ? 'green' : surplus < 0 ? 'red' : '');
 
-Communication style:
-- Plain, conversational language — no jargon without a clear explanation
-- Use real numbers and examples to illustrate concepts
-- Direct and confident — give clear answers, not wishy-washy non-answers
-- Concise: 3–6 sentences for simple questions, structured lists for multi-step concepts
-- Warm and encouraging — financial stress is real, acknowledge it when appropriate
+  document.getElementById('yearsToRetireVal').textContent = years > 0 ? years + ' years' : '—';
+  document.getElementById('incomeVal').textContent = income > 0 ? fmt(income) : '$—';
 
-Strict limits — NEVER:
-- Recommend specific financial products, companies, insurers, or advisors by name
-- Give personalized investment or tax advice
-- Discuss topics outside personal finance
-- Guarantee investment returns
+  liveCalc2();
+  liveCalc3();
+}
 
-If asked for specific personal advice ("should I buy X?", "what should I invest in?"), explain the relevant concept, then close with: "For decisions specific to your situation, a licensed financial advisor can help you apply these principles to your exact numbers."
-`;
+function liveCalc2() {
+  const income = v('annualIncome');
+  const age = v('currentAge');
+  const retire = v('retirementAge');
+  const years = Math.max(0, retire - age);
+  const employer = v('employerLife');
+  const personal = v('personalLife');
+  const other = v('otherLife');
 
-  let chatHistory = [];
-  let chatOpen = false;
-  let apiKey = '';
+  const earningPower = income * years;
+  const coverageNeeded = income * 10;
+  const currentCoverage = employer + personal + other;
+  const gap = Math.max(0, coverageNeeded - currentCoverage);
 
-  function initChat() {
-    apiKey = localStorage.getItem('fb_api_key') || '';
-    if (apiKey) showChatUI();
-  }
+  document.getElementById('earningPowerVal').textContent = earningPower > 0 ? fmt(earningPower) : '$—';
+  document.getElementById('coverageNeededVal').textContent = coverageNeeded > 0 ? fmt(coverageNeeded) : '$—';
+  document.getElementById('currentCoverageVal').textContent = fmt(currentCoverage);
 
-  function saveApiKey() {
-    const val = document.getElementById('api-key-input').value.trim();
-    if (!val.startsWith('sk-')) { alert('Please enter a valid OpenAI API key (starts with sk-)'); return; }
-    apiKey = val;
-    localStorage.setItem('fb_api_key', apiKey);
-    showChatUI();
-  }
+  const gv = document.getElementById('coverageGapVal');
+  const gc = document.getElementById('gapCard');
+  gv.textContent = coverageNeeded > 0 ? fmt(gap) : '$—';
+  gv.className = 'result-value ' + (gap === 0 && coverageNeeded > 0 ? 'green-val' : gap > 0 ? 'red-val' : '');
+  gc.className = 'result-card ' + (gap === 0 && coverageNeeded > 0 ? 'green' : gap > 0 ? 'red' : '');
+}
 
-  function showChatUI() {
-    document.getElementById('api-key-setup').style.display = 'none';
-    const ui = document.getElementById('chat-ui');
-    ui.style.display = 'flex';
-    if (chatHistory.length === 0) {
-      appendMsg('bot', "Hi! I'm your Financial Blueprint AI. Ask me anything about life insurance, debt, retirement, or investing. What's on your mind?");
+function liveCalc3() {
+  const target = v('targetRetireIncome');
+  const cpp = v('cppAmount') || 758;
+  const oas = v('oasAmount') || 700;
+  const savings = v('currentSavings');
+  const age = v('currentAge');
+  const retire = v('retirementAge');
+  const years = Math.max(0, retire - age);
+
+  const monthlyFromSavings = Math.max(0, target - cpp - oas);
+  const nestEgg = (monthlyFromSavings * 12) / 0.04;
+  const projected = savings * Math.pow(1.09, years);
+  const gap = Math.max(0, nestEgg - projected);
+
+  document.getElementById('monthlyFromSavingsVal').textContent = target > 0 ? fmt(monthlyFromSavings) : '$—';
+  document.getElementById('nestEggVal').textContent = target > 0 ? fmt(nestEgg) : '$—';
+  document.getElementById('projectedSavingsVal').textContent = savings >= 0 && years > 0 ? fmt(projected) : '$—';
+
+  const rv = document.getElementById('retirementGapVal');
+  const rc = document.getElementById('retirementGapCard');
+  rv.textContent = target > 0 ? fmt(gap) : '$—';
+  rv.className = 'result-value ' + (gap === 0 && target > 0 ? 'green-val' : gap > 0 ? 'red-val' : '');
+  rc.className = 'result-card ' + (gap === 0 && target > 0 ? 'green' : gap > 0 ? 'red' : '');
+}
+
+// ═══════════════════════════════════════════
+// DEBT TABLE
+// ═══════════════════════════════════════════
+function addDebtRow(name='', balance='', rate='', minPay='') {
+  const tbody = document.getElementById('debtRows');
+  const id = ++debtRowCount;
+  const tr = document.createElement('tr');
+  tr.id = 'debtRow' + id;
+  tr.innerHTML = `
+    <td><input type="text" placeholder="e.g. Credit Card" value="${name}" oninput="calcDebt()"></td>
+    <td><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" placeholder="5,000" value="${balance}" min="0" oninput="calcDebt()"></div></td>
+    <td><div class="input-wrap has-suffix"><input type="number" placeholder="19.99" value="${rate}" min="0" max="100" step="0.01" oninput="calcDebt()"><span class="suffix">%</span></div></td>
+    <td><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" placeholder="150" value="${minPay}" min="0" oninput="calcDebt()"></div></td>
+    <td><button class="btn-remove" onclick="removeDebt(${id})">✕</button></td>
+  `;
+  tbody.appendChild(tr);
+  calcDebt();
+}
+
+function removeDebt(id) {
+  const row = document.getElementById('debtRow' + id);
+  if (row) row.remove();
+  calcDebt();
+}
+
+function getDebts() {
+  const rows = document.querySelectorAll('#debtRows tr');
+  const debts = [];
+  rows.forEach(row => {
+    const inputs = row.querySelectorAll('input');
+    const balance = parseFloat(inputs[1].value) || 0;
+    const rate = parseFloat(inputs[2].value) || 0;
+    const minPay = parseFloat(inputs[3].value) || 0;
+    if (balance > 0) debts.push({ balance, rate, minPay });
+  });
+  return debts;
+}
+
+function simulatePayoff(debts, extra = 0) {
+  if (!debts.length) return { months: 0, totalInterest: 0 };
+  let ds = debts.map(d => ({ balance: d.balance, rate: d.rate / 100 / 12, minPay: d.minPay }));
+  ds.sort((a, b) => b.rate - a.rate);
+  let months = 0;
+  let totalInterest = 0;
+  const MAX = 600;
+  while (ds.some(d => d.balance > 0) && months < MAX) {
+    months++;
+    let available = extra;
+    ds.forEach(d => {
+      if (d.balance <= 0) return;
+      const interest = d.balance * d.rate;
+      totalInterest += interest;
+      d.balance += interest;
+      const pay = Math.min(d.balance, d.minPay);
+      d.balance -= pay;
+    });
+    // Roll extra into first debt with balance
+    for (let i = 0; i < ds.length; i++) {
+      if (ds[i].balance > 0 && available > 0) {
+        const pay = Math.min(ds[i].balance, available);
+        ds[i].balance -= pay;
+        available -= pay;
+        if (available <= 0) break;
+      }
     }
+    // Roll cleared minimums forward
+    let freed = 0;
+    ds.forEach(d => {
+      if (d.balance <= 0 && d.minPay > 0) { freed += d.minPay; d.minPay = 0; }
+    });
+    extra += freed;
+  }
+  return { months, totalInterest };
+}
+
+function calcDebt() {
+  const debts = getDebts();
+  if (!debts.length) {
+    document.getElementById('debtResults').style.display = 'none';
+    return;
+  }
+  document.getElementById('debtResults').style.display = 'block';
+
+  const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
+  const totalMins = debts.reduce((s, d) => s + d.minPay, 0);
+  document.getElementById('totalDebtVal').textContent = fmt(totalDebt);
+  document.getElementById('totalMinsVal').textContent = fmt(totalMins);
+
+  const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
+  const extra = Math.max(0, surplus - totalMins);
+
+  const noStack = simulatePayoff(debts.map(d => ({...d})), 0);
+  const stack = simulatePayoff(debts.map(d => ({...d})), extra);
+
+  const saved = noStack.totalInterest - stack.totalInterest;
+  const maxMonths = Math.max(noStack.months, 1);
+
+  document.getElementById('noStackLabel').textContent = fmtYrs(noStack.months) + ' · ' + fmt(noStack.totalInterest) + ' interest';
+  document.getElementById('stackLabel').textContent   = fmtYrs(stack.months)   + ' · ' + fmt(stack.totalInterest) + ' interest';
+  document.getElementById('noStackBar').style.width = '100%';
+  document.getElementById('noStackBar').textContent = fmtYrs(noStack.months);
+  const stackPct = Math.max(15, Math.round((stack.months / maxMonths) * 100));
+  document.getElementById('stackBar').style.width = stackPct + '%';
+  document.getElementById('stackBar').textContent = fmtYrs(stack.months);
+
+  if (saved > 100) {
+    document.getElementById('interestSavedLabel').textContent = '💰 Debt Stacking saves you ' + fmt(saved) + ' in interest!';
+  } else {
+    document.getElementById('interestSavedLabel').textContent = '';
+  }
+}
+
+// ═══════════════════════════════════════════
+// RESULTS PAGE
+// ═══════════════════════════════════════════
+function buildResults() {
+  const name = document.getElementById('firstName').value || 'Friend';
+  document.getElementById('resultsName').textContent = name;
+
+  // Surplus
+  const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
+  const sv = document.getElementById('snap-surplus');
+  sv.textContent = fmt(surplus);
+  sv.className = 'snap-value ' + (surplus > 0 ? 'green' : 'red');
+
+  // Coverage gap
+  const income = v('annualIncome');
+  const coverageNeeded = income * 10;
+  const currentCoverage = v('employerLife') + v('personalLife') + v('otherLife');
+  const covGap = Math.max(0, coverageNeeded - currentCoverage);
+  const cov = document.getElementById('snap-coverage');
+  const covCard = document.getElementById('snap-coverage-card');
+  cov.textContent = fmt(covGap);
+  if (covGap === 0 && coverageNeeded > 0) {
+    cov.className = 'snap-value green';
+    covCard.className = 'snap-card green';
+  } else if (covGap > 0) {
+    cov.className = 'snap-value red';
+    covCard.className = 'snap-card red';
+  } else {
+    cov.className = 'snap-value teal';
+    covCard.className = 'snap-card teal';
   }
 
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    document.getElementById('chat-window').classList.toggle('open', chatOpen);
-    if (chatOpen) {
-      setTimeout(() => document.getElementById('chat-input')?.focus(), 300);
-      const badge = document.querySelector('.chat-badge');
-      if (badge) badge.style.display = 'none';
+  // Retirement gap
+  const target = v('targetRetireIncome');
+  const cpp = v('cppAmount') || 758;
+  const oas = v('oasAmount') || 700;
+  const savingsNow = v('currentSavings');
+  const age = v('currentAge');
+  const retire = v('retirementAge');
+  const years = Math.max(0, retire - age);
+  const monthlyFromSavings = Math.max(0, target - cpp - oas);
+  const nestEgg = (monthlyFromSavings * 12) / 0.04;
+  const projected = savingsNow * Math.pow(1.09, years);
+  const retireGap = Math.max(0, nestEgg - projected);
+
+  const rv = document.getElementById('snap-retire');
+  const rCard = document.getElementById('snap-retire-card');
+  rv.textContent = target > 0 ? fmt(retireGap) : '—';
+  if (retireGap === 0 && target > 0) {
+    rv.className = 'snap-value green'; rCard.className = 'snap-card green';
+  } else if (retireGap > 0) {
+    rv.className = 'snap-value red'; rCard.className = 'snap-card red';
+  } else {
+    rv.className = 'snap-value teal'; rCard.className = 'snap-card teal';
+  }
+
+  // Debt-free date
+  const debts = getDebts();
+  const totalMins = debts.reduce((s, d) => s + d.minPay, 0);
+  const extra = Math.max(0, surplus - totalMins);
+  let debtFreeText = 'No debts entered';
+  let stackMonths = 0;
+  if (debts.length) {
+    const stack = simulatePayoff(debts.map(d => ({...d})), extra);
+    stackMonths = stack.months;
+    const debtFreeYear = new Date().getFullYear() + Math.floor(stack.months / 12);
+    debtFreeText = fmtYrs(stack.months) + ' (' + debtFreeYear + ')';
+  }
+  document.getElementById('snap-debt').textContent = debtFreeText;
+
+  // Priority
+  let priority = '';
+  if (covGap > 50000) {
+    priority = `Your biggest gap right now is income protection — you have a ${fmt(covGap)} coverage gap. If something happened to you today, your family would be short ${fmt(covGap)} in protection. This is Priority #1 — term life insurance is typically very affordable and this gap should be closed first.`;
+  } else if (retireGap > 100000 && target > 0) {
+    const monthlyNeeded = retireGap / (((Math.pow(1.09, years) - 1) / (0.09 / 12)));
+    priority = `Your retirement gap of ${fmt(retireGap)} is your most urgent priority. The good news: you have ${years} years to close it. Contributing approximately ${fmt(monthlyNeeded)}/month to your RRSP or TFSA (at 9% growth) would bridge the gap by retirement.`;
+  } else if (debts.length > 0) {
+    const totalDebt = debts.reduce((s, d) => s + d.balance, 0);
+    priority = `You have ${fmt(totalDebt)} in total debt. Using Debt Stacking, you can be completely debt-free in ${debtFreeText}. Once you're debt-free, every dollar of those payments becomes wealth-building fuel — redirected straight into your TFSA or RRSP.`;
+  } else if (surplus > 0) {
+    priority = `Your monthly cash flow looks healthy with a ${fmt(surplus)} surplus. Your priority now is putting that money to work — maximize your TFSA first (tax-free growth forever), then your RRSP. Time in the market is everything.`;
+  } else if (surplus <= 0) {
+    priority = `Your monthly expenses are exceeding your take-home pay. Before anything else, your priority is fixing the cash flow. Review your monthly expenses and find areas to reduce — even $200–300/month redirected can transform your financial picture over 5–10 years.`;
+  } else {
+    priority = 'Complete all steps to see your personalized priority recommendation.';
+  }
+  document.getElementById('priorityText').textContent = priority;
+
+  // Store for AI coach
+  window._results = { name, surplus, covGap, retireGap, nestEgg, projected, years, income, debts, stackMonths, monthlyFromSavings, coverageNeeded, currentCoverage, target, cpp, oas, savingsNow, age, retire };
+}
+
+// ═══════════════════════════════════════════
+// AI COACH CHAT
+// ═══════════════════════════════════════════
+let chatReady = false;
+
+function initChat() {
+  if (chatReady) return;
+  chatReady = true;
+  const r = window._results || {};
+  const name = r.name || 'there';
+
+  let opening = `Hi ${name}! I've reviewed your numbers. Here's what I see: `;
+
+  const parts = [];
+  if (r.covGap > 50000) parts.push(`you have a ${fmt(r.covGap)} income protection gap — that's your most urgent issue`);
+  if (r.retireGap > 100000 && r.target > 0) parts.push(`a ${fmt(r.retireGap)} retirement gap that needs a plan`);
+  if (r.debts && r.debts.length > 0) {
+    const td = r.debts.reduce((s, d) => s + d.balance, 0);
+    parts.push(`${fmt(td)} in total debt — Debt Stacking can clear that in ${fmtYrs(r.stackMonths)}`);
+  }
+  if (r.surplus > 0) parts.push(`a healthy ${fmt(r.surplus)}/month surplus to work with`);
+
+  if (parts.length === 0) opening += "you're in a solid starting position. Let's build from here.";
+  else opening += parts.join(', ') + '. What would you like to tackle first?';
+
+  setTimeout(() => addCoachMsg(opening), 600);
+}
+
+function addCoachMsg(text) {
+  const indicator = document.getElementById('typingIndicator');
+  const messages = document.getElementById('chatMessages');
+  indicator.classList.remove('show');
+
+  const div = document.createElement('div');
+  div.className = 'msg coach';
+  const now = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${now}</div>`;
+  messages.insertBefore(div, indicator);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function addUserMsg(text) {
+  const messages = document.getElementById('chatMessages');
+  const indicator = document.getElementById('typingIndicator');
+  const div = document.createElement('div');
+  div.className = 'msg user';
+  const now = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${now}</div>`;
+  messages.insertBefore(div, indicator);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendChip(text) {
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addUserMsg(text);
+
+  const indicator = document.getElementById('typingIndicator');
+  indicator.classList.add('show');
+  document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+
+  setTimeout(() => {
+    indicator.classList.remove('show');
+    const response = getCoachResponse(text.toLowerCase());
+    addCoachMsg(response);
+  }, 900 + Math.random() * 600);
+}
+
+function getCoachResponse(msg) {
+  const r = window._results || {};
+
+  // Coverage / insurance
+  if (msg.match(/coverage|insurance|life|protect|gap|shield/)) {
+    if (r.covGap > 0) {
+      return `Your coverage gap is ${fmt(r.covGap)}. That means if something happened to you today, your family would be missing ${fmt(r.covGap)} in financial protection. The 10× rule says someone earning ${fmt(r.income)}/year needs ${fmt(r.coverageNeeded)} in total coverage. You currently have ${fmt(r.currentCoverage)}. The fix: term life insurance. For most people in their ${Math.floor(r.age/10)*10}s, a 20-year term policy for ${fmt(r.covGap)} costs less than you'd expect. This is almost always Priority #1. Would you like to understand the difference between term and whole life insurance?`;
+    } else if (r.coverageNeeded > 0) {
+      return `Great news — your coverage gap is $0! You're fully protected at the 10× income level. Your ${fmt(r.currentCoverage)} in total coverage meets the ${fmt(r.coverageNeeded)} recommended for your income. Now the question is: is that employer coverage portable? If you change jobs, group life insurance disappears. Having at least some personal term coverage is still smart. What else can I help you with?`;
     }
+    return `The 10× rule says you need life insurance equal to 10 times your annual income. This replaces your earning power for your family. Term life insurance provides pure protection at a low cost — unlike whole life, which bundles savings with insurance at a high cost. The simple rule: buy term, invest the difference. Want to know more about how to calculate what you need?`;
   }
 
-  function appendMsg(role, text) {
-    const msgs = document.getElementById('chat-messages');
-    const div = document.createElement('div');
-    div.className = 'msg ' + role;
-    div.innerHTML = text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\n/g, '<br>');
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  function showTyping() {
-    const msgs = document.getElementById('chat-messages');
-    const div = document.createElement('div');
-    div.className = 'msg typing';
-    div.id = 'typing-indicator';
-    div.innerHTML = '<span class="typing-dots"><span></span><span></span><span></span></span>';
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  function hideTyping() { document.getElementById('typing-indicator')?.remove(); }
-
-  function sendSuggestion(el) {
-    document.getElementById('chat-suggestions').style.display = 'none';
-    sendMessageText(el.textContent);
-  }
-
-  function handleChatKey(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  }
-
-  function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const text = input.value.trim();
-    if (!text) return;
-    input.value = '';
-    input.style.height = 'auto';
-    sendMessageText(text);
-  }
-
-  async function sendMessageText(text) {
-    if (!apiKey) { toggleChat(); return; }
-    document.getElementById('chat-suggestions').style.display = 'none';
-    appendMsg('user', text);
-    chatHistory.push({ role: 'user', content: text });
-    const sendBtn = document.getElementById('chat-send');
-    sendBtn.disabled = true;
-    showTyping();
-
-    try {
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...chatHistory],
-          max_tokens: 500,
-          temperature: 0.7
-        })
-      });
-      if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || 'API error'); }
-      const data = await res.json();
-      const reply = data.choices[0].message.content;
-      hideTyping();
-      appendMsg('bot', reply);
-      chatHistory.push({ role: 'assistant', content: reply });
-      if (chatHistory.length > 20) chatHistory = chatHistory.slice(-20);
-    } catch (err) {
-      hideTyping();
-      let msg = 'Something went wrong. ';
-      if (err.message.includes('401') || err.message.includes('Incorrect API')) {
-        msg += 'Invalid API key — close the chat, reopen, and re-enter your key.';
-        localStorage.removeItem('fb_api_key'); apiKey = '';
-      } else if (err.message.includes('429')) {
-        msg += 'Rate limit hit — wait a moment and try again.';
-      } else { msg += err.message; }
-      appendMsg('bot', msg);
+  // Retirement
+  if (msg.match(/retire|retirement|rrsp|tfsa|pension|nest egg|savings/)) {
+    if (r.retireGap > 0 && r.target > 0) {
+      const yrs = r.years;
+      const monthlyContrib = yrs > 0 ? r.retireGap / (((Math.pow(1.09, yrs) - 1) / (0.09/12))) : 0;
+      return `Your retirement gap is ${fmt(r.retireGap)}. Here's the plan to close it: you have ${yrs} years until retirement. Your current savings of ${fmt(r.savingsNow)} will grow to approximately ${fmt(r.projected)} at 9% — but you need ${fmt(r.nestEgg)}. To bridge the gap, you'd need to contribute approximately ${fmt(monthlyContrib)}/month in a TFSA or RRSP. TFSA first if your income is moderate — the growth and withdrawals are completely tax-free forever. RRSP if you're in a high tax bracket — the deduction saves you money now. Ideally? Maximize both. What's your current monthly contribution?`;
     }
-    sendBtn.disabled = false;
-    document.getElementById('chat-input')?.focus();
+    return `The two most powerful retirement tools for Canadians are the RRSP and TFSA. RRSP: contributions are tax-deductible (saves you money now), growth is tax-deferred, withdrawals are taxed as income. Best for higher earners. TFSA: contributions aren't deductible, but growth and withdrawals are completely tax-free forever. Best for most people. The Rule of 72 tells you how fast your money doubles — at 9%, your money doubles every 8 years. Time is your most powerful tool. How much are you currently saving each month?`;
   }
+
+  // Debt
+  if (msg.match(/debt|loan|credit|mortgage|stack|pay off|payoff/)) {
+    if (r.debts && r.debts.length > 0) {
+      const totalDebt = r.debts.reduce((s, d) => s + d.balance, 0);
+      const totalMins = r.debts.reduce((s, d) => s + d.minPay, 0);
+      return `You're carrying ${fmt(totalDebt)} in total debt with minimum payments of ${fmt(totalMins)}/month. With Debt Stacking, you can be completely debt-free in ${fmtYrs(r.stackMonths)}. Here's how it works: sort your debts by highest interest rate, attack that one first while paying minimums on everything else. When it's cleared, roll that full payment into the next debt. Each payoff accelerates the next. Once you're debt-free, redirect every dollar of those payments into your TFSA — same amount, same habit, building wealth instead of paying banks. Want to know which debt to hit first?`;
+    }
+    return `Debt Stacking is one of the most powerful debt elimination strategies. Unlike the snowball method (smallest balance first), Debt Stacking attacks the highest interest rate first — which mathematically saves the most money. The key insight: when a debt is cleared, you don't reduce your monthly payment — you roll the full amount into the next debt. This creates a "stacking" effect that accelerates payoff exponentially. Have you entered your debts in Step 4 so I can calculate your specific timeline?`;
+  }
+
+  // Budget / surplus / cash flow
+  if (msg.match(/budget|surplus|expense|cash flow|spend|afford|money/)) {
+    if (r.surplus > 0) {
+      return `Your monthly surplus is ${fmt(r.surplus)} — that's real money to build with. Here's how I'd prioritize it: First, make sure you have 3 months of expenses in an emergency fund (${fmt((v('monthlyExpenses') || 0) * 3)}). Then, if you have high-interest debt (anything above 6%), attack that first with Debt Stacking. Once debt is cleared, direct your full surplus into your TFSA (tax-free growth forever) and RRSP. That ${fmt(r.surplus)}/month invested at 9% for ${r.years} years grows to ${fmt((r.surplus * 12) * ((Math.pow(1.09, r.years) - 1) / 0.09))}. What would you like to prioritize?`;
+    } else if (r.surplus <= 0 && r.surplus !== undefined) {
+      return `Your expenses are currently exceeding your take-home pay — that needs to be addressed before anything else. A negative cash flow means every financial goal gets harder. Start by listing every monthly expense and categorizing: essential (housing, food, utilities, transportation) vs non-essential. Even finding $200–300/month in savings creates breathing room. The goal is a positive surplus you can direct intentionally. Once you have positive cash flow, everything else becomes possible. What's your biggest monthly expense category?`;
+    }
+    return `Good budgeting comes down to one rule: spend less than you earn, and direct the difference with intention. The three accounts you need: (1) Emergency fund — 3 months of expenses, liquid; (2) Short-term savings — goals in next 3–5 years; (3) Wealth building — long-term RRSP/TFSA. Enter your income and expenses in Step 1 to see your real monthly surplus.`;
+  }
+
+  // Priority / where to start
+  if (msg.match(/priority|first|start|begin|where|what should|help me|plan/)) {
+    const r = window._results || {};
+    if (r.covGap > 50000) return `Your #1 priority is closing your ${fmt(r.covGap)} coverage gap. Before you invest, before you stack debt — make sure your family is protected. One bad event without proper coverage can wipe out everything you build. Get a term life insurance quote this week. It's typically very affordable and takes the biggest risk off the table. Once you have protection in place, we tackle debt and savings. What else do you want to understand about your coverage gap?`;
+    if (r.retireGap > 100000 && r.target > 0) return `With a ${fmt(r.retireGap)} retirement gap and ${r.years} years to close it, your #1 priority is opening and maximizing your TFSA (and RRSP if you're in a higher tax bracket). The longer you wait, the more you need to contribute monthly. At 9% growth, every year you delay roughly doubles your required monthly contribution. Start small if needed — $100/month is infinitely better than nothing. What's holding you back from starting?`;
+    if (r.debts && r.debts.length > 0) return `With ${fmt(r.debts.reduce((s,d)=>s+d.balance,0))} in total debt, your priority is Debt Stacking — especially any debt above 6-7% interest. High-interest debt is a guaranteed negative return on your money. You can't out-invest 19% credit card interest. Get debt-free, then redirect every dollar into wealth building. Your debt-free date with stacking is ${fmtYrs(r.stackMonths)}. What's your highest interest rate debt?`;
+    return `The 4-priority framework from your Financial Blueprint: 1) Protection (insurance, emergency fund) — your foundation. 2) Debt elimination — using Debt Stacking. 3) Savings building — RRSP, TFSA, investments. 4) Income management — optimizing your cash flow. Complete all steps in this calculator and I'll give you a personalized priority recommendation based on your actual numbers.`;
+  }
+
+  // Compound interest
+  if (msg.match(/compound|grow|growth|rule of 72|double|invest/)) {
+    const yrs = r.years || 25;
+    const income = r.income || 80000;
+    const small = 200;
+    const compounded = small * 12 * ((Math.pow(1.09, yrs) - 1) / 0.09);
+    return `Compound interest is why time matters more than amount. The Rule of 72: divide 72 by your interest rate to find how long your money takes to double. At 9%, your money doubles every 8 years. ${fmt(small)}/month invested today at 9% for ${yrs} years = ${fmt(compounded)}. Same money at 3% in a savings account = ${fmt(small * 12 * ((Math.pow(1.03, yrs) - 1) / 0.03))}. The difference? ${fmt(compounded - (small * 12 * ((Math.pow(1.03, yrs) - 1) / 0.03)))}. That's the cost of "safe" savings. The key is starting NOW — every year you delay roughly doubles what you need to save monthly to reach the same goal. Does this change how you think about your savings account?`;
+  }
+
+  // CPP / OAS / Government
+  if (msg.match(/cpp|oas|government|pension|gis|benefit/)) {
+    return `Here's the reality: average CPP is about $758/month and max OAS is about $700/month — combined, that's roughly $1,458/month. Most Canadians need 3-4× that to maintain their lifestyle in retirement. Government benefits are a baseline, not a retirement plan. This is why your personal savings (RRSP + TFSA) are so critical — they're the only leg of the retirement stool you fully control. CPP amount depends on your contribution history — you can check your estimate at canada.ca. Want me to walk through how to optimize your RRSP vs TFSA strategy?`;
+  }
+
+  // Help menu
+  if (msg.match(/help|\?|what can|topics|options/)) {
+    return `Here are things I can help you with:\n\n💬 "Tell me about my coverage gap" — I'll explain your specific insurance shortfall\n📈 "How do I close my retirement gap?" — Monthly contribution math for your situation\n⚡ "How does debt stacking work?" — Strategy for your specific debts\n💰 "What should I do with my surplus?" — How to allocate your monthly cash flow\n🎯 "What's my #1 priority?" — Personalized recommendation based on your numbers\n📐 "Explain compound interest" — With your actual numbers\n🏛️ "What about CPP and OAS?" — Government benefit reality check\n\nWhat would you like to explore?`;
+  }
+
+  // Default fallback
+  const fallbacks = [
+    `That's a great question. Based on your numbers, the most important thing right now is understanding the gap between where you are and where you need to be. Your Financial Blueprint calculator has already done the hard math — the next step is taking action on whichever priority is biggest for you. What's the one area you feel least confident about?`,
+    `Financial freedom is built one decision at a time. Your numbers show a clear picture — the question is which to tackle first. Whether it's protection, debt, or savings, the common thread is consistency. A small action done every month beats a big action done once. What would you like to dig into?`,
+    `The principles in your Financial Blueprint work regardless of where you're starting from. Take control of what you can control — your savings rate, your debt strategy, your coverage. The market, the economy, the government — those aren't yours to control. Your next step is. What's on your mind?`,
+  ];
+  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+}
+
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  // Add one default debt row
+  addDebtRow('Credit Card', '', '19.99', '');
+  liveCalc();
+});
 </script>
 </body>
 </html>
