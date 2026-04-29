@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Financial Blueprint — A Common Sense Guide to Financial Freedom</title>
+  <meta name="author" content="Financial Blueprint">
+  <style>
+    /* ============================================================
+       FINANCIAL BLUEPRINT v3 — Premium Dark Design
+       Palette:
+         --navy-deep:   #030b18
+         --navy:        #071525
+         --cobalt:      #102a52
+         --cobalt-mid:  #1a4a96
+         --electric:    #2d7dd2
+         --sky:         #4fa3e0
+         --chrome:      #8ab4d4
+         --ice:         #c8dff0
+         --frost:       #e8f4fd
+         --white:       #ffffff
+         --gold:        #e8b84b
+         --gold-light:  #f5d98e
+         --danger:      #e05252
+    ============================================================ */
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter;
+      margin: 0;
+      @bottom-center {
+        content: counter(page);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 8pt;
+        color: #4fa3e0;
+        margin-bottom: 0.5cm;
+      }
+    }
+
+    @page cover-page { margin: 0; @bottom-center { content: none; } }
+    @page final-page { margin: 0; @bottom-center { content: none; } }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.7;
+      color: #1a2c42;
+      background: white;
+    }
+
+    /* ============================================================
+       COVER PAGE
+    ============================================================ */
+    .cover {
+      page: cover-page;
+      page-break-after: always;
+      width: 8.5in;
+      height: 11in;
+      background: #030b18;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Blueprint grid overlay */
+    .cover-grid {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(45,125,210,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,125,210,0.06) 1px, transparent 1px);
+      background-size: 36pt 36pt;
+    }
+
+    /* Radial glow */
+    .cover-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(26,74,150,0.5) 0%, transparent 70%);
+    }
+
+    /* Top accent bar */
+    .cover-top-bar {
+      position: relative;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #030b18, #2d7dd2 30%, #8ab4d4 50%, #2d7dd2 70%, #030b18);
+    }
+
+    /* Main cover content */
+    .cover-body {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1cm 1.5cm 0.5cm;
+      text-align: center;
+    }
+
+    .cover-eyebrow {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #4fa3e0;
+      margin-bottom: 28px;
+    }
+
+    /* Decorative line */
+    .cover-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #4fa3e0, transparent);
+      margin: 0 auto 28px;
+    }
+
+    .cover-title {
+      font-size: 58pt;
+      font-weight: 900;
+      line-height: 1.0;
+      color: #ffffff;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+      
+    }
+
+    .cover-title .accent {
+      color: #8ab4d4;
+      display: block;
+    }
+
+    .cover-title .big {
+      font-size: 80pt;
+      color: #e8f4fd;
+      display: block;
+      letter-spacing: -4px;
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: rgba(200,223,240,0.8);
+      max-width: 440px;
+      margin: 20px auto 36px;
+      line-height: 1.6;
+    }
+
+    /* 3 promise badges */
+    .cover-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .cover-badge {
+      background: rgba(45,125,210,0.12);
+      border: 1px solid rgba(79,163,224,0.3);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #8ab4d4;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Dashboard SVG container */
+    .cover-dashboard {
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Bottom strip */
+    .cover-footer {
+      position: relative;
+      background: rgba(45,125,210,0.08);
+      border-top: 1px solid rgba(79,163,224,0.2);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-footer-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(138,180,212,0.5);
+    }
+
+    /* ============================================================
+       GLOBAL CONTENT PAGES
+    ============================================================ */
+    .page-content {
+      padding: 1.8cm 2cm;
+    }
+
+    /* ============================================================
+       TABLE OF CONTENTS
+    ============================================================ */
+    .toc-wrap {
+      page-break-after: always;
+      padding: 2cm;
+    }
+
+    .toc-header {
+      margin-bottom: 30px;
+    }
+
+    .toc-header h2 {
+      font-size: 28pt;
+      font-weight: 900;
+      color: #071525;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .toc-header .underline {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2d7dd2, #8ab4d4);
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+
+    .toc-section-label {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #2d7dd2;
+      margin: 24px 0 8px;
+    }
+
+    .toc-row {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #dce8f4;
+      gap: 14px;
+    }
+
+    .toc-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #071525, #1a4a96);
+      border: 1px solid rgba(79,163,224,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8pt;
+      font-weight: 800;
+      color: #8ab4d4;
+      flex-shrink: 0;
+    }
+
+    .toc-row-title {
+      flex: 1;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #071525;
+    }
+
+    .toc-row-sub {
+      font-size: 8.5pt;
+      color: #6a8aaa;
+      font-weight: 400;
+    }
+
+    .toc-dot-line {
+      flex: 1;
+      border-bottom: 1px dotted #b0c8e0;
+      margin: 0 10px;
+    }
+
+    /* ============================================================
+       CHAPTER HEADER — FULL BLEED DARK BANNER
+    ============================================================ */
+    .chapter {
+      page-break-before: always;
+    }
+
+    .ch-banner {
+      background: #030b18;
+      margin: -1.8cm -2cm 0;
+      padding: 2.2cm 2cm 1.6cm;
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    /* Blueprint grid on banner */
+    .ch-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(45,125,210,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,125,210,0.07) 1px, transparent 1px);
+      background-size: 22pt 22pt;
+    }
+
+    /* Bottom accent line */
+    .ch-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2d7dd2 0%, #8ab4d4 40%, transparent 100%);
+    }
+
+    .ch-banner-inner {
+      position: relative;
+    }
+
+    .ch-label {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #4fa3e0;
+      margin-bottom: 10px;
+    }
+
+    .ch-title {
+      font-size: 30pt;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .ch-intro {
+      font-size: 11pt;
+      color: rgba(200,223,240,0.75);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    /* Accent number top-right */
+    .ch-accent-num {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      font-size: 80pt;
+      font-weight: 900;
+      color: rgba(45,125,210,0.07);
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+
+    /* ============================================================
+       CHAPTER BODY CONTENT
+    ============================================================ */
+    .ch-body {
+      padding-top: 28px;
+    }
+
+    h3 {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #071525;
+      margin: 28px 0 10px;
+      padding-left: 14px;
+      border-left: 4px solid #2d7dd2;
+      letter-spacing: -0.2px;
+    }
+
+    h4 {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a3a6e;
+      margin: 18px 0 6px;
+    }
+
+    p { margin-bottom: 13px; }
+
+    /* ============================================================
+       CALLOUT BOXES
+    ============================================================ */
+    .box {
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      page-break-inside: avoid;
+    }
+
+    .box-label {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    /* Blue info box */
+    .box-blue {
+      background: linear-gradient(135deg, #eaf4fd 0%, #f0f8ff 100%);
+      border-left: 4px solid #2d7dd2;
+      border-top: 1px solid rgba(45,125,210,0.15);
+      border-right: 1px solid rgba(45,125,210,0.1);
+      border-bottom: 1px solid rgba(45,125,210,0.1);
+    }
+    .box-blue .box-label { color: #1a4a96; }
+
+    /* Gold highlight box */
+    .box-gold {
+      background: linear-gradient(135deg, #fffbf0 0%, #fff8e0 100%);
+      border-left: 4px solid #e8b84b;
+      border-top: 1px solid rgba(232,184,75,0.2);
+      border-right: 1px solid rgba(232,184,75,0.15);
+      border-bottom: 1px solid rgba(232,184,75,0.15);
+    }
+    .box-gold .box-label { color: #9a6b00; }
+
+    /* Red warning box */
+    .box-red {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+      border-left: 4px solid #e05252;
+      border-top: 1px solid rgba(224,82,82,0.2);
+      border-right: 1px solid rgba(224,82,82,0.15);
+      border-bottom: 1px solid rgba(224,82,82,0.15);
+    }
+    .box-red .box-label { color: #9a1c1c; }
+
+    /* Dark principle box */
+    .box-dark {
+      background: linear-gradient(135deg, #030b18 0%, #071525 70%, #102a52 100%);
+      color: white;
+      border: 1px solid rgba(79,163,224,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .box-dark::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #2d7dd2, #8ab4d4, transparent);
+    }
+    .box-dark .box-label { color: #4fa3e0; }
+    .box-dark p { color: rgba(200,223,240,0.9); font-size: 12.5pt; font-style: italic; margin: 0; line-height: 1.6; }
+
+    /* ============================================================
+       STAT BOXES
+    ============================================================ */
+    .stats-row {
+      display: flex;
+      gap: 14px;
+      margin: 20px 0;
+      page-break-inside: avoid;
+    }
+
+    .stat {
+      flex: 1;
+      background: linear-gradient(160deg, #071525 0%, #102a52 100%);
+      border: 1px solid rgba(79,163,224,0.25);
+      border-radius: 10px;
+      padding: 20px 14px 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(138,180,212,0.5), transparent);
+    }
+
+    .stat-num {
+      font-size: 26pt;
+      font-weight: 900;
+      color: #8ab4d4;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .stat-num.gold { color: #e8b84b; }
+    .stat-num.danger { color: #e05252; }
+    .stat-num.bright { color: #c8dff0; }
+
+    .stat-desc {
+      font-size: 8pt;
+      color: rgba(200,223,240,0.65);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Big pull stat (left column) */
+    .stat-pull {
+      background: linear-gradient(160deg, #071525 0%, #102a52 100%);
+      border: 1px solid rgba(79,163,224,0.25);
+      border-radius: 10px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .stat-pull .stat-num { font-size: 36pt; }
+
+    /* ============================================================
+       TWO COLUMN LAYOUTS
+    ============================================================ */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      align-items: start;
+      margin: 20px 0;
+      page-break-inside: avoid;
+    }
+
+    .two-col-equal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      margin: 20px 0;
+      page-break-inside: avoid;
+    }
+
+    /* ============================================================
+       TABLES
+    ============================================================ */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead th {
+      background: linear-gradient(135deg, #071525 0%, #102a52 100%);
+      color: #c8dff0;
+      padding: 10px 13px;
+      text-align: left;
+      font-weight: 800;
+      font-size: 8pt;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #2d7dd2;
+    }
+
+    tbody tr:nth-child(even) { background: #f0f7ff; }
+    tbody tr:nth-child(odd) { background: #f8fbff; }
+
+    tbody td {
+      padding: 8px 13px;
+      border-bottom: 1px solid #dce8f4;
+    }
+
+    .td-good { color: #1a4a96; font-weight: 700; }
+    .td-bad  { color: #c0392b; font-weight: 700; }
+
+    /* ============================================================
+       LISTS
+    ============================================================ */
+    ul { margin: 8px 0 12px 22px; }
+    ol { margin: 8px 0 12px 22px; }
+    li { margin-bottom: 5px; }
+
+    ul.check { list-style: none; margin-left: 0; }
+    ul.check li::before { content: '✔ '; color: #2d7dd2; font-weight: 700; }
+
+    ul.cross { list-style: none; margin-left: 0; }
+    ul.cross li::before { content: '✗ '; color: #e05252; font-weight: 700; }
+
+    /* ============================================================
+       ACTION BOX
+    ============================================================ */
+    .action-box {
+      background: linear-gradient(135deg, #e8f4fd 0%, #d8eaf8 100%);
+      border: 2px solid #2d7dd2;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      page-break-inside: avoid;
+    }
+
+    .action-box h4 {
+      color: #071525;
+      font-size: 11pt;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    .action-box li {
+      font-size: 10pt;
+      color: #1a2c42;
+      margin-bottom: 8px;
+    }
+
+    /* ============================================================
+       DIVIDER
+    ============================================================ */
+    .divider {
+      border: none;
+      border-top: 1px solid #dce8f4;
+      margin: 24px 0;
+    }
+
+    /* ============================================================
+       BLOCKQUOTE
+    ============================================================ */
+    blockquote {
+      border-left: 3px solid #4fa3e0;
+      padding: 12px 18px;
+      margin: 18px 0;
+      font-style: italic;
+      color: #2a3f5a;
+      background: linear-gradient(135deg, #eaf4fd, #f4f9ff);
+      border-radius: 0 6px 6px 0;
+      page-break-inside: avoid;
+    }
+
+    blockquote cite {
+      display: block;
+      font-style: normal;
+      font-size: 8.5pt;
+      color: #5a7a9a;
+      margin-top: 5px;
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       FINAL PAGE
+    ============================================================ */
+    .final-page {
+      page: final-page;
+      page-break-before: always;
+      background: #030b18;
+      min-height: 11in;
+      padding: 3cm;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(45,125,210,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,125,210,0.06) 1px, transparent 1px);
+      background-size: 36pt 36pt;
+    }
+
+    .final-page h2 {
+      font-size: 32pt;
+      font-weight: 900;
+      color: #8ab4d4;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .final-page p {
+      font-size: 10.5pt;
+      color: rgba(200,223,240,0.65);
+      max-width: 480px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .final-line {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #4fa3e0, transparent);
+      margin: 28px auto;
+      position: relative;
+    }
+
+    /* ============================================================
+       FNA WORKSHEET
+    ============================================================ */
+    .fna-section {
+      background: white;
+      border: 1.5px solid #c8dff0;
+      border-radius: 10px;
+      padding: 0;
+      margin: 20px 0;
+      page-break-inside: avoid;
+      overflow: hidden;
+      
+    }
+
+    .fna-section-title {
+      background: linear-gradient(135deg, #071525 0%, #102a52 100%);
+      color: white;
+      padding: 10px 18px;
+      font-size: 10pt;
+      font-weight: 800;
+      border-bottom: 2px solid #2d7dd2;
+      letter-spacing: 0.3px;
+    }
+
+    .fna-inner { padding: 18px 20px; }
+
+    .fna-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .fna-label {
+      font-size: 9.5pt;
+      color: #1a2c42;
+      flex: 0 0 200px;
+      font-weight: 600;
+    }
+
+    .fna-blank {
+      flex: 1;
+      height: 26px;
+      border-bottom: 2px solid #2d7dd2;
+      background: #f0f7ff;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .fna-result {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      gap: 10px;
+      background: linear-gradient(135deg, #eaf4fd, #f0f7ff);
+      padding: 9px 12px;
+      border-radius: 5px;
+      border-left: 3px solid #2d7dd2;
+    }
+
+    .fna-result.final-result {
+      background: linear-gradient(135deg, #071525, #102a52);
+      border-left: 3px solid #4fa3e0;
+    }
+
+    .fna-result-label {
+      font-size: 9.5pt;
+      color: #071525;
+      font-weight: 700;
+      flex: 0 0 220px;
+    }
+
+    .fna-result.final-result .fna-result-label { color: #8ab4d4; font-size: 10pt; }
+
+    .fna-result-val {
+      flex: 1;
+      height: 24px;
+      border-bottom: 2px dashed #4fa3e0;
+    }
+
+    .fna-result.final-result .fna-result-val { border-bottom-color: rgba(232,184,75,0.6); }
+
+    .fna-formula {
+      background: #f0f7ff;
+      border: 1px solid #c8dff0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      font-size: 9pt;
+      color: #1a2c42;
+    }
+
+    .fna-formula strong { color: #071525; font-weight: 800; }
+
+    .fna-note {
+      font-size: 8pt;
+      color: #7a9abc;
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .fna-divider { border: none; border-top: 1px dashed #c8dff0; margin: 14px 0; }
+
+    /* ============================================================
+       PAGE BREAK HELPERS
+    ============================================================ */
+    h2, h3, h4 { page-break-after: avoid; }
+    .box, .stats-row, .action-box, table { page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-top-bar"></div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Financial Education · For Canadian Families</div>
+
+    <!-- Big Dashboard SVG -->
+    <div class="cover-dashboard">
+      <svg width="580" height="200" viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#071525"/><stop offset="100%" stop-color="#102a52"/></linearGradient>
+          <linearGradient id="cBar1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8ab4d4"/><stop offset="100%" stop-color="#2d7dd2"/></linearGradient>
+          <linearGradient id="cBar2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4fa3e0"/><stop offset="100%" stop-color="#1a4a96"/></linearGradient>
+          <linearGradient id="cBar3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8dff0"/><stop offset="100%" stop-color="#4fa3e0"/></linearGradient>
+          <linearGradient id="cGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5d98e"/><stop offset="100%" stop-color="#e8b84b"/></linearGradient>
+          <linearGradient id="cLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2d7dd2" stop-opacity="0"/><stop offset="50%" stop-color="#8ab4d4"/><stop offset="100%" stop-color="#2d7dd2" stop-opacity="0"/></linearGradient>
+          <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Main card -->
+        <rect x="0" y="0" width="580" height="200" rx="14" fill="url(#cBg)" stroke="rgba(79,163,224,0.25)" stroke-width="1.5"/>
+        <!-- Top chrome -->
+        <rect x="0" y="0" width="580" height="4" rx="2" fill="url(#cLine)"/>
+        <!-- Grid lines -->
+        <line x1="0" y1="50" x2="580" y2="50" stroke="rgba(79,163,224,0.06)" stroke-width="1"/>
+        <line x1="0" y1="100" x2="580" y2="100" stroke="rgba(79,163,224,0.06)" stroke-width="1"/>
+        <line x1="0" y1="150" x2="580" y2="150" stroke="rgba(79,163,224,0.06)" stroke-width="1"/>
+
+        <!-- KPI Cards Row -->
+        <rect x="12" y="12" width="120" height="50" rx="7" fill="rgba(45,125,210,0.15)" stroke="rgba(79,163,224,0.3)" stroke-width="0.5"/>
+        <rect x="12" y="12" width="120" height="3" rx="2" fill="#2d7dd2"/>
+        <text x="72" y="33" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="18" font-weight="900" fill="#c8dff0">$2.1M</text>
+        <text x="72" y="48" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(200,223,240,0.5)" font-weight="700" letter-spacing="1">EARNING POWER</text>
+
+        <rect x="146" y="12" width="120" height="50" rx="7" fill="rgba(45,125,210,0.15)" stroke="rgba(79,163,224,0.3)" stroke-width="0.5"/>
+        <rect x="146" y="12" width="120" height="3" rx="2" fill="#4fa3e0"/>
+        <text x="206" y="33" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="18" font-weight="900" fill="#c8dff0">$1M+</text>
+        <text x="206" y="48" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(200,223,240,0.5)" font-weight="700" letter-spacing="1">RETIRE TARGET</text>
+
+        <rect x="280" y="12" width="120" height="50" rx="7" fill="rgba(232,184,75,0.1)" stroke="rgba(232,184,75,0.3)" stroke-width="0.5"/>
+        <rect x="280" y="12" width="120" height="3" rx="2" fill="url(#cGold)"/>
+        <text x="340" y="33" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="18" font-weight="900" fill="#f5d98e">9%</text>
+        <text x="340" y="48" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(245,217,142,0.5)" font-weight="700" letter-spacing="1">AVG RETURN</text>
+
+        <rect x="414" y="12" width="154" height="50" rx="7" fill="rgba(45,125,210,0.15)" stroke="rgba(138,180,212,0.3)" stroke-width="0.5"/>
+        <rect x="414" y="12" width="154" height="3" rx="2" fill="#8ab4d4"/>
+        <text x="491" y="33" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="18" font-weight="900" fill="#c8dff0">10×</text>
+        <text x="491" y="48" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(200,223,240,0.5)" font-weight="700" letter-spacing="1">INCOME COVERAGE RULE</text>
+
+        <!-- BAR CHART (left section) -->
+        <text x="18" y="82" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.4)" font-weight="700" letter-spacing="2">WEALTH GROWTH OVER TIME</text>
+        <!-- Bars -->
+        <rect x="20" y="162" width="26" height="22" rx="3" fill="url(#cBar2)" opacity="0.4"/>
+        <rect x="54" y="148" width="26" height="36" rx="3" fill="url(#cBar2)" opacity="0.55"/>
+        <rect x="88" y="130" width="26" height="54" rx="3" fill="url(#cBar2)" opacity="0.7"/>
+        <rect x="122" y="106" width="26" height="78" rx="3" fill="url(#cBar1)" filter="url(#glow2)"/>
+        <rect x="156" y="82" width="26" height="102" rx="3" fill="url(#cBar3)" filter="url(#glow2)"/>
+        <!-- Area under line -->
+        <path d="M33,162 L67,148 L101,130 L135,106 L169,82 L169,184 L33,184 Z" fill="rgba(45,125,210,0.08)"/>
+        <!-- Trend line -->
+        <path d="M33,162 L67,148 L101,130 L135,106 L169,82" stroke="#8ab4d4" stroke-width="2.5" fill="none" filter="url(#glow2)"/>
+        <!-- Dots -->
+        <circle cx="33" cy="162" r="4" fill="#4fa3e0"/>
+        <circle cx="67" cy="148" r="4" fill="#4fa3e0"/>
+        <circle cx="101" cy="130" r="4" fill="#4fa3e0"/>
+        <circle cx="135" cy="106" r="5" fill="#8ab4d4" filter="url(#glow2)"/>
+        <circle cx="169" cy="82" r="6" fill="#c8dff0" filter="url(#glow2)"/>
+        <!-- X labels -->
+        <text x="33" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.35)">Y1</text>
+        <text x="67" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.35)">Y5</text>
+        <text x="101" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.35)">Y10</text>
+        <text x="135" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.35)">Y20</text>
+        <text x="169" y="196" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" fill="rgba(138,180,212,0.35)">Y30</text>
+
+        <!-- Vertical divider -->
+        <line x1="210" y1="70" x2="210" y2="188" stroke="rgba(79,163,224,0.15)" stroke-width="1"/>
+
+        <!-- CIRCULAR RINGS (right section) -->
+        <!-- Ring 1 -->
+        <circle cx="285" cy="140" r="36" fill="none" stroke="rgba(79,163,224,0.12)" stroke-width="8"/>
+        <circle cx="285" cy="140" r="36" fill="none" stroke="#2d7dd2" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="56" stroke-linecap="round" transform="rotate(-90 285 140)"/>
+        <text x="285" y="137" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="13" font-weight="900" fill="#8ab4d4">75%</text>
+        <text x="285" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7.5" fill="rgba(200,223,240,0.45)">DEBT FREE</text>
+        <text x="285" y="86" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7" font-weight="700" fill="rgba(138,180,212,0.4)" letter-spacing="1">GOAL TRACKER</text>
+
+        <!-- Ring 2 -->
+        <circle cx="375" cy="140" r="36" fill="none" stroke="rgba(79,163,224,0.12)" stroke-width="8"/>
+        <circle cx="375" cy="140" r="36" fill="none" stroke="#4fa3e0" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="136" stroke-linecap="round" transform="rotate(-90 375 140)"/>
+        <text x="375" y="137" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="13" font-weight="900" fill="#8ab4d4">40%</text>
+        <text x="375" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7.5" fill="rgba(200,223,240,0.45)">SAVINGS</text>
+
+        <!-- Ring 3 -->
+        <circle cx="465" cy="140" r="36" fill="none" stroke="rgba(79,163,224,0.12)" stroke-width="8"/>
+        <circle cx="465" cy="140" r="36" fill="none" stroke="#e8b84b" stroke-width="8" stroke-dasharray="226" stroke-dashoffset="23" stroke-linecap="round" transform="rotate(-90 465 140)"/>
+        <text x="465" y="137" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="13" font-weight="900" fill="#f5d98e">90%</text>
+        <text x="465" y="152" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial" font-size="7.5" fill="rgba(200,223,240,0.45)">PROTECTED</text>
+
+        <!-- Bottom chrome -->
+        <rect x="0" y="196" width="580" height="4" rx="2" fill="url(#cLine)" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <div class="cover-line" style="margin-top:28px;"></div>
+
+    <!-- Title -->
+    <div class="cover-title">
+      <span class="accent">Your Financial</span>
+      <span class="big">Blueprint</span>
+    </div>
+
+    <div class="cover-subtitle">
+      A common sense guide to getting out of debt, building real wealth,<br>and securing your family's future — no matter where you're starting from.
+    </div>
+
+    <!-- Promise badges -->
+    <div class="cover-badges">
+      <div class="cover-badge">Get Out of Debt</div>
+      <div class="cover-badge">Build Real Wealth</div>
+      <div class="cover-badge">Protect Your Family</div>
+    </div>
+
+  </div>
+
+  <!-- Footer strip -->
+  <div class="cover-footer" style="padding:16px 2cm; display:flex; justify-content:space-between; align-items:center; background:rgba(45,125,210,0.08); border-top:1px solid rgba(79,163,224,0.2);">
+    <div style="font-size:7pt; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(138,180,212,0.45);">Financial Education Series</div>
+    <!-- Canadian flag -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="66" height="33" viewBox="0 0 9600 4800" style="opacity:0.7;">
+      <path fill="#d52b1e" d="m0 0h2400l99 99h4602l99-99h2400v4800h-2400l-99-99h-4602l-99 99H0z"/>
+      <path fill="#fff" d="m2400 0h4800v4800h-4800zm2490 4430-45-863a95 95 0 0 1 111-98l859 151-116-320a65 65 0 0 1 20-73l941-762-212-99a65 65 0 0 1-34-79l186-572-542 115a65 65 0 0 1-73-38l-105-247-423 454a65 65 0 0 1-111-57l204-1052-327 189a65 65 0 0 1-91-27l-332-652-332 652a65 65 0 0 1-91 27l-327-189 204 1052a65 65 0 0 1-111 57l-423-454-105 247a65 65 0 0 1-73 38l-542-115 186 572a65 65 0 0 1-34 79l-212 99 941 762a65 65 0 0 1 20 73l-116 320 859-151a95 95 0 0 1 111 98l-45 863z"/>
+    </svg>
+    <div style="font-size:7pt; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(138,180,212,0.45);">For Canadian Families · 2026</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════════════════════ -->
+<div class="toc-wrap">
+  <div class="toc-header">
+    <h2>What's Inside</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="toc-section-label">Introduction</div>
+  <div class="toc-row">
+    <div class="toc-num" style="background:linear-gradient(135deg,#071525,#2d7dd2);">→</div>
+    <div style="flex:1;"><div class="toc-row-title">The Truth About Financial Independence</div><div class="toc-row-sub">Why ordinary families can achieve financial freedom</div></div>
+  </div>
+
+  <div class="toc-section-label">Core Principles</div>
+  <div class="toc-row">
+    <div class="toc-num">1</div>
+    <div style="flex:1;"><div class="toc-row-title">Take Control</div><div class="toc-row-sub">Your financial starting point — mindset and fundamentals</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">2</div>
+    <div style="flex:1;"><div class="toc-row-title">Pay Yourself First</div><div class="toc-row-sub">The single most important savings habit</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">3</div>
+    <div style="flex:1;"><div class="toc-row-title">Crush Your Debt</div><div class="toc-row-sub">Debt stacking — eliminate debt faster than you think possible</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">4</div>
+    <div style="flex:1;"><div class="toc-row-title">The Power of Compound Interest</div><div class="toc-row-sub">Why time is your most powerful financial tool</div></div>
+  </div>
+
+  <div class="toc-section-label">Building Your Plan</div>
+  <div class="toc-row">
+    <div class="toc-num">5</div>
+    <div style="flex:1;"><div class="toc-row-title">Protect Your Income</div><div class="toc-row-sub">Life insurance done right — the 10x rule</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">6</div>
+    <div style="flex:1;"><div class="toc-row-title">Defer Your Taxes</div><div class="toc-row-sub">RRSP &amp; TFSA — Canada's most underused wealth tools</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">7</div>
+    <div style="flex:1;"><div class="toc-row-title">Be an Owner, Not a Loaner</div><div class="toc-row-sub">Why "safe" savings could be your biggest risk</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num">8</div>
+    <div style="flex:1;"><div class="toc-row-title">Invest With Professional Management</div><div class="toc-row-sub">The 3 Ds of successful investing</div></div>
+  </div>
+
+  <div class="toc-section-label">Your Action Plan</div>
+  <div class="toc-row">
+    <div class="toc-num">9</div>
+    <div style="flex:1;"><div class="toc-row-title">Your Financial Needs Snapshot</div><div class="toc-row-sub">The 4-priority framework</div></div>
+  </div>
+  <div class="toc-row">
+    <div class="toc-num" style="background:linear-gradient(135deg,#071525,#e8b84b);color:#030b18;">★</div>
+    <div style="flex:1;"><div class="toc-row-title">Bonus: Personal FNA Worksheet</div><div class="toc-row-sub">Calculate your real numbers — coverage gap, retirement gap, debt payoff</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INTRODUCTION
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">→</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Introduction</div>
+      <div class="ch-title">The Truth About<br>Financial Independence</div>
+      <div class="ch-intro">Most people believe financial freedom is only for the wealthy. It's not. Here's the truth.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <p>There's a common misunderstanding that only people with high incomes, large inheritances, or lucky breaks can become financially independent. That couldn't be further from the truth.</p>
+    <p>The fact is: you have the power to become financially secure. Many people who never earned a six-figure income have built meaningful wealth. Not because of luck — because of a few simple principles, consistently applied over time.</p>
+
+    <div class="box box-gold">
+      <div class="box-label">The Real Questions</div>
+      How can I save for the future when I have so much debt?
+      How much money is enough to retire comfortably?
+      If I die prematurely, what happens to my family?
+      Can I ever truly become financially secure?
+      <p style="margin-top:10px;margin-bottom:0;"><strong>The answer to all of these is yes</strong> — if you understand and apply the principles in this guide.</p>
+    </div>
+
+    <p>This guide is not a sales pitch. It's a financial education resource built to help you become an independent thinker who can make the right choices for your unique situation.</p>
+
+    <div class="box box-dark">
+      <div class="box-label">The Core Truth</div>
+      <p>"It's not what you make — it's what you keep. And what you do with what you keep."</p>
+    </div>
+
+    <p>You can get out of debt. You can build savings. You can get on the path to financial independence. But nobody else can make it happen for you. That's both the challenge and the opportunity. Let's get started.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 1: TAKE CONTROL
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">1</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 1</div>
+      <div class="ch-title">Take Control</div>
+      <div class="ch-intro">One of the biggest financial mistakes people make is dependence. Financial security starts when you take control of what you actually can control.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>What You Can and Can't Control</h3>
+    <table>
+      <thead><tr><th>You CANNOT Control</th><th>You CAN Control</th></tr></thead>
+      <tbody>
+        <tr><td>The future of government pensions</td><td class="td-good">How much you save for retirement</td></tr>
+        <tr><td>Your employer's decisions</td><td class="td-good">Your savings rate and investment choices</td></tr>
+        <tr><td>Tax rates</td><td class="td-good">Ways to legally minimize your taxes</td></tr>
+        <tr><td>Inflation and rising costs</td><td class="td-good">Maximizing your rate of return</td></tr>
+        <tr><td>A single investment's performance</td><td class="td-good">Diversification of your portfolio</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Change Your Thinking First</h3>
+    <p>The way you think about money determines everything. People who win the lottery and lose it all think about money differently than the self-made millionaire who never earned a huge salary. The difference isn't luck — it's mindset. If you believe you don't deserve financial security, you'll never have it. If you upgrade that belief — if you decide you deserve freedom and peace of mind — you'll start making the choices that get you there.</p>
+
+    <div class="box box-gold">
+      <div class="box-label">The Golden Rule of Spending</div>
+      If you make $10 and spend $9 = <strong>happiness.</strong><br>
+      If you make $10 and spend $11 = <strong>misery.</strong><br><br>
+      It's not what you make — it's what you keep.
+    </div>
+
+    <h3>Want vs. Need — The Most Important Distinction</h3>
+    <p>Every purchase requires a conscious decision. Understanding the difference between wants and needs is foundational:</p>
+    <ul>
+      <li><strong>A need</strong> is something you can't do without — food, shelter, utilities, transportation to work.</li>
+      <li><strong>A want</strong> is something you'd like to have — the newer car, the bigger house, the daily latte.</li>
+    </ul>
+    <p>To achieve financial independence, you may need to sacrifice some wants for a period of time. This isn't about deprivation — it's about temporary trade-offs for permanent gain.</p>
+
+    <h3>Know Your Financial Independence Number (FIN)</h3>
+    <p>Your Financial Independence Number is the amount of savings you'd need to retire — or stop working — comfortably. For a typical Canadian family earning $80,000/year today, your FIN at retirement could easily be over $2–3 million when you factor in inflation. Most families haven't thought about this number — and that's exactly the problem.</p>
+
+    <div class="action-box">
+      <h4>🎯 Goal Setting Framework</h4>
+      <ol>
+        <li><strong>Make a list</strong> — write down your financial goals, big and small, in detail</li>
+        <li><strong>Prioritize</strong> — which goals matter most? Which are most attainable first?</li>
+        <li><strong>Get personal</strong> — attach meaning to each goal (why does it matter to you?)</li>
+        <li><strong>Do the math</strong> — calculate exactly how much you need and how long it will take</li>
+        <li><strong>Create a timeline</strong> — goals without deadlines are just wishes</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 2: PAY YOURSELF FIRST
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">2</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 2</div>
+      <div class="ch-title">Pay Yourself First</div>
+      <div class="ch-intro">Most people pay everyone else first — and save whatever's left over. There's never anything left over. Here's the fix.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <div class="two-col">
+      <div class="stat-pull">
+        <span class="stat-num gold">10%</span>
+        <div class="stat-desc">Set this aside FIRST — before any other bill. Treat it like a mandatory payment to yourself.</div>
+      </div>
+      <div>
+        <p>At the end of the month, most people have nothing left to save. The solution is radical in its simplicity: <strong>before you pay anyone else, set aside 10% of your income for yourself.</strong></p>
+        <p>Treat your savings like a recurring bill — one you pay first, no exceptions. Most people send large payments to credit card companies every month without hesitation. Give yourself the same commitment.</p>
+      </div>
+    </div>
+
+    <div class="box box-dark">
+      <div class="box-label">Core Principle</div>
+      <p>"Paying yourself first may be the single most important financial habit you can build."</p>
+    </div>
+
+    <h3>The Three Accounts You Need</h3>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">1</span>
+        <div class="stat-desc" style="font-size:9pt; font-weight:700; color:#c8dff0; margin-bottom:6px;">EMERGENCY ACCOUNT</div>
+        <div class="stat-desc">3+ months of income. Keep this liquid — unexpected events only.</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2</span>
+        <div class="stat-desc" style="font-size:9pt; font-weight:700; color:#c8dff0; margin-bottom:6px;">SHORT-TERM ACCOUNT</div>
+        <div class="stat-desc">6+ months of income for goals in the next 3–5 years.</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <div class="stat-desc" style="font-size:9pt; font-weight:700; color:#c8dff0; margin-bottom:6px;">WEALTH BUILDING</div>
+        <div class="stat-desc">Long-term retirement savings. This is the account that makes you financially free.</div>
+      </div>
+    </div>
+
+    <div class="box box-blue">
+      <div class="box-label">How Much Have You Actually Kept?</div>
+      Average annual income × years worked = <strong>total earned (A)</strong><br>
+      Amount you have saved today = <strong>total saved (B)</strong><br>
+      B ÷ A × 100 = <strong>your savings rate (%)</strong>
+      <p style="margin-top:10px;margin-bottom:0;">Most people are shocked by their number. That shock is a good thing — it's motivation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 3: CRUSH YOUR DEBT
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">3</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 3</div>
+      <div class="ch-title">Crush Your Debt</div>
+      <div class="ch-intro">Of all the threats to your financial security, none is more dangerous than debt. And none is more fixable once you understand how it actually works.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>The Hidden Enemy: Compound Interest Working Against You</h3>
+    <div class="box box-red">
+      <div class="box-label">The Real Cost of Minimum Payments</div>
+      A one-time $3,000 credit card purchase at 18% interest, with minimum monthly payments only:
+      <ul style="margin-top:8px;">
+        <li>Takes <strong>over 10 years</strong> to pay off</li>
+        <li>Costs you an extra <strong>$2,002 in interest</strong></li>
+        <li>Total paid: <strong>$5,002</strong> for a $3,000 purchase</li>
+      </ul>
+    </div>
+
+    <h3>Revolving vs. Fixed Debt</h3>
+    <table>
+      <thead><tr><th>Feature</th><th>Revolving (Credit Card)</th><th>Fixed (Personal Loan)</th></tr></thead>
+      <tbody>
+        <tr><td>Interest Compounds</td><td class="td-bad">Daily</td><td class="td-good">Monthly</td></tr>
+        <tr><td>Payment Amount</td><td class="td-bad">Fluctuates (minimum)</td><td class="td-good">Fixed — predictable</td></tr>
+        <tr><td>Payoff Timeline</td><td class="td-bad">Can go on forever</td><td class="td-good">Set end date</td></tr>
+        <tr><td>$17,000 at 18% — Total Interest</td><td class="td-bad">$12,500+</td><td class="td-good">$5,370</td></tr>
+        <tr><td>$17,000 at 18% — Time to Pay Off</td><td class="td-bad">17+ years</td><td class="td-good">3 years</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Debt Stacking: The Systematic Way Out</h3>
+    <div class="two-col">
+      <div>
+        <div class="stat-pull" style="margin-bottom:12px;">
+          <span class="stat-num danger">25 yrs</span>
+          <div class="stat-desc">Minimum payments only<br>$205,279 in interest paid</div>
+        </div>
+        <div style="text-align:center;padding:6px 0;font-weight:800;color:#4fa3e0;font-size:11pt;">vs.</div>
+        <div class="stat-pull">
+          <span class="stat-num bright">10.5 yrs</span>
+          <div class="stat-desc">With Debt Stacking<br>Save $112,000+ in interest</div>
+        </div>
+      </div>
+      <div>
+        <div class="box box-blue">
+          <div class="box-label">How Debt Stacking Works</div>
+          <ol style="margin-top:8px;">
+            <li>List all debts — order by highest interest rate first</li>
+            <li>Make consistent payments on ALL debts every month</li>
+            <li>When debt #1 is paid off, <strong>roll that payment</strong> into debt #2</li>
+            <li>Repeat — each cleared debt accelerates the next</li>
+            <li>When debt-free, redirect everything into wealth building</li>
+          </ol>
+        </div>
+        <p>Same total monthly payment. Same debts. Just a smarter order of attack. Every payment on a cleared debt gets rolled into the next one — accelerating payoff exponentially.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 4: RULE OF 72
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">4</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 4</div>
+      <div class="ch-title">The Power of<br>Compound Interest</div>
+      <div class="ch-intro">Albert Einstein reportedly called compound interest "the most powerful force in the universe." Once you understand it, you'll never think about money the same way again.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>The Rule of 72</h3>
+    <p>Divide 72 by your rate of return, and you get the approximate number of years it takes your money to double.</p>
+
+    <div class="stats-row">
+      <div class="stat"><span class="stat-num danger">24 yrs</span><div class="stat-desc">to double at 3%</div></div>
+      <div class="stat"><span class="stat-num">12 yrs</span><div class="stat-desc">to double at 6%</div></div>
+      <div class="stat"><span class="stat-num bright">8 yrs</span><div class="stat-desc">to double at 9%</div></div>
+      <div class="stat"><span class="stat-num gold">6 yrs</span><div class="stat-desc">to double at 12%</div></div>
+    </div>
+
+    <p>A one-time $10,000 investment at 3% doubles twice in 48 years (to $40,000). At 12%, it doubles 8 times — turning into <strong>$2,560,000</strong>. Same money. Same time. Completely different outcome based on rate of return.</p>
+
+    <h3>The High Cost of Waiting</h3>
+    <table>
+      <thead><tr><th>Start at Age</th><th>Monthly Amount</th><th>Total Invested</th><th>Balance at 65 (9%)</th></tr></thead>
+      <tbody>
+        <tr><td>25</td><td>$213/mo</td><td>$102,240</td><td class="td-good">$1,000,000</td></tr>
+        <tr><td>35</td><td>$543/mo</td><td>$195,480</td><td>$1,000,000</td></tr>
+        <tr><td>45</td><td>$1,487/mo</td><td>$357,240</td><td>$1,000,000</td></tr>
+        <tr><td>55</td><td>$5,130/mo</td><td>$616,000</td><td class="td-bad">$1,000,000</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-gold">
+      <div class="box-label">The Early Starter Lesson</div>
+      Someone who invests $5,000/year from ages 22–29 (total: $40,000) and then <em>stops</em> will have more at age 65 than someone who invests $5,000/year from ages 30–65 (total: $180,000). Time beats total contributions. <strong>Start now.</strong>
+    </div>
+
+    <h3>The Power of Just a Little More</h3>
+    <table>
+      <thead><tr><th>Monthly</th><th>10 Years</th><th>20 Years</th><th>30 Years</th><th>40 Years</th></tr></thead>
+      <tbody>
+        <tr><td>$20/month</td><td>$3,900</td><td>$13,460</td><td>$36,890</td><td>$94,330</td></tr>
+        <tr><td>$100/month</td><td class="td-good">$19,500</td><td class="td-good">$67,300</td><td class="td-good">$184,450</td><td class="td-good">$471,650</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:#888;margin-top:-10px;">Hypothetical 9% nominal rate, compounded monthly. For illustrative purposes only.</p>
+
+    <h3>Rate of Return Is Everything</h3>
+    <table>
+      <thead><tr><th>Investment Type</th><th>Rate</th><th>$1,000 at birth → Age 65</th></tr></thead>
+      <tbody>
+        <tr><td>Savings account / GIC</td><td class="td-bad">3%</td><td class="td-bad">$7,000</td></tr>
+        <tr><td>Balanced fund</td><td>6%</td><td>$48,900</td></tr>
+        <tr><td>Equity fund</td><td class="td-good">9%</td><td class="td-good">$339,700</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:#888;margin-top:-10px;">Hypothetical constant rates. Does not include fees or taxes. For illustrative purposes only.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 5: LIFE INSURANCE
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">5</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 5</div>
+      <div class="ch-title">Protect Your Income —<br>Life Insurance Done Right</div>
+      <div class="ch-intro">Life insurance is one of the most important — and most misunderstood — financial tools available to families. Getting this wrong can cost your family everything.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>What Life Insurance Actually Is</h3>
+    <p>Think of life insurance less as "death coverage" and more as <strong>income protection</strong>. Your ability to earn income is your most valuable financial asset — far more valuable than your house or your car.</p>
+
+    <div class="two-col">
+      <div class="stat-pull">
+        <span class="stat-num">$2.1M</span>
+        <div class="stat-desc">Earning power at risk without coverage</div>
+        <div style="font-size:7.5pt;color:rgba(200,223,240,0.4);margin-top:6px;">$70,000/yr × 30 years</div>
+      </div>
+      <div class="box box-gold">
+        <div class="box-label">The Value of Your Earning Power</div>
+        Annual income × years until retirement = your earning power.
+        <p style="margin-top:8px;">Most people insure their car carefully and underinsure their income. Your ability to earn is your most valuable asset — by far.</p>
+      </div>
+    </div>
+
+    <h3>Term vs. Cash Value Life Insurance</h3>
+    <table>
+      <thead><tr><th>Feature</th><th>Term Life</th><th>Cash Value / Whole Life</th></tr></thead>
+      <tbody>
+        <tr><td>Purpose</td><td class="td-good">Pure death protection</td><td>Protection + forced savings</td></tr>
+        <tr><td>Initial Premium</td><td class="td-good">Lower — more coverage per dollar</td><td class="td-bad">Typically 3–5× more</td></tr>
+        <tr><td>Flexibility</td><td class="td-good">Adjust coverage as life changes</td><td class="td-bad">Less flexible</td></tr>
+        <tr><td>Investment Return</td><td class="td-good">You control your own investments</td><td class="td-bad">Low rate of return inside policy</td></tr>
+        <tr><td>Death Benefit + Savings</td><td class="td-good">Family gets both</td><td class="td-bad">Traditional: family gets one OR the other</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Buy Term and Invest the Difference</h3>
+    <p>Rather than bundling savings inside a life insurance policy at a poor rate of return:</p>
+    <ol style="margin-left:22px;">
+      <li>Buy inexpensive <strong>term life insurance</strong> for pure income protection</li>
+      <li>Invest the premium savings you would have paid for whole/universal life</li>
+      <li>Grow your investments in flexible, higher-return accounts</li>
+      <li>As your wealth builds, your need for coverage decreases naturally</li>
+    </ol>
+
+    <div class="box box-red">
+      <div class="box-label">Watch Out: Cash Value Life Insurance</div>
+      Products like whole life, universal life, and permanent life insurance bundle insurance with savings. Key concerns:
+      <ul class="cross" style="margin-top:8px;">
+        <li>Takes many years to build meaningful cash value</li>
+        <li>Surrender value in early years is often a fraction of premiums paid</li>
+        <li>Cash value grows tax-deferred — NOT tax-free like a TFSA</li>
+        <li>With some policies, the death benefit goes to the insurer if you use your cash value</li>
+      </ul>
+    </div>
+
+    <div class="box box-dark">
+      <div class="box-label">The Simple Strategy</div>
+      <p>"Buy term insurance for protection. Invest the difference separately for growth. Never mix the two."</p>
+    </div>
+
+    <div class="action-box">
+      <h4>✅ Your Insurance Action Steps</h4>
+      <ol>
+        <li>Calculate your earnings protection need (annual income × 10)</li>
+        <li>Review your current coverage — employer group and personal combined</li>
+        <li>If you have a gap, price out term life insurance</li>
+        <li>Avoid bundling insurance with investments — keep them separate</li>
+        <li>Review coverage at every major life event: marriage, new child, new mortgage</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 6: DEFER YOUR TAXES
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">6</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 6</div>
+      <div class="ch-title">Defer Your Taxes —<br>RRSP &amp; TFSA</div>
+      <div class="ch-intro">The federal government has given every Canadian two powerful wealth-building tools. Most families dramatically underuse them.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>The Power of Tax-Deferred Savings</h3>
+    <table>
+      <thead><tr><th>Years Invested</th><th>Non-Registered (Taxed)</th><th>Registered (Tax-Deferred)</th></tr></thead>
+      <tbody>
+        <tr><td>10 years</td><td>$74,300</td><td class="td-good">$87,600</td></tr>
+        <tr><td>20 years</td><td>$205,400</td><td class="td-good">$295,100</td></tr>
+        <tr><td>30 years</td><td>$436,900</td><td class="td-good">$786,200</td></tr>
+        <tr><td>40 years</td><td>$845,700</td><td class="td-good">$1,948,900</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:#888;margin-top:-10px;">Based on $458/month at 9% return, 35% tax rate. Illustrative only.</p>
+
+    <h3>RRSP vs. TFSA: Know the Difference</h3>
+    <table>
+      <thead><tr><th>Feature</th><th>RRSP</th><th>TFSA</th></tr></thead>
+      <tbody>
+        <tr><td>Contribution deductible?</td><td class="td-good">Yes — reduces taxable income now</td><td>No</td></tr>
+        <tr><td>Earnings taxed?</td><td>Deferred until withdrawal</td><td class="td-good">Never — tax free</td></tr>
+        <tr><td>Withdrawals taxed?</td><td>Yes — added to income</td><td class="td-good">No</td></tr>
+        <tr><td>Best for</td><td>Higher income earners</td><td class="td-good">All Canadians</td></tr>
+        <tr><td>Age limit</td><td>Must convert by age 71</td><td class="td-good">No age limit</td></tr>
+        <tr><td>Re-contribute withdrawals?</td><td>No (with exceptions)</td><td class="td-good">Yes, next calendar year</td></tr>
+      </tbody>
+    </table>
+
+    <div class="box box-gold">
+      <div class="box-label">The Simple Rule</div>
+      If your income is modest to moderate → maximize your <strong>TFSA first</strong> (withdrawals are never taxed).<br>
+      If you're in a high tax bracket → maximize your <strong>RRSP first</strong> (deduction now, when the tax benefit is biggest).<br>
+      Best case: maximize both.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 7: OWNER NOT LOANER
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">7</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 7</div>
+      <div class="ch-title">Be an Owner,<br>Not a Loaner</div>
+      <div class="ch-intro">Most Canadians believe their money is "safe" in the bank. Here's why that belief is costing them their financial future.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>The Banking Reality</h3>
+    <p>When you deposit money in a bank, you are <strong>lending money to the bank</strong>. They pay you a low interest rate, then invest your money and earn a much higher rate. The bank keeps the difference. You are the loaner. The bank is the owner.</p>
+
+    <div class="box box-red">
+      <div class="box-label">The Hidden Math of "Safe" Savings</div>
+      You deposit $10,000 at 1% interest:<br>
+      + $100 interest earned<br>
+      − $25 in tax on that interest (25% example)<br>
+      = $75 net earnings → balance of $10,075<br><br>
+      If inflation is 4%, your $10,075 has <strong>only $9,688 of real buying power.</strong><br>
+      You actually <strong>lost $312 in purchasing power</strong> — while thinking you were being safe.
+    </div>
+
+    <h3>The Broken Three-Legged Stool</h3>
+    <div class="two-col-equal">
+      <div>
+        <svg width="200" height="130" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="stG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#071525"/><stop offset="100%" stop-color="#102a52"/></linearGradient></defs>
+          <rect x="20" y="20" width="160" height="18" rx="4" fill="url(#stG)" stroke="rgba(79,163,224,0.3)" stroke-width="1"/>
+          <!-- Leg 1: CPP cracked -->
+          <rect x="28" y="38" width="30" height="78" rx="2" fill="rgba(224,82,82,0.2)" stroke="rgba(224,82,82,0.5)" stroke-width="1"/>
+          <line x1="28" y1="68" x2="58" y2="80" stroke="#e05252" stroke-width="2"/>
+          <text x="43" y="105" text-anchor="middle" font-family="Helvetica Neue,Arial" font-size="7" fill="rgba(224,82,82,0.8)" font-weight="700">CPP/OAS</text>
+          <!-- Leg 2: Pension cracked -->
+          <rect x="85" y="38" width="30" height="78" rx="2" fill="rgba(224,82,82,0.15)" stroke="rgba(224,82,82,0.4)" stroke-width="1"/>
+          <line x1="85" y1="58" x2="115" y2="72" stroke="#e05252" stroke-width="2"/>
+          <text x="100" y="105" text-anchor="middle" font-family="Helvetica Neue,Arial" font-size="7" fill="rgba(224,82,82,0.7)" font-weight="700">PENSION</text>
+          <!-- Leg 3: Savings solid -->
+          <rect x="142" y="38" width="30" height="78" rx="2" fill="#2d7dd2" stroke="#4fa3e0" stroke-width="1"/>
+          <text x="157" y="105" text-anchor="middle" font-family="Helvetica Neue,Arial" font-size="7" fill="white" font-weight="700">SAVINGS</text>
+          <text x="157" y="120" text-anchor="middle" font-family="Helvetica Neue,Arial" font-size="6.5" fill="#4fa3e0" font-weight="700">← YOUR CONTROL</text>
+        </svg>
+      </div>
+      <div>
+        <p>For decades, retirement security was described as a three-legged stool: <strong>government benefits</strong>, <strong>company pensions</strong>, and <strong>personal savings</strong>. That stool is broken. Company pensions have largely disappeared. Government benefits cover a modest baseline — not a comfortable retirement. The only leg you can truly rely on? <strong>Personal savings.</strong></p>
+        <div class="box box-red">
+          <div class="box-label">Reality Check</div>
+          Average CPP: ~$758/mo · Max OAS: ~$700/mo<br>
+          Combined: ~$1,458/month — well below most Canadians' cost of living.<br><br>
+          <strong>It's up to you to fund your retirement.</strong>
+        </div>
+      </div>
+    </div>
+
+    <h3>Rate of Return Is the Key to Real Security</h3>
+    <table>
+      <thead><tr><th>Investment Type</th><th>Approx. Return</th><th>Purchasing Power Risk</th></tr></thead>
+      <tbody>
+        <tr><td>Savings account / GIC</td><td class="td-bad">1–3%</td><td class="td-bad">High (often below inflation)</td></tr>
+        <tr><td>Government bonds</td><td>3–5%</td><td>Moderate</td></tr>
+        <tr><td>Balanced funds</td><td>5–7%</td><td>Lower</td></tr>
+        <tr><td>Diversified equity funds</td><td class="td-good">7–9%+</td><td class="td-good">Lowest over long periods</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:#888;margin-top:-10px;">Historical averages. Past performance is not a guarantee of future results.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 8: PROFESSIONAL MANAGEMENT
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">8</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 8</div>
+      <div class="ch-title">Invest With<br>Professional Management</div>
+      <div class="ch-intro">You don't need to be a financial expert to benefit from professional investment management. Here's how ordinary families access it.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <h3>The Three Ds of Successful Investing</h3>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num" style="font-size:30pt;">D</span>
+        <div class="stat-desc" style="font-size:9pt;font-weight:800;color:#c8dff0;margin-bottom:5px;">DISCIPLINE</div>
+        <div class="stat-desc">Stay invested through market ups and downs. Missing even the 10 best trading days in a decade dramatically reduces returns.</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num" style="font-size:30pt;">D</span>
+        <div class="stat-desc" style="font-size:9pt;font-weight:800;color:#c8dff0;margin-bottom:5px;">DIVERSIFY</div>
+        <div class="stat-desc">Spread risk across industries, geographies, and asset types. When one sector falls, others often hold or rise.</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num" style="font-size:30pt;">D</span>
+        <div class="stat-desc" style="font-size:9pt;font-weight:800;color:#c8dff0;margin-bottom:5px;">DOLLAR-COST AVG</div>
+        <div class="stat-desc">Invest a fixed amount every month. When prices drop, your fixed amount buys more units — lowering your average cost.</div>
+      </div>
+    </div>
+
+    <h3>Dollar-Cost Averaging: Why Falling Markets Can Be Your Friend</h3>
+    <table>
+      <thead><tr><th>Month</th><th>Investor A — Rising Market</th><th>Investor B — Dip &amp; Recovery</th></tr></thead>
+      <tbody>
+        <tr><td>Month 1</td><td>$10/unit — buys 10 units</td><td>$10/unit — buys 10 units</td></tr>
+        <tr><td>Month 2</td><td>$12/unit — buys 8.3 units</td><td>$6/unit — buys 16.7 units</td></tr>
+        <tr><td>Month 3</td><td>$14/unit — buys 7.1 units</td><td>$4/unit — buys 25 units</td></tr>
+        <tr><td>Month 4</td><td>$16/unit — buys 6.3 units</td><td>$4/unit — buys 25 units</td></tr>
+        <tr><td>Month 5</td><td>$18/unit — buys 5.6 units</td><td>$6/unit — buys 16.7 units</td></tr>
+        <tr><td>Month 6</td><td>$20/unit — buys 5 units</td><td>$10/unit — buys 10 units</td></tr>
+        <tr><td><strong>Result</strong></td><td>42.3 units @ avg $14.19/unit</td><td class="td-good"><strong>103.4 units @ avg $5.80/unit</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:8.5pt;color:#888;margin-top:-10px;">Hypothetical example. Dollar-cost averaging cannot assure a profit or protect against loss in declining markets.</p>
+
+    <div class="box box-gold">
+      <div class="box-label">Key Insight</div>
+      Investor B — who kept investing through a market dip — accumulated <strong>nearly 2.5× more units</strong> than Investor A. When markets recovered to $10/unit, Investor B came out far ahead with the same $600 total invested.
+    </div>
+
+    <div class="action-box">
+      <h4>✅ Your Investment Action Steps</h4>
+      <ol>
+        <li>Determine your savings goal and time horizon before choosing investments</li>
+        <li>Understand your risk tolerance — how would you react to a 30% temporary drop?</li>
+        <li>Prioritize tax-sheltered accounts (RRSP, TFSA) before non-registered investing</li>
+        <li>Set up automatic monthly contributions — make it systematic, not discretionary</li>
+        <li>Don't stop investing when markets fall — DCA works best through downturns</li>
+        <li>Review your portfolio annually; don't panic-sell during market downturns</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 9: FINANCIAL SNAPSHOT
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner">
+    <div class="ch-accent-num">9</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label">Chapter 9</div>
+      <div class="ch-title">Your Financial<br>Needs Snapshot</div>
+      <div class="ch-intro">Your real numbers — retirement gap, debt load, and protection — are the foundation of a real financial plan.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <p>Every solid financial plan starts with four priorities — in this order:</p>
+
+    <div class="box box-blue"><div class="box-label">Priority 1 — Protection Management (Foundation)</div>Life insurance, emergency fund, legal protection. Without this layer, one bad event can wipe out everything you've built above it.</div>
+    <div class="box box-blue"><div class="box-label">Priority 2 — Debt Management</div>Consumer debt, credit cards, and non-mortgage debt — eliminated as fast as possible using Debt Stacking.</div>
+    <div class="box box-blue"><div class="box-label">Priority 3 — Savings Management</div>Retirement savings (RRSP/TFSA), education funds, and goals accounts. This is where real wealth is built.</div>
+    <div class="box box-blue"><div class="box-label">Priority 4 — Income Management</div>Understanding your cash flow: what comes in, what goes out, and the surplus that determines how fast you progress on Priorities 1–3.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONCLUSION
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner" style="background: linear-gradient(160deg, #030b18 0%, #071525 50%, #102a52 100%);">
+    <div class="ch-banner-inner">
+      <div class="ch-label">Conclusion</div>
+      <div class="ch-title">You Can Do This</div>
+      <div class="ch-intro">Financial independence isn't a secret. It's a set of principles — applied consistently, over time. You now have the knowledge. The only question is: will you use it?</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+    <div class="box box-dark">
+      <div class="box-label">The Fundamentals That Work</div>
+      <p>"Take control. Pay yourself first. Eliminate debt. Use compound interest for you, not against you. Protect your income. Defer your taxes. Own pieces of the economy. Start now."</p>
+    </div>
+
+    <p>Whatever your current situation — whether you're just starting out, carrying debt, behind on retirement savings, or simply looking for a clearer picture — the most important step is the next one.</p>
+
+    <div class="action-box">
+      <h4>🚀 Your First Steps This Week</h4>
+      <ol>
+        <li>Calculate your Financial Independence Number</li>
+        <li>Review your current life insurance coverage and close any gaps</li>
+        <li>List all your debts and set up your Debt Stacking order</li>
+        <li>Open or maximize a TFSA if you haven't already</li>
+        <li>Set up an automatic monthly savings transfer — even $100 starts the habit</li>
+        <li>Talk to a qualified financial advisor to build your full personalized plan</li>
+        <li><strong>Complete the Personal FNA Worksheet on the next page</strong></li>
+      </ol>
+    </div>
+
+    <p>Winning the financial game is the result of winning tiny battles day to day. The basic concepts of money management aren't obscure or difficult to understand. They're based on common sense — and they can put financial success within your reach.</p>
+    <p><strong>Whatever your present situation, the most important step is getting started today.</strong></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PERSONAL FNA WORKSHEET
+═══════════════════════════════════════════════════════════ -->
+<div class="chapter">
+  <div class="ch-banner" style="background: linear-gradient(160deg, #030b18, #071525, #1a3a00);">
+    <div class="ch-accent-num" style="color:rgba(232,184,75,0.06);">★</div>
+    <div class="ch-banner-inner">
+      <div class="ch-label" style="color:#e8b84b;">Bonus Worksheet</div>
+      <div class="ch-title">Your Personal Financial Needs Analysis</div>
+      <div class="ch-intro">Use this worksheet to calculate your real numbers — income protection gap, retirement gap, and debt payoff timeline.</div>
+    </div>
+  </div>
+
+  <div class="ch-body page-content">
+
+    <!-- SECTION 1 -->
+    <div class="fna-section">
+      <div class="fna-section-title">📋 Section 1 — Your Household Basics</div>
+      <div class="fna-inner">
+        <div class="fna-row"><div class="fna-label">Primary earner's name:</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Partner/Spouse name:</div><div class="fna-blank"></div></div>
+        <div class="fna-row">
+          <div class="fna-label">Current age:</div>
+          <div class="fna-blank" style="flex:0 0 80px;"></div>
+          <div class="fna-label" style="flex:0 0 160px;">Target retirement age:</div>
+          <div class="fna-blank" style="flex:0 0 80px;"></div>
+        </div>
+        <div class="fna-row"><div class="fna-label">Combined annual income:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Monthly take-home pay:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Monthly expenses (total):</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-divider"></div>
+        <div class="fna-result"><div class="fna-result-label">Monthly surplus / shortfall:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+        <p class="fna-note">Monthly surplus = Take-home pay − Monthly expenses. Positive = room to build wealth. Negative = spending needs to be addressed first.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="fna-section">
+      <div class="fna-section-title" style="background:linear-gradient(135deg,#071525,#6b1c1c);">🛡️ Section 2 — Income Protection Analysis</div>
+      <div class="fna-inner">
+        <h4>Step A — Your Earning Power</h4>
+        <div class="fna-row"><div class="fna-label">Annual income (you):</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Years to retirement:</div><div class="fna-blank" style="flex:0 0 80px;"></div></div>
+        <div class="fna-formula"><strong>Total Earning Power = Annual Income × Years to Retirement</strong><br>Example: $70,000 × 30 = <strong>$2,100,000</strong></div>
+        <div class="fna-result"><div class="fna-result-label">Your total earning power:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+
+        <div class="fna-divider"></div>
+        <h4>Step B — Coverage Needed (10× Rule)</h4>
+        <div class="fna-formula"><strong>Coverage Needed = Annual Income × 10</strong><br>Example: $70,000 × 10 = <strong>$700,000 recommended coverage</strong></div>
+        <div class="fna-result"><div class="fna-result-label">Coverage needed:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+
+        <div class="fna-divider"></div>
+        <h4>Step C — Your Current Coverage</h4>
+        <div class="fna-row"><div class="fna-label">Employer group life:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Personal life insurance:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Other coverage:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-result"><div class="fna-result-label">Total current coverage:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+        <div class="fna-result final-result"><div class="fna-result-label">⚠️ COVERAGE GAP:</div><div style="flex:0 0 20px;font-weight:700;color:#8ab4d4;">$</div><div class="fna-result-val"></div></div>
+        <p class="fna-note">Coverage Gap = Coverage Needed − Total Current Coverage. Positive = underinsured. This gap is what your family would be missing.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="fna-section">
+      <div class="fna-section-title">💰 Section 3 — Retirement Gap Analysis</div>
+      <div class="fna-inner">
+        <h4>Step A — Monthly Income Target</h4>
+        <div class="fna-row"><div class="fna-label">Target retirement income/mo:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Estimated CPP monthly:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Estimated OAS monthly:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-result"><div class="fna-result-label">Income from savings needed/mo:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+
+        <div class="fna-divider"></div>
+        <h4>Step B — Nest Egg Required</h4>
+        <div class="fna-formula"><strong>Nest Egg = Monthly income from savings × 12 ÷ 0.04</strong><br>(4% rule — makes savings last 25–30 years)<br>Example: $3,000/mo × 12 ÷ 0.04 = <strong>$900,000 needed</strong></div>
+        <div class="fna-result"><div class="fna-result-label">Nest egg required:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+
+        <div class="fna-divider"></div>
+        <h4>Step C — Your Gap</h4>
+        <div class="fna-row"><div class="fna-label">Current RRSP/TFSA balance:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-blank"></div></div>
+        <div class="fna-row"><div class="fna-label">Years until retirement:</div><div class="fna-blank" style="flex:0 0 80px;"></div></div>
+        <div class="fna-formula"><strong>Projected savings = Current balance × (1.09)^years</strong><br>Example: $50,000 × (1.09)^25 = $431,000</div>
+        <div class="fna-result"><div class="fna-result-label">Projected retirement savings:</div><div style="flex:0 0 20px;font-weight:700;">$</div><div class="fna-result-val"></div></div>
+        <div class="fna-result final-result"><div class="fna-result-label">🎯 RETIREMENT GAP:</div><div style="flex:0 0 20px;font-weight:700;color:#8ab4d4;">$</div><div class="fna-result-val"></div></div>
+        <p class="fna-note">Retirement Gap = Nest Egg Required − Projected Retirement Savings. This is the additional wealth you need to build.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="fna-section">
+      <div class="fna-section-title">📉 Section 4 — Debt Payoff Plan (Debt Stacking)</div>
+      <div class="fna-inner">
+        <p style="font-size:9.5pt;color:#5a7a9a;margin-bottom:14px;">List all debts below. Order by interest rate (highest first) for maximum Debt Stacking impact.</p>
+        <table>
+          <thead><tr><th>Debt Name</th><th>Balance Owing</th><th>Interest Rate</th><th>Min. Monthly Payment</th><th>Priority #</th></tr></thead>
+          <tbody>
+            <tr><td style="height:28px;"></td><td>$</td><td>%</td><td>$</td><td></td></tr>
+            <tr><td style="height:28px;"></td><td>$</td><td>%</td><td>$</td><td></td></tr>
+            <tr><td style="height:28px;"></td><td>$</td><td>%</td><td>$</td><td></td></tr>
+            <tr><td style="height:28px;"></td><td>$</td><td>%</td><td>$</td><td></td></tr>
+            <tr><td style="height:28px;"></td><td>$</td><td>%</td><td>$</td><td></td></tr>
+            <tr style="background:#eef3ff;"><td><strong>TOTAL</strong></td><td>$</td><td>—</td><td>$</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <div class="fna-formula" style="margin-top:14px;">
+          <strong>Extra Monthly Payment Available (from your Section 1 surplus):</strong> $____________<br><br>
+          Apply this extra amount to Priority #1 debt every month. When paid off, roll that full payment into Priority #2. Repeat until debt-free.
+        </div>
+
+        <div class="fna-result final-result" style="margin-top:14px;"><div class="fna-result-label">💡 Once debt-free, redirect to savings:</div><div style="flex:0 0 20px;font-weight:700;color:#8ab4d4;">$</div><div class="fna-result-val"></div></div>
+        <p class="fna-note">When all debts are paid, your entire monthly debt payment becomes wealth-building fuel. This is the Debt Stacking payoff.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="fna-section">
+      <div class="fna-section-title">🚀 Section 5 — Your Financial Action Plan</div>
+      <div class="fna-inner">
+        <p style="font-size:9.5pt;color:#5a7a9a;margin-bottom:16px;">Based on what you've calculated above, set your top 3 financial priorities and next actions.</p>
+
+        <div style="margin-bottom:20px;">
+          <div style="font-size:10pt;font-weight:800;color:#071525;margin-bottom:8px;">Priority #1 — My most urgent financial need right now:</div>
+          <div style="height:22px;border-bottom:2px solid #071525;margin-bottom:8px;"></div>
+          <div style="font-size:9pt;color:#888;margin-bottom:4px;">First action I will take (and when):</div>
+          <div style="height:22px;border-bottom:1px solid #ccc;"></div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <div style="font-size:10pt;font-weight:800;color:#071525;margin-bottom:8px;">Priority #2:</div>
+          <div style="height:22px;border-bottom:2px solid #071525;margin-bottom:8px;"></div>
+          <div style="font-size:9pt;color:#888;margin-bottom:4px;">First action I will take (and when):</div>
+          <div style="height:22px;border-bottom:1px solid #ccc;"></div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <div style="font-size:10pt;font-weight:800;color:#071525;margin-bottom:8px;">Priority #3:</div>
+          <div style="height:22px;border-bottom:2px solid #071525;margin-bottom:8px;"></div>
+          <div style="font-size:9pt;color:#888;margin-bottom:4px;">First action I will take (and when):</div>
+          <div style="height:22px;border-bottom:1px solid #ccc;"></div>
+        </div>
+
+        <div class="box box-gold">
+          <div class="box-label">Reminder</div>
+          This worksheet gives you the picture — a qualified financial advisor can help you build the full plan, select the right products, and keep you accountable. The best next step after completing this worksheet is to sit down with someone who can help you close the gaps you found.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FINAL PAGE
+═══════════════════════════════════════════════════════════ -->
+<div class="final-page">
+  <h2>Your Financial Blueprint</h2>
+  <div class="final-line"></div>
+  <p>This guide is intended for general financial education purposes only. It is not a solicitation for any product or service. All examples are illustrative. For advice specific to your situation, consult a qualified and licensed financial professional in your province.</p>
+  <div class="final-line"></div>
+  <p style="font-size:8.5pt;color:rgba(255,255,255,0.3);">© 2026 · Financial Education Series · For Canadian Families</p>
+</div>
+
+</body>
+</html>
