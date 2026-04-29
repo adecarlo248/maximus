@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #030b18;
+      width: 8.5in;
+      height: 11in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Blueprint grid */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(79,163,224,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,163,224,0.06) 1px, transparent 1px);
+      background-size: 36pt 36pt;
+    }
+
+    /* Radial glow */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(26,74,150,0.4) 0%, transparent 70%);
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 5.5in;
+      background: linear-gradient(160deg, #071525 0%, #102a52 100%);
+      border: 1px solid rgba(79,163,224,0.3);
+      border-radius: 16pt;
+      padding: 52pt 48pt;
+      text-align: center;
+      box-shadow: 0 0 60pt rgba(79,163,224,0.12);
+    }
+
+    /* Top accent line */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3pt;
+      border-radius: 16pt 16pt 0 0;
+      background: linear-gradient(90deg, #4fa3e0, #8ab4d4, #4fa3e0);
+    }
+
+    .eyebrow {
+      font-size: 7pt;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #4fa3e0;
+      margin-bottom: 18pt;
+    }
+
+    .logo {
+      font-size: 22pt;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6pt;
+      line-height: 1.1;
+    }
+
+    .logo span { color: #4fa3e0; }
+
+    .divider {
+      width: 50pt;
+      height: 2pt;
+      background: linear-gradient(90deg, transparent, #4fa3e0, transparent);
+      margin: 18pt auto;
+    }
+
+    .headline {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10pt;
+      line-height: 1.3;
+    }
+
+    .subtext {
+      font-size: 9pt;
+      color: rgba(200,223,240,0.65);
+      line-height: 1.6;
+      margin-bottom: 28pt;
+      max-width: 3.8in;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* URL Box */
+    .url-box {
+      background: rgba(79,163,224,0.08);
+      border: 1.5pt solid rgba(79,163,224,0.35);
+      border-radius: 9pt;
+      padding: 16pt 20pt;
+      margin-bottom: 28pt;
+    }
+
+    .url-label {
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(200,223,240,0.4);
+      margin-bottom: 8pt;
+    }
+
+    .url-text {
+      font-size: 14pt;
+      font-weight: 900;
+      color: #4fa3e0;
+      letter-spacing: 0.3px;
+    }
+
+    .url-note {
+      font-size: 7pt;
+      color: rgba(200,223,240,0.35);
+      margin-top: 6pt;
+    }
+
+    /* Features row */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 18pt;
+      margin-bottom: 28pt;
+      flex-wrap: wrap;
+    }
+
+    .feat {
+      text-align: center;
+    }
+
+    .feat-icon {
+      font-size: 16pt;
+      display: block;
+      margin-bottom: 5pt;
+    }
+
+    .feat-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: rgba(200,223,240,0.5);
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    /* Bottom note */
+    .bottom-note {
+      font-size: 7pt;
+      color: rgba(200,223,240,0.25);
+      line-height: 1.5;
+      border-top: 1pt solid rgba(79,163,224,0.1);
+      padding-top: 16pt;
+    }
+
+    .flag {
+      display: inline-block;
+      margin-bottom: 4pt;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="eyebrow">Your Purchase is Complete</div>
+
+    <div class="logo">Your Financial <span>Blueprint</span></div>
+
+    <div class="divider"></div>
+
+    <div class="headline">Access Your App Here</div>
+    <div class="subtext">
+      Open the link below in any browser on your phone, tablet, or computer.
+      Your data saves automatically — no account or login required.
+    </div>
+
+    <div class="url-box">
+      <div class="url-label">Your App Link</div>
+      <div class="url-text">yourfinancialblueprint.netlify.app/app.html</div>
+      <div class="url-note">Bookmark this page — your progress saves between visits</div>
+    </div>
+
+    <div class="features">
+      <div class="feat">
+        <span class="feat-icon">🧮</span>
+        <div class="feat-label">FNA<br>Calculator</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">💰</span>
+        <div class="feat-label">Debt<br>Tracker</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📈</span>
+        <div class="feat-label">Savings<br>Goals</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🚀</span>
+        <div class="feat-label">Investment<br>Portfolio</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🏦</span>
+        <div class="feat-label">Net Worth<br>Tracker</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🧭</span>
+        <div class="feat-label">AI Financial<br>Coach</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">
+      <div class="flag">🇨🇦</div><br>
+      Financial Education Series · For Canadian Families · 2026<br>
+      This tool is for educational purposes only and does not constitute financial advice.
+    </div>
+  </div>
+</body>
+</html>
