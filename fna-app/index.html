@@ -903,6 +903,161 @@
       margin-left: 8px;
     }
 
+
+    /* ══════════════════════════════════
+       TRACKER TABS (Step 5 inline)
+    ══════════════════════════════════ */
+    .tracker-wrap { margin-top: 24px; }
+
+    .tracker-tabs {
+      display: flex;
+      gap: 0;
+      background: var(--navy);
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      border: 1px solid rgba(79,163,224,0.2);
+      border-bottom: none;
+    }
+
+    .tr-tab {
+      flex: 1;
+      padding: 12px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(200,223,240,0.45);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .tr-tab:hover { color: rgba(200,223,240,0.8); }
+    .tr-tab.active { color: #fff; border-bottom-color: var(--teal); background: rgba(79,163,224,0.08); }
+
+    .tr-panels {
+      background: var(--bg);
+      border: 1px solid rgba(79,163,224,0.2);
+      border-radius: 0 0 12px 12px;
+      padding: 20px;
+    }
+
+    .tr-panel { display: none; animation: fadeIn 0.25s ease; }
+    .tr-panel.active { display: block; }
+
+    /* reuse card style for tracker cards */
+    .tr-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(79,163,224,0.18);
+      box-shadow: 0 3px 16px rgba(7,21,37,0.06);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .tr-card-hdr {
+      background: var(--navy);
+      padding: 13px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tr-card-hdr::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(79,163,224,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.07) 1px,transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    .tr-card-hdr::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), rgba(79,163,224,0.1), transparent);
+    }
+
+    .tr-eye { font-size: 0.6rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); position: relative; }
+    .tr-title { font-size: 1.05rem; font-weight: 800; color: #fff; position: relative; }
+    .tr-body { padding: 18px; }
+
+    .tr-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 10px; margin-bottom: 16px; }
+    .tr-stat { background: linear-gradient(160deg,var(--navy),var(--cobalt)); border: 1px solid rgba(79,163,224,0.18); border-radius: 9px; padding: 13px 10px; text-align: center; }
+    .tr-stat-lbl { font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(200,223,240,0.4); margin-bottom: 4px; }
+    .tr-stat-val { font-size: 1.1rem; font-weight: 900; line-height: 1; }
+    .tr-stat-val.teal { color: var(--teal); }
+    .tr-stat-val.gold { color: var(--gold); }
+    .tr-stat-val.green { color: var(--green); }
+    .tr-stat-val.red   { color: var(--red); }
+
+    .tr-form-row { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px; margin-bottom: 12px; }
+    .tr-label { display: block; font-size: 0.72rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .tr-input { width: 100%; padding: 8px 10px; border: 1.5px solid #d4e4f4; border-radius: 7px; font-family: inherit; font-size: 0.88rem; background: #fafcff; outline: none; transition: all 0.2s; color: var(--text); }
+    .tr-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(79,163,224,0.1); }
+    .tr-has-pre { position: relative; }
+    .tr-has-pre .tr-pre { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 0.82rem; font-weight: 600; color: var(--muted); pointer-events: none; }
+    .tr-has-pre .tr-input { padding-left: 18px; }
+    .tr-has-suf { position: relative; }
+    .tr-has-suf .tr-suf { position: absolute; right: 9px; top: 50%; transform: translateY(-50%); font-size: 0.78rem; color: var(--muted); pointer-events: none; }
+    .tr-has-suf .tr-input { padding-right: 26px; }
+
+    .tr-btn { padding: 8px 18px; border-radius: 7px; font-family: inherit; font-size: 0.82rem; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
+    .tr-btn-primary { background: linear-gradient(135deg,var(--teal),#2d7dd2); color: #fff; box-shadow: 0 2px 8px rgba(79,163,224,0.3); }
+    .tr-btn-primary:hover { transform: translateY(-1px); }
+    .tr-btn-ghost { background: none; border: 1.5px solid rgba(79,163,224,0.3); color: var(--teal); }
+    .tr-btn-ghost:hover { background: rgba(79,163,224,0.06); }
+    .tr-btn-add { background: none; border: 1.5px dashed rgba(79,163,224,0.35); color: var(--teal); padding: 7px 14px; border-radius: 7px; font-size: 0.78rem; font-weight: 700; cursor: pointer; margin-top: 8px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+    .tr-btn-add:hover { background: rgba(79,163,224,0.06); border-color: var(--teal); }
+    .tr-btn-danger { background: none; border: none; color: var(--red); font-size: 1rem; padding: 3px 7px; cursor: pointer; }
+
+    .tr-item { background: #fff; border: 1px solid rgba(79,163,224,0.15); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+    .tr-item-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+    .tr-item-name { font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+    .tr-item-meta { font-size: 0.73rem; color: var(--muted); margin-top: 1px; }
+    .tr-item-val { font-size: 1rem; font-weight: 800; text-align: right; }
+    .tr-item-sub { font-size: 0.72rem; color: var(--muted); text-align: right; margin-top: 1px; }
+    .tr-item-actions { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
+    .tr-done-badge { display: inline-block; background: var(--green); color: #fff; font-size: 0.6rem; font-weight: 800; letter-spacing: 1px; padding: 2px 7px; border-radius: 16px; margin-left: 6px; vertical-align: middle; }
+
+    .tr-prog-track { height: 9px; background: #e8f0f8; border-radius: 5px; overflow: hidden; margin-bottom: 3px; }
+    .tr-prog-fill { height: 100%; border-radius: 5px; transition: width 0.7s ease; }
+    .tr-prog-fill.teal  { background: linear-gradient(90deg,var(--teal),#00c8ff); }
+    .tr-prog-fill.green { background: linear-gradient(90deg,var(--green),#27ae60); }
+    .tr-prog-fill.gold  { background: linear-gradient(90deg,var(--gold),#f5d98e); }
+    .tr-prog-fill.red   { background: linear-gradient(90deg,var(--red),#c0392b); }
+    .tr-prog-pct { font-size: 0.65rem; font-weight: 700; color: var(--muted); text-align: right; }
+
+    .tr-pay-box { background: linear-gradient(135deg,#eaf4fd,#f0f8ff); border: 1.5px solid rgba(79,163,224,0.22); border-radius: 9px; padding: 14px 16px; margin-top: 4px; }
+    .tr-pay-title { font-size: 0.62rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .tr-pay-row { display: grid; grid-template-columns: 2fr 1fr auto; gap: 9px; align-items: end; }
+
+    .tr-hist-title { font-size: 0.62rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+    .tr-hist-list { display: flex; flex-direction: column; gap: 4px; max-height: 140px; overflow-y: auto; }
+    .tr-hist-item { background: #f0f7ff; border-left: 3px solid var(--teal); border-radius: 0 5px 5px 0; padding: 5px 10px; font-size: 0.75rem; display: flex; justify-content: space-between; }
+    .tr-hist-item.gold-h { border-left-color: var(--gold); background: #fffbf0; }
+
+    .nw-big { text-align: center; padding: 24px; background: linear-gradient(160deg,var(--navy),var(--cobalt)); border-radius: 11px; margin-bottom: 16px; border: 1px solid rgba(79,163,224,0.18); }
+    .nw-lbl { font-size: 0.62rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(200,223,240,0.35); margin-bottom: 6px; }
+    .nw-val { font-size: 2.4rem; font-weight: 900; line-height: 1; }
+    .nw-chg { font-size: 0.82rem; margin-top: 6px; }
+    .chart-svg { width: 100%; height: 100px; display: block; }
+
+    .tr-empty { text-align: center; padding: 30px 16px; color: var(--muted); }
+    .tr-empty-icon { font-size: 2rem; margin-bottom: 8px; }
+    .tr-empty-text { font-size: 0.85rem; }
+
+    .gain-pos { color: var(--green); font-weight: 700; }
+    .gain-neg { color: var(--red); font-weight: 700; }
+
+    .tr-select { width: 100%; padding: 8px 10px; border: 1.5px solid #d4e4f4; border-radius: 7px; font-family: inherit; font-size: 0.88rem; background: #fafcff; outline: none; }
+    .tr-select:focus { border-color: var(--teal); }
+
+    /* Confetti */
+    .confetti-wrap { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+    @keyframes confFall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1;} 100%{transform:translateY(100vh) rotate(720deg);opacity:0;} }
+    .conf-piece { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: confFall 2s ease forwards; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
       .field-row { grid-template-columns: 1fr; }
@@ -1386,17 +1541,144 @@
       </div>
     </div>
 
-    <!-- Upsell Banner -->
-    <div style="background:linear-gradient(135deg,#071525,#102a52);border:1.5px solid rgba(232,184,75,0.35);border-radius:14px;padding:24px 28px;margin:8px 0 24px;text-align:center;position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(79,163,224,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.05) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;"></div>
-      <div style="position:relative;">
-        <div style="font-size:0.65rem;font-weight:800;letter-spacing:3px;color:var(--gold);margin-bottom:8px;">⭐ UPGRADE YOUR TOOLKIT</div>
-        <div style="font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:8px;">Track Every Dollar. Watch Your Net Worth Climb.</div>
-        <div style="font-size:0.85rem;color:rgba(200,223,240,0.65);margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto;">The Premium Tracker adds Savings Goals, Investment Portfolio, and Net Worth tracking — with real-time progress bars and 12-month trend charts. One-time payment. No subscription.</div>
-        <a href="index-landing.html" style="display:inline-block;background:linear-gradient(135deg,var(--gold),#c8921a);color:#fff;font-weight:800;font-size:0.95rem;padding:13px 32px;border-radius:9px;text-decoration:none;box-shadow:0 4px 16px rgba(232,184,75,0.4);">Get Premium Tracker — $20.99 →</a>
-        <div style="font-size:0.72rem;color:rgba(200,223,240,0.3);margin-top:10px;">One-time · No subscription · Your data stays private</div>
+    <!-- ══════════════════════════════════
+         INTEGRATED TRACKER
+    ══════════════════════════════════ -->
+    <div class="tracker-wrap">
+      <div style="font-size:0.65rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;padding-left:12px;border-left:3px solid var(--teal);">Your Financial Trackers</div>
+
+      <!-- Tracker Tab Bar -->
+      <div class="tracker-tabs">
+        <div class="tr-tab active" onclick="trSwitch('debt')">💰 Debt</div>
+        <div class="tr-tab" onclick="trSwitch('savings')">📈 Savings</div>
+        <div class="tr-tab" onclick="trSwitch('investments')">🚀 Investments</div>
+        <div class="tr-tab" onclick="trSwitch('networth')">🏦 Net Worth</div>
       </div>
-    </div>
+
+      <div class="tr-panels">
+
+        <!-- ── DEBT TAB ── -->
+        <div class="tr-panel active" id="trp-debt">
+          <div class="tr-stats" id="tr-debt-stats"></div>
+          <div class="tr-card">
+            <div class="tr-card-hdr"><div class="tr-eye">Add Debt</div><div class="tr-title">Track a New Debt</div></div>
+            <div class="tr-body">
+              <div class="tr-form-row">
+                <div><label class="tr-label">Debt Name</label><input class="tr-input" type="text" id="tr-d-name" placeholder="e.g. Credit Card"></div>
+                <div><label class="tr-label">Balance ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-d-bal" placeholder="5,000" min="0"></div></div>
+                <div><label class="tr-label">Interest Rate (%)</label><div class="tr-has-suf"><input class="tr-input" type="number" id="tr-d-rate" placeholder="19.99" min="0" max="100" step="0.01"><span class="tr-suf">%</span></div></div>
+                <div><label class="tr-label">Min Payment ($/mo)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-d-min" placeholder="150" min="0"></div></div>
+              </div>
+              <button class="tr-btn tr-btn-primary" onclick="trAddDebt()">+ Add Debt</button>
+            </div>
+          </div>
+          <div id="tr-debt-list"></div>
+          <div class="tr-card" id="tr-debt-stack-card" style="display:none;">
+            <div class="tr-card-hdr"><div class="tr-eye">Debt Stacking</div><div class="tr-title">Payoff Timeline Comparison</div></div>
+            <div class="tr-body" id="tr-debt-stack-body"></div>
+          </div>
+          <div class="tr-card" id="tr-debt-pay-card" style="display:none;">
+            <div class="tr-card-hdr"><div class="tr-eye">Log Payment</div><div class="tr-title">Apply a Payment</div></div>
+            <div class="tr-body">
+              <div class="tr-pay-row">
+                <div><label class="tr-label">Select Debt</label><select class="tr-select" id="tr-d-pay-sel"></select></div>
+                <div><label class="tr-label">Amount ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-d-pay-amt" placeholder="500" min="1"></div></div>
+                <div style="display:flex;align-items:flex-end;"><button class="tr-btn tr-btn-primary" onclick="trApplyDebtPay()">Apply ✓</button></div>
+              </div>
+              <div id="tr-d-hist-wrap" style="display:none;">
+                <div class="tr-hist-title">Payment History</div>
+                <div class="tr-hist-list" id="tr-d-hist-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SAVINGS TAB ── -->
+        <div class="tr-panel" id="trp-savings">
+          <div class="tr-stats" id="tr-sav-stats"></div>
+          <div class="tr-card">
+            <div class="tr-card-hdr"><div class="tr-eye">Add Goal</div><div class="tr-title">New Savings Goal</div></div>
+            <div class="tr-body">
+              <div class="tr-form-row">
+                <div><label class="tr-label">Goal Name</label><input class="tr-input" type="text" id="tr-s-name" placeholder="e.g. Emergency Fund"></div>
+                <div><label class="tr-label">Target Amount ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-s-target" placeholder="10,000" min="0"></div></div>
+                <div><label class="tr-label">Current Balance ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-s-current" placeholder="2,500" min="0"></div></div>
+                <div><label class="tr-label">Monthly Contribution ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-s-monthly" placeholder="300" min="0"></div></div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+                <button class="tr-btn tr-btn-ghost" onclick="trQuickGoal('Emergency Fund',10000,0,300)">+ Emergency Fund</button>
+                <button class="tr-btn tr-btn-ghost" onclick="trQuickGoal('Down Payment',50000,0,800)">+ Down Payment</button>
+                <button class="tr-btn tr-btn-ghost" onclick="trQuickGoal('Vacation Fund',3000,0,200)">+ Vacation</button>
+              </div>
+              <button class="tr-btn tr-btn-primary" onclick="trAddGoal()">+ Add Goal</button>
+            </div>
+          </div>
+          <div id="tr-savings-list"></div>
+        </div>
+
+        <!-- ── INVESTMENTS TAB ── -->
+        <div class="tr-panel" id="trp-investments">
+          <div class="tr-stats" id="tr-inv-stats"></div>
+          <div class="tr-card">
+            <div class="tr-card-hdr"><div class="tr-eye">Add Holding</div><div class="tr-title">Track an Investment</div></div>
+            <div class="tr-body">
+              <div class="tr-form-row">
+                <div><label class="tr-label">Name</label><input class="tr-input" type="text" id="tr-i-name" placeholder="e.g. RRSP — TD e-Series"></div>
+                <div><label class="tr-label">Account Type</label>
+                  <select class="tr-select" id="tr-i-type">
+                    <option value="RRSP">RRSP</option><option value="TFSA">TFSA</option>
+                    <option value="Non-Reg">Non-Registered</option><option value="RESP">RESP</option><option value="Other">Other</option>
+                  </select>
+                </div>
+                <div><label class="tr-label">Current Value ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-i-value" placeholder="25,000" min="0"></div></div>
+                <div><label class="tr-label">Total Contributed ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-i-contrib" placeholder="20,000" min="0"></div></div>
+                <div><label class="tr-label">Monthly Contribution ($)</label><div class="tr-has-pre"><span class="tr-pre">$</span><input class="tr-input" type="number" id="tr-i-monthly" placeholder="500" min="0"></div></div>
+                <div><label class="tr-label">Years to Retirement</label><input class="tr-input" type="number" id="tr-i-years" placeholder="25" min="1" max="50"></div>
+              </div>
+              <button class="tr-btn tr-btn-primary" onclick="trAddInvestment()">+ Add Holding</button>
+            </div>
+          </div>
+          <div id="tr-inv-list"></div>
+          <div id="tr-inv-alloc" style="display:none;"></div>
+        </div>
+
+        <!-- ── NET WORTH TAB ── -->
+        <div class="tr-panel" id="trp-networth">
+          <div id="tr-nw-big"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="tr-card">
+              <div class="tr-card-hdr"><div class="tr-eye">Assets</div><div class="tr-title" style="color:var(--green);">What You Own</div></div>
+              <div class="tr-body">
+                <div id="tr-asset-list"></div>
+                <button class="tr-btn-add" onclick="trAddAsset()">+ Add Asset</button>
+                <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.82rem;">
+                  <span style="font-weight:700;">Total Assets</span>
+                  <span style="font-weight:900;color:var(--green);" id="tr-total-assets">$0</span>
+                </div>
+              </div>
+            </div>
+            <div class="tr-card">
+              <div class="tr-card-hdr"><div class="tr-eye">Liabilities</div><div class="tr-title" style="color:var(--red);">What You Owe</div></div>
+              <div class="tr-body">
+                <div id="tr-liab-list"></div>
+                <button class="tr-btn-add" onclick="trAddLiability()">+ Add Liability</button>
+                <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.82rem;">
+                  <span style="font-weight:700;">Total Liabilities</span>
+                  <span style="font-weight:900;color:var(--red);" id="tr-total-liabs">$0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tr-card" id="tr-nw-chart-card" style="display:none;margin-top:14px;">
+            <div class="tr-card-hdr"><div class="tr-eye">History</div><div class="tr-title">Net Worth Trend</div></div>
+            <div class="tr-body"><svg class="chart-svg" id="tr-nw-chart"></svg></div>
+          </div>
+        </div>
+
+      </div><!-- /tr-panels -->
+    </div><!-- /tracker-wrap -->
+
+    <div class="confetti-wrap" id="tr-confetti"></div>
 
     <div class="btn-row" style="justify-content:flex-start; margin-top:24px;">
       <button class="btn btn-back" onclick="prevStep(5)">← Back</button>
@@ -1778,6 +2060,7 @@ function buildResults() {
   // Store for AI coach
   window._results = { name, surplus, covGap, retireGap, nestEgg, projected, years, income, debts, stackMonths, monthlyFromSavings, coverageNeeded, currentCoverage, target, cpp, oas, savingsNow, age, retire };
   buildDebtTracker();
+  initTrackers();
 }
 
 // ═══════════════════════════════════════════
@@ -2065,6 +2348,457 @@ document.addEventListener('DOMContentLoaded', () => {
   addDebtRow('Credit Card', '', '19.99', '');
   liveCalc();
 });
+
+// ══════════════════════════════════════════════
+// INTEGRATED TRACKER JS
+// ══════════════════════════════════════════════
+const trLoad = key => JSON.parse(localStorage.getItem(key)||'[]');
+const trSave = (key,val) => localStorage.setItem(key,JSON.stringify(val));
+const trUid = () => Date.now().toString(36)+Math.random().toString(36).slice(2);
+const trNow = () => new Date().toLocaleDateString('en-CA',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+const trFmt = n => {
+  const abs=Math.abs(n);
+  if(abs>=1e6) return (n<0?'-':'')+'$'+(abs/1e6).toFixed(1)+'M';
+  return (n<0?'-':'')+'$'+Math.round(abs).toLocaleString();
+};
+const trFmtYrs = m => {const y=Math.floor(m/12),mo=m%12;return y>0?(y+'y '+(mo>0?mo+'mo':'')):mo+'mo';};
+const trFmtDate = d => d.toLocaleDateString('en-CA',{month:'short',year:'numeric'});
+
+// Tab switching
+function trSwitch(name) {
+  document.querySelectorAll('.tr-tab').forEach((t,i) => {
+    t.classList.toggle('active', ['debt','savings','investments','networth'][i]===name);
+  });
+  document.querySelectorAll('.tr-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('trp-'+name);
+  if(panel) panel.classList.add('active');
+  if(name==='networth') trRenderNW();
+}
+
+// ── DEBT ──
+function trAddDebt() {
+  const name=(document.getElementById('tr-d-name').value.trim())||'Debt';
+  const bal=parseFloat(document.getElementById('tr-d-bal').value)||0;
+  const rate=parseFloat(document.getElementById('tr-d-rate').value)||0;
+  const min=parseFloat(document.getElementById('tr-d-min').value)||0;
+  if(bal<=0){const el=document.getElementById('tr-d-bal');el.style.borderColor='var(--red)';setTimeout(()=>el.style.borderColor='',1200);return;}
+  const debts=trLoad('fbp_debts');
+  debts.push({id:trUid(),name,original:bal,remaining:bal,rate,min,paid:0,history:[]});
+  trSave('fbp_debts',debts);
+  ['tr-d-name','tr-d-bal','tr-d-rate','tr-d-min'].forEach(id=>document.getElementById(id).value='');
+  trRenderDebt();
+}
+
+function trSimDebt(debts,extra=0) {
+  if(!debts.length) return {months:0,interest:0};
+  let ds=debts.map(d=>({b:d.remaining>0?d.remaining:0,r:d.rate/100/12,m:d.min}));
+  ds.sort((a,b)=>b.r-a.r);
+  let months=0,interest=0;
+  while(ds.some(d=>d.b>0.01)&&months<600){
+    months++;let avail=extra;
+    ds.forEach(d=>{if(d.b<0.01)return;const intr=d.b*d.r;interest+=intr;d.b+=intr;const pay=Math.min(d.b,d.m);d.b-=pay;});
+    for(let i=0;i<ds.length;i++){if(ds[i].b>0.01&&avail>0){const pay=Math.min(ds[i].b,avail);ds[i].b-=pay;avail-=pay;if(avail<=0)break;}}
+    let freed=0;ds.forEach(d=>{if(d.b<0.01&&d.m>0){freed+=d.m;d.m=0;}});extra+=freed;
+  }
+  return {months,interest};
+}
+
+function trCalcPayoff(bal,rate,pay){
+  if(!pay||!rate) return null;
+  const r=rate/100/12;
+  const months=Math.ceil(Math.log(pay/(pay-bal*r))/Math.log(1+r));
+  if(!isFinite(months)||months>600) return null;
+  const d=new Date();d.setMonth(d.getMonth()+months);return d;
+}
+
+function trRenderDebt() {
+  const debts=trLoad('fbp_debts');
+  const list=document.getElementById('tr-debt-list');
+  if(!debts.length){
+    list.innerHTML='<div class="tr-empty"><div class="tr-empty-icon">💳</div><div class="tr-empty-text">No debts yet — add your first debt above.</div></div>';
+    document.getElementById('tr-debt-pay-card').style.display='none';
+    document.getElementById('tr-debt-stack-card').style.display='none';
+    trRenderDebtStats([]);return;
+  }
+  list.innerHTML='';
+  debts.forEach(d=>{
+    const pct=Math.min(100,Math.round((d.paid/d.original)*100));
+    const done=d.remaining<=0.01;
+    const payoffDate=done?null:trCalcPayoff(d.remaining,d.rate,d.min);
+    list.innerHTML+=`<div class="tr-item">
+      <div class="tr-item-top">
+        <div>
+          <div class="tr-item-name">${d.name}${done?'<span class="tr-done-badge">✓ PAID OFF</span>':''}</div>
+          <div class="tr-item-meta">${d.rate}% · Min ${trFmt(d.min)}/mo${payoffDate?' · Payoff: '+trFmtDate(payoffDate):''}</div>
+        </div>
+        <div>
+          <div class="tr-item-val" style="color:${done?'var(--green)':'var(--navy)'}">${trFmt(d.remaining)}</div>
+          <div class="tr-item-sub">${d.paid>0?trFmt(d.paid)+' paid':trFmt(d.original)+' original'}</div>
+        </div>
+      </div>
+      <div class="tr-prog-track"><div class="tr-prog-fill ${done?'green':'teal'}" style="width:${pct}%"></div></div>
+      <div class="tr-prog-pct">${pct}% paid off</div>
+      <div class="tr-item-actions"><button class="tr-btn tr-btn-danger" onclick="trRemoveDebt('${d.id}')">✕ Remove</button></div>
+    </div>`;
+  });
+  trRenderDebtStats(debts);
+  trRenderDebtStack(debts);
+  trRenderDebtPaySel(debts);
+  trRenderDebtHist(debts);
+  document.getElementById('tr-debt-pay-card').style.display='block';
+  document.getElementById('tr-debt-stack-card').style.display='block';
+}
+
+function trRenderDebtStack(debts){
+  const active=debts.filter(d=>d.remaining>0.01);
+  if(!active.length){document.getElementById('tr-debt-stack-card').style.display='none';return;}
+  const noStack=trSimDebt(active.map(d=>({...d})),0);
+  const withStack=trSimDebt(active.map(d=>({...d})),0);
+  const saved=noStack.interest-withStack.interest;
+  const max=Math.max(noStack.months,1);
+  const pct=Math.max(15,Math.round((withStack.months/max)*100));
+  document.getElementById('tr-debt-stack-body').innerHTML=`
+    <div style="margin-bottom:12px;">
+      <div style="font-size:0.72rem;color:var(--muted);margin-bottom:3px;display:flex;justify-content:space-between;"><span>Minimum Payments Only</span><span>${trFmtYrs(noStack.months)} · ${trFmt(noStack.interest)} interest</span></div>
+      <div class="tr-prog-track" style="height:16px;"><div class="tr-prog-fill red" style="width:100%;display:flex;align-items:center;padding-left:8px;font-size:0.68rem;font-weight:700;color:#fff;">${trFmtYrs(noStack.months)}</div></div>
+    </div>
+    <div style="margin-bottom:12px;">
+      <div style="font-size:0.72rem;color:var(--muted);margin-bottom:3px;display:flex;justify-content:space-between;"><span>With Debt Stacking</span><span>${trFmtYrs(withStack.months)} · ${trFmt(withStack.interest)} interest</span></div>
+      <div class="tr-prog-track" style="height:16px;"><div class="tr-prog-fill teal" style="width:${pct}%;display:flex;align-items:center;padding-left:8px;font-size:0.68rem;font-weight:700;color:#fff;">${trFmtYrs(withStack.months)}</div></div>
+    </div>
+    ${saved>100?`<div style="text-align:center;font-size:0.82rem;font-weight:700;color:var(--gold);">💰 Debt Stacking saves you ${trFmt(saved)} in interest!</div>`:''}
+  `;
+}
+
+function trRenderDebtStats(debts){
+  const total=debts.reduce((s,d)=>s+d.remaining,0);
+  const paid=debts.reduce((s,d)=>s+d.paid,0);
+  const avgRate=debts.length?debts.reduce((s,d)=>s+d.rate,0)/debts.length:0;
+  const active=debts.filter(d=>d.remaining>0.01);
+  const stack=active.length?trSimDebt(active,0):{months:0};
+  const dfYear=stack.months?new Date().getFullYear()+Math.floor(stack.months/12):null;
+  document.getElementById('tr-debt-stats').innerHTML=`
+    <div class="tr-stat"><div class="tr-stat-lbl">Total Debt</div><div class="tr-stat-val red">${trFmt(total)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Total Paid</div><div class="tr-stat-val green">${trFmt(paid)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Avg Rate</div><div class="tr-stat-val teal">${avgRate.toFixed(1)}%</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Debt-Free</div><div class="tr-stat-val gold">${dfYear||'—'}</div></div>
+  `;
+}
+
+function trRenderDebtPaySel(debts){
+  const sel=document.getElementById('tr-d-pay-sel');sel.innerHTML='';
+  debts.filter(d=>d.remaining>0.01).forEach(d=>{
+    const o=document.createElement('option');o.value=d.id;
+    o.textContent=d.name+' — '+trFmt(d.remaining);sel.appendChild(o);
+  });
+}
+
+function trRenderDebtHist(debts){
+  const hist=document.getElementById('tr-d-hist-list');hist.innerHTML='';
+  const entries=debts.flatMap(d=>(d.history||[]).map(h=>({...h,debt:d.name}))).sort((a,b)=>b.ts-a.ts).slice(0,15);
+  if(!entries.length){document.getElementById('tr-d-hist-wrap').style.display='none';return;}
+  document.getElementById('tr-d-hist-wrap').style.display='block';
+  entries.forEach(e=>{hist.innerHTML+=`<div class="tr-hist-item"><span><strong>${trFmt(e.amt)}</strong> → ${e.debt}</span><span style="color:var(--muted)">${e.date}</span></div>`;});
+}
+
+function trApplyDebtPay(){
+  const sel=document.getElementById('tr-d-pay-sel');
+  const amt=parseFloat(document.getElementById('tr-d-pay-amt').value)||0;
+  if(!sel.value||amt<=0){const el=document.getElementById('tr-d-pay-amt');el.style.borderColor='var(--red)';setTimeout(()=>el.style.borderColor='',1200);return;}
+  const debts=trLoad('fbp_debts');
+  const idx=debts.findIndex(d=>d.id===sel.value);
+  if(idx<0)return;
+  const applied=Math.min(amt,debts[idx].remaining);
+  debts[idx].remaining=Math.max(0,debts[idx].remaining-applied);
+  debts[idx].paid+=applied;
+  if(!debts[idx].history)debts[idx].history=[];
+  debts[idx].history.push({amt:applied,date:trNow(),ts:Date.now()});
+  trSave('fbp_debts',debts);
+  document.getElementById('tr-d-pay-amt').value='';
+  document.getElementById('tr-d-pay-amt').style.borderColor='var(--green)';
+  setTimeout(()=>document.getElementById('tr-d-pay-amt').style.borderColor='',1200);
+  if(debts[idx].remaining<0.01) trCelebrate();
+  trRenderDebt();trUpdateNW();
+}
+
+function trRemoveDebt(id){trSave('fbp_debts',trLoad('fbp_debts').filter(d=>d.id!==id));trRenderDebt();trUpdateNW();}
+
+// ── SAVINGS ──
+function trAddGoal(n,t,c,m){
+  const name=(n||document.getElementById('tr-s-name').value.trim())||'Goal';
+  const target=parseFloat(t||document.getElementById('tr-s-target').value)||0;
+  const current=parseFloat(c||document.getElementById('tr-s-current').value)||0;
+  const monthly=parseFloat(m||document.getElementById('tr-s-monthly').value)||0;
+  if(target<=0){const el=document.getElementById('tr-s-target');el.style.borderColor='var(--red)';setTimeout(()=>el.style.borderColor='',1200);return;}
+  const goals=trLoad('fbp_savings');
+  goals.push({id:trUid(),name,target,current,monthly,history:[]});
+  trSave('fbp_savings',goals);
+  ['tr-s-name','tr-s-target','tr-s-current','tr-s-monthly'].forEach(id=>document.getElementById(id).value='');
+  trRenderSavings();
+}
+function trQuickGoal(n,t,c,m){document.getElementById('tr-s-name').value=n;document.getElementById('tr-s-target').value=t;document.getElementById('tr-s-current').value=c;document.getElementById('tr-s-monthly').value=m;trAddGoal();}
+
+function trRenderSavings(){
+  const goals=trLoad('fbp_savings');
+  const list=document.getElementById('tr-savings-list');
+  if(!goals.length){
+    list.innerHTML='<div class="tr-empty"><div class="tr-empty-icon">🎯</div><div class="tr-empty-text">No goals yet — add your first savings goal above.</div></div>';
+    trRenderSavStats([]);return;
+  }
+  list.innerHTML='';
+  goals.forEach(g=>{
+    const pct=Math.min(100,Math.round((g.current/g.target)*100));
+    const done=g.current>=g.target;
+    list.innerHTML+=`<div class="tr-item">
+      <div class="tr-item-top">
+        <div>
+          <div class="tr-item-name">${g.name}${done?'<span class="tr-done-badge">✓ REACHED</span>':''}</div>
+          <div class="tr-item-meta">${trFmt(g.monthly)}/mo · ${trFmt(g.target)} target</div>
+        </div>
+        <div>
+          <div class="tr-item-val" style="color:var(--green)">${trFmt(g.current)}</div>
+          <div class="tr-item-sub">of ${trFmt(g.target)}</div>
+        </div>
+      </div>
+      <div class="tr-prog-track"><div class="tr-prog-fill ${done?'green':'gold'}" style="width:${pct}%"></div></div>
+      <div class="tr-prog-pct">${pct}% toward goal</div>
+      <div class="tr-item-actions">
+        <button class="tr-btn tr-btn-ghost" style="font-size:0.75rem;padding:5px 12px;" onclick="trContribGoal('${g.id}')">+ Contribute</button>
+        <button class="tr-btn tr-btn-danger" onclick="trRemoveGoal('${g.id}')">✕</button>
+      </div>
+      ${g.history&&g.history.length?`<div class="tr-hist-title">Recent</div><div class="tr-hist-list">${g.history.slice(-3).reverse().map(h=>`<div class="tr-hist-item gold-h"><span><strong>${trFmt(h.amt)}</strong> added</span><span style="color:var(--muted)">${h.date}</span></div>`).join('')}</div>`:''}
+    </div>`;
+  });
+  trRenderSavStats(goals);
+}
+
+function trRenderSavStats(goals){
+  const total=goals.reduce((s,g)=>s+g.current,0);
+  const target=goals.reduce((s,g)=>s+g.target,0);
+  const pct=target>0?Math.round((total/target)*100):0;
+  document.getElementById('tr-sav-stats').innerHTML=`
+    <div class="tr-stat"><div class="tr-stat-lbl">Total Saved</div><div class="tr-stat-val green">${trFmt(total)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Total Target</div><div class="tr-stat-val teal">${trFmt(target)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Progress</div><div class="tr-stat-val gold">${pct}%</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Goals</div><div class="tr-stat-val">${goals.filter(g=>g.current>=g.target).length} / ${goals.length}</div></div>
+  `;
+}
+
+function trContribGoal(id){
+  const amt=parseFloat(prompt('Add contribution ($):'));
+  if(!amt||amt<=0) return;
+  const goals=trLoad('fbp_savings');
+  const i=goals.findIndex(g=>g.id===id);
+  if(i>=0){goals[i].current+=amt;if(!goals[i].history)goals[i].history=[];goals[i].history.push({amt,date:trNow(),ts:Date.now()});if(goals[i].current>=goals[i].target)trCelebrate();}
+  trSave('fbp_savings',goals);trRenderSavings();trUpdateNW();
+}
+function trRemoveGoal(id){trSave('fbp_savings',trLoad('fbp_savings').filter(g=>g.id!==id));trRenderSavings();trUpdateNW();}
+
+// ── INVESTMENTS ──
+function trAddInvestment(){
+  const name=document.getElementById('tr-i-name').value.trim()||'Investment';
+  const type=document.getElementById('tr-i-type').value;
+  const value=parseFloat(document.getElementById('tr-i-value').value)||0;
+  const contrib=parseFloat(document.getElementById('tr-i-contrib').value)||0;
+  const monthly=parseFloat(document.getElementById('tr-i-monthly').value)||0;
+  const years=parseFloat(document.getElementById('tr-i-years').value)||25;
+  if(value<=0){const el=document.getElementById('tr-i-value');el.style.borderColor='var(--red)';setTimeout(()=>el.style.borderColor='',1200);return;}
+  const invs=trLoad('fbp_investments');
+  invs.push({id:trUid(),name,type,value,contrib,monthly,years,history:[]});
+  trSave('fbp_investments',invs);
+  ['tr-i-name','tr-i-value','tr-i-contrib','tr-i-monthly','tr-i-years'].forEach(id=>document.getElementById(id).value='');
+  trRenderInv();
+}
+
+function trProjValue(cur,monthly,years,rate=0.09){
+  const r=rate/12,n=years*12;
+  return cur*Math.pow(1+rate,years)+monthly*((Math.pow(1+r,n)-1)/r);
+}
+
+function trRenderInv(){
+  const invs=trLoad('fbp_investments');
+  const list=document.getElementById('tr-inv-list');
+  if(!invs.length){
+    list.innerHTML='<div class="tr-empty"><div class="tr-empty-icon">📊</div><div class="tr-empty-text">No investments tracked yet.<br>Add your RRSP, TFSA, or other holdings above.</div></div>';
+    document.getElementById('tr-inv-alloc').style.display='none';
+    trRenderInvStats([]);return;
+  }
+  list.innerHTML='';
+  invs.forEach(inv=>{
+    const gain=inv.value-inv.contrib;
+    const gainPct=inv.contrib>0?(gain/inv.contrib)*100:0;
+    const projected=trProjValue(inv.value,inv.monthly,inv.years);
+    list.innerHTML+=`<div class="tr-item">
+      <div class="tr-item-top">
+        <div>
+          <div class="tr-item-name">${inv.name} <span style="background:rgba(79,163,224,0.1);color:var(--teal);font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:10px;">${inv.type}</span></div>
+          <div class="tr-item-meta">${trFmt(inv.monthly)}/mo · ${inv.years}yr · Projected: ${trFmt(projected)}</div>
+        </div>
+        <div>
+          <div class="tr-item-val" style="color:var(--teal)">${trFmt(inv.value)}</div>
+          <div class="tr-item-sub ${gain>=0?'gain-pos':'gain-neg'}">${gain>=0?'+':''}${trFmt(gain)} (${(gainPct>=0?'+':'')+gainPct.toFixed(1)}%)</div>
+        </div>
+      </div>
+      <div class="tr-item-actions">
+        <button class="tr-btn tr-btn-ghost" style="font-size:0.75rem;padding:5px 12px;" onclick="trContribInv('${inv.id}')">+ Contribute</button>
+        <button class="tr-btn tr-btn-ghost" style="font-size:0.75rem;padding:5px 12px;" onclick="trUpdateInv('${inv.id}')">↑ Update Value</button>
+        <button class="tr-btn tr-btn-danger" onclick="trRemoveInv('${inv.id}')">✕</button>
+      </div>
+    </div>`;
+  });
+  trRenderInvStats(invs);
+  // Allocation
+  const alloc=document.getElementById('tr-inv-alloc');
+  const total=invs.reduce((s,i)=>s+i.value,0);
+  const groups={};invs.forEach(i=>{groups[i.type]=(groups[i.type]||0)+i.value;});
+  const colors={'RRSP':'#4fa3e0','TFSA':'#e8b84b','Non-Reg':'#2ecc71','RESP':'#9b59b6','Other':'#e05252'};
+  const items=Object.entries(groups).map(([t,v])=>`<span style="display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-size:0.78rem;"><span style="width:10px;height:10px;border-radius:50%;background:${colors[t]||'#888'};display:inline-block;"></span><strong>${t}</strong> ${trFmt(v)} (${Math.round(v/total*100)}%)</span>`).join('');
+  alloc.style.display='block';
+  alloc.innerHTML=`<div class="tr-card" style="margin-top:0;"><div class="tr-card-hdr"><div class="tr-eye">Allocation</div><div class="tr-title">Portfolio Breakdown</div></div><div class="tr-body" style="display:flex;flex-wrap:wrap;gap:4px;">${items}</div></div>`;
+  trUpdateNW();
+}
+
+function trRenderInvStats(invs){
+  const total=invs.reduce((s,i)=>s+i.value,0);
+  const contrib=invs.reduce((s,i)=>s+i.contrib,0);
+  const gain=total-contrib;
+  const gainPct=contrib>0?(gain/contrib)*100:0;
+  document.getElementById('tr-inv-stats').innerHTML=`
+    <div class="tr-stat"><div class="tr-stat-lbl">Portfolio</div><div class="tr-stat-val teal">${trFmt(total)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Contributed</div><div class="tr-stat-val">${trFmt(contrib)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Total Gain</div><div class="tr-stat-val ${gain>=0?'green':'red'}">${trFmt(gain)}</div></div>
+    <div class="tr-stat"><div class="tr-stat-lbl">Return</div><div class="tr-stat-val ${gain>=0?'green':'red'}">${(gainPct>=0?'+':'')+gainPct.toFixed(1)}%</div></div>
+  `;
+}
+
+function trContribInv(id){
+  const amt=parseFloat(prompt('Add contribution ($):'));
+  if(!amt||amt<=0) return;
+  const invs=trLoad('fbp_investments');
+  const i=invs.findIndex(x=>x.id===id);
+  if(i>=0){invs[i].value+=amt;invs[i].contrib+=amt;}
+  trSave('fbp_investments',invs);trRenderInv();
+}
+
+function trUpdateInv(id){
+  const val=parseFloat(prompt('Enter current market value ($):'));
+  if(!val||val<=0) return;
+  const invs=trLoad('fbp_investments');
+  const i=invs.findIndex(x=>x.id===id);
+  if(i>=0) invs[i].value=val;
+  trSave('fbp_investments',invs);trRenderInv();
+}
+
+function trRemoveInv(id){trSave('fbp_investments',trLoad('fbp_investments').filter(i=>i.id!==id));trRenderInv();}
+
+// ── NET WORTH ──
+function trAddAsset(){
+  const name=prompt('Asset name (e.g. Home, RRSP, Cash):');if(!name)return;
+  const val=parseFloat(prompt('Current value ($):')||0);if(isNaN(val))return;
+  const assets=trLoad('fbp_assets');assets.push({id:trUid(),name,value:val});
+  trSave('fbp_assets',assets);trRenderNW();
+}
+function trAddLiability(){
+  const name=prompt('Liability name (e.g. Mortgage, Credit Card):');if(!name)return;
+  const val=parseFloat(prompt('Balance owed ($):')||0);if(isNaN(val))return;
+  const liabs=trLoad('fbp_liabilities');liabs.push({id:trUid(),name,value:val});
+  trSave('fbp_liabilities',liabs);trRenderNW();
+}
+
+function trUpdateNW(){
+  const assets=trLoad('fbp_assets');
+  const liabs=trLoad('fbp_liabilities');
+  const invs=trLoad('fbp_investments');
+  const savs=trLoad('fbp_savings');
+  const debts=trLoad('fbp_debts');
+  const totalA=assets.reduce((s,a)=>s+a.value,0)+invs.reduce((s,i)=>s+i.value,0)+savs.reduce((s,g)=>s+g.current,0);
+  const totalL=liabs.reduce((s,l)=>s+l.value,0)+debts.reduce((s,d)=>s+d.remaining,0);
+  const nw=totalA-totalL;
+  const hist=trLoad('fbp_networth_history');
+  const today=new Date().toISOString().slice(0,10);
+  const last=hist[hist.length-1];
+  if(!last||last.date!==today) hist.push({date:today,value:nw});
+  else hist[hist.length-1].value=nw;
+  if(hist.length>36) hist.splice(0,hist.length-36);
+  trSave('fbp_networth_history',hist);
+}
+
+function trRenderNW(){
+  const assets=trLoad('fbp_assets');
+  const liabs=trLoad('fbp_liabilities');
+  const invs=trLoad('fbp_investments');
+  const savs=trLoad('fbp_savings');
+  const debts=trLoad('fbp_debts');
+  const totalA=assets.reduce((s,a)=>s+a.value,0)+invs.reduce((s,i)=>s+i.value,0)+savs.reduce((s,g)=>s+g.current,0);
+  const totalL=liabs.reduce((s,l)=>s+l.value,0)+debts.reduce((s,d)=>s+d.remaining,0);
+  const nw=totalA-totalL;
+  const hist=trLoad('fbp_networth_history');
+  const prev=hist.length>1?hist[hist.length-2]:null;
+  const change=prev?nw-prev.value:null;
+  document.getElementById('tr-nw-big').innerHTML=`<div class="nw-big">
+    <div class="nw-lbl">YOUR NET WORTH</div>
+    <div class="nw-val" style="color:${nw>=0?'var(--green)':'var(--red)'}">${trFmt(nw)}</div>
+    ${change!==null?`<div class="nw-chg" style="color:${change>=0?'var(--green)':'var(--red)'}">${change>=0?'↑':'↓'} ${trFmt(Math.abs(change))} since last visit</div>`:''}
+  </div>`;
+
+  // Assets
+  const al=document.getElementById('tr-asset-list');al.innerHTML='';
+  const allA=[...assets.map(a=>({name:a.name,val:a.value})),...invs.map(i=>({name:i.name+' ('+i.type+')',val:i.value})),...savs.map(g=>({name:g.name+' (Savings)',val:g.current}))];
+  if(!allA.length) al.innerHTML='<div style="font-size:0.78rem;color:var(--muted);padding:6px 0;">No assets yet.</div>';
+  allA.forEach(a=>{al.innerHTML+=`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #eaf2fc;font-size:0.82rem;"><span>${a.name}</span><span style="font-weight:700;color:var(--green)">${trFmt(a.val)}</span></div>`;});
+  document.getElementById('tr-total-assets').textContent=trFmt(totalA);
+
+  // Liabilities
+  const ll=document.getElementById('tr-liab-list');ll.innerHTML='';
+  const allL=[...liabs.map(l=>({name:l.name,val:l.value})),...debts.filter(d=>d.remaining>0.01).map(d=>({name:d.name+' ('+d.rate+'%)',val:d.remaining}))];
+  if(!allL.length) ll.innerHTML='<div style="font-size:0.78rem;color:var(--muted);padding:6px 0;">No liabilities. 🎉</div>';
+  allL.forEach(l=>{ll.innerHTML+=`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #eaf2fc;font-size:0.82rem;"><span>${l.name}</span><span style="font-weight:700;color:var(--red)">${trFmt(l.val)}</span></div>`;});
+  document.getElementById('tr-total-liabs').textContent=trFmt(totalL);
+
+  // Chart
+  if(hist.length>1){
+    document.getElementById('tr-nw-chart-card').style.display='block';
+    trDrawChart(hist.slice(-12));
+  }
+  trUpdateNW();
+}
+
+function trDrawChart(hist){
+  const svg=document.getElementById('tr-nw-chart');
+  const W=svg.clientWidth||700,H=100,PAD=36;
+  const vals=hist.map(h=>h.value);
+  const min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;
+  const pts=hist.map((h,i)=>{
+    const x=PAD+(i/(hist.length-1))*(W-PAD*2);
+    const y=H-8-((h.value-min)/range)*(H-28);
+    return [x,y];
+  });
+  const path=pts.map((p,i)=>(i===0?'M':'L')+p[0]+','+p[1]).join(' ');
+  const area='M'+pts[0][0]+','+(H-8)+' '+pts.map(p=>'L'+p[0]+','+p[1]).join(' ')+' L'+pts[pts.length-1][0]+','+(H-8)+' Z';
+  svg.innerHTML=`<defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(79,163,224,0.22)"/><stop offset="100%" stop-color="rgba(79,163,224,0)"/></linearGradient></defs>
+    <path d="${area}" fill="url(#tg)"/>
+    <path d="${path}" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linejoin="round"/>
+    ${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="var(--teal)"/>`).join('')}
+    ${hist.map((h,i)=>`<text x="${pts[i][0]}" y="${H}" text-anchor="middle" font-size="8" fill="rgba(90,122,154,0.6)">${h.date.slice(5)}</text>`).join('')}`;
+}
+
+// Confetti
+function trCelebrate(){
+  const wrap=document.getElementById('tr-confetti');
+  const colors=['#4fa3e0','#e8b84b','#2ecc71','#e05252','#9b59b6'];
+  for(let i=0;i<50;i++){
+    const el=document.createElement('div');el.className='conf-piece';
+    el.style.cssText=`left:${Math.random()*100}%;top:-10px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*0.8}s;animation-duration:${1.5+Math.random()}s;transform:rotate(${Math.random()*360}deg);`;
+    wrap.appendChild(el);
+  }
+  setTimeout(()=>wrap.innerHTML='',3000);
+}
+
+// Init trackers when results page shown
+function initTrackers(){
+  trRenderDebt();trRenderSavings();trRenderInv();trUpdateNW();
+}
+
 </script>
 </body>
 </html>
