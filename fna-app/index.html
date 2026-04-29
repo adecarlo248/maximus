@@ -840,6 +840,69 @@
       line-height: 1.55;
     }
 
+    /* ── DEBT TRACKER ── */
+    .debt-track-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .debt-track-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .debt-track-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .debt-track-amounts {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .debt-track-amounts strong {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .debt-track-amounts .remaining { color: var(--navy); }
+    .debt-track-amounts .paid { color: var(--green); }
+    .debt-progress-track {
+      height: 10px;
+      background: #e8f0f8;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .debt-progress-fill {
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-bright));
+      transition: width 0.6s ease;
+    }
+    .debt-progress-fill.done {
+      background: linear-gradient(90deg, var(--green), #27ae60);
+    }
+    .debt-track-pct {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 5px;
+      text-align: right;
+    }
+    .debt-track-done {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 8px;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
       .field-row { grid-template-columns: 1fr; }
@@ -1243,6 +1306,45 @@
         <div class="priority-box" id="priorityBox">
           <div class="priority-label">⭐ Your #1 Priority Right Now</div>
           <div class="priority-text" id="priorityText">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Debt Payoff Tracker -->
+    <div class="card" id="debtTrackerCard" style="display:none;">
+      <div class="card-header">
+        <div class="card-eyebrow">Live Tracker</div>
+        <div class="card-title">Watch Your Debt Disappear</div>
+        <div class="card-subtitle">Log real payments and watch your balances drop in real time.</div>
+      </div>
+      <div class="card-body">
+
+        <div id="debtTrackerList"></div>
+
+        <!-- Make a Payment -->
+        <div style="background:linear-gradient(135deg,#eaf4fd,#f0f8ff);border:1.5px solid rgba(79,163,224,0.3);border-radius:10px;padding:18px 20px;margin-top:4px;">
+          <div style="font-size:0.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;">💳 Log a Payment</div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;align-items:end;">
+            <div>
+              <label style="font-size:0.75rem;">Select Debt</label>
+              <select id="paymentDebtSelect" style="width:100%;padding:9px 12px;border:1.5px solid #d4e4f4;border-radius:8px;font-family:inherit;font-size:0.9rem;background:#fff;outline:none;">
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem;">Payment Amount ($)</label>
+              <div class="input-wrap has-prefix">
+                <span class="prefix">$</span>
+                <input type="number" id="paymentAmount" placeholder="500" min="1" style="padding-left:22px;">
+              </div>
+            </div>
+            <button onclick="logPayment()" style="background:linear-gradient(135deg,var(--teal),#2d7dd2);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-family:inherit;font-size:0.85rem;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(79,163,224,0.35);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">Apply ✓</button>
+          </div>
+        </div>
+
+        <!-- Payment history -->
+        <div id="paymentHistory" style="margin-top:16px;display:none;">
+          <div style="font-size:0.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Payment History</div>
+          <div id="paymentHistoryList" style="display:flex;flex-direction:column;gap:6px;max-height:180px;overflow-y:auto;"></div>
         </div>
       </div>
     </div>
@@ -1663,6 +1765,7 @@ function buildResults() {
 
   // Store for AI coach
   window._results = { name, surplus, covGap, retireGap, nestEgg, projected, years, income, debts, stackMonths, monthlyFromSavings, coverageNeeded, currentCoverage, target, cpp, oas, savingsNow, age, retire };
+  buildDebtTracker();
 }
 
 // ═══════════════════════════════════════════
@@ -1818,6 +1921,128 @@ function getCoachResponse(msg) {
     `The principles in your Financial Blueprint work regardless of where you're starting from. Take control of what you can control — your savings rate, your debt strategy, your coverage. The market, the economy, the government — those aren't yours to control. Your next step is. What's on your mind?`,
   ];
   return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+}
+
+// ═══════════════════════════════════════════
+// DEBT TRACKER
+// ═══════════════════════════════════════════
+let trackerDebts = []; // { name, original, remaining, rate, minPay }
+
+function buildDebtTracker() {
+  const debts = getDebts();
+  if (!debts.length) return;
+
+  // Get names from table
+  const rows = document.querySelectorAll('#debtRows tr');
+  trackerDebts = [];
+  rows.forEach((row, i) => {
+    const inputs = row.querySelectorAll('input');
+    const name = inputs[0].value || ('Debt #' + (i + 1));
+    const balance = parseFloat(inputs[1].value) || 0;
+    const rate = parseFloat(inputs[2].value) || 0;
+    const minPay = parseFloat(inputs[3].value) || 0;
+    if (balance > 0) trackerDebts.push({ name, original: balance, remaining: balance, rate, minPay, paid: 0 });
+  });
+
+  renderTracker();
+  buildPaymentSelect();
+
+  document.getElementById('debtTrackerCard').style.display = 'block';
+}
+
+function renderTracker() {
+  const list = document.getElementById('debtTrackerList');
+  list.innerHTML = '';
+
+  trackerDebts.forEach((d, i) => {
+    const pct = Math.min(100, Math.round((d.paid / d.original) * 100));
+    const done = d.remaining <= 0;
+    list.innerHTML += `
+      <div class="debt-track-item">
+        <div class="debt-track-top">
+          <div class="debt-track-name">
+            ${d.name}
+            ${done ? '<span class="debt-track-done">✓ PAID OFF</span>' : ''}
+          </div>
+          <div class="debt-track-amounts">
+            <span class="remaining"><strong>$${Math.max(0, d.remaining).toLocaleString(undefined, {maximumFractionDigits:0})}</strong> remaining</span>
+            ${d.paid > 0 ? ` &nbsp;·&nbsp; <span class="paid">$${d.paid.toLocaleString(undefined, {maximumFractionDigits:0})} paid</span>` : ''}
+          </div>
+        </div>
+        <div class="debt-progress-track">
+          <div class="debt-progress-fill ${done ? 'done' : ''}" style="width:${pct}%"></div>
+        </div>
+        <div class="debt-track-pct">${pct}% paid off${done ? ' 🎉' : ''}</div>
+      </div>
+    `;
+  });
+
+  // Update debt-free date card
+  const totalRemaining = trackerDebts.reduce((s, d) => s + Math.max(0, d.remaining), 0);
+  const allDone = trackerDebts.every(d => d.remaining <= 0);
+  if (allDone && trackerDebts.length > 0) {
+    document.getElementById('snap-debt').textContent = '🎉 DEBT FREE!';
+    document.getElementById('snap-debt').style.color = 'var(--green)';
+  } else if (trackerDebts.length > 0) {
+    // Recalculate from remaining balances
+    const surplus = v('monthlyTakeHome') - v('monthlyExpenses');
+    const totalMins = trackerDebts.reduce((s, d) => s + (d.remaining > 0 ? d.minPay : 0), 0);
+    const extra = Math.max(0, surplus - totalMins);
+    const remaining = trackerDebts.filter(d => d.remaining > 0).map(d => ({ balance: d.remaining, rate: d.rate, minPay: d.minPay }));
+    const stack = simulatePayoff(remaining, extra);
+    const debtFreeYear = new Date().getFullYear() + Math.floor(stack.months / 12);
+    document.getElementById('snap-debt').textContent = fmtYrs(stack.months) + ' (' + debtFreeYear + ')';
+  }
+}
+
+function buildPaymentSelect() {
+  const sel = document.getElementById('paymentDebtSelect');
+  sel.innerHTML = '';
+  trackerDebts.forEach((d, i) => {
+    if (d.remaining > 0) {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = d.name + ' — $' + Math.round(d.remaining).toLocaleString() + ' remaining';
+      sel.appendChild(opt);
+    }
+  });
+}
+
+function logPayment() {
+  const sel = document.getElementById('paymentDebtSelect');
+  const amtInput = document.getElementById('paymentAmount');
+  const idx = parseInt(sel.value);
+  const amt = parseFloat(amtInput.value);
+
+  if (isNaN(idx) || isNaN(amt) || amt <= 0) {
+    amtInput.style.borderColor = 'var(--red)';
+    setTimeout(() => amtInput.style.borderColor = '', 1200);
+    return;
+  }
+
+  const debt = trackerDebts[idx];
+  if (!debt) return;
+
+  const applied = Math.min(amt, debt.remaining);
+  debt.remaining = Math.max(0, debt.remaining - applied);
+  debt.paid += applied;
+
+  // Add to history
+  const hist = document.getElementById('paymentHistoryList');
+  const now = new Date().toLocaleDateString('en-CA', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const entry = document.createElement('div');
+  entry.style.cssText = 'background:#f0f8ff;border-left:3px solid var(--teal);border-radius:0 6px 6px 0;padding:7px 12px;font-size:0.8rem;display:flex;justify-content:space-between;';
+  entry.innerHTML = `<span><strong>$${applied.toLocaleString(undefined,{maximumFractionDigits:0})}</strong> → ${debt.name}</span><span style="color:var(--muted)">${now}</span>`;
+  hist.insertBefore(entry, hist.firstChild);
+  document.getElementById('paymentHistory').style.display = 'block';
+
+  amtInput.value = '';
+  renderTracker();
+  buildPaymentSelect();
+
+  // Flash the updated bar
+  amtInput.style.borderColor = 'var(--green)';
+  setTimeout(() => amtInput.style.borderColor = '', 1200);
 }
 
 // ═══════════════════════════════════════════
