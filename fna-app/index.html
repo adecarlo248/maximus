@@ -1299,6 +1299,12 @@
 let currentStep = 1;
 let debtRowCount = 0;
 
+function togglePartner() {
+  const show = document.getElementById('hasPartner').checked;
+  document.getElementById('partnerSection').style.display = show ? 'block' : 'none';
+  liveCalc();
+}
+
 // ═══════════════════════════════════════════
 // STEP NAVIGATION
 // ═══════════════════════════════════════════
@@ -1382,7 +1388,9 @@ function liveCalc() {
   const takeHome = v('monthlyTakeHome');
   const expenses = v('monthlyExpenses');
   const surplus = takeHome - expenses;
-  const income = v('annualIncome');
+  const hasPartner = document.getElementById('hasPartner') && document.getElementById('hasPartner').checked;
+  const partnerInc = hasPartner ? v('partnerIncome') : 0;
+  const income = v('annualIncome') + partnerInc;
   const age = v('currentAge');
   const retire = v('retirementAge');
   const years = Math.max(0, retire - age);
@@ -1408,10 +1416,12 @@ function liveCalc2() {
   const employer = v('employerLife');
   const personal = v('personalLife');
   const other = v('otherLife');
+  const hasPartner = document.getElementById('hasPartner') && document.getElementById('hasPartner').checked;
+  const partnerLifeVal = hasPartner ? v('partnerLife') : 0;
 
   const earningPower = income * years;
   const coverageNeeded = income * 10;
-  const currentCoverage = employer + personal + other;
+  const currentCoverage = employer + personal + other + partnerLifeVal;
   const gap = Math.max(0, coverageNeeded - currentCoverage);
 
   document.getElementById('earningPowerVal').textContent = earningPower > 0 ? fmt(earningPower) : '$—';
