@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Financial Blueprint — Premium Tracker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    :root{--navy:#071525;--cobalt:#102a52;--teal:#4fa3e0;--gold:#e8b84b;--green:#2ecc71;--red:#e05252;--white:#fff;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--white);}
+    a{text-decoration:none;}
+
+    /* NAV */
+    .nav{background:rgba(7,21,37,0.95);backdrop-filter:blur(10px);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(79,163,224,0.15);}
+    .nav-logo{font-size:1rem;font-weight:800;color:#fff;}.nav-logo span{color:var(--teal);}
+    .nav-cta{background:linear-gradient(135deg,var(--teal),#2d7dd2);color:#fff;font-weight:700;font-size:0.85rem;padding:9px 20px;border-radius:8px;box-shadow:0 3px 12px rgba(79,163,224,0.35);}
+    .nav-cta:hover{transform:translateY(-1px);}
+
+    /* HERO */
+    .hero{position:relative;overflow:hidden;padding:80px 24px 100px;text-align:center;}
+    .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(79,163,224,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.06) 1px,transparent 1px);background-size:32px 32px;}
+    .hero::after{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:80%;height:80%;background:radial-gradient(ellipse,rgba(26,74,150,0.5) 0%,transparent 70%);pointer-events:none;}
+    .hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+    .hero-badge{display:inline-block;background:linear-gradient(135deg,rgba(232,184,75,0.15),rgba(232,184,75,0.05));border:1px solid rgba(232,184,75,0.4);color:var(--gold);font-size:0.7rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px;}
+    .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;}
+    .hero h1 span{color:var(--teal);}
+    .hero-sub{font-size:1.1rem;color:rgba(200,223,240,0.7);max-width:560px;margin:0 auto 40px;line-height:1.65;}
+    .hero-cta{display:inline-block;background:linear-gradient(135deg,var(--teal),#2d7dd2);color:#fff;font-weight:800;font-size:1.1rem;padding:16px 44px;border-radius:10px;box-shadow:0 6px 24px rgba(79,163,224,0.4);transition:all 0.2s;}
+    .hero-cta:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(79,163,224,0.5);}
+    .hero-note{font-size:0.78rem;color:rgba(200,223,240,0.4);margin-top:14px;}
+
+    /* SECTIONS */
+    section{padding:70px 24px;}
+    .section-inner{max-width:900px;margin:0 auto;}
+    .sec-eye{font-size:0.65rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;text-align:center;}
+    .sec-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;text-align:center;margin-bottom:12px;letter-spacing:-0.5px;}
+    .sec-sub{font-size:0.95rem;color:rgba(200,223,240,0.6);text-align:center;max-width:500px;margin:0 auto 48px;line-height:1.6;}
+
+    /* FEATURE CARDS */
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .feat-card{background:linear-gradient(160deg,rgba(16,42,82,0.8),rgba(7,21,37,0.9));border:1px solid rgba(79,163,224,0.2);border-radius:14px;padding:24px 20px;position:relative;overflow:hidden;transition:all 0.2s;}
+    .feat-card:hover{border-color:rgba(79,163,224,0.5);transform:translateY(-3px);box-shadow:0 12px 32px rgba(7,21,37,0.4);}
+    .feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .feat-card:nth-child(1)::before{background:linear-gradient(90deg,var(--red),transparent);}
+    .feat-card:nth-child(2)::before{background:linear-gradient(90deg,var(--gold),transparent);}
+    .feat-card:nth-child(3)::before{background:linear-gradient(90deg,var(--teal),transparent);}
+    .feat-card:nth-child(4)::before{background:linear-gradient(90deg,var(--green),transparent);}
+    .feat-icon{font-size:2rem;margin-bottom:14px;display:block;}
+    .feat-title{font-size:1rem;font-weight:800;margin-bottom:8px;}
+    .feat-desc{font-size:0.82rem;color:rgba(200,223,240,0.6);line-height:1.55;}
+
+    /* HOW IT WORKS */
+    .steps-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+    .step-item{text-align:center;}
+    .step-num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2d7dd2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;margin:0 auto 16px;box-shadow:0 0 20px rgba(79,163,224,0.4);}
+    .step-title{font-size:1rem;font-weight:800;margin-bottom:8px;}
+    .step-desc{font-size:0.85rem;color:rgba(200,223,240,0.6);line-height:1.55;}
+
+    /* PROOF STATS */
+    .proof-bg{background:linear-gradient(160deg,rgba(16,42,82,0.5),rgba(7,21,37,0.8));border-top:1px solid rgba(79,163,224,0.15);border-bottom:1px solid rgba(79,163,224,0.15);}
+    .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+    .proof-card{background:linear-gradient(160deg,var(--navy),var(--cobalt));border:1px solid rgba(79,163,224,0.2);border-radius:12px;padding:24px;text-align:center;position:relative;overflow:hidden;}
+    .proof-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(138,180,212,0.4),transparent);}
+    .proof-num{font-size:1.8rem;font-weight:900;color:var(--gold);margin-bottom:8px;}
+    .proof-desc{font-size:0.82rem;color:rgba(200,223,240,0.6);line-height:1.5;}
+
+    /* PRICING */
+    .pricing-card{max-width:480px;margin:0 auto;background:linear-gradient(160deg,var(--cobalt),var(--navy));border:2px solid rgba(79,163,224,0.3);border-radius:18px;padding:40px 36px;text-align:center;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(7,21,37,0.5);}
+    .pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),#8ab4d4,var(--teal));}
+    .pricing-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),#c8921a);color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:2px;padding:4px 14px;border-radius:20px;margin-bottom:20px;}
+    .pricing-title{font-size:1.3rem;font-weight:800;margin-bottom:8px;}
+    .pricing-name{font-size:0.85rem;color:rgba(200,223,240,0.5);margin-bottom:24px;}
+    .price-big{font-size:3.5rem;font-weight:900;color:var(--gold);line-height:1;}
+    .price-note{font-size:0.8rem;color:rgba(200,223,240,0.4);margin-bottom:28px;margin-top:4px;}
+    .pricing-includes{list-style:none;margin-bottom:28px;text-align:left;}
+    .pricing-includes li{padding:7px 0;font-size:0.88rem;color:rgba(200,223,240,0.8);border-bottom:1px solid rgba(79,163,224,0.1);display:flex;align-items:center;gap:10px;}
+    .pricing-includes li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
+    .pricing-cta{display:block;background:linear-gradient(135deg,var(--gold),#c8921a);color:#fff;font-weight:800;font-size:1.05rem;padding:15px 40px;border-radius:10px;box-shadow:0 6px 20px rgba(232,184,75,0.4);transition:all 0.2s;margin-bottom:12px;}
+    .pricing-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,184,75,0.5);}
+    .pricing-guarantee{font-size:0.75rem;color:rgba(200,223,240,0.35);}
+
+    /* FAQ */
+    .faq-list{max-width:680px;margin:0 auto;}
+    .faq-item{border-bottom:1px solid rgba(79,163,224,0.1);padding:20px 0;}
+    .faq-q{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:8px;}
+    .faq-a{font-size:0.86rem;color:rgba(200,223,240,0.6);line-height:1.6;}
+
+    /* FOOTER */
+    footer{background:rgba(7,21,37,0.8);border-top:1px solid rgba(79,163,224,0.1);padding:28px 24px;text-align:center;font-size:0.78rem;color:rgba(200,223,240,0.3);}
+
+    /* DIVIDER */
+    .divider{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);margin:0 auto 40px;}
+
+    @media(max-width:540px){
+      .hero{padding:60px 20px 80px;}
+      .pricing-card{padding:28px 20px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Your Financial <span>Blueprint</span></div>
+  <a href="#pricing" class="nav-cta">Get Access — $20.99</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">⭐ Premium Financial Toolkit</div>
+    <h1>Watch Your Debt Disappear.<br><span>Watch Your Wealth Grow.</span></h1>
+    <p class="hero-sub">The Financial Blueprint Premium Tracker gives you real-time visibility into every dollar — debt, savings, investments, and net worth — all in one place. No subscriptions. No accounts. Your data stays on your device.</p>
+    <a href="#pricing" class="hero-cta">Get Instant Access — $20.99 →</a>
+    <p class="hero-note">One-time payment · Instant download · 100% private</p>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section style="background:rgba(16,42,82,0.3);">
+  <div class="section-inner">
+    <div class="sec-eye">What's Inside</div>
+    <h2 class="sec-title">4 Powerful Trackers in One App</h2>
+    <div class="divider"></div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <span class="feat-icon">💰</span>
+        <div class="feat-title">Debt Payoff Tracker</div>
+        <div class="feat-desc">Add all your debts, log real payments, and watch progress bars move in real time. See exactly how Debt Stacking saves you thousands in interest.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📈</span>
+        <div class="feat-title">Savings Goal Tracker</div>
+        <div class="feat-desc">Set goals for your emergency fund, down payment, or any target. Log contributions and watch your progress bar climb toward 100%.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🚀</span>
+        <div class="feat-title">Investment Portfolio Tracker</div>
+        <div class="feat-desc">Track your RRSP, TFSA, and other accounts. See your total gain/loss, return %, and projected value at retirement in real time.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🏦</span>
+        <div class="feat-title">Net Worth Dashboard</div>
+        <div class="feat-desc">Your complete financial picture — assets minus liabilities. Track your net worth over time with a visual trend chart. Watch the number grow.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <div class="sec-eye">How It Works</div>
+    <h2 class="sec-title">Three Steps to Financial Clarity</h2>
+    <div class="divider"></div>
+    <div class="steps-row">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-title">Enter Your Numbers</div>
+        <div class="step-desc">Add your debts, savings goals, and investments once. The tracker does all the math — payoff dates, projected growth, and your current net worth.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-title">Log Payments & Contributions</div>
+        <div class="step-desc">Every time you make a debt payment or savings contribution, log it in 5 seconds. Watch your progress bars move and your net worth climb.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-title">Watch Your Net Worth Grow</div>
+        <div class="step-desc">The Net Worth tab tracks your progress over time with a visual chart. See the trend from the moment you start taking control.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STATS -->
+<section class="proof-bg">
+  <div class="section-inner">
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-num">4</div>
+        <div class="proof-desc">Full trackers in one app — Debt, Savings, Investments, and Net Worth.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">$0</div>
+        <div class="proof-desc">Monthly fees. Zero subscriptions. Pay once, use forever.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">100%</div>
+        <div class="proof-desc">Private. Your data never leaves your device — no accounts, no servers.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">🇨🇦</div>
+        <div class="proof-desc">Built for Canadian families. RRSP, TFSA, CPP, OAS — built in.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="sec-eye">Pricing</div>
+    <h2 class="sec-title">One Price. Everything Included.</h2>
+    <div class="divider"></div>
+    <div class="pricing-card">
+      <div class="pricing-badge">⭐ PREMIUM TRACKER</div>
+      <div class="pricing-title">Your Financial Blueprint</div>
+      <div class="pricing-name">Premium Tracker App</div>
+      <div class="price-big">$20.99</div>
+      <div class="price-note">One-time payment · Instant access · No subscription</div>
+      <ul class="pricing-includes">
+        <li>💰 Debt Payoff Tracker with real-time progress bars</li>
+        <li>📈 Savings Goal Tracker (unlimited goals)</li>
+        <li>🚀 Investment Portfolio Tracker (RRSP, TFSA, Non-Reg)</li>
+        <li>🏦 Net Worth Dashboard with trend chart</li>
+        <li>⚡ Debt Stacking calculator — see how much you save</li>
+        <li>📊 Portfolio allocation breakdown</li>
+        <li>🎯 Payment history log for every account</li>
+        <li>💾 Your data stays private on your device</li>
+        <li>📱 Works on any device — phone, tablet, desktop</li>
+        <li>♾️ No account required. No expiry. Yours forever.</li>
+      </ul>
+      <a href="#" class="pricing-cta">Get Instant Access — $20.99 →</a>
+      <p class="pricing-guarantee">🔒 Secure payment · Instant download after purchase</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:rgba(16,42,82,0.2);">
+  <div class="section-inner">
+    <div class="sec-eye">Questions</div>
+    <h2 class="sec-title">Frequently Asked</h2>
+    <div class="divider"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What exactly is this?</div>
+        <div class="faq-a">It's a standalone web app — a single HTML file you download and open in any browser. No installation, no account, no internet required after purchase. It includes four financial trackers: Debt Payoff, Savings Goals, Investment Portfolio, and a Net Worth Dashboard.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to create an account?</div>
+        <div class="faq-a">No account, no sign-up, no email required. You download the file, open it in your browser, and start using it immediately. Your data is saved locally on your device.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my financial data private?</div>
+        <div class="faq-a">Completely. Your data never leaves your device. Nothing is sent to any server. The app runs 100% in your browser using local storage. Close the tab and your data is still there next time you open it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does it work on my phone?</div>
+        <div class="faq-a">Yes — it's fully responsive and designed to work on any device. Open it in Chrome, Safari, Firefox, or any modern browser on your phone, tablet, or desktop.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Your Financial Blueprint · Financial Education Series · For Canadian Families · 2026</div>
+  <div style="margin-top:6px;">© 2026 · All rights reserved</div>
+</footer>
+
+</body>
+</html>

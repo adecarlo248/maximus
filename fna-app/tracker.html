@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Financial Blueprint — Premium Tracker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    :root {
+      --navy:#071525;--cobalt:#102a52;--teal:#4fa3e0;--teal2:#00c8ff;
+      --gold:#e8b84b;--green:#2ecc71;--red:#e05252;--bg:#f0f4f8;
+      --card:#fff;--border:rgba(79,163,224,0.2);--text:#071525;--muted:#5a7a9a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+    /* HEADER */
+    .hdr{background:var(--navy);position:relative;overflow:hidden;padding:0 20px;}
+    .hdr::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(79,163,224,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.07) 1px,transparent 1px);background-size:28px 28px;}
+    .hdr-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .logo{font-size:1rem;font-weight:800;color:#fff;white-space:nowrap;}.logo span{color:var(--teal);}
+    .badge{background:linear-gradient(135deg,var(--gold),#c8921a);color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:20px;}
+
+    /* TABS */
+    .tabs{background:var(--navy);border-bottom:1px solid rgba(79,163,224,0.15);position:sticky;top:0;z-index:100;}
+    .tabs-inner{max-width:900px;margin:0 auto;display:flex;gap:0;padding:0 20px;}
+    .tab{padding:12px 20px;font-size:0.82rem;font-weight:700;color:rgba(200,223,240,0.5);cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;}
+    .tab:hover{color:rgba(200,223,240,0.8);}
+    .tab.active{color:#fff;border-bottom-color:var(--teal);}
+
+    /* MAIN */
+    .main{max-width:900px;margin:0 auto;padding:28px 16px 80px;}
+    .panel{display:none;animation:fadeIn 0.25s ease;}.panel.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+    /* CARDS */
+    .card{background:var(--card);border-radius:14px;border:1px solid var(--border);box-shadow:0 4px 20px rgba(7,21,37,0.07);overflow:hidden;margin-bottom:20px;}
+    .card-hdr{background:var(--navy);padding:16px 22px;position:relative;overflow:hidden;}
+    .card-hdr::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(79,163,224,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.08) 1px,transparent 1px);background-size:20px 20px;}
+    .card-hdr::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),rgba(79,163,224,0.1),transparent);}
+    .card-eye{font-size:0.62rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:3px;position:relative;}
+    .card-title{font-size:1.2rem;font-weight:800;color:#fff;position:relative;}
+    .card-body{padding:22px;}
+
+    /* SUMMARY STATS */
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px;}
+    .stat-card{background:linear-gradient(160deg,var(--navy),var(--cobalt));border:1px solid rgba(79,163,224,0.2);border-radius:10px;padding:16px 12px;text-align:center;position:relative;overflow:hidden;}
+    .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(138,180,212,0.4),transparent);}
+    .stat-lbl{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,223,240,0.45);margin-bottom:5px;}
+    .stat-val{font-size:1.3rem;font-weight:900;line-height:1;}
+    .stat-val.teal{color:var(--teal);}.stat-val.gold{color:var(--gold);}.stat-val.green{color:var(--green);}.stat-val.red{color:var(--red);}
+    .stat-sub{font-size:0.65rem;color:rgba(200,223,240,0.3);margin-top:4px;}
+
+    /* SECTION LABEL */
+    .sec{font-size:0.65rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);border-left:3px solid var(--teal);padding-left:10px;margin:20px 0 14px;}
+
+    /* FORM */
+    .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;}
+    label{display:block;font-size:0.75rem;font-weight:700;color:var(--text);margin-bottom:5px;}
+    input[type=text],input[type=number],input[type=date],select{width:100%;padding:9px 12px;border:1.5px solid #d4e4f4;border-radius:8px;font-family:inherit;font-size:0.9rem;color:var(--text);background:#fafcff;outline:none;transition:all 0.2s;}
+    input:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(79,163,224,0.12);}
+    .has-pre{position:relative;}.has-pre .pre{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:0.85rem;font-weight:600;color:var(--muted);pointer-events:none;}
+    .has-pre input{padding-left:20px;}
+    .has-suf{position:relative;}.has-suf .suf{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:0.82rem;color:var(--muted);pointer-events:none;}
+    .has-suf input{padding-right:28px;}
+
+    /* BUTTONS */
+    .btn{padding:9px 20px;border-radius:8px;font-family:inherit;font-size:0.85rem;font-weight:700;cursor:pointer;border:none;transition:all 0.2s;}
+    .btn-primary{background:linear-gradient(135deg,var(--teal),#2d7dd2);color:#fff;box-shadow:0 3px 10px rgba(79,163,224,0.3);}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(79,163,224,0.4);}
+    .btn-ghost{background:none;border:1.5px solid rgba(79,163,224,0.3);color:var(--teal);}
+    .btn-ghost:hover{background:rgba(79,163,224,0.06);}
+    .btn-danger{background:none;border:none;color:var(--red);font-size:1rem;padding:4px 8px;cursor:pointer;}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),#c8921a);color:#fff;box-shadow:0 3px 10px rgba(232,184,75,0.3);}
+    .btn-add-row{background:none;border:1.5px dashed rgba(79,163,224,0.35);color:var(--teal);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;margin-top:8px;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;}
+    .btn-add-row:hover{background:rgba(79,163,224,0.06);border-color:var(--teal);}
+
+    /* ITEM CARDS */
+    .item{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px;transition:box-shadow 0.2s;}
+    .item:hover{box-shadow:0 4px 16px rgba(79,163,224,0.1);}
+    .item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;}
+    .item-name{font-size:0.95rem;font-weight:700;color:var(--navy);}
+    .item-meta{font-size:0.78rem;color:var(--muted);margin-top:2px;}
+    .item-amounts{text-align:right;flex-shrink:0;}
+    .item-main-val{font-size:1.05rem;font-weight:800;}
+    .item-sub-val{font-size:0.75rem;color:var(--muted);margin-top:1px;}
+    .item-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+    .done-badge{display:inline-block;background:var(--green);color:#fff;font-size:0.62rem;font-weight:800;letter-spacing:1px;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle;}
+    .gain-pos{color:var(--green);font-weight:700;}.gain-neg{color:var(--red);font-weight:700;}
+
+    /* PROGRESS BAR */
+    .prog-track{height:10px;background:#e8f0f8;border-radius:5px;overflow:hidden;margin-bottom:4px;}
+    .prog-fill{height:100%;border-radius:5px;transition:width 0.7s ease;}
+    .prog-fill.teal{background:linear-gradient(90deg,var(--teal),var(--teal2));}
+    .prog-fill.green{background:linear-gradient(90deg,var(--green),#27ae60);}
+    .prog-fill.gold{background:linear-gradient(90deg,var(--gold),#f5d98e);}
+    .prog-fill.red{background:linear-gradient(90deg,var(--red),#c0392b);}
+    .prog-pct{font-size:0.68rem;font-weight:700;color:var(--muted);text-align:right;}
+
+    /* PAYMENT INPUT */
+    .pay-box{background:linear-gradient(135deg,#eaf4fd,#f0f8ff);border:1.5px solid rgba(79,163,224,0.25);border-radius:10px;padding:16px 18px;margin-top:4px;}
+    .pay-box-title{font-size:0.65rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+    .pay-row{display:grid;grid-template-columns:2fr 1fr auto;gap:10px;align-items:end;}
+
+    /* HISTORY */
+    .hist-wrap{margin-top:14px;}
+    .hist-title{font-size:0.65rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+    .hist-list{display:flex;flex-direction:column;gap:5px;max-height:160px;overflow-y:auto;}
+    .hist-item{background:#f0f7ff;border-left:3px solid var(--teal);border-radius:0 6px 6px 0;padding:6px 12px;font-size:0.78rem;display:flex;justify-content:space-between;}
+    .hist-item.gold-hist{border-left-color:var(--gold);background:#fffbf0;}
+    .hist-item.green-hist{border-left-color:var(--green);background:#f0fff6;}
+
+    /* NET WORTH */
+    .nw-big{text-align:center;padding:28px 20px;background:linear-gradient(160deg,var(--navy),var(--cobalt));border-radius:12px;margin-bottom:20px;border:1px solid rgba(79,163,224,0.2);}
+    .nw-lbl{font-size:0.65rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(200,223,240,0.4);margin-bottom:8px;}
+    .nw-val{font-size:2.8rem;font-weight:900;line-height:1;}
+    .nw-change{font-size:0.85rem;margin-top:8px;}
+
+    /* SVG CHART */
+    .chart-svg{width:100%;height:120px;display:block;}
+
+    /* ALLOCATION PIE — CSS circles */
+    .alloc-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;}
+    .alloc-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;}
+    .alloc-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+
+    /* EMPTY STATE */
+    .empty{text-align:center;padding:40px 20px;color:var(--muted);}
+    .empty-icon{font-size:2.5rem;margin-bottom:12px;}
+    .empty-text{font-size:0.9rem;}
+
+    /* INLINE EDIT MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(7,21,37,0.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;}
+    .modal{background:#fff;border-radius:14px;padding:24px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(7,21,37,0.3);}
+    .modal-title{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:16px;}
+    .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;}
+
+    /* CONFETTI */
+    .confetti-wrap{position:fixed;inset:0;pointer-events:none;z-index:9999;}
+    @keyframes confFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+    .conf-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confFall 2s ease forwards;}
+
+    @media(max-width:540px){
+      .pay-row{grid-template-columns:1fr 1fr;}.pay-row .btn{grid-column:1/-1;}
+      .tab{padding:10px 12px;font-size:0.75rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="logo">Your Financial <span>Blueprint</span></div>
+    <div class="badge">⭐ PREMIUM TRACKER</div>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <div class="tab active" onclick="switchTab('debt')">💰 Debt</div>
+    <div class="tab" onclick="switchTab('savings')">📈 Savings</div>
+    <div class="tab" onclick="switchTab('investments')">🚀 Investments</div>
+    <div class="tab" onclick="switchTab('networth')">🏦 Net Worth</div>
+  </div>
+</div>
+
+<main class="main">
+
+<!-- ══════════════════════════════════
+     TAB: DEBT
+══════════════════════════════════ -->
+<div class="panel active" id="panel-debt">
+  <div class="stats-row" id="debt-stats"></div>
+  <div class="card">
+    <div class="card-hdr"><div class="card-eye">Add Debt</div><div class="card-title">Track a New Debt</div></div>
+    <div class="card-body">
+      <div class="form-row">
+        <div><label>Debt Name</label><input type="text" id="d-name" placeholder="e.g. Credit Card"></div>
+        <div><label>Balance ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="d-bal" placeholder="5,000" min="0"></div></div>
+        <div><label>Interest Rate (%)</label><div class="has-suf"><input type="number" id="d-rate" placeholder="19.99" min="0" max="100" step="0.01"><span class="suf">%</span></div></div>
+        <div><label>Min Monthly Payment ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="d-min" placeholder="150" min="0"></div></div>
+      </div>
+      <button class="btn btn-primary" onclick="addDebt()">+ Add Debt</button>
+    </div>
+  </div>
+
+  <div id="debt-list"></div>
+
+  <div class="card" id="debt-stacking-card" style="display:none;">
+    <div class="card-hdr"><div class="card-eye">Debt Stacking</div><div class="card-title">Payoff Timeline Comparison</div></div>
+    <div class="card-body" id="debt-stacking-body"></div>
+  </div>
+
+  <div class="card" id="debt-pay-card" style="display:none;">
+    <div class="card-hdr"><div class="card-eye">Log Payment</div><div class="card-title">Apply a Payment</div></div>
+    <div class="card-body">
+      <div class="pay-row">
+        <div><label>Select Debt</label><select id="d-pay-sel"></select></div>
+        <div><label>Amount ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="d-pay-amt" placeholder="500" min="1" style="padding-left:20px;"></div></div>
+        <div style="display:flex;align-items:flex-end;"><button class="btn btn-primary" onclick="applyDebtPayment()">Apply ✓</button></div>
+      </div>
+      <div class="hist-wrap" id="d-hist-wrap" style="display:none;">
+        <div class="hist-title">Payment History</div>
+        <div class="hist-list" id="d-hist-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     TAB: SAVINGS
+══════════════════════════════════ -->
+<div class="panel" id="panel-savings">
+  <div class="stats-row" id="sav-stats"></div>
+  <div class="card">
+    <div class="card-hdr"><div class="card-eye">Add Goal</div><div class="card-title">New Savings Goal</div></div>
+    <div class="card-body">
+      <div class="form-row">
+        <div><label>Goal Name</label><input type="text" id="s-name" placeholder="e.g. Emergency Fund"></div>
+        <div><label>Target Amount ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="s-target" placeholder="10,000" min="0"></div></div>
+        <div><label>Current Balance ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="s-current" placeholder="2,500" min="0"></div></div>
+        <div><label>Monthly Contribution ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="s-monthly" placeholder="300" min="0"></div></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+        <button class="btn btn-ghost" onclick="quickGoal('Emergency Fund',10000,0,300)">+ Emergency Fund</button>
+        <button class="btn btn-ghost" onclick="quickGoal('Down Payment',50000,0,800)">+ Down Payment</button>
+        <button class="btn btn-ghost" onclick="quickGoal('Vacation Fund',3000,0,200)">+ Vacation Fund</button>
+      </div>
+      <button class="btn btn-primary" onclick="addGoal()">+ Add Goal</button>
+    </div>
+  </div>
+  <div id="savings-list"></div>
+</div>
+
+<!-- ══════════════════════════════════
+     TAB: INVESTMENTS
+══════════════════════════════════ -->
+<div class="panel" id="panel-investments">
+  <div class="stats-row" id="inv-stats"></div>
+  <div class="card">
+    <div class="card-hdr"><div class="card-eye">Add Holding</div><div class="card-title">Track an Investment</div></div>
+    <div class="card-body">
+      <div class="form-row">
+        <div><label>Name</label><input type="text" id="i-name" placeholder="e.g. RRSP — TD e-Series"></div>
+        <div><label>Account Type</label>
+          <select id="i-type">
+            <option value="RRSP">RRSP</option>
+            <option value="TFSA">TFSA</option>
+            <option value="Non-Reg">Non-Registered</option>
+            <option value="RESP">RESP</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div><label>Current Value ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="i-value" placeholder="25,000" min="0"></div></div>
+        <div><label>Total Contributed ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="i-contrib" placeholder="20,000" min="0"></div></div>
+        <div><label>Monthly Contribution ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="i-monthly" placeholder="500" min="0"></div></div>
+        <div><label>Years to Retirement</label><input type="number" id="i-years" placeholder="25" min="1" max="50"></div>
+      </div>
+      <button class="btn btn-primary" onclick="addInvestment()">+ Add Holding</button>
+    </div>
+  </div>
+  <div id="inv-list"></div>
+  <div id="inv-allocation" style="display:none;"></div>
+</div>
+
+<!-- ══════════════════════════════════
+     TAB: NET WORTH
+══════════════════════════════════ -->
+<div class="panel" id="panel-networth">
+  <div id="nw-big-display"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <!-- ASSETS -->
+    <div class="card">
+      <div class="card-hdr"><div class="card-eye">Assets</div><div class="card-title" style="color:var(--green);">What You Own</div></div>
+      <div class="card-body">
+        <div id="asset-list"></div>
+        <button class="btn-add-row" onclick="addAsset()">+ Add Asset</button>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="font-weight:700;">Total Assets</span>
+          <span style="font-weight:900;color:var(--green);" id="total-assets-val">$0</span>
+        </div>
+      </div>
+    </div>
+    <!-- LIABILITIES -->
+    <div class="card">
+      <div class="card-hdr"><div class="card-eye">Liabilities</div><div class="card-title" style="color:var(--red);">What You Owe</div></div>
+      <div class="card-body">
+        <div id="liability-list"></div>
+        <button class="btn-add-row" onclick="addLiability()">+ Add Liability</button>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="font-weight:700;">Total Liabilities</span>
+          <span style="font-weight:900;color:var(--red);" id="total-liab-val">$0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Net Worth Trend Chart -->
+  <div class="card" id="nw-chart-card" style="display:none;">
+    <div class="card-hdr"><div class="card-eye">History</div><div class="card-title">Net Worth Trend</div></div>
+    <div class="card-body">
+      <svg class="chart-svg" id="nw-chart"></svg>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" style="display:none;" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-title" id="modal-title">Update Value</div>
+    <div id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="modal-confirm">Update</button>
+    </div>
+  </div>
+</div>
+
+<div class="confetti-wrap" id="confetti"></div>
+
+<script>
+// ── UTILS ──
+const $ = id => document.getElementById(id);
+const fmt = n => {
+  const abs = Math.abs(n);
+  if(abs>=1e6) return (n<0?'-':'')+'$'+(abs/1e6).toFixed(1)+'M';
+  if(abs>=1000) return (n<0?'-':'')+'$'+Math.round(abs).toLocaleString();
+  return (n<0?'-':'')+'$'+Math.round(abs).toLocaleString();
+};
+const fmtPct = n => (n>=0?'+':'')+n.toFixed(1)+'%';
+const fmtDate = d => d.toLocaleDateString('en-CA',{month:'short',year:'numeric'});
+const now = () => new Date().toLocaleDateString('en-CA',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+const uid = () => Date.now().toString(36)+Math.random().toString(36).slice(2);
+
+// ── STORAGE ──
+const load = key => JSON.parse(localStorage.getItem(key)||'[]');
+const save = (key,val) => localStorage.setItem(key,JSON.stringify(val));
+
+// ── TABS ──
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.classList.toggle('active', ['debt','savings','investments','networth'][i]===name);
+  });
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  $('panel-'+name).classList.add('active');
+  if(name==='networth') renderNetWorth();
+}
+
+// ══════════════════════════════════
+// DEBT TRACKER
+// ══════════════════════════════════
+function addDebt(){
+  const name=$('d-name').value.trim()||'Debt';
+  const bal=parseFloat($('d-bal').value)||0;
+  const rate=parseFloat($('d-rate').value)||0;
+  const min=parseFloat($('d-min').value)||0;
+  if(bal<=0){$('d-bal').style.borderColor='var(--red)';setTimeout(()=>$('d-bal').style.borderColor='',1200);return;}
+  const debts=load('fbp_debts');
+  debts.push({id:uid(),name,original:bal,remaining:bal,rate,min,paid:0,history:[]});
+  save('fbp_debts',debts);
+  ['d-name','d-bal','d-rate','d-min'].forEach(id=>$(id).value='');
+  renderDebts();
+}
+
+function renderDebts(){
+  const debts=load('fbp_debts');
+  const list=$('debt-list');
+
+  if(!debts.length){
+    list.innerHTML='<div class="empty"><div class="empty-icon">💳</div><div class="empty-text">No debts added yet.<br>Add your first debt above to start tracking.</div></div>';
+    $('debt-pay-card').style.display='none';
+    $('debt-stacking-card').style.display='none';
+    renderDebtStats([]);
+    return;
+  }
+
+  list.innerHTML='<div class="sec">Your Debts</div>';
+  debts.forEach((d,i)=>{
+    const pct=Math.min(100,Math.round((d.paid/d.original)*100));
+    const done=d.remaining<=0.01;
+    const payoffDate=done?null:calcDebtPayoff(d.remaining,d.rate,d.min);
+    list.innerHTML+=`
+      <div class="item">
+        <div class="item-top">
+          <div>
+            <div class="item-name">${d.name}${done?'<span class="done-badge">✓ PAID OFF</span>':''}</div>
+            <div class="item-meta">${d.rate}% · Min $${d.min.toLocaleString()}/mo${payoffDate?' · Payoff: '+fmtDate(payoffDate):''}</div>
+          </div>
+          <div class="item-amounts">
+            <div class="item-main-val" style="color:${done?'var(--green)':'var(--navy)'}">${fmt(d.remaining)}</div>
+            <div class="item-sub-val">${d.paid>0?fmt(d.paid)+' paid':fmt(d.original)+' original'}</div>
+          </div>
+        </div>
+        <div class="prog-track"><div class="prog-fill ${done?'green':'teal'}" style="width:${pct}%"></div></div>
+        <div class="prog-pct">${pct}% paid off</div>
+        <div class="item-actions">
+          <button class="btn btn-danger" onclick="removeDebt('${d.id}')">✕ Remove</button>
+        </div>
+      </div>`;
+  });
+
+  renderDebtStats(debts);
+  renderDebtStacking(debts);
+  renderDebtPaySelect(debts);
+  renderDebtHistory(debts);
+  $('debt-pay-card').style.display='block';
+  $('debt-stacking-card').style.display='block';
+}
+
+function calcDebtPayoff(bal,rate,payment){
+  if(!payment||!rate) return null;
+  const r=rate/100/12;
+  const months=Math.ceil(Math.log(payment/(payment-bal*r))/Math.log(1+r));
+  if(!isFinite(months)||months>600) return null;
+  const d=new Date();d.setMonth(d.getMonth()+months);return d;
+}
+
+function simulateDebtPayoff(debts,extra=0){
+  if(!debts.length) return {months:0,interest:0};
+  let ds=debts.map(d=>({b:d.remaining>0?d.remaining:0,r:d.rate/100/12,m:d.min}));
+  ds.sort((a,b)=>b.r-a.r);
+  let months=0,interest=0,MAX=600;
+  while(ds.some(d=>d.b>0.01)&&months<MAX){
+    months++;let avail=extra;
+    ds.forEach(d=>{if(d.b<0.01)return;const intr=d.b*d.r;interest+=intr;d.b+=intr;const pay=Math.min(d.b,d.m);d.b-=pay;});
+    for(let i=0;i<ds.length;i++){if(ds[i].b>0.01&&avail>0){const pay=Math.min(ds[i].b,avail);ds[i].b-=pay;avail-=pay;if(avail<=0)break;}}
+    let freed=0;ds.forEach(d=>{if(d.b<0.01&&d.m>0){freed+=d.m;d.m=0;}});extra+=freed;
+  }
+  return {months,interest};
+}
+
+function renderDebtStacking(debts){
+  const active=debts.filter(d=>d.remaining>0.01);
+  if(!active.length){$('debt-stacking-card').style.display='none';return;}
+  const totalMins=active.reduce((s,d)=>s+d.min,0);
+  const noStack=simulateDebtPayoff(active,0);
+  const withStack=simulateDebtPayoff(active,0); // same payments, just stacking effect
+  const fmtYrs=m=>{const y=Math.floor(m/12),mo=m%12;return y>0?(y+'y '+(mo>0?mo+'mo':'')):mo+'mo';};
+  const max=Math.max(noStack.months,1);
+  const pct=Math.max(15,Math.round((withStack.months/max)*100));
+  const saved=noStack.interest-withStack.interest;
+  $('debt-stacking-body').innerHTML=`
+    <div style="margin-bottom:14px;">
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between;"><span>Minimum Payments Only</span><span>${fmtYrs(noStack.months)} · ${fmt(noStack.interest)} interest</span></div>
+      <div class="prog-track" style="height:18px;"><div class="prog-fill red" style="width:100%;display:flex;align-items:center;padding-left:10px;font-size:0.7rem;font-weight:700;color:#fff;">${fmtYrs(noStack.months)}</div></div>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between;"><span>With Debt Stacking</span><span>${fmtYrs(withStack.months)} · ${fmt(withStack.interest)} interest</span></div>
+      <div class="prog-track" style="height:18px;"><div class="prog-fill teal" style="width:${pct}%;display:flex;align-items:center;padding-left:10px;font-size:0.7rem;font-weight:700;color:#fff;">${fmtYrs(withStack.months)}</div></div>
+    </div>
+    ${saved>100?`<div style="text-align:center;font-size:0.85rem;font-weight:700;color:var(--gold);">💰 Debt Stacking saves you ${fmt(saved)} in interest!</div>`:''}
+  `;
+}
+
+function renderDebtStats(debts){
+  const total=debts.reduce((s,d)=>s+d.remaining,0);
+  const paid=debts.reduce((s,d)=>s+d.paid,0);
+  const avgRate=debts.length?debts.reduce((s,d)=>s+d.rate,0)/debts.length:0;
+  const active=debts.filter(d=>d.remaining>0.01);
+  const stack=active.length?simulateDebtPayoff(active,0):{months:0};
+  const dfYear=stack.months?new Date().getFullYear()+Math.floor(stack.months/12):null;
+  $('debt-stats').innerHTML=`
+    <div class="stat-card"><div class="stat-lbl">Total Debt</div><div class="stat-val red">${fmt(total)}</div><div class="stat-sub">Remaining balance</div></div>
+    <div class="stat-card"><div class="stat-lbl">Total Paid</div><div class="stat-val green">${fmt(paid)}</div><div class="stat-sub">You've paid this off</div></div>
+    <div class="stat-card"><div class="stat-lbl">Avg Rate</div><div class="stat-val teal">${avgRate.toFixed(1)}%</div><div class="stat-sub">Weighted average</div></div>
+    <div class="stat-card"><div class="stat-lbl">Debt-Free</div><div class="stat-val gold">${dfYear||'—'}</div><div class="stat-sub">With Debt Stacking</div></div>
+  `;
+}
+
+function renderDebtPaySelect(debts){
+  const sel=$('d-pay-sel');sel.innerHTML='';
+  debts.filter(d=>d.remaining>0.01).forEach(d=>{
+    const o=document.createElement('option');o.value=d.id;
+    o.textContent=d.name+' — '+fmt(d.remaining)+' remaining';sel.appendChild(o);
+  });
+}
+
+function renderDebtHistory(debts){
+  const hist=$('d-hist-list');hist.innerHTML='';
+  const entries=debts.flatMap(d=>(d.history||[]).map(h=>({...h,debt:d.name}))).sort((a,b)=>b.ts-a.ts).slice(0,20);
+  if(!entries.length){$('d-hist-wrap').style.display='none';return;}
+  $('d-hist-wrap').style.display='block';
+  entries.forEach(e=>{hist.innerHTML+=`<div class="hist-item"><span><strong>${fmt(e.amt)}</strong> → ${e.debt}</span><span style="color:var(--muted)">${e.date}</span></div>`;});
+}
+
+function applyDebtPayment(){
+  const sel=$('d-pay-sel');const amt=parseFloat($('d-pay-amt').value)||0;
+  if(!sel.value||amt<=0){$('d-pay-amt').style.borderColor='var(--red)';setTimeout(()=>$('d-pay-amt').style.borderColor='',1200);return;}
+  const debts=load('fbp_debts');
+  const idx=debts.findIndex(d=>d.id===sel.value);
+  if(idx<0)return;
+  const applied=Math.min(amt,debts[idx].remaining);
+  debts[idx].remaining=Math.max(0,debts[idx].remaining-applied);
+  debts[idx].paid+=applied;
+  if(!debts[idx].history)debts[idx].history=[];
+  debts[idx].history.push({amt:applied,date:now(),ts:Date.now()});
+  save('fbp_debts',debts);
+  $('d-pay-amt').value='';
+  $('d-pay-amt').style.borderColor='var(--green)';setTimeout(()=>$('d-pay-amt').style.borderColor='',1200);
+  if(debts[idx].remaining<0.01) celebrate();
+  renderDebts();
+  updateNetWorthFromTrackers();
+}
+
+function removeDebt(id){
+  const debts=load('fbp_debts').filter(d=>d.id!==id);
+  save('fbp_debts',debts);renderDebts();updateNetWorthFromTrackers();
+}
+
+// ══════════════════════════════════
+// SAVINGS TRACKER
+// ══════════════════════════════════
+function addGoal(n,t,c,m){
+  const name=(n||$('s-name').value.trim())||'Goal';
+  const target=parseFloat(t||$('s-target').value)||0;
+  const current=parseFloat(c||$('s-current').value)||0;
+  const monthly=parseFloat(m||$('s-monthly').value)||0;
+  if(target<=0){$('s-target').style.borderColor='var(--red)';setTimeout(()=>$('s-target').style.borderColor='',1200);return;}
+  const goals=load('fbp_savings');
+  goals.push({id:uid(),name,target,current,monthly,history:[]});
+  save('fbp_savings',goals);
+  ['s-name','s-target','s-current','s-monthly'].forEach(id=>$(id).value='');
+  renderSavings();
+}
+function quickGoal(n,t,c,m){$('s-name').value=n;$('s-target').value=t;$('s-current').value=c;$('s-monthly').value=m;addGoal();}
+
+function calcMonthsToGoal(current,target,monthly,rate=0.04){
+  if(monthly<=0) return null;
+  const r=rate/12;let bal=current,months=0;
+  while(bal<target&&months<600){bal=bal*(1+r)+monthly;months++;}
+  return months;
+}
+
+function renderSavings(){
+  const goals=load('fbp_savings');
+  const list=$('savings-list');
+  if(!goals.length){
+    list.innerHTML='<div class="empty"><div class="empty-icon">🎯</div><div class="empty-text">No savings goals yet.<br>Add your first goal to start tracking progress.</div></div>';
+    renderSavingsStats([]);return;
+  }
+  list.innerHTML='<div class="sec">Your Goals</div>';
+  goals.forEach(g=>{
+    const pct=Math.min(100,Math.round((g.current/g.target)*100));
+    const done=g.current>=g.target;
+    const months=done?0:calcMonthsToGoal(g.current,g.target,g.monthly);
+    const eta=months?fmtDate(new Date(Date.now()+months*30.4*24*3600*1000)):'—';
+    list.innerHTML+=`
+      <div class="item">
+        <div class="item-top">
+          <div>
+            <div class="item-name">${g.name}${done?'<span class="done-badge">✓ REACHED</span>':''}</div>
+            <div class="item-meta">${fmt(g.monthly)}/mo contribution${months?' · Goal: '+eta:''}</div>
+          </div>
+          <div class="item-amounts">
+            <div class="item-main-val" style="color:var(--green)">${fmt(g.current)}</div>
+            <div class="item-sub-val">of ${fmt(g.target)}</div>
+          </div>
+        </div>
+        <div class="prog-track"><div class="prog-fill ${done?'green':'gold'}" style="width:${pct}%"></div></div>
+        <div class="prog-pct">${pct}% toward goal</div>
+        <div class="item-actions">
+          <button class="btn btn-ghost" style="font-size:0.78rem;padding:6px 14px;" onclick="openContribModal('sav','${g.id}')">+ Add Contribution</button>
+          <button class="btn btn-danger" onclick="removeGoal('${g.id}')">✕</button>
+        </div>
+        ${g.history&&g.history.length?`<div class="hist-wrap"><div class="hist-title">Recent Contributions</div><div class="hist-list">${g.history.slice(-5).reverse().map(h=>`<div class="hist-item gold-hist"><span><strong>${fmt(h.amt)}</strong> added</span><span style="color:var(--muted)">${h.date}</span></div>`).join('')}</div></div>`:''}
+      </div>`;
+  });
+  renderSavingsStats(goals);
+}
+
+function renderSavingsStats(goals){
+  const total=goals.reduce((s,g)=>s+g.current,0);
+  const target=goals.reduce((s,g)=>s+g.target,0);
+  const pct=target>0?Math.round((total/target)*100):0;
+  const done=goals.filter(g=>g.current>=g.target).length;
+  $('sav-stats').innerHTML=`
+    <div class="stat-card"><div class="stat-lbl">Total Saved</div><div class="stat-val green">${fmt(total)}</div><div class="stat-sub">Across all goals</div></div>
+    <div class="stat-card"><div class="stat-lbl">Total Goals</div><div class="stat-val teal">${fmt(target)}</div><div class="stat-sub">Combined targets</div></div>
+    <div class="stat-card"><div class="stat-lbl">Overall</div><div class="stat-val gold">${pct}%</div><div class="stat-sub">Progress</div></div>
+    <div class="stat-card"><div class="stat-lbl">Achieved</div><div class="stat-val green">${done} / ${goals.length}</div><div class="stat-sub">Goals reached</div></div>
+  `;
+}
+
+function removeGoal(id){
+  save('fbp_savings',load('fbp_savings').filter(g=>g.id!==id));
+  renderSavings();updateNetWorthFromTrackers();
+}
+
+// ══════════════════════════════════
+// INVESTMENT TRACKER
+// ══════════════════════════════════
+function addInvestment(){
+  const name=$('i-name').value.trim()||'Investment';
+  const type=$('i-type').value;
+  const value=parseFloat($('i-value').value)||0;
+  const contrib=parseFloat($('i-contrib').value)||0;
+  const monthly=parseFloat($('i-monthly').value)||0;
+  const years=parseFloat($('i-years').value)||25;
+  if(value<=0){$('i-value').style.borderColor='var(--red)';setTimeout(()=>$('i-value').style.borderColor='',1200);return;}
+  const invs=load('fbp_investments');
+  invs.push({id:uid(),name,type,value,contrib,monthly,years,history:[]});
+  save('fbp_investments',invs);
+  ['i-name','i-value','i-contrib','i-monthly','i-years'].forEach(id=>$(id).value='');
+  renderInvestments();
+}
+
+function projectValue(current,monthly,years,rate=0.09){
+  const r=rate/12,n=years*12;
+  return current*Math.pow(1+rate,years)+monthly*((Math.pow(1+r,n)-1)/r);
+}
+
+function renderInvestments(){
+  const invs=load('fbp_investments');
+  const list=$('inv-list');
+  if(!invs.length){
+    list.innerHTML='<div class="empty"><div class="empty-icon">📊</div><div class="empty-text">No investments tracked yet.<br>Add your RRSP, TFSA, or other holdings above.</div></div>';
+    $('inv-allocation').style.display='none';
+    renderInvStats([]);return;
+  }
+  list.innerHTML='<div class="sec">Your Holdings</div>';
+  invs.forEach(inv=>{
+    const gain=inv.value-inv.contrib;
+    const gainPct=inv.contrib>0?(gain/inv.contrib)*100:0;
+    const projected=projectValue(inv.value,inv.monthly,inv.years);
+    const progPct=Math.min(100,inv.contrib>0?Math.round((inv.value/Math.max(inv.value,inv.contrib))*100):100);
+    list.innerHTML+=`
+      <div class="item">
+        <div class="item-top">
+          <div>
+            <div class="item-name">${inv.name} <span style="background:rgba(79,163,224,0.12);color:var(--teal);font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:4px;">${inv.type}</span></div>
+            <div class="item-meta">${fmt(inv.monthly)}/mo · ${inv.years}yr horizon · Projected: ${fmt(projected)}</div>
+          </div>
+          <div class="item-amounts">
+            <div class="item-main-val" style="color:var(--teal)">${fmt(inv.value)}</div>
+            <div class="item-sub-val ${gain>=0?'gain-pos':'gain-neg'}">${gain>=0?'+':''}${fmt(gain)} (${fmtPct(gainPct)})</div>
+          </div>
+        </div>
+        <div class="prog-track"><div class="prog-fill teal" style="width:${progPct}%"></div></div>
+        <div class="prog-pct">${fmt(inv.contrib)} contributed · ${fmt(inv.value)} current value</div>
+        <div class="item-actions">
+          <button class="btn btn-ghost" style="font-size:0.78rem;padding:6px 14px;" onclick="openContribModal('inv','${inv.id}')">+ Contribution</button>
+          <button class="btn btn-ghost" style="font-size:0.78rem;padding:6px 14px;" onclick="openUpdateModal('${inv.id}')">↑ Update Value</button>
+          <button class="btn btn-danger" onclick="removeInv('${inv.id}')">✕</button>
+        </div>
+      </div>`;
+  });
+  renderInvStats(invs);
+  renderAllocation(invs);
+  updateNetWorthFromTrackers();
+}
+
+function renderInvStats(invs){
+  const total=invs.reduce((s,i)=>s+i.value,0);
+  const contrib=invs.reduce((s,i)=>s+i.contrib,0);
+  const gain=total-contrib;
+  const gainPct=contrib>0?(gain/contrib)*100:0;
+  $('inv-stats').innerHTML=`
+    <div class="stat-card"><div class="stat-lbl">Portfolio Value</div><div class="stat-val teal">${fmt(total)}</div><div class="stat-sub">Current total</div></div>
+    <div class="stat-card"><div class="stat-lbl">Total Contributed</div><div class="stat-val">${fmt(contrib)}</div><div class="stat-sub">Money invested</div></div>
+    <div class="stat-card"><div class="stat-lbl">Total Gain</div><div class="stat-val ${gain>=0?'green':'red'}">${fmt(gain)}</div><div class="stat-sub">${fmtPct(gainPct)} return</div></div>
+    <div class="stat-card"><div class="stat-lbl">Holdings</div><div class="stat-val gold">${invs.length}</div><div class="stat-sub">Accounts tracked</div></div>
+  `;
+}
+
+function renderAllocation(invs){
+  if(!invs.length){$('inv-allocation').style.display='none';return;}
+  const total=invs.reduce((s,i)=>s+i.value,0);
+  const groups={};
+  invs.forEach(i=>{groups[i.type]=(groups[i.type]||0)+i.value;});
+  const colors={'RRSP':'#4fa3e0','TFSA':'#e8b84b','Non-Reg':'#2ecc71','RESP':'#9b59b6','Other':'#e05252'};
+  const alloc=$('inv-allocation');
+  alloc.style.display='block';
+  const items=Object.entries(groups).map(([type,val])=>`
+    <div class="alloc-item">
+      <div class="alloc-dot" style="background:${colors[type]||'#888'}"></div>
+      <span><strong>${type}</strong> — ${fmt(val)} (${Math.round(val/total*100)}%)</span>
+    </div>`).join('');
+  alloc.innerHTML=`<div class="card"><div class="card-hdr"><div class="card-eye">Allocation</div><div class="card-title">Portfolio Breakdown</div></div><div class="card-body"><div class="alloc-row">${items}</div></div></div>`;
+}
+
+function removeInv(id){
+  save('fbp_investments',load('fbp_investments').filter(i=>i.id!==id));
+  renderInvestments();
+}
+
+function openUpdateModal(id){
+  $('modal-title').textContent='Update Investment Value';
+  $('modal-body').innerHTML=`<div><label>New Current Value ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="modal-val" placeholder="25,000" min="0" style="padding-left:20px;"></div></div>`;
+  $('modal-confirm').onclick=()=>{
+    const v=parseFloat($('modal-val').value)||0;
+    if(v<=0) return;
+    const invs=load('fbp_investments');
+    const i=invs.findIndex(x=>x.id===id);
+    if(i>=0){invs[i].value=v;if(!invs[i].history)invs[i].history=[];invs[i].history.push({amt:v,date:now(),ts:Date.now()});}
+    save('fbp_investments',invs);closeModal();renderInvestments();
+  };
+  $('modal').style.display='flex';
+}
+
+// ══════════════════════════════════
+// SHARED CONTRIBUTION MODAL
+// ══════════════════════════════════
+function openContribModal(type,id){
+  $('modal-title').textContent='Add Contribution';
+  $('modal-body').innerHTML=`<div><label>Amount ($)</label><div class="has-pre"><span class="pre">$</span><input type="number" id="modal-val" placeholder="500" min="1" style="padding-left:20px;"></div></div>`;
+  $('modal-confirm').onclick=()=>{
+    const amt=parseFloat($('modal-val').value)||0;
+    if(amt<=0) return;
+    if(type==='sav'){
+      const goals=load('fbp_savings');
+      const i=goals.findIndex(g=>g.id===id);
+      if(i>=0){goals[i].current+=amt;if(!goals[i].history)goals[i].history=[];goals[i].history.push({amt,date:now(),ts:Date.now()});if(goals[i].current>=goals[i].target)celebrate();}
+      save('fbp_savings',goals);closeModal();renderSavings();
+    } else {
+      const invs=load('fbp_investments');
+      const i=invs.findIndex(x=>x.id===id);
+      if(i>=0){invs[i].value+=amt;invs[i].contrib+=amt;if(!invs[i].history)invs[i].history=[];invs[i].history.push({amt,date:now(),ts:Date.now()});}
+      save('fbp_investments',invs);closeModal();renderInvestments();
+    }
+    updateNetWorthFromTrackers();
+  };
+  $('modal').style.display='flex';
+}
+function closeModal(){$('modal').style.display='none';}
+
+// ══════════════════════════════════
+// NET WORTH
+// ══════════════════════════════════
+function addAsset(){
+  const name=prompt('Asset name (e.g. Home, RRSP, Cash):');
+  if(!name) return;
+  const val=parseFloat(prompt('Current value ($):')||0);
+  if(isNaN(val)) return;
+  const assets=load('fbp_assets');
+  assets.push({id:uid(),name,value:val});
+  save('fbp_assets',assets);renderNetWorth();
+}
+
+function addLiability(){
+  const name=prompt('Liability name (e.g. Mortgage, Credit Card):');
+  if(!name) return;
+  const val=parseFloat(prompt('Balance owed ($):')||0);
+  if(isNaN(val)) return;
+  const liabs=load('fbp_liabilities');
+  liabs.push({id:uid(),name,value:val});
+  save('fbp_liabilities',liabs);renderNetWorth();
+}
+
+function updateNetWorthFromTrackers(){
+  // Pull savings + investments into assets, debts into liabilities
+  // (Auto-sync, non-destructive)
+  recordNetWorthHistory();
+}
+
+function recordNetWorthHistory(){
+  const assets=load('fbp_assets');
+  const liabs=load('fbp_liabilities');
+  const invs=load('fbp_investments');
+  const savs=load('fbp_savings');
+  const debts=load('fbp_debts');
+
+  const totalAssets=assets.reduce((s,a)=>s+a.value,0)
+    +invs.reduce((s,i)=>s+i.value,0)
+    +savs.reduce((s,g)=>s+g.current,0);
+  const totalLiabs=liabs.reduce((s,l)=>s+l.value,0)
+    +debts.reduce((s,d)=>s+d.remaining,0);
+  const nw=totalAssets-totalLiabs;
+
+  const hist=load('fbp_networth_history');
+  const today=new Date().toISOString().slice(0,10);
+  const last=hist[hist.length-1];
+  if(!last||last.date!==today) hist.push({date:today,value:nw});
+  else hist[hist.length-1].value=nw;
+  if(hist.length>36) hist.splice(0,hist.length-36);
+  save('fbp_networth_history',hist);
+}
+
+function renderNetWorth(){
+  const assets=load('fbp_assets');
+  const liabs=load('fbp_liabilities');
+  const invs=load('fbp_investments');
+  const savs=load('fbp_savings');
+  const debts=load('fbp_debts');
+
+  const totalAssets=assets.reduce((s,a)=>s+a.value,0)
+    +invs.reduce((s,i)=>s+i.value,0)
+    +savs.reduce((s,g)=>s+g.current,0);
+  const totalLiabs=liabs.reduce((s,l)=>s+l.value,0)
+    +debts.reduce((s,d)=>s+d.remaining,0);
+  const nw=totalAssets-totalLiabs;
+
+  // Big display
+  const hist=load('fbp_networth_history');
+  const prev=hist.length>1?hist[hist.length-2]:null;
+  const change=prev?nw-prev.value:null;
+  $('nw-big-display').innerHTML=`
+    <div class="nw-big">
+      <div class="nw-lbl">YOUR NET WORTH</div>
+      <div class="nw-val" style="color:${nw>=0?'var(--green)':'var(--red)'}">${fmt(nw)}</div>
+      ${change!==null?`<div class="nw-change" style="color:${change>=0?'var(--green)':'var(--red)'}">${change>=0?'↑':'↓'} ${fmt(Math.abs(change))} since last visit</div>`:''}
+    </div>`;
+
+  // Asset list
+  const assetListEl=$('asset-list');
+  assetListEl.innerHTML='';
+  const allAssets=[
+    ...assets.map(a=>({name:a.name,value:a.value,id:a.id,type:'manual'})),
+    ...invs.map(i=>({name:i.name+' ('+i.type+')',value:i.value,id:i.id,type:'inv'})),
+    ...savs.map(g=>({name:g.name+' (Savings)',value:g.current,id:g.id,type:'sav'}))
+  ];
+  if(!allAssets.length) assetListEl.innerHTML='<div style="font-size:0.82rem;color:var(--muted);padding:8px 0;">No assets yet. Add assets or track investments/savings.</div>';
+  allAssets.forEach(a=>{
+    assetListEl.innerHTML+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eaf2fc;font-size:0.85rem;">
+      <span>${a.name}</span>
+      <span style="font-weight:700;color:var(--green)">${fmt(a.value)}</span>
+    </div>`;
+  });
+  $('total-assets-val').textContent=fmt(totalAssets);
+
+  // Liability list
+  const liabListEl=$('liability-list');
+  liabListEl.innerHTML='';
+  const allLiabs=[
+    ...liabs.map(l=>({name:l.name,value:l.value,id:l.id})),
+    ...debts.filter(d=>d.remaining>0.01).map(d=>({name:d.name+' ('+d.rate+'%)',value:d.remaining,id:d.id}))
+  ];
+  if(!allLiabs.length) liabListEl.innerHTML='<div style="font-size:0.82rem;color:var(--muted);padding:8px 0;">No liabilities. Great position!</div>';
+  allLiabs.forEach(l=>{
+    liabListEl.innerHTML+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eaf2fc;font-size:0.85rem;">
+      <span>${l.name}</span>
+      <span style="font-weight:700;color:var(--red)">${fmt(l.value)}</span>
+    </div>`;
+  });
+  $('total-liab-val').textContent=fmt(totalLiabs);
+
+  // Chart
+  if(hist.length>1){
+    $('nw-chart-card').style.display='block';
+    drawNWChart(hist.slice(-12));
+  }
+
+  recordNetWorthHistory();
+}
+
+function drawNWChart(hist){
+  const svg=$('nw-chart');
+  const W=svg.clientWidth||800,H=120,PAD=40;
+  const vals=hist.map(h=>h.value);
+  const min=Math.min(...vals),max=Math.max(...vals);
+  const range=max-min||1;
+  const pts=hist.map((h,i)=>{
+    const x=PAD+(i/(hist.length-1))*(W-PAD*2);
+    const y=H-10-((h.value-min)/range)*(H-30);
+    return [x,y];
+  });
+  const path=pts.map((p,i)=>(i===0?'M':'L')+p[0]+','+p[1]).join(' ');
+  const area='M'+pts[0][0]+','+(H-10)+' '+pts.map(p=>'L'+p[0]+','+p[1]).join(' ')+' L'+pts[pts.length-1][0]+','+(H-10)+' Z';
+  svg.innerHTML=`
+    <defs>
+      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(79,163,224,0.25)"/>
+        <stop offset="100%" stop-color="rgba(79,163,224,0)"/>
+      </linearGradient>
+    </defs>
+    <path d="${area}" fill="url(#chartGrad)"/>
+    <path d="${path}" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linejoin="round"/>
+    ${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--teal)"/>`).join('')}
+    ${hist.map((h,i)=>`<text x="${pts[i][0]}" y="${H}" text-anchor="middle" font-size="9" fill="rgba(90,122,154,0.7)">${h.date.slice(5)}</text>`).join('')}
+  `;
+}
+
+// ── CONFETTI ──
+function celebrate(){
+  const wrap=$('confetti');
+  const colors=['#4fa3e0','#e8b84b','#2ecc71','#e05252','#9b59b6','#00c8ff'];
+  for(let i=0;i<60;i++){
+    const el=document.createElement('div');
+    el.className='conf-piece';
+    el.style.cssText=`left:${Math.random()*100}%;top:-10px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*0.8}s;animation-duration:${1.5+Math.random()}s;transform:rotate(${Math.random()*360}deg);`;
+    wrap.appendChild(el);
+  }
+  setTimeout(()=>wrap.innerHTML='',3000);
+}
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded',()=>{
+  renderDebts();
+  renderSavings();
+  renderInvestments();
+  recordNetWorthHistory();
+});
+</script>
+</body>
+</html>
