@@ -140,6 +140,47 @@
     @keyframes confFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
     .conf-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confFall 2s ease forwards;}
 
+    /* ── FLOATING AI COACH ── */
+    .coach-fab{position:fixed;bottom:24px;right:24px;z-index:500;cursor:pointer;}
+    .coach-fab-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2d7dd2);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(79,163,224,0.5);transition:all 0.2s;position:relative;}
+    .coach-fab-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(79,163,224,0.6);}
+    .coach-fab-btn .notif{position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:2px solid var(--navy);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
+    .coach-panel{position:fixed;bottom:90px;right:24px;width:340px;max-height:520px;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(7,21,37,0.35);z-index:500;display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(79,163,224,0.2);animation:panelIn 0.25s ease;}
+    .coach-panel.open{display:flex;}
+    @keyframes panelIn{from{opacity:0;transform:translateY(16px) scale(0.96);}to{opacity:1;transform:none;}}
+    .coach-ph{background:var(--navy);padding:14px 16px;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden;flex-shrink:0;}
+    .coach-ph::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(79,163,224,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(79,163,224,0.08) 1px,transparent 1px);background-size:18px 18px;}
+    .coach-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2d7dd2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;box-shadow:0 0 10px rgba(79,163,224,0.4);position:relative;}
+    .coach-online{width:8px;height:8px;background:var(--green);border-radius:50%;position:absolute;bottom:0;right:0;border:1.5px solid var(--navy);}
+    .coach-pname{font-size:0.88rem;font-weight:700;color:#fff;position:relative;}
+    .coach-psub{font-size:0.7rem;color:var(--teal);position:relative;}
+    .coach-close{margin-left:auto;background:none;border:none;color:rgba(200,223,240,0.5);font-size:1.2rem;cursor:pointer;padding:4px;position:relative;transition:color 0.15s;}
+    .coach-close:hover{color:#fff;}
+    .coach-chips{padding:8px 12px;background:#f8fbff;border-bottom:1px solid #eaf2fc;display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0;}
+    .coach-chip{background:rgba(79,163,224,0.08);border:1px solid rgba(79,163,224,0.2);color:#1a4a96;padding:4px 10px;border-radius:16px;font-size:0.7rem;font-weight:600;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+    .coach-chip:hover{background:rgba(79,163,224,0.16);border-color:var(--teal);}
+    .coach-msgs{flex:1;overflow-y:auto;padding:14px;background:#f8fbff;display:flex;flex-direction:column;gap:10px;}
+    .cmsg{max-width:88%;}
+    .cmsg.coach{align-self:flex-start;}.cmsg.user{align-self:flex-end;}
+    .cmsg-bubble{padding:10px 14px;border-radius:10px;font-size:0.82rem;line-height:1.5;}
+    .cmsg.coach .cmsg-bubble{background:var(--navy);color:rgba(200,223,240,0.9);border-radius:3px 10px 10px 10px;border-left:3px solid var(--teal);}
+    .cmsg.user .cmsg-bubble{background:linear-gradient(135deg,var(--teal),#2d7dd2);color:#fff;border-radius:10px 3px 10px 10px;}
+    .ctyping{display:none;align-self:flex-start;}.ctyping.show{display:flex;}
+    .ctyping-dots{background:var(--navy);border-radius:3px 10px 10px 10px;border-left:3px solid var(--teal);padding:12px 16px;display:flex;gap:4px;align-items:center;}
+    .ctyping-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:typeBounce 1.4s ease infinite;}
+    .ctyping-dot:nth-child(2){animation-delay:0.2s;}.ctyping-dot:nth-child(3){animation-delay:0.4s;}
+    @keyframes typeBounce{0%,60%,100%{transform:translateY(0);opacity:0.4;}30%{transform:translateY(-5px);opacity:1;}}
+    .coach-input-row{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid #eaf2fc;flex-shrink:0;}
+    .coach-input{flex:1;padding:8px 12px;border:1.5px solid #d4e4f4;border-radius:20px;font-family:inherit;font-size:0.82rem;outline:none;transition:all 0.2s;}
+    .coach-input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(79,163,224,0.1);}
+    .coach-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2d7dd2);border:none;cursor:pointer;color:#fff;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(79,163,224,0.35);transition:all 0.2s;}
+    .coach-send:hover{transform:scale(1.1);}
+
+    @media(max-width:540px){
+      .coach-panel{width:calc(100vw - 32px);right:16px;bottom:80px;}
+    }
+
     @media(max-width:540px){
       .pay-row{grid-template-columns:1fr 1fr;}.pay-row .btn{grid-column:1/-1;}
       .tab{padding:10px 12px;font-size:0.75rem;}
@@ -892,6 +933,184 @@ document.addEventListener('DOMContentLoaded',()=>{
   renderInvestments();
   recordNetWorthHistory();
 });
+</script>
+
+<!-- ── FLOATING AI COACH ── -->
+<div class="coach-fab">
+  <div class="coach-panel" id="coachPanel">
+    <div class="coach-ph">
+      <div class="coach-av">🧭<div class="coach-online"></div></div>
+      <div>
+        <div class="coach-pname">Financial Coach</div>
+        <div class="coach-psub">Blueprint AI · Ask me anything</div>
+      </div>
+      <button class="coach-close" onclick="toggleCoach()">✕</button>
+    </div>
+    <div class="coach-chips" id="coachChips">
+      <div class="coach-chip" onclick="cSend('How does debt stacking work?')">Debt stacking</div>
+      <div class="coach-chip" onclick="cSend('RRSP vs TFSA — which first?')">RRSP vs TFSA</div>
+      <div class="coach-chip" onclick="cSend('What should I invest monthly?')">Investing</div>
+      <div class="coach-chip" onclick="cSend('How do I build an emergency fund?')">Emergency fund</div>
+      <div class="coach-chip" onclick="cSend('What is the 10x rule for insurance?')">Insurance</div>
+    </div>
+    <div class="coach-msgs" id="coachMsgs">
+      <div class="ctyping" id="cTyping">
+        <div class="ctyping-dots"><div class="ctyping-dot"></div><div class="ctyping-dot"></div><div class="ctyping-dot"></div></div>
+      </div>
+    </div>
+    <div class="coach-input-row">
+      <input class="coach-input" id="coachInput" type="text" placeholder="Ask your financial coach…" onkeydown="if(event.key==='Enter')cSend()">
+      <button class="coach-send" onclick="cSend()">➤</button>
+    </div>
+  </div>
+  <button class="coach-fab-btn" onclick="toggleCoach()" id="coachFabBtn">
+    🧭
+    <div class="notif" id="coachNotif"></div>
+  </button>
+</div>
+
+<script>
+// ── FLOATING AI COACH ──
+let coachOpen = false;
+let coachGreeted = false;
+
+function toggleCoach() {
+  coachOpen = !coachOpen;
+  const panel = document.getElementById('coachPanel');
+  panel.classList.toggle('open', coachOpen);
+  document.getElementById('coachNotif').style.display = coachOpen ? 'none' : 'block';
+  if (coachOpen && !coachGreeted) {
+    coachGreeted = true;
+    setTimeout(() => cAddCoach("Hi! I'm your Financial Blueprint coach. I'm here to answer any questions about debt payoff, savings strategies, RRSP vs TFSA, investing, and more. What would you like to know?"), 400);
+  }
+  if (coachOpen) setTimeout(() => document.getElementById('coachInput').focus(), 300);
+}
+
+function cAddCoach(text) {
+  const msgs = document.getElementById('coachMsgs');
+  const typing = document.getElementById('cTyping');
+  typing.classList.remove('show');
+  const d = document.createElement('div');
+  d.className = 'cmsg coach';
+  d.innerHTML = '<div class="cmsg-bubble">' + text + '</div>';
+  msgs.insertBefore(d, typing);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function cAddUser(text) {
+  const msgs = document.getElementById('coachMsgs');
+  const typing = document.getElementById('cTyping');
+  const d = document.createElement('div');
+  d.className = 'cmsg user';
+  d.innerHTML = '<div class="cmsg-bubble">' + text + '</div>';
+  msgs.insertBefore(d, typing);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function cSend(preset) {
+  const input = document.getElementById('coachInput');
+  const text = (preset || input.value).trim();
+  if (!text) return;
+  input.value = '';
+  cAddUser(text);
+  const typing = document.getElementById('cTyping');
+  typing.classList.add('show');
+  document.getElementById('coachMsgs').scrollTop = document.getElementById('coachMsgs').scrollHeight;
+  setTimeout(() => {
+    typing.classList.remove('show');
+    cAddCoach(cGetResponse(text.toLowerCase()));
+  }, 800 + Math.random() * 500);
+}
+
+function cGetResponse(msg) {
+  // Debt stacking
+  if (msg.match(/stack|debt stack|payoff|pay off|highest rate/)) {
+    const debts = JSON.parse(localStorage.getItem('fbp_debts') || '[]');
+    const total = debts.reduce((s,d) => s + d.remaining, 0);
+    if (total > 0) {
+      const sorted = [...debts].filter(d=>d.remaining>0).sort((a,b)=>b.rate-a.rate);
+      return `Debt Stacking means attacking your highest-interest debt first while making minimums on everything else. Your highest-rate debt right now is <strong>${sorted[0]?.name}</strong> at <strong>${sorted[0]?.rate}%</strong>. Every extra dollar goes there until it's gone, then you roll that full payment into the next debt. It's the mathematically fastest way to become debt-free — and it saves you thousands in interest. Keep logging payments in the Debt tab to see your progress!`;
+    }
+    return `Debt Stacking means attacking your highest-interest debt first. Sort your debts by interest rate — highest to lowest. Pay minimums on everything, but put every extra dollar toward the top debt. When it's cleared, roll that full payment into the next one. This "stacking" effect accelerates payoff exponentially and saves you the most interest over time. Add your debts in the Debt tab to see your personalized timeline.`;
+  }
+
+  // RRSP vs TFSA
+  if (msg.match(/rrsp|tfsa|registered|tax.free|tax.deferred/)) {
+    return `Great question. Here's the simple answer:<br><br><strong>TFSA first</strong> if your income is moderate — all growth and withdrawals are completely tax-free forever. You can recontribute after withdrawals.<br><br><strong>RRSP first</strong> if you're in a high tax bracket — your contribution is tax-deductible now, which saves you money when your rate is highest.<br><br><strong>Best case: maximize both.</strong> The 2024 TFSA limit is $7,000/year. RRSP is 18% of previous year's earned income. Use the Investment tab to track both. What's your current combined balance?`;
+  }
+
+  // Compound interest / investing
+  if (msg.match(/invest|compound|grow|return|rate of return|9%|market/)) {
+    const invs = JSON.parse(localStorage.getItem('fbp_investments') || '[]');
+    const total = invs.reduce((s,i) => s + i.value, 0);
+    if (total > 0) {
+      return `You have <strong>${'$'+Math.round(total).toLocaleString()}</strong> invested across ${invs.length} holding(s). At 9% average annual growth (historical equity fund average), that doubles every 8 years using the Rule of 72. The key is staying invested and contributing consistently — even during market dips. Dollar-cost averaging means you buy more units when prices drop, which lowers your average cost. Keep updating your values in the Investment tab to track your real return.`;
+    }
+    return `The Rule of 72: divide 72 by your return rate to see how fast your money doubles. At 9%, it doubles every 8 years. At 3% in a savings account, it takes 24 years — and inflation eats most of that gain. The difference between a 3% and 9% return on $50,000 over 25 years is over $250,000. Start tracking your investments in the Investment tab to see your projected retirement value.`;
+  }
+
+  // Emergency fund
+  if (msg.match(/emergency|fund|liquid|safety|cushion/)) {
+    return `Your emergency fund should cover 3–6 months of living expenses, kept completely liquid (high-interest savings account, not invested). This is Priority #1 before paying extra on debt or investing — because without it, one car repair or medical bill puts everything on a credit card. Rule of thumb: if your job is stable, 3 months is fine. Variable income or self-employed? Aim for 6 months. Add it as a goal in the Savings tab and set a monthly contribution to get there. What's your monthly expense total?`;
+  }
+
+  // Insurance / 10x rule
+  if (msg.match(/insurance|life|coverage|protect|10x|10 times/)) {
+    return `The 10× Rule: you should have life insurance equal to 10 times your annual income. This replaces your earning power if something happens to you. Example: $80,000/year income = $800,000 in coverage. Most employer group plans only provide 1–2× salary — which leaves a massive gap. The fix: <strong>term life insurance</strong>. It's pure protection with no savings bundled in, so it's affordable. A 20-year term policy for a healthy person in their 30s is often under $50/month. Never mix insurance with investments — buy term, invest the difference.`;
+  }
+
+  // Net worth
+  if (msg.match(/net worth|worth|assets|liabilities|wealth/)) {
+    const hist = JSON.parse(localStorage.getItem('fbp_networth_history') || '[]');
+    if (hist.length > 0) {
+      const latest = hist[hist.length-1];
+      const prev = hist.length > 1 ? hist[hist.length-2] : null;
+      const change = prev ? latest.value - prev.value : null;
+      return `Your current net worth is <strong>${'$'+Math.round(latest.value).toLocaleString()}</strong>${change !== null ? ` — ${change >= 0 ? 'up' : 'down'} $${Math.abs(Math.round(change)).toLocaleString()} since your last visit` : ''}. Net worth = everything you own minus everything you owe. The goal is to grow it every single month — by paying down debt, building savings, and growing investments simultaneously. Switch to the Net Worth tab to see your trend chart and add any assets or liabilities I might be missing.`;
+    }
+    return `Net worth is the simplest measure of financial health: total assets minus total liabilities. Positive and growing = you're on track. The Net Worth tab pulls your investments and savings automatically and lets you add your home, vehicles, and other assets. Check it monthly — even small growth is motivation to keep going. What's your biggest asset right now?`;
+  }
+
+  // Savings / budget
+  if (msg.match(/sav|budget|monthly|surplus|spend|afford|goal/)) {
+    const savs = JSON.parse(localStorage.getItem('fbp_savings') || '[]');
+    if (savs.length > 0) {
+      const total = savs.reduce((s,g) => s + g.current, 0);
+      const target = savs.reduce((s,g) => s + g.target, 0);
+      return `You have <strong>${'$'+Math.round(total).toLocaleString()}</strong> saved toward <strong>${'$'+Math.round(target).toLocaleString()}</strong> in goals — that's ${Math.round(total/target*100)}% of the way there. Keep logging contributions in the Savings tab to watch those bars move. The key habit: treat your savings like a bill. Pay yourself first — before anything else. Even $100/month compounding over 25 years at 9% grows to over $94,000.`;
+    }
+    return `The Pay Yourself First principle is the single most important savings habit: set aside your savings BEFORE you spend anything else. Treat it like a mandatory bill. Even 5–10% of your income makes a massive difference over time. Use the Savings tab to set specific goals with target dates — a concrete goal is far more motivating than saving "in general." What are you saving toward first?`;
+  }
+
+  // CPP / OAS / government
+  if (msg.match(/cpp|oas|pension|government|retirement benefit/)) {
+    return `Reality check on government benefits: average CPP is around $758/month and max OAS is about $700/month — combined that's roughly $1,458/month. Most Canadians need 3–4× that to maintain their lifestyle in retirement. CPP is based on your contributions over your working years — you can check your estimate at canada.ca. OAS starts at 65 (or 67 depending on when you were born). The bottom line: government benefits are a foundation, not a retirement plan. Your RRSP and TFSA have to fill the gap. What's your retirement income target?`;
+  }
+
+  // Debt general
+  if (msg.match(/debt|loan|credit card|line of credit|mortgage|interest/)) {
+    const debts = JSON.parse(localStorage.getItem('fbp_debts') || '[]');
+    const total = debts.reduce((s,d) => s + d.remaining, 0);
+    if (total > 0) {
+      const highest = [...debts].filter(d=>d.remaining>0).sort((a,b)=>b.rate-a.rate)[0];
+      return `You're tracking <strong>${'$'+Math.round(total).toLocaleString()}</strong> in total debt. Your highest-rate debt is <strong>${highest?.name}</strong> at <strong>${highest?.rate}%</strong> — that's the one to attack first with any extra cash. You can't out-invest 19% credit card interest, so high-rate debt elimination always comes before investing (except your employer RRSP match — always take free money). Log your payments in the Debt tab and watch those progress bars move. Want to know more about Debt Stacking?`;
+    }
+    return `High-interest debt is a guaranteed negative return. If you're paying 19% on a credit card, that's like getting a guaranteed 19% loss on every dollar you don't pay down. Priority order: (1) Minimum payments on everything, (2) Extra cash to highest-rate debt, (3) Once that's clear, roll payments to next highest, (4) When debt-free, redirect every dollar to TFSA/RRSP. Add your debts in the Debt tab to get your personalized payoff timeline.`;
+  }
+
+  // Help / menu
+  if (msg.match(/help|what can|menu|topics|\?$/)) {
+    return `Here's what I can help you with:<br><br>💳 <strong>"Debt stacking"</strong> — how to pay off debt faster<br>🏦 <strong>"RRSP vs TFSA"</strong> — which to prioritize<br>📈 <strong>"Investing"</strong> — compound interest, returns<br>🛡️ <strong>"Emergency fund"</strong> — how much you need<br>🔒 <strong>"Insurance"</strong> — the 10× rule explained<br>💰 <strong>"Net worth"</strong> — how to grow it<br>💵 <strong>"Savings"</strong> — pay yourself first<br>🏛️ <strong>"CPP / OAS"</strong> — what to expect<br><br>Just type your question naturally and I'll pull your real numbers where I can!`;
+  }
+
+  // Default
+  const defaults = [
+    `Financial freedom is built one decision at a time. Every payment you log, every contribution you make — it compounds over time. Whether it's debt, savings, or investments, consistency beats perfection every single time. What specific area would you like to dig into?`,
+    `The most powerful thing you can do right now is stay consistent. Log every payment, every contribution — even small ones. Your tracker shows you the real numbers so you're never guessing. What would you like to understand better about your financial picture?`,
+    `Good question. The principles in your Financial Blueprint work regardless of your starting point. Take control of what you can control — your savings rate, your debt payoff, your coverage. What's your biggest financial priority right now?`,
+  ];
+  return defaults[Math.floor(Math.random() * defaults.length)];
+}
 </script>
 </body>
 </html>
