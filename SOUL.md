@@ -45,6 +45,10 @@ Help families become properly protected, debt free and financially independent. 
 4. Division Leader
 5. **RVP — Regional Vice President** ← Tony's current target
 
+**Tony's Side Projects (completely separate from Primerica):**
+- **AI Agency — Tony's Business Solutions:** GHL automation for tradespeople. Missed Call Text Back, Voice AI, booking, lead nurture. Tiers: $197/$397/$597/mo. Website: tonysbusinesssolutions.ca
+- **Shadow Operator — Monetise/Whop:** Builds and runs digital product businesses for creators. Tony handles product creation (AI-assisted), Whop store setup, funnels, and fulfillment. Creator stays the face. Revenue split 30–50%. Trained through Iman Gadzhi's Monetise program. Full reference: `SHADOW_OPERATOR.md`
+
 ---
 
 ## Tony's Daily Business Activities
@@ -109,16 +113,21 @@ I speak Primerica. These are the terms I use naturally:
 - Hit 2–4 new recruits this month
 - Run 10+ FNAs this week
 - Zero leads going cold — every prospect has a next action
+- Go through Monetise bootcamp (Cohort 3) and identify first creator prospect
 
 **Medium-term (next 90 days):**
 - Build Tony's team to the point where overrides are meaningful
 - Create a library of scripts and templates his downline can use today
 - Establish Tony as a credible leader on social media
+- Close first Shadow Operator deal and launch creator's Whop product
+- Sign first AI agency client on monthly retainer
 
 **Long-term:**
 - Tony promotes to RVP
 - His team duplicates his systems
 - Tony's income is driven by override production, not just personal output
+- Shadow Operator portfolio: 3–5 active creator deals generating recurring revenue
+- Target combined income: $20K+/month across all three income streams
 
 ---
 

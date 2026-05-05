@@ -120,6 +120,18 @@
 - Tony considering Iman Gadzhi's course ($1,995 USD) which includes Synthesise AI tool — decision pending
 - Files: `~/.openclaw/workspace/ebook/financial-blueprint.pdf` and `~/.openclaw/workspace/fna-app/index.html`
 
+## Shadow Operator Project (2026-05-05)
+- **New side project:** Becoming a Shadow Operator for creators via Iman Gadzhi's **Monetise** program
+- **Platform:** Whop (Iman is a co-owner — deeply integrated with Monetise ecosystem)
+- **Model:** Tony operates the back-end of creator businesses (product creation, Whop setup, sales funnels, fulfillment) while the creator stays as the face. Revenue split typically 30–50%
+- **Program:** Monetise bootcamp — 4-day live intensive. Enrollment opens Episode 2 (Monday 1 PM Eastern). Waitlist at monetise.com
+- **AI Tools:** Monetise includes Synthesise AI — ghostwriter, course builder, template generators
+- **Cohort track record:** $23.9M+ in tracked sales across first 2 cohorts
+- **Status:** Tony is in research/learning phase — going through Iman's playbook
+- **Full reference:** `SHADOW_OPERATOR.md` in workspace
+- **Compliance:** Keep 100% separate from Primerica — different brand, different email, no cross-promotion
+- **Tony's edge:** Financial education niche — natural fit for sourcing creators in personal finance, business, real estate
+
 ## Ideas Parked for Later
 
 ### Primerica Agent AI Kit (2026-04-12)
@@ -176,3 +188,37 @@ Recommended starting point: Option 1 with 2-3 pilot reps ($200-500 setup + $50-1
 - Social media posts for recruiting and brand awareness
 - Training guides for downline reps (plug-and-play)
 - Eventually automate repetitive tasks with agentic AI
+
+## Promoted From Short-Term Memory (2026-05-04)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:338:341 -->
+- - Candidate: Reflections: Theme: `assistant` kept surfacing across 772 memories.; confidence: 1.00; evidence: memory/2026-04-13.md:408-411, memory/2026-04-14.md:408-411, memory/2026-04-16.md:383-386; note: reflection - confidence: 0.00 - evidence: memory/2026-04-27.md:338-341 - recalls: 0 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-27.md:3-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:344:344 -->
+- - Candidate: Possible Lasting Truths: No strong candidate truths surfaced. [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-27.md:268-268]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:6:9 -->
+- ## Files Committed to GitHub - `adecarlo248/maximus` repo - Commits: ebook update (SVG + FNA worksheet) + fna-app initial build ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Ebook — Updated (financial-blueprint.pdf): Added inline SVG illustrations to every chapter (cover, intro, ch1–9); Added a 5-section Personal FNA Worksheet at the back of the PDF; Section 1: Household basics + monthly surplus; Section 2: Income protection gap (coverage needed vs. [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:83-90]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:10:13 -->
+- ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Ebook — Updated (financial-blueprint.pdf): Added inline SVG illustrations to every chapter (cover, intro, ch1–9); Added a 5-section Personal FNA Worksheet at the back of the PDF; Section 1: Household basics + monthly surplus; Section 2: Income protection gap (coverage needed vs. - confidence: 0.00 - evidence: memory/2026-04-28.md:6-9 - recalls: 0 - status: staged - Candidate: Ebook — Updated (financial-blueprint.pdf): Section 3: Retirement gap (nest egg calc, CPP/OAS, 4% rule); Section 4: Debt Stacking table + payoff plan; Section 5: Written action plan with 3 priority spots; File: `~/.openclaw/workspace/ebook/financial-blueprint.pdf` [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:88-95]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:14:15 -->
+- - recalls: 0 - status: staged - Candidate: Ebook — Updated (financial-blueprint.pdf): Section 3: Retirement gap (nest egg calc, CPP/OAS, 4% rule); Section 4: Debt Stacking table + payoff plan; Section 5: Written action plan with 3 priority spots; File: `~/.openclaw/workspace/ebook/financial-blueprint.pdf` - confidence: 0.00 - evidence: memory/2026-04-28.md:10-13 - recalls: 0 - status: staged - Candidate: Ebook — Updated (financial-blueprint.pdf): 30 pages, 420 KB; Windows path: `\\wsl$\Ubuntu\home\maximus\.openclaw\workspace\ebook\financial-blueprint.pdf` [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:93-100]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:18:21 -->
+- - recalls: 0 - status: staged - Candidate: Ebook — Updated (financial-blueprint.pdf): 30 pages, 420 KB; Windows path: `\\wsl$\Ubuntu\home\maximus\.openclaw\workspace\ebook\financial-blueprint.pdf` - confidence: 0.00 - evidence: memory/2026-04-28.md:14-15 - recalls: 0 - status: staged - Candidate: Standalone FNA Web App (fna-app/index.html): Fully interactive multi-step financial needs analysis calculator; 4-step guided flow: Basics → Income Protection → Retirement → Debt; Live calculations update as user types; Full results dashboard with: [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:98-105]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:22:25 -->
+- - recalls: 0 - status: staged - Candidate: Standalone FNA Web App (fna-app/index.html): Fully interactive multi-step financial needs analysis calculator; 4-step guided flow: Basics → Income Protection → Retirement → Debt; Live calculations update as user types; Full results dashboard with: - confidence: 0.00 - evidence: memory/2026-04-28.md:18-21 - recalls: 0 - status: staged - Candidate: Standalone FNA Web App (fna-app/index.html): 4 summary cards (coverage gap, retirement gap, monthly surplus, total debt); Detailed breakdown per section with formulas; Debt Stacking table sorted by interest rate, priority #1 highlighted; Dynamic action plan generated based on gap [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:103-110]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-28.md:26:29 -->
+- - recalls: 0 - status: staged - Candidate: Standalone FNA Web App (fna-app/index.html): 4 summary cards (coverage gap, retirement gap, monthly surplus, total debt); Detailed breakdown per section with formulas; Debt Stacking table sorted by interest rate, priority #1 highlighted; Dynamic action plan generated based on gap - confidence: 0.00 - evidence: memory/2026-04-28.md:22-25 - recalls: 0 - status: staged - Candidate: Standalone FNA Web App (fna-app/index.html): Print / Save as PDF button built in; Mobile responsive; ZERO Primerica branding — completely standalone; File: `~/.openclaw/workspace/fna-app/index.html` [score=0.838 recalls=0 avg=0.620 source=memory/2026-04-28.md:108-115]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-29.md:434:434 -->
+- ## Light Sleep <!-- openclaw:dreaming:light:start --> - Candidate: Reflections: Theme: `assistant` kept surfacing across 887 memories.; confidence: 1.00; evidence: memory/2026-04-16.md:383-386, memory/2026-04-17.md:348-351, memory/2026-04-18.md:373-376; note: reflection - confidence: 0.00 - evidence: memory/2026-04-29.md:408-411 - recalls: 0 - status: staged - Candidate: Possible Lasting Truths: No strong candidate truths surfaced. [score=0.832 recalls=0 avg=0.620 source=memory/2026-04-29.md:436-443]
+
+## Promoted From Short-Term Memory (2026-05-05)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-29.md:878:878 -->
+- **What Tony wanted:** Redesign the financial-blueprint.pdf to look premium/stunning — not just functional. Referenced AI-generated infographic pages with glowing neon charts, dark navy backgrounds, professional design quality. [score=0.861 recalls=0 avg=0.620 source=memory/2026-04-29.md:878-878]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-29.md:880:880 -->
+- **What we did:** [score=0.861 recalls=0 avg=0.620 source=memory/2026-04-29.md:880-880]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-30.md:433:436 -->
+- - Candidate: Reflections: Theme: `assistant` kept surfacing across 987 memories.; confidence: 1.00; evidence: memory/2026-04-16.md:383-386, memory/2026-04-17.md:348-351, memory/2026-04-18.md:373-376; note: reflection - confidence: 0.00 - evidence: memory/2026-04-30.md:433-436 - recalls: 0 [score=0.854 recalls=0 avg=0.620 source=memory/2026-04-30.md:3-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-30.md:439:439 -->
+- - Candidate: Possible Lasting Truths: No strong candidate truths surfaced. [score=0.854 recalls=0 avg=0.620 source=memory/2026-04-30.md:118-118]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-29.md:869:869 -->
+- - Candidate: Possible Lasting Truths: No strong candidate truths surfaced. [score=0.822 recalls=0 avg=0.620 source=memory/2026-04-29.md:598-598]

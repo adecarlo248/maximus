@@ -1378,28 +1378,32 @@
         <h2 class="section-title">Let's See If We're a Fit</h2>
         <p class="section-sub">We take on a limited number of creator partnerships at a time. Fill out the form below and we'll be in touch within 48 hours.</p>
         <div class="apply-form">
+          <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="b6317384-5b4d-4a6c-8a04-3de60fb30fde" />
+          <input type="hidden" name="subject" value="New TNT Operators Application" />
+          <input type="hidden" name="from_name" value="TNT Operators Website" />
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" placeholder="Tony" />
+              <input type="text" name="first_name" placeholder="Tony" required />
             </div>
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="DeCarlo" />
+              <input type="text" name="last_name" placeholder="DeCarlo" required />
             </div>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="you@email.com" />
+            <input type="email" name="email" placeholder="you@email.com" required />
           </div>
           <div class="form-group">
             <label>Your Primary Platform & Handle</label>
-            <input type="text" placeholder="Instagram @yourhandle / YouTube @yourchannel" />
+            <input type="text" name="platform_handle" placeholder="Instagram @yourhandle / YouTube @yourchannel" required />
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Follower Count</label>
-              <select>
+              <select name="follower_count" required>
                 <option value="">Select range...</option>
                 <option>1K – 10K</option>
                 <option>10K – 50K</option>
@@ -1410,7 +1414,7 @@
             </div>
             <div class="form-group">
               <label>Your Niche</label>
-              <select>
+              <select name="niche" required>
                 <option value="">Select niche...</option>
                 <option>Finance / Money</option>
                 <option>Fitness / Health</option>
@@ -1424,10 +1428,11 @@
           </div>
           <div class="form-group full">
             <label>Do you have an existing digital product? If so, describe it.</label>
-            <textarea placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven't actively promoted it..."></textarea>
+            <textarea name="existing_product" placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven't actively promoted it..."></textarea>
           </div>
-          <button class="form-submit">Submit Application →</button>
+          <button class="form-submit" type="submit">Submit Application →</button>
           <p class="form-note">We review every application personally. No spam, no sales calls unless you want one.</p>
+          </form>
         </div>
       </div>
     </div>
