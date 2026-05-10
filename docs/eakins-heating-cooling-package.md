@@ -35,6 +35,7 @@ This package should help Jake:
 - Show up better in local Google searches
 - Look more professional when prospects check him out
 - Capture missed calls and website leads
+- Optionally answer overflow/after-hours calls with an AI voice assistant
 - Get more Google reviews consistently
 - Follow up automatically with people who inquire
 - Clean up the hacked/neglected social presence
@@ -67,7 +68,18 @@ This package should help Jake:
 - Captures hot leads before they call the next HVAC company
 - Can include booking link or callback prompt
 
-### 4. Booking + Follow-Up Automation
+
+### 4. AI Voice Assistant Option
+- 24/7 overflow or after-hours call answering
+- Greets callers professionally as Eakins Heating & Cooling
+- Collects name, phone number, service need, urgency, and address/service area if appropriate
+- Can route emergency calls toward immediate callback
+- Can help book/request appointments when connected to the calendar/request flow
+- Sends call summaries so Jake knows who called and what they need
+
+**Why it matters:** HVAC calls often happen when Jake is on a job or after hours. AI voice gives the business a professional front desk without hiring full-time staff.
+
+### 5. Booking + Follow-Up Automation
 - Simple booking/request form
 - Appointment confirmation texts/emails
 - 24-hour reminder
@@ -75,7 +87,7 @@ This package should help Jake:
 - No-show or quote follow-up sequence
 - Estimate follow-up after 24–48 hours
 
-### 5. Website Refresh / Conversion Fixes
+### 6. Website Refresh / Conversion Fixes
 - Stronger homepage headline
 - Clear emergency/service CTA
 - Click-to-call button
@@ -90,7 +102,7 @@ This package should help Jake:
 - Add contact/booking form
 - Improve mobile layout and speed
 
-### 6. Local SEO Foundation
+### 7. Local SEO Foundation
 - Service keywords on each page
 - Page titles/meta descriptions
 - Local schema markup
@@ -99,7 +111,7 @@ This package should help Jake:
 - Internal links between service pages
 - Add FAQ section for common HVAC searches
 
-### 7. Sponsored Google Placement
+### 8. Sponsored Google Placement
 To get him in the top sponsored HVAC list, there are two routes:
 
 #### Option A — Google Local Services Ads
@@ -125,7 +137,7 @@ This is usually the best fit for HVAC.
 
 **Best recommendation:** Start with Local Services Ads if HVAC is eligible, then add Search Ads once tracking and landing page are ready.
 
-### 8. Social Media Recovery / Cleanup
+### 9. Social Media Recovery / Cleanup
 - Help secure/recover hacked page if possible
 - If not recoverable, create clean replacement profile
 - Update branding, bio, contact info, service area, website link
@@ -161,6 +173,11 @@ Recommended options:
 - Local SEO updates
 - Review campaign management
 - Monthly performance report
+
+#### AI Voice Add-On
+- 24/7 overflow/after-hours call answering
+- Lead qualification and booking/callback capture
+- Suggested add-on: **$197–$300/mo** depending on call volume and setup
 
 #### Ads Management Add-On
 - Google Local Services Ads / Search Ads setup and management

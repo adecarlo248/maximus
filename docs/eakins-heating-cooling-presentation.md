@@ -125,7 +125,7 @@ We build a simple process to request reviews after completed jobs:
 
 ---
 
-## Slide 8 — Part 3: Missed Call Text Back
+## Slide 8 — Part 3: Missed Call Text Back + AI Voice Option
 
 # Catch Hot Leads Before They Call Someone Else
 
@@ -137,8 +137,10 @@ If a call is missed, they instantly get a text:
 
 This keeps the conversation alive even when you’re on a job.
 
+Optional upgrade: an AI voice assistant can answer overflow or after-hours calls, collect the customer’s name/number, understand what they need, and help route them toward booking or a callback.
+
 **Tony talk track:**
-“Most people don’t leave voicemails anymore. If they don’t get an answer, they call the next company. This gives you a second chance instantly.”
+“Most people don’t leave voicemails anymore. If they don’t get an answer, they call the next company. Text-back catches one side of that. AI voice is the next level — it gives you a 24/7 front desk without hiring someone full-time.”
 
 ---
 
@@ -245,6 +247,8 @@ Includes:
 - Automation maintenance
 - Monthly performance report
 - Ongoing optimization
+
+**Optional AI Voice Add-On:** 24/7 overflow/after-hours call answering, lead qualification, booking/callback capture.
 
 **Ads management:** Add later once foundation is live. Suggested: $300–$500/month + ad spend.
 
