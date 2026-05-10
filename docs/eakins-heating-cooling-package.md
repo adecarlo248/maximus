@@ -38,7 +38,8 @@ This package should help Jake:
 - Optionally answer overflow/after-hours calls with an AI voice assistant
 - Get more Google reviews consistently
 - Follow up automatically with people who inquire
-- Clean up the hacked/neglected social presence
+- Clean up/manage the Facebook business presence
+- Create and manage an Instagram presence if selected
 - Convert more emergency/service traffic into booked calls
 
 ## Package Components
@@ -137,9 +138,10 @@ This is usually the best fit for HVAC.
 
 **Best recommendation:** Start with Local Services Ads if HVAC is eligible, then add Search Ads once tracking and landing page are ready.
 
-### 9. Social Media Recovery / Cleanup
-- Help secure/recover hacked page if possible
-- If not recoverable, create clean replacement profile
+### 9. Social Media Presence Management
+- Help secure/recover or clean up the Facebook business page if possible
+- If not recoverable, create a clean replacement page
+- Create Instagram if Jake wants a simple modern presence
 - Update branding, bio, contact info, service area, website link
 - Post basic credibility content:
   - before/after installs
@@ -147,6 +149,7 @@ This is usually the best fit for HVAC.
   - seasonal furnace/AC reminders
   - review screenshots
   - emergency service reminders
+- Suggested content rhythm: 2–4 posts/month to start, focused on trust and seasonal demand
 
 ## Suggested Offer Structure
 
@@ -178,6 +181,11 @@ Recommended options:
 - 24/7 overflow/after-hours call answering
 - Lead qualification and booking/callback capture
 - Suggested add-on: **$197–$300/mo** depending on call volume and setup
+
+#### Social Media Add-On
+- Facebook business page cleanup/management
+- Instagram setup and basic content posting
+- Suggested add-on: **$197–$397/mo** depending on posting frequency
 
 #### Ads Management Add-On
 - Google Local Services Ads / Search Ads setup and management
