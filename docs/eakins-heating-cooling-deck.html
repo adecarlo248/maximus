@@ -5,30 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eakins Heating & Cooling — Lead & Reputation Engine</title>
   <style>
-    :root{
-      --navy:#07111f; --navy2:#0d1b2e; --blue:#1a73e8; --cyan:#49d5ff; --orange:#ff8a22;
-      --text:#eef6ff; --muted:#9fb1c8; --card:#101f35; --line:rgba(255,255,255,.12);
-      --paper:#f7fbff; --ink:#0a1524;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(circle at 10% 10%,rgba(26,115,232,.25),transparent 28%),linear-gradient(135deg,var(--navy),#030711);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;}
-    .deck{width:100%;}
-    .slide{min-height:100vh;padding:56px clamp(24px,6vw,84px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-    .slide:before{content:"";position:absolute;inset:auto -12% -18% auto;width:420px;height:420px;background:radial-gradient(circle,rgba(73,213,255,.18),transparent 65%);border-radius:50%;pointer-events:none}
-    .kicker{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:14px;margin-bottom:16px}
-    h1{font-size:clamp(42px,6vw,76px);line-height:.96;margin:0 0 22px;letter-spacing:-.06em;max-width:1050px}
-    h2{font-size:clamp(34px,4.6vw,60px);line-height:1;margin:0 0 28px;letter-spacing:-.05em;max-width:1000px}
-    h3{font-size:24px;margin:0 0 10px;color:#fff}
-    p,li{font-size:clamp(18px,2.1vw,28px);line-height:1.32;color:#dbe8f6;max-width:980px}
-    ul{margin:0;padding-left:1.1em} li{margin:.35em 0}.small{font-size:18px;color:var(--muted)}
-    .brand{position:absolute;top:26px;left:clamp(24px,6vw,84px);display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:-.02em}.brand img{width:42px;height:42px;border-radius:11px}
-    .num{position:absolute;right:clamp(24px,6vw,84px);bottom:28px;color:rgba(255,255,255,.36);font-weight:800;font-size:16px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;max-width:1150px}.card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.22)}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1160px}.pill{display:inline-flex;padding:10px 14px;border-radius:999px;background:rgba(26,115,232,.16);border:1px solid rgba(73,213,255,.25);color:#bdefff;font-weight:800;margin:6px 8px 6px 0}.quote{border-left:5px solid var(--orange);padding:18px 0 18px 24px;color:#fff;font-size:30px;font-weight:800;max-width:920px}.price{font-size:58px;font-weight:900;color:#fff;letter-spacing:-.05em}.accent{color:var(--cyan)}.orange{color:var(--orange)}
-    .talk{margin-top:28px;padding:18px 22px;border-radius:18px;background:rgba(255,138,34,.10);border:1px solid rgba(255,138,34,.28);max-width:980px}.talk strong{color:#ffd1ac}.talk p{font-size:19px;margin:0;color:#ffe8d5}
-    .cta{display:inline-block;margin-top:24px;background:linear-gradient(135deg,var(--orange),#ffb347);color:#160c02;text-decoration:none;font-weight:900;padding:16px 24px;border-radius:14px;font-size:20px}
-    @media (max-width:800px){.slide{padding-top:86px}.grid,.two{grid-template-columns:1fr}.brand{font-size:14px}h1{font-size:44px}h2{font-size:36px}p,li{font-size:19px}.price{font-size:44px}}
-    @page{size:16in 9in;margin:0}@media print{body{background:#06101e}.slide{height:100vh;page-break-after:always}.talk{display:none}.num{bottom:18px}}
+    :root{--navy:#07111f;--blue:#1a73e8;--cyan:#49d5ff;--orange:#ff8a22;--text:#eef6ff;--muted:#a9bbd1;--line:rgba(255,255,255,.15)}
+    *{box-sizing:border-box}
+    body{margin:0;background:#07111f;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+    .deck{width:100%}
+    .slide{width:16in;height:9in;page-break-after:always;position:relative;overflow:hidden;padding:.78in .9in;background:radial-gradient(circle at 12% 18%,rgba(26,115,232,.26),transparent 28%),linear-gradient(135deg,#07111f 0%,#030711 100%);border-bottom:1px solid var(--line)}
+    .slide:before{content:"";position:absolute;right:-1.6in;bottom:-1.8in;width:5in;height:5in;background:radial-gradient(circle,rgba(73,213,255,.16),transparent 66%);border-radius:50%}
+    .brand{position:absolute;top:.34in;left:.9in;display:flex;align-items:center;gap:.12in;color:#fff;font-weight:800;font-size:15px;letter-spacing:-.02em;z-index:2}.brand img{width:.42in;height:.42in;border-radius:.1in}
+    .num{position:absolute;right:.9in;bottom:.36in;color:rgba(255,255,255,.38);font-weight:800;font-size:15px;z-index:2}
+    .kicker{color:var(--cyan);font-weight:900;text-transform:uppercase;letter-spacing:.16em;font-size:15px;margin:0 0 .18in;padding-top:.55in;position:relative;z-index:2}
+    h1{font-size:56px;line-height:.96;margin:0 0 .28in;letter-spacing:-.055em;max-width:12.4in;position:relative;z-index:2}
+    h2{font-size:48px;line-height:1;margin:0 0 .32in;letter-spacing:-.05em;max-width:12.5in;position:relative;z-index:2}
+    h3{font-size:23px;margin:0 0 .11in;color:#fff;position:relative;z-index:2}
+    p,li{font-size:24px;line-height:1.28;color:#dbe8f6;max-width:12.2in;position:relative;z-index:2}
+    p{margin:.08in 0 .18in} ul{margin:.05in 0 0;padding-left:.34in;position:relative;z-index:2}li{margin:.08in 0}.small{font-size:17px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.2in;margin-top:.22in;max-width:13.3in;position:relative;z-index:2}.card{background:rgba(255,255,255,.065);border:1px solid var(--line);border-radius:.22in;padding:.25in}.card p{font-size:20px;margin:0;color:#dbe8f6}.card h3{font-size:22px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:.24in;max-width:13in;position:relative;z-index:2}.pill{display:inline-block;padding:.1in .14in;border-radius:999px;background:rgba(26,115,232,.18);border:1px solid rgba(73,213,255,.26);color:#bdefff;font-weight:800;margin:.06in .07in .06in 0;font-size:18px;position:relative;z-index:2}.quote{border-left:.06in solid var(--orange);padding:.16in 0 .16in .25in;color:#fff;font-size:29px;font-weight:900;max-width:11.5in;position:relative;z-index:2}.price{font-size:54px;font-weight:900;color:#fff;letter-spacing:-.05em}.accent{color:var(--cyan)}.orange{color:var(--orange)}
+    .talk{margin-top:.28in;padding:.17in .22in;border-radius:.18in;background:rgba(255,138,34,.10);border:1px solid rgba(255,138,34,.28);max-width:12in;position:relative;z-index:2}.talk strong{color:#ffd1ac}.talk p{font-size:18px;margin:0;color:#ffe8d5}.cta{display:inline-block;margin-top:.22in;background:linear-gradient(135deg,var(--orange),#ffb347);color:#160c02;text-decoration:none;font-weight:900;padding:.15in .24in;border-radius:.14in;font-size:20px;position:relative;z-index:2}
+    @page{size:16in 9in;margin:0}
+    @media print{body{background:#07111f}.slide{page-break-after:always}.talk{display:none}}
   </style>
 </head>
 <body>
