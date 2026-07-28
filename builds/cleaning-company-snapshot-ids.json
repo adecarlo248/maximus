@@ -1,0 +1,760 @@
+{
+  "locationId": "qxs3X4jCYse1W18z5H3k",
+  "builtAt": "2026-07-28T14:34:23.449308",
+  "customFields": [
+    {
+      "name": "Lead Source",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "07c7c9e1-9386-4423-b9e8-2c9f5f70d570"
+      }
+    },
+    {
+      "name": "Cleaning Type",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "4dc2d718-156b-4500-89e9-63613fbe4d14"
+      }
+    },
+    {
+      "name": "Service Frequency",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "7cb53589-aa06-4dec-84c1-0db012389aa1"
+      }
+    },
+    {
+      "name": "Property Type",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "2f482291-8e3c-4a62-8862-10b889d8edec"
+      }
+    },
+    {
+      "name": "Bedrooms",
+      "statusCode": 201,
+      "id": "XQG0DXk7auWC5Ctwz9Te"
+    },
+    {
+      "name": "Bathrooms",
+      "statusCode": 201,
+      "id": "8jDA0NsCEMMq0rQmVeL2"
+    },
+    {
+      "name": "Approx Square Footage",
+      "statusCode": 201,
+      "id": "mjRjUT1XJQ1ks6FZPMQt"
+    },
+    {
+      "name": "Pets On Site",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "4f769a73-7ad2-4af8-95b6-dea1e8ff1931"
+      }
+    },
+    {
+      "name": "Access Instructions",
+      "statusCode": 201,
+      "id": "q7duSNMmAHo4iJGusyx2"
+    },
+    {
+      "name": "Priority Areas",
+      "statusCode": 201,
+      "id": "2z4wXp8XL5C5KJ2NBTx3"
+    },
+    {
+      "name": "Special Instructions",
+      "statusCode": 201,
+      "id": "f4wuA2NxMS5OVK8zxjXg"
+    },
+    {
+      "name": "Preferred Service Date",
+      "statusCode": 201,
+      "id": "FWckGEG8HWuSwE8hWGWN"
+    },
+    {
+      "name": "Quote Amount",
+      "statusCode": 201,
+      "id": "XKZGhuNuBXHMahMq93b7"
+    },
+    {
+      "name": "Recurring Plan Price",
+      "statusCode": 201,
+      "id": "yPluevOSWWwePUfO24V0"
+    },
+    {
+      "name": "Deposit Paid",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "b0c18fd7-109f-422e-8b02-e7443298b122"
+      }
+    },
+    {
+      "name": "Cleaner Assigned",
+      "statusCode": 201,
+      "id": "2PP8sCLqA0jFXEr2JQTu"
+    },
+    {
+      "name": "Review Requested",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "3aff18a8-0883-4c66-b215-bd4ec3ab2be0"
+      }
+    },
+    {
+      "name": "Review Received",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "075d0b54-f17b-485d-ba59-1a8efb5d7d9c"
+      }
+    },
+    {
+      "name": "Referral Requested",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "33d89ada-b592-46e9-bf08-344d135a39ee"
+      }
+    },
+    {
+      "name": "Recurring Client",
+      "statusCode": 400,
+      "error": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "7865bf28-26ad-4f95-9004-8db8621864cd"
+      }
+    },
+    {
+      "name": "Last Service Date",
+      "statusCode": 201,
+      "id": "RyaIOMhWDtCibOxlwqh9"
+    },
+    {
+      "name": "Next Service Date",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "Airbnb Checkout Time",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "Airbnb Next Check-In Time",
+      "statusCode": 201,
+      "id": "XOLhVqX2w11A4gU30xRH"
+    }
+  ],
+  "pipelines": [
+    {
+      "name": "Cleaning - New Leads",
+      "statusCode": 422,
+      "stages": [],
+      "error": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "1c67889e-f713-4b39-b90d-cb9f8a052721"
+      }
+    },
+    {
+      "name": "Cleaning - Bookings",
+      "statusCode": 422,
+      "stages": [],
+      "error": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "3fef011f-4095-41aa-aa60-08c362198b50"
+      }
+    },
+    {
+      "name": "Cleaning - Recurring Clients",
+      "statusCode": 422,
+      "stages": [],
+      "error": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "a0791672-abeb-456d-9c54-6236ddb916b1"
+      }
+    },
+    {
+      "name": "Cleaning - Airbnb Turnovers",
+      "statusCode": 422,
+      "stages": [],
+      "error": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "32655765-8999-4bf2-96d8-a12e0e6019de"
+      }
+    },
+    {
+      "name": "Cleaning - Commercial Leads",
+      "statusCode": 422,
+      "stages": [],
+      "error": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "13cc6265-4820-4ad2-b5b4-c37fd8ae41dd"
+      }
+    }
+  ],
+  "calendars": [
+    {
+      "name": "Residential Cleaning",
+      "durationMinutes": 120,
+      "statusCode": 201,
+      "id": "tg9QzRdagIGLNyJtGLal"
+    },
+    {
+      "name": "Deep Cleaning / Move-Out Cleaning",
+      "durationMinutes": 240,
+      "statusCode": 201,
+      "id": "ofzJuk3IazBnIIt3nyxH"
+    },
+    {
+      "name": "Commercial Walkthrough / Quote Call",
+      "durationMinutes": 30,
+      "statusCode": 201,
+      "id": "6KyW4eAQrNac1pr7sXg0"
+    },
+    {
+      "name": "Airbnb Turnover Cleaning",
+      "durationMinutes": 180,
+      "statusCode": 201,
+      "id": "7fAizhtVVu5GgnqZfK5w"
+    },
+    {
+      "name": "Post-Construction Walkthrough",
+      "durationMinutes": 30,
+      "statusCode": 201,
+      "id": "xaPlEQxcwlkmhB57Jgri"
+    }
+  ],
+  "tags": [
+    {
+      "name": "new-lead",
+      "statusCode": 201,
+      "id": "XHbmALVaDAHPYCZLWOKD"
+    },
+    {
+      "name": "quote-requested",
+      "statusCode": 201,
+      "id": "2vgRyGPI8flWsSX0pbQr"
+    },
+    {
+      "name": "cleaning-booked",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "customer-active",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "cold-lead",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "recurring-client",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "recurring-interest",
+      "statusCode": 201,
+      "id": "Zh5Pyk2JCn6jriqcEWlu"
+    },
+    {
+      "name": "recurring-upsell-sent",
+      "statusCode": 201,
+      "id": "vodsr2SHiFeMvHbtzEeg"
+    },
+    {
+      "name": "review-requested",
+      "statusCode": 201,
+      "id": "KjcqEoWGZ6YOxAXfBBAL"
+    },
+    {
+      "name": "review-received",
+      "statusCode": 201,
+      "id": "yAfq86lwcPs05gEyR5Ow"
+    },
+    {
+      "name": "referral-requested",
+      "statusCode": 201,
+      "id": "skv4cKs8X4XhtryRyn6r"
+    },
+    {
+      "name": "service-residential-cleaning",
+      "statusCode": 201,
+      "id": "q9Rkz02wM52GpWcCQktP"
+    },
+    {
+      "name": "service-deep-cleaning",
+      "statusCode": 201,
+      "id": "vNmW9YyIiga9WNuLJGEi"
+    },
+    {
+      "name": "service-move-in-out",
+      "statusCode": 201,
+      "id": "wW2VRkR0f4ZTBRLJFqGO"
+    },
+    {
+      "name": "service-commercial-cleaning",
+      "statusCode": 201,
+      "id": "ual4Q9Qz4gGkb7GxtPmO"
+    },
+    {
+      "name": "service-airbnb-turnover",
+      "statusCode": 201,
+      "id": "ST4BBzZU2iGIAAUqFNvR"
+    },
+    {
+      "name": "service-post-construction",
+      "statusCode": 201,
+      "id": "D7UsOSMKFqP6PmKZUC7i"
+    },
+    {
+      "name": "service-recurring-cleaning",
+      "statusCode": 201,
+      "id": "roO3p4h53RyeZkXv7hfe"
+    },
+    {
+      "name": "service-one-time-cleaning",
+      "statusCode": 201,
+      "id": "Hr7f51JJ6udWdbIkJ7YS"
+    },
+    {
+      "name": "airbnb-turnover-booked",
+      "statusCode": 201,
+      "id": "A5jKwRWFiDSbRMMfNCWR"
+    },
+    {
+      "name": "recurring-turnover-interest",
+      "statusCode": 201,
+      "id": "rr6A6Sl0zfVzr3Yh8Lsx"
+    },
+    {
+      "name": "commercial-cold-lead",
+      "statusCode": 201,
+      "id": "xjwljFvRdUECGALl3y6H"
+    },
+    {
+      "name": "post-construction-lead",
+      "statusCode": 201,
+      "id": "ERbIJJNbUg3c6jC4n0yE"
+    },
+    {
+      "name": "no-show",
+      "statusCode": 201,
+      "id": "ig4i6X4zwWfKoNuecajE"
+    },
+    {
+      "name": "cancelled",
+      "statusCode": 201,
+      "id": "K9M6dsbiAxilI4o6tgN8"
+    },
+    {
+      "name": "facebook-lead",
+      "statusCode": 201,
+      "id": "dBxO6HyCXfaRtvL37xsN"
+    },
+    {
+      "name": "google-lead",
+      "statusCode": 201,
+      "id": "jpmZsL6Fp92qADxlKwb2"
+    },
+    {
+      "name": "website-lead",
+      "statusCode": 201,
+      "id": "6tXPbThmGZAPW9xM7egN"
+    },
+    {
+      "name": "referral-lead",
+      "statusCode": 201,
+      "id": "xZQeuDDyXXjZRvpRCNHC"
+    },
+    {
+      "name": "phone-lead",
+      "statusCode": 201,
+      "id": "xm5z1Jie2Mj0KbBK9cD3"
+    },
+    {
+      "name": "urgent-clean",
+      "statusCode": 201,
+      "id": "kgK4R6phFmownv3yZahg"
+    },
+    {
+      "name": "needs-quote",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "quote-sent",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "invoice-sent",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "paid",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "name": "service-complete",
+      "statusCode": 429,
+      "error": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "customField": "Lead Source",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "07c7c9e1-9386-4423-b9e8-2c9f5f70d570"
+      }
+    },
+    {
+      "customField": "Cleaning Type",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "4dc2d718-156b-4500-89e9-63613fbe4d14"
+      }
+    },
+    {
+      "customField": "Service Frequency",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "7cb53589-aa06-4dec-84c1-0db012389aa1"
+      }
+    },
+    {
+      "customField": "Property Type",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "2f482291-8e3c-4a62-8862-10b889d8edec"
+      }
+    },
+    {
+      "customField": "Pets On Site",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "4f769a73-7ad2-4af8-95b6-dea1e8ff1931"
+      }
+    },
+    {
+      "customField": "Deposit Paid",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "b0c18fd7-109f-422e-8b02-e7443298b122"
+      }
+    },
+    {
+      "customField": "Review Requested",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "3aff18a8-0883-4c66-b215-bd4ec3ab2be0"
+      }
+    },
+    {
+      "customField": "Review Received",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "075d0b54-f17b-485d-ba59-1a8efb5d7d9c"
+      }
+    },
+    {
+      "customField": "Referral Requested",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "33d89ada-b592-46e9-bf08-344d135a39ee"
+      }
+    },
+    {
+      "customField": "Recurring Client",
+      "status": 400,
+      "response": {
+        "message": "v.trim is not a function",
+        "error": "Bad Request",
+        "statusCode": 400,
+        "traceId": "7865bf28-26ad-4f95-9004-8db8621864cd"
+      }
+    },
+    {
+      "customField": "Next Service Date",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "customField": "Airbnb Checkout Time",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "pipeline": "Cleaning - New Leads",
+      "status": 422,
+      "response": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "1c67889e-f713-4b39-b90d-cb9f8a052721"
+      }
+    },
+    {
+      "pipeline": "Cleaning - Bookings",
+      "status": 422,
+      "response": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "3fef011f-4095-41aa-aa60-08c362198b50"
+      }
+    },
+    {
+      "pipeline": "Cleaning - Recurring Clients",
+      "status": 422,
+      "response": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "a0791672-abeb-456d-9c54-6236ddb916b1"
+      }
+    },
+    {
+      "pipeline": "Cleaning - Airbnb Turnovers",
+      "status": 422,
+      "response": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "32655765-8999-4bf2-96d8-a12e0e6019de"
+      }
+    },
+    {
+      "pipeline": "Cleaning - Commercial Leads",
+      "status": 422,
+      "response": {
+        "message": [
+          "stages must contain at least 1 elements",
+          "stages must be an array",
+          "stages should not be empty"
+        ],
+        "error": "Unprocessable Entity",
+        "statusCode": 422,
+        "traceId": "13cc6265-4820-4ad2-b5b4-c37fd8ae41dd"
+      }
+    },
+    {
+      "tag": "cleaning-booked",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "customer-active",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "cold-lead",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "recurring-client",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "needs-quote",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "quote-sent",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "invoice-sent",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "paid",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    },
+    {
+      "tag": "service-complete",
+      "status": 429,
+      "response": {
+        "statusCode": 429,
+        "message": "Too Many Requests"
+      }
+    }
+  ]
+}
