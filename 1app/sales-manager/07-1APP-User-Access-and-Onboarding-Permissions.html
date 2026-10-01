@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset="utf-8"><title>1APP User Access and Onboarding Permissions</title><meta name="author" content="1APP Technologies Inc."><style>
+@page { size: Letter; margin: 0.68in 0.72in 0.72in;
+  @bottom-left { content: "1APP Technologies Inc. • Confidential Draft"; font-size: 7.5pt; color: #718096; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font-size: 7.5pt; color: #718096; }
+}
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; color: #14243a; font-size: 9.7pt; line-height: 1.43; }
+h1 { font-size: 22pt; line-height: 1.08; color: #102e52; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 3px solid #d9a71c; }
+h2 { font-size: 14.5pt; color: #102e52; margin: 20px 0 7px; padding-top: 3px; page-break-after: avoid; }
+h3 { font-size: 11.8pt; color: #174a7c; margin: 14px 0 6px; page-break-after: avoid; }
+p { margin: 0 0 8px; }
+ul, ol { margin: 0 0 9px 20px; padding: 0; }
+li { margin: 2.5px 0; }
+blockquote { margin: 10px 0 12px; padding: 10px 13px; border-left: 4px solid #d9a71c; background: #f3f7fb; color: #20364f; }
+code { font-family: Consolas, monospace; font-size: 8.8pt; background: #edf2f7; padding: 1px 3px; border-radius: 3px; }
+hr { border: 0; border-top: 1px solid #ccd7e4; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; margin: 9px 0 14px; page-break-inside: avoid; }
+th { background: #102e52; color: white; text-align: left; padding: 6px 7px; border: 1px solid #102e52; }
+td { padding: 6px 7px; border: 1px solid #ccd7e4; vertical-align: top; }
+tr:nth-child(even) td { background: #f7f9fc; }
+.doc-meta { margin: 0 0 15px; padding: 9px 11px; border: 1px solid #d7b74e; background: #fff9df; color: #4f4214; font-size: 8.8pt; }
+strong { font-weight: 700; }
+</style></head><body><div class="doc-meta"><strong>Confidential working draft.</strong> Owner approval and Ontario employment-law review are required before signature or use as a binding compensation plan.</div><h1>1APP User Access and Onboarding Permissions</h1>
+<p><strong>Version:</strong> 1.0 Draft <strong>Owner:</strong> 1APP Technologies Inc. <strong>Rule:</strong> Grant the least access required for the person&#x27;s current job. Access is earned through training, reviewed regularly, and removed immediately when no longer required.</p>
+<h2>1. Recommended account structure</h2>
+<h3>1APP Corporate Sales account</h3>
+<p>Use this for prospects, sales pipelines, recruiting, quotes, demos, tasks, team coaching, and management reporting. It must not contain unrelated client-account settings or unrestricted company administration.</p>
+<h3>1APP Demo and Training account</h3>
+<p>Use this for practice contacts, mock opportunities, product demonstrations, onboarding rehearsals, and certification. The Sales Manager may have elevated permissions here because it contains no live client data.</p>
+<h3>Client accounts</h3>
+<p>No Sales Manager or associate receives default access to every client account. Access is client-specific, task-specific, approved, time-limited, and removed when the task is complete. Most associates can complete the onboarding checklist in the Corporate Sales account without entering a client account.</p>
+<h2>2. Sales Manager role</h2>
+<p>Create a dedicated role named <strong>Sales Manager — Corporate Sales</strong>. Start from a standard user role, not an administrator role.</p>
+<h3>Allow</h3>
+<ul>
+<li>View sales dashboards, team activity, pipeline reports, and conversion reporting.</li>
+<li>View, create, and edit corporate-sales contacts and companies.</li>
+<li>View and respond to sales-team conversations.</li>
+<li>View, create, assign, edit, and move opportunities in approved sales and recruiting pipelines.</li>
+<li>View, create, edit, and assign tasks, notes, appointments, and follow-up.</li>
+<li>Manage approved demo calendars.</li>
+<li>View forms and submissions; edit only approved sales assets when the permission can be limited safely.</li>
+<li>Prepare quotes and proposals from approved templates within written pricing authority.</li>
+<li>View team performance and approved call records for coaching.</li>
+<li>Use approved templates, scripts, training resources, and demo assets.</li>
+<li>Create and update recruit records, training stages, certification results, and coaching notes.</li>
+</ul>
+<h3>Deny</h3>
+<ul>
+<li>Company, agency, or global administrator access.</li>
+<li>Billing, subscriptions, payouts, bank information, tax settings, refunds, credits, or financial-account administration.</li>
+<li>API, developer, integration, webhook, domain, DNS, email-service, phone-number, or authentication administration.</li>
+<li>Creating, publishing, deleting, or materially changing live workflows, AI agents, phone automations, payment automations, or client integrations.</li>
+<li>Publishing websites, funnels, or domains.</li>
+<li>Global contact export, bulk deletion, destructive imports, merges, or irreversible bulk actions.</li>
+<li>Creating users, changing roles, or granting permissions.</li>
+<li>Deploying templates or configurations across multiple client accounts.</li>
+<li>Access to client accounts unrelated to an approved task.</li>
+</ul>
+<h3>Conditional permissions</h3>
+<ul>
+<li>Contact export remains off unless an owner approves a defined export in writing.</li>
+<li>Delete permissions remain off.</li>
+<li>Payment status may be view-only when required to verify paid-active status; bank and payment-method details remain hidden.</li>
+<li>Live workflow access is view-only if the system supports safe view-only access; otherwise use the Demo and Training account.</li>
+<li>Marketing, social publishing, and bulk messaging remain off unless separately assigned and trained.</li>
+<li>Temporary client access follows the approval process in Section 5.</li>
+</ul>
+<h2>3. Sales Associate role</h2>
+<p>After certification, create a role named <strong>Sales Associate — Assigned Data Only</strong>.</p>
+<p>Allow access only to:</p>
+<ul>
+<li>Assigned contacts, conversations, opportunities, tasks, and appointments.</li>
+<li>Approved sales and recruiting pipelines.</li>
+<li>Demo calendars, forms, scripts, and approved templates.</li>
+<li>Quote-request preparation within written authority.</li>
+<li>Notes, tasks, and the onboarding checklist for the associate&#x27;s own properly attributed clients.</li>
+</ul>
+<p>Do not allow access to:</p>
+<ul>
+<li>Administrator, billing, settings, integrations, phone, domains, workflows, bulk actions, exports, user management, or unrelated client records.</li>
+<li>Live client accounts unless temporary access is approved for a specific onboarding task.</li>
+</ul>
+<p>Before certification, the recruit receives access only to the Demo and Training account.</p>
+<h2>4. Sales Manager setup sequence</h2>
+<ol>
+<li>Create <strong>Sales Manager — Corporate Sales</strong> in the 1APP team and permissions area.</li>
+<li>Base it on a standard user role, not an administrator role.</li>
+<li>Enable only the allow-list permissions in Section 2.</li>
+<li>Limit data visibility to the corporate sales and recruiting records needed to manage the team.</li>
+<li>Disable every denied or conditional permission unless a written exception exists.</li>
+<li>Invite the manager using a unique company email address; never use a shared login.</li>
+<li>Require multi-factor authentication before access to real business data.</li>
+<li>Assign the Corporate Sales account and Demo and Training account only.</li>
+<li>Assign approved pipelines, calendars, team members, templates, and reporting views.</li>
+<li>Test the role while signed in as the user: prove required actions work and prohibited actions are blocked.</li>
+<li>Record the approver, permissions granted, test result, and next review date.</li>
+<li>Review access on Day 14, Day 30, Day 90, any role change, any security event, and immediately at termination.</li>
+</ol>
+<h2>5. Temporary client-account access</h2>
+<p>The manager submits an access request containing:</p>
+<ul>
+<li>Client name.</li>
+<li>Exact task.</li>
+<li>Minimum permissions required.</li>
+<li>Business reason.</li>
+<li>Approver.</li>
+<li>Start time and expiry time.</li>
+</ul>
+<p>An owner or designated technical administrator then:</p>
+<ol>
+<li>Confirms the task cannot be completed through the approved handoff process.</li>
+<li>Grants the narrowest possible access.</li>
+<li>Keeps billing, user management, security, and unrelated settings blocked.</li>
+<li>Requires test data where practical before any live change.</li>
+<li>Records the work completed and test result.</li>
+<li>Removes access immediately after the task or at the scheduled expiry.</li>
+</ol>
+<p>Associates do not receive temporary client access until they have passed onboarding certification and the Sales Manager confirms the task is within their training.</p>
+<h2>6. Device and security requirements</h2>
+<h3>Employee Sales Manager</h3>
+<p>Recommended: provide a 1APP-managed computer configured with:</p>
+<ul>
+<li>Current supported operating system and browser.</li>
+<li>Automatic security updates.</li>
+<li>Full-disk encryption and automatic screen lock.</li>
+<li>Approved password manager.</li>
+<li>Multi-factor authentication.</li>
+<li>Company-controlled work profile and account-removal process.</li>
+<li>No shared household or public user account for client work.</li>
+</ul>
+<h3>Sales associates</h3>
+<p>Each associate must have:</p>
+<ul>
+<li>Reliable laptop or desktop computer; a phone alone is not sufficient.</li>
+<li>Supported operating system and current browser.</li>
+<li>Stable internet connection.</li>
+<li>Webcam and headset or private audio setup.</li>
+<li>Multi-factor-authentication method.</li>
+<li>Private workspace appropriate for client conversations.</li>
+<li>No use of public or shared computers for client work.</li>
+</ul>
+<h2>7. Client-onboarding boundary</h2>
+<p>Certified associates may guide clients through the approved checklist, collect non-secret business requirements, demonstrate the client experience with test data, record dependencies, and escalate questions.</p>
+<p>Associates may not collect credentials, change live settings, import or export client data, configure integrations, approve technical scope, launch automations, or alter pricing or terms unless separately trained, certified, and given written task-specific approval.</p>
+<h2>8. Access review checklist</h2>
+<p>At every review, confirm:</p>
+<ul>
+<li>The user is still active and performing the assigned role.</li>
+<li>Every permission is still necessary.</li>
+<li>Multi-factor authentication and device requirements remain satisfied.</li>
+<li>No shared accounts exist.</li>
+<li>Client access has an active approval and expiry.</li>
+<li>Exports, bulk actions, and live-setting changes remain blocked unless approved.</li>
+<li>Departed or suspended users have been disabled and sessions revoked.</li>
+<li>Access changes and reviewer decisions are documented.</li>
+</ul></body></html>

@@ -273,7 +273,7 @@ Making exaggerated income claims to recruit associates is grounds for immediate 
 
 ---
 
-## 17. Recommended Starting Structure
+## 8. Recommended Starting Structure
 
 For the first wave, keep it simple:
 
@@ -287,7 +287,7 @@ For the first wave, keep it simple:
 
 ---
 
-## 17. Qualified Lead Rules
+## 9. Qualified Lead Rules
 
 A lead is only commissionable if it is submitted properly and meets minimum fit.
 
@@ -314,7 +314,7 @@ A lead is only commissionable if it is submitted properly and meets minimum fit.
 
 ---
 
-## 17. Lead Ownership
+## 10. Lead Ownership
 
 **Lead protection window:** 90 days from CRM submission.
 
@@ -329,7 +329,7 @@ If two associates claim the same lead:
 
 ---
 
-## 17. Sales Process
+## 11. Sales Process
 
 ### Step 1 — Identify
 Find businesses that fit 1APP's target:
@@ -373,7 +373,7 @@ After payment:
 
 ---
 
-## 17. Brand & Conduct Rules
+## 12. Brand & Conduct Rules
 
 Associates must:
 - Use approved 1APP scripts and materials
@@ -390,7 +390,7 @@ Violation can result in immediate removal from the program and forfeiture of unp
 
 ---
 
-## 17. Payment Terms
+## 13. Payment Terms
 
 Commissions are paid on **collected revenue only**.
 
@@ -411,7 +411,7 @@ Commissions are paid on **collected revenue only**.
 
 ---
 
-## 17. Required Training Before Selling
+## 14. Required Training Before Selling
 
 Before selling, each associate must complete:
 
@@ -430,7 +430,7 @@ Before selling, each associate must complete:
 
 ---
 
-## 17. KPIs by Associate Level
+## 15. KPIs by Associate Level
 
 ### Referral Associate
 - 10+ warm introductions/month
@@ -452,7 +452,7 @@ Before selling, each associate must complete:
 
 ---
 
-## 17. Associate Agreement Terms to Include
+## 16. Associate Agreement Terms to Include
 
 This is not legal advice. The final agreement should include:
 

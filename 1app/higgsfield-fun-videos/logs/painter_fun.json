@@ -1,0 +1,41 @@
+[
+  {
+    "created_at": "2026-08-06T16:21:30.887933Z",
+    "display_name": "Seedance 2.0",
+    "id": "8cc0d6a7-af90-4ed5-8de2-eb6b58af3c17",
+    "job_type": "seedance_2_0",
+    "min_result_url": null,
+    "params": {
+      "aspect_ratio": "1:1",
+      "bitrate_mode": "standard",
+      "duration": 5,
+      "generate_audio": false,
+      "genre": "auto",
+      "height": 720,
+      "medias": [
+        {
+          "data": {
+            "id": "6f2783d3-7388-474e-ae95-466e9a96a1da",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/6f2783d3-7388-474e-ae95-466e9a96a1da.jpg"
+          },
+          "role": "start_image"
+        }
+      ],
+      "mode": "std",
+      "model": "seedance_2_0",
+      "multi_prompt": [],
+      "multi_shot_mode": "custom",
+      "multi_shots": false,
+      "prompt": "Create an exciting, fun, polished 5-second square social ad video using the provided painter 1APP ad creative as the exact starting frame. Preserve the original ad layout, real 1APP logo, colors, painter, calendar UI, headline, subtext, CTA button, and all existing text exactly as shown. All text must remain crisp, readable, and stable for the entire video.\n\nFun motion direction: upbeat “calendar on autopilot” energy. Add subtle gold/blue highlight sweep over the CTA, gentle parallax between painter/background/calendar UI, tiny clean bounce on the calendar card, and a smooth push-in. Keep all typography locked and sharp. Do not invent or change text. Do not add new words, fake letters, extra buttons, warped logos, strange hands, extra fingers, distorted paint tools, or mutated UI. No cuts, no scene changes, no audio.",
+      "prompt_language": "en",
+      "reference_elements": [],
+      "resolution": "720p",
+      "speedramp": "auto",
+      "width": 720
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260806_162130_8cc0d6a7-af90-4ed5-8de2-eb6b58af3c17.mp4",
+    "status": "completed",
+    "thumbnail_url": "https://cdn.higgsfield.ai/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260806_162130_8cc0d6a7-af90-4ed5-8de2-eb6b58af3c17_thumbnail.webp"
+  }
+]

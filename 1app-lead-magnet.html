@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>The Missed Call Report — 1APP</title>
+  <style>
+    @page { size: letter; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; color: #1a1a2e; background: #fff; font-size: 10.5pt; }
+
+    /* COVER PAGE */
+    .cover {
+      width: 100%;
+      min-height: 100vh;
+      background: #0a1628;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      page-break-after: always;
+    }
+    .cover-top {
+      padding: 36px 48px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-logo { font-size: 28pt; font-weight: 900; color: #d4a017; letter-spacing: -1px; }
+    .cover-tag { font-size: 8.5pt; color: #aab4c4; text-align: right; line-height: 1.6; }
+    .cover-body {
+      padding: 0 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-eyebrow {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #d4a017;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 18px;
+    }
+    .cover-title {
+      font-size: 32pt;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      max-width: 520px;
+      margin-bottom: 20px;
+    }
+    .cover-title span { color: #d4a017; }
+    .cover-subtitle {
+      font-size: 12pt;
+      color: #aab4c4;
+      max-width: 480px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .cover-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 520px;
+    }
+    .cover-stat {
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: 6px;
+      padding: 14px 16px;
+      background: rgba(212,160,23,0.05);
+    }
+    .cover-stat-num { font-size: 22pt; font-weight: 900; color: #d4a017; line-height: 1; }
+    .cover-stat-label { font-size: 7.5pt; color: #aab4c4; margin-top: 4px; line-height: 1.4; }
+    .cover-bottom {
+      padding: 20px 48px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-bottom-left { font-size: 8pt; color: #5a6a7a; }
+    .cover-bottom-right { font-size: 8pt; color: #d4a017; }
+
+    /* CONTENT PAGES */
+    .page {
+      padding: 40px 48px;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* PAGE HEADER */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #d4a017;
+      margin-bottom: 24px;
+    }
+    .page-header-brand { font-size: 13pt; font-weight: 900; color: #0a1628; }
+    .page-header-brand span { color: #d4a017; }
+    .page-header-title { font-size: 8pt; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* SECTION TITLE */
+    .section-eyebrow {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #d4a017;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 18pt;
+      font-weight: 900;
+      color: #0a1628;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .section-intro {
+      font-size: 10.5pt;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* STAT CALLOUT */
+    .stat-callout {
+      background: #0a1628;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .stat-callout-num { font-size: 26pt; font-weight: 900; color: #d4a017; white-space: nowrap; line-height: 1; }
+    .stat-callout-text { font-size: 9.5pt; color: #d0d8e4; line-height: 1.55; }
+    .stat-callout-text strong { color: #fff; }
+
+    /* POINT BLOCK */
+    .point {
+      border-left: 3px solid #d4a017;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      background: #f8f9fb;
+      border-radius: 0 5px 5px 0;
+    }
+    .point-number {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #d4a017;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .point h3 { font-size: 11pt; font-weight: 800; color: #0a1628; margin-bottom: 6px; }
+    .point p { font-size: 9.5pt; color: #444; line-height: 1.6; }
+    .point p strong { color: #0a1628; }
+
+    /* SCENARIO BOX */
+    .scenario {
+      border: 1px solid #dde2ea;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 18px 0;
+    }
+    .scenario-header {
+      background: #f0f2f5;
+      padding: 8px 14px;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .scenario-body { padding: 14px; }
+    .scenario-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .scenario-col h4 { font-size: 9pt; font-weight: 700; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .scenario-col.bad h4 { color: #c0392b; }
+    .scenario-col.good h4 { color: #22a06b; }
+    .scenario-col p { font-size: 9pt; color: #444; line-height: 1.6; }
+
+    /* QUOTE */
+    .pull-quote {
+      border-top: 3px solid #d4a017;
+      border-bottom: 3px solid #d4a017;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .pull-quote p {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0a1628;
+      line-height: 1.5;
+      font-style: italic;
+    }
+    .pull-quote cite { font-size: 8pt; color: #888; display: block; margin-top: 6px; font-style: normal; }
+
+    /* SOLUTION PAGE */
+    .solution-intro {
+      background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+    }
+    .solution-intro h2 { font-size: 14pt; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .solution-intro h2 span { color: #d4a017; }
+    .solution-intro p { font-size: 9.5pt; color: #aab4c4; line-height: 1.65; }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .solution-item {
+      border: 1px solid #dde2ea;
+      border-radius: 5px;
+      padding: 12px 14px;
+    }
+    .solution-item-icon { font-size: 16pt; margin-bottom: 6px; }
+    .solution-item h4 { font-size: 9.5pt; font-weight: 700; color: #0a1628; margin-bottom: 4px; }
+    .solution-item p { font-size: 8.5pt; color: #555; line-height: 1.5; }
+
+    /* PRICING TEASER */
+    .pricing-teaser {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .price-card {
+      border: 1px solid #dde2ea;
+      border-radius: 5px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .price-card-header { background: #0a1628; padding: 8px; }
+    .price-card-header h4 { font-size: 9pt; font-weight: 800; color: #fff; }
+    .price-card-body { padding: 10px 8px; }
+    .price-card-price { font-size: 14pt; font-weight: 900; color: #d4a017; }
+    .price-card-per { font-size: 7.5pt; color: #888; margin-bottom: 6px; }
+    .price-card-feature { font-size: 7.5pt; color: #555; line-height: 1.5; }
+
+    /* CTA PAGE */
+    .cta-page {
+      background: #0a1628;
+      min-height: 100vh;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cta-eyebrow { font-size: 9pt; color: #d4a017; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+    .cta-title { font-size: 28pt; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 16px; max-width: 500px; }
+    .cta-title span { color: #d4a017; }
+    .cta-body { font-size: 10.5pt; color: #aab4c4; line-height: 1.7; max-width: 480px; margin-bottom: 32px; }
+    .cta-steps {
+      margin-bottom: 32px;
+    }
+    .cta-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .cta-step-num {
+      width: 28px;
+      height: 28px;
+      background: #d4a017;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10pt;
+      font-weight: 900;
+      color: #0a1628;
+      flex-shrink: 0;
+    }
+    .cta-step-text { font-size: 9.5pt; color: #d0d8e4; line-height: 1.55; padding-top: 4px; }
+    .cta-step-text strong { color: #fff; }
+    .cta-url-box {
+      border: 2px solid #d4a017;
+      border-radius: 6px;
+      padding: 16px 22px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+    .cta-url-label { font-size: 8pt; color: #aab4c4; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .cta-url { font-size: 16pt; font-weight: 900; color: #d4a017; }
+    .cta-footer { font-size: 8pt; color: #5a6a7a; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">1APP</div>
+    <div class="cover-tag">use1app.com<br/>Peterborough, Ontario</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">The 1APP Trades Business Report — 2026</div>
+    <div class="cover-title">The <span>Missed Call</span> Problem Costing Ontario Trades Businesses Thousands Every Month</div>
+    <div class="cover-subtitle">Why fast response time is now the single biggest competitive advantage for HVAC companies, plumbers, electricians, roofers, and contractors — and what to do about it.</div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">78%</div>
+        <div class="cover-stat-label">of customers buy from the first business that calls them back</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">10x</div>
+        <div class="cover-stat-label">drop in lead conversion after just one hour of no response</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">$3K+</div>
+        <div class="cover-stat-label">estimated monthly revenue lost to missed calls for a typical trades business</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-bottom-left">For tradespeople and service businesses across Ontario and Canada</div>
+    <div class="cover-bottom-right">use1app.com</div>
+  </div>
+</div>
+
+
+<!-- ===== PAGE 1: THE PROBLEM ===== -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-brand">1<span>APP</span></div>
+    <div class="page-header-title">The Missed Call Problem</div>
+  </div>
+
+  <div class="section-eyebrow">The Reality</div>
+  <div class="section-title">You're Losing Jobs You Don't Even Know You Lost</div>
+  <div class="section-intro">
+    You're good at your trade. You show up on time, do quality work, and take care of your customers. But every day, while you're on a job doing everything right, your phone is ringing — and nobody is answering it. Those aren't just missed calls. They're missed jobs. And the customer on the other end? They've already called the next number on Google by the time you see the notification.
+  </div>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">10x</div>
+    <div class="stat-callout-text"><strong>The likelihood of reaching a lead drops 10 times after just one hour.</strong> After 20 hours, additional call attempts actually make things worse. Speed of response is now the #1 factor in whether a lead converts — ahead of price, reviews, and reputation. <em>(Source: MIT Lead Response Management Study)</em></div>
+  </div>
+
+  <div class="section-intro">
+    This isn't a new problem — but it's getting worse. Homeowners and property managers have more options than ever. They Google a service, they call the first few results, and they book with whoever responds first. Not the best. Not the cheapest. The fastest.
+  </div>
+
+  <div class="pull-quote">
+    <p>"Fast response time is what's giving residential contractors the competitive edge in 2026."</p>
+    <cite>— ServiceTitan 2026 Residential State of the Trades Report, surveying 1,000+ contractors</cite>
+  </div>
+
+  <div class="section-intro">
+    The trades businesses winning right now aren't necessarily better at their craft. They're better at responding. And here's the painful truth: most of their competitors — maybe including you — are still running on voicemail and manual callbacks.
+  </div>
+</div>
+
+
+<!-- ===== PAGE 2: THE 5 WAYS ===== -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-brand">1<span>APP</span></div>
+    <div class="page-header-title">5 Ways You're Losing Revenue Right Now</div>
+  </div>
+
+  <div class="section-eyebrow">The Breakdown</div>
+  <div class="section-title">5 Ways Trades Businesses Leak Revenue Every Single Day</div>
+
+  <div class="point">
+    <div class="point-number">Problem 01</div>
+    <h3>Missed Calls With No Follow-Up</h3>
+    <p>When a customer calls and gets voicemail, <strong>85% do not leave a message.</strong> They hang up and call the next contractor. If you're not texting back within 5 minutes, that lead is gone. Most trades businesses have no automatic follow-up at all — it relies on the owner remembering to call back between jobs.</p>
+  </div>
+
+  <div class="point">
+    <div class="point-number">Problem 02</div>
+    <h3>No-Shows Eating Your Schedule</h3>
+    <p>No-shows cost the average trades business 6–10 hours of lost time per month. Without automated reminders — 24 hours and 1 hour before the appointment — customers forget, reschedule last minute, or simply don't show. <strong>That's billable time you'll never get back.</strong></p>
+  </div>
+
+  <div class="point">
+    <div class="point-number">Problem 03</div>
+    <h3>Leads That Go Cold Before You Call Back</h3>
+    <p>You get busy. You intend to call back. Three days later you find the number. By then the customer has already hired someone else and forgotten they even called you. <strong>Most trades businesses have no system for following up — they rely entirely on memory.</strong> Memory is not a system.</p>
+  </div>
+
+  <div class="point">
+    <div class="point-number">Problem 04</div>
+    <h3>Zero Google Reviews Despite Doing Great Work</h3>
+    <p>You finish a great job. The customer is happy. You move on to the next one. Nobody asks for a review, and the customer never thinks to leave one. Meanwhile, your competitor down the road has 140 reviews because <strong>he sends an automatic review request text 30 minutes after every job.</strong> That's the difference between page 1 and page 3 on Google.</p>
+  </div>
+
+  <div class="point">
+    <div class="point-number">Problem 05</div>
+    <h3>After-Hours Calls Going Straight to Voicemail</h3>
+    <p>A homeowner's hot water tank dies at 9pm on a Sunday. They call three plumbers. Two go to voicemail. One has an AI that answers, asks about the issue, and books an emergency appointment for 7am Monday. <strong>Which business gets the call?</strong> After-hours availability used to be a differentiator. In 2026, customers expect it.</p>
+  </div>
+</div>
+
+
+<!-- ===== PAGE 3: THE MATH + SCENARIO ===== -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-brand">1<span>APP</span></div>
+    <div class="page-header-title">The Real Cost of Doing Nothing</div>
+  </div>
+
+  <div class="section-eyebrow">The Numbers</div>
+  <div class="section-title">What This Is Actually Costing You Per Month</div>
+  <div class="section-intro">Most trades business owners underestimate the cost of a missed call because they never see the job they didn't get. Here's a conservative estimate for a typical 1–3 person trades operation:</div>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">$3,200</div>
+    <div class="stat-callout-text"><strong>Estimated average monthly revenue lost</strong> for a trades business missing 4 calls per day at an average job value of $800. That's $38,400 per year — walking out the door while you're on the tools.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-header">Real-World Scenario — HVAC Contractor, 2 Trucks</div>
+    <div class="scenario-body">
+      <div class="scenario-row">
+        <div class="scenario-col bad">
+          <h4>❌ Without 1APP</h4>
+          <p>Customer calls at 2pm about an AC unit. Owner is on a job. Call goes to voicemail. Customer doesn't leave a message. Calls the next HVAC company on Google. That company answers, quotes $1,200, and books the job. Owner sees the missed call at 5pm and calls back. "Sorry, already booked someone."</p>
+        </div>
+        <div class="scenario-col good">
+          <h4>✅ With 1APP</h4>
+          <p>Customer calls at 2pm. Owner is on a job. Call goes unanswered — but within 5 seconds, an automatic text goes to the customer: "Hey, it's Mike from ABC HVAC! Sorry I missed you — I'm with a customer right now. Can I ask what you need help with?" Customer replies. AI qualifies the lead and books a 4pm appointment. Owner finishes his current job and drives straight there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-intro">Same missed call. Completely different outcome. The only difference is whether a system responded in the first 5 seconds.</div>
+
+  <div class="stat-callout">
+    <div class="stat-callout-num">78%</div>
+    <div class="stat-callout-text"><strong>of customers go with the first business to respond to their inquiry.</strong> Not the best reviewed. Not the cheapest. The first one to reply. This single statistic is the entire case for automating your follow-up. <em>(Source: Lead Response Management Study)</em></div>
+  </div>
+</div>
+
+
+<!-- ===== PAGE 4: THE SOLUTION ===== -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-brand">1<span>APP</span></div>
+    <div class="page-header-title">The Solution</div>
+  </div>
+
+  <div class="solution-intro">
+    <h2>Introducing <span>1APP</span> — AI Automation Built for Trades Businesses</h2>
+    <p>1APP installs a managed AI automation system that runs silently in the background of your business. You don't need to change how you work, log into new software, or train your team. We build it, connect it to your phone number and calendar, and it runs automatically from day one. Every missed call gets a response. Every lead gets followed up. Every customer gets asked for a review.</p>
+  </div>
+
+  <div class="solution-grid">
+    <div class="solution-item">
+      <div class="solution-item-icon">📱</div>
+      <h4>Missed Call Text Back</h4>
+      <p>Instant automated text within 5 seconds of every missed call — keeps the lead engaged before they call your competitor.</p>
+    </div>
+    <div class="solution-item">
+      <div class="solution-item-icon">🤖</div>
+      <h4>AI Voice Receptionist</h4>
+      <p>Answers calls 24/7, qualifies the lead, and books appointments directly into your calendar — even at 11pm on a Sunday.</p>
+    </div>
+    <div class="solution-item">
+      <div class="solution-item-icon">📅</div>
+      <h4>Automated Booking & Reminders</h4>
+      <p>Customers self-book online. 24hr and 1hr reminders go out automatically. No-shows drop. Schedule stays full.</p>
+    </div>
+    <div class="solution-item">
+      <div class="solution-item-icon">🔁</div>
+      <h4>Lead Follow-Up Sequences</h4>
+      <p>Multi-step SMS and email follow-up that chases every lead automatically until they book, reply, or opt out.</p>
+    </div>
+    <div class="solution-item">
+      <div class="solution-item-icon">⭐</div>
+      <h4>Google Review Requests</h4>
+      <p>Automatic review request sent after every completed job. Build your Google rating consistently without lifting a finger.</p>
+    </div>
+    <div class="solution-item">
+      <div class="solution-item-icon">💬</div>
+      <h4>Unified Inbox</h4>
+      <p>All your customer conversations — text, email, Facebook, web chat — in one place. Nothing slips through the cracks.</p>
+    </div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:4px;">Plans &amp; Pricing</div>
+  <div class="pricing-teaser">
+    <div class="price-card">
+      <div class="price-card-header"><h4>Standard</h4></div>
+      <div class="price-card-body">
+        <div class="price-card-price">$299</div>
+        <div class="price-card-per">/month + $499 setup</div>
+        <div class="price-card-feature">Missed call text back, booking, reminders, follow-up, reviews, unified inbox</div>
+      </div>
+    </div>
+    <div class="price-card" style="border:2px solid #d4a017;">
+      <div class="price-card-header" style="background:#d4a017;"><h4 style="color:#0a1628;">Growth</h4></div>
+      <div class="price-card-body">
+        <div class="price-card-price">$499</div>
+        <div class="price-card-per">/month + $999 setup</div>
+        <div class="price-card-feature">Everything in Standard + AI Voice, CRM, Email Marketing, Reporting</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-card-header"><h4>Revenue Engine</h4></div>
+      <div class="price-card-body">
+        <div class="price-card-price">$799</div>
+        <div class="price-card-per">/month + $1,499 setup</div>
+        <div class="price-card-feature">Everything in Growth + Social Planner, Invoicing, Funnels, Full Suite</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:7.5pt;color:#888;text-align:center;margin-top:6px;">All prices in CAD. No long-term contracts. Cancel anytime.</p>
+</div>
+
+
+<!-- ===== CTA PAGE ===== -->
+<div class="cta-page">
+  <div class="cta-eyebrow">Ready to Stop Losing Jobs to Missed Calls?</div>
+  <div class="cta-title">Book Your <span>Free Demo</span> and See It Live</div>
+  <div class="cta-body">We'll walk you through the full 1APP system live — show you exactly how it works for your type of business, what it would look like set up for you, and answer every question you have. No pressure. No obligation. Just a clear picture of what's possible.</div>
+
+  <div class="cta-steps">
+    <div class="cta-step">
+      <div class="cta-step-num">1</div>
+      <div class="cta-step-text"><strong>Book a free 30-minute demo</strong> — we'll show you the full system live, customized to your trade.</div>
+    </div>
+    <div class="cta-step">
+      <div class="cta-step-num">2</div>
+      <div class="cta-step-text"><strong>We build and connect everything</strong> — your phone number, calendar, and automations are set up within days.</div>
+    </div>
+    <div class="cta-step">
+      <div class="cta-step-num">3</div>
+      <div class="cta-step-text"><strong>You show up to more booked jobs</strong> — every missed call gets a response, every lead gets followed up, every customer gets asked for a review.</div>
+    </div>
+  </div>
+
+  <div class="cta-url-box">
+    <div class="cta-url-label">Book your free demo at</div>
+    <div class="cta-url">use1app.com</div>
+  </div>
+
+  <div class="cta-footer">
+    1APP Technologies Inc. — Peterborough, Ontario, Canada — adecarlo@use1app.com — use1app.com<br/>
+    All prices in CAD. No long-term contracts. Cancel anytime. Results may vary by business type and volume.
+  </div>
+</div>
+
+</body>
+</html>

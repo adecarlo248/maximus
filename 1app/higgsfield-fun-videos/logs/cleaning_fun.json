@@ -1,0 +1,49 @@
+[
+  {
+    "created_at": "2026-08-06T16:12:09.577939Z",
+    "display_name": "Seedance 2.0",
+    "id": "26cc19f6-24ec-455d-aeec-932e7565739b",
+    "job_type": "seedance_2_0",
+    "min_result_url": null,
+    "params": {
+      "aspect_ratio": "1:1",
+      "bitrate_mode": "standard",
+      "duration": 5,
+      "generate_audio": false,
+      "genre": "auto",
+      "height": 720,
+      "medias": [
+        {
+          "data": {
+            "id": "da2fe4eb-02f9-483b-9328-bec089ad25f3",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/da2fe4eb-02f9-483b-9328-bec089ad25f3.jpg"
+          },
+          "role": "start_image"
+        },
+        {
+          "data": {
+            "id": "ff98f30a-d749-4be4-b366-bd8bb1150120",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/ff98f30a-d749-4be4-b366-bd8bb1150120.png"
+          },
+          "role": "image"
+        }
+      ],
+      "mode": "std",
+      "model": "seedance_2_0",
+      "multi_prompt": [],
+      "multi_shot_mode": "custom",
+      "multi_shots": false,
+      "prompt": "Create an exciting, fun, polished 5-second square social ad video using the provided cleaning 1APP ad creative as the exact starting frame and the provided 1APP logo as the brand reference. Preserve the original ad layout, real 1APP logo, colors, phone, notification bubbles, person, room, headline, subtext, CTA button, and all existing text exactly as shown. All text must remain crisp, readable, and stable for the entire video.\n\nFun motion direction: bright “booked calendar” energy. Add subtle bounce to notification bubbles, soft sparkle sweep over the CTA, gentle parallax between person/background/UI, and a clean push-in. Keep all typography locked and sharp. Do not invent or change text. Do not add new words, fake letters, extra buttons, warped logos, strange hands, extra fingers, distorted rooms, or mutated UI. No cuts, no scene changes, no audio.",
+      "prompt_language": "en",
+      "reference_elements": [],
+      "resolution": "720p",
+      "speedramp": "auto",
+      "width": 720
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260806_161209_26cc19f6-24ec-455d-aeec-932e7565739b.mp4",
+    "status": "completed",
+    "thumbnail_url": "https://cdn.higgsfield.ai/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260806_161209_26cc19f6-24ec-455d-aeec-932e7565739b_thumbnail.webp"
+  }
+]

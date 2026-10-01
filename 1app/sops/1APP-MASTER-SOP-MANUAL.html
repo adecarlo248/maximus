@@ -1,0 +1,862 @@
+<!doctype html><html><head><meta charset="utf-8"><title>1APP Master SOP Manual v1.2</title><meta name="author" content="1APP Technologies Inc."><style>
+@page { size: Letter; margin: .64in .68in .7in;
+  @bottom-left { content: "1APP Technologies Inc. • Internal Working Draft"; font-size: 7pt; color:#667085; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font-size: 7pt; color:#667085; }
+}
+* { box-sizing:border-box; }
+body { font-family:Arial,Helvetica,sans-serif; color:#172033; font-size:9.2pt; line-height:1.38; }
+h1 { color:#0a2d62; font-size:21pt; line-height:1.08; border-bottom:3px solid #1d63ff; padding-bottom:9px; margin:0 0 13px; }
+h2 { color:#0a2d62; font-size:14pt; margin:18px 0 6px; page-break-after:avoid; }
+h3 { color:#164b8f; font-size:11pt; margin:13px 0 5px; page-break-after:avoid; }
+p { margin:0 0 7px; }
+ul,ol { margin:0 0 8px 18px; padding:0; }
+li { margin:2px 0; }
+blockquote { margin:9px 0 11px; padding:9px 12px; border-left:4px solid #29a7ff; background:#eef6ff; }
+code { font-family:Consolas,monospace; font-size:8.4pt; background:#eef2f7; padding:1px 3px; }
+table { width:100%; border-collapse:collapse; margin:8px 0 12px; page-break-inside:auto; font-size:8.4pt; }
+thead { display:table-header-group; }
+tr { page-break-inside:avoid; }
+th { background:#0a2d62; color:white; text-align:left; padding:5px 6px; border:1px solid #0a2d62; }
+td { padding:5px 6px; border:1px solid #ced7e5; vertical-align:top; }
+tr:nth-child(even) td { background:#f7f9fc; }
+.notice { background:#fff5dd; border:1px solid #efc46b; color:#624300; padding:8px 10px; margin-bottom:13px; font-size:8.2pt; }
+</style></head><body><div class="notice"><strong>Review draft.</strong> Owner approval is required before website deployment or customer use.</div><h1>1APP Master SOP Manual</h1>
+<p><strong>Company:</strong> 1APP Technologies Inc. <strong>Version:</strong> 1.2 Review Draft <strong>Effective date:</strong> Pending owner approval <strong>Process owner:</strong> Tony DeCarlo <strong>Commercial owner:</strong> Justin Roffey</p>
+<p>---</p>
+<h2>1. Purpose</h2>
+<p>This manual turns 1APP into a repeatable business that can grow from the first clients to 100–200+ active clients without relying on tribal knowledge.</p>
+<p>Every process must produce five things:</p>
+<ol>
+<li>A clear owner.</li>
+<li>A defined trigger.</li>
+<li>A repeatable checklist.</li>
+<li>A measurable completion standard.</li>
+<li>A record inside 1APP.</li>
+</ol>
+<h2>2. Operating Principles</h2>
+<ol>
+<li><strong>One system of record:</strong> If it is not recorded in 1APP, it did not happen.</li>
+<li><strong>No promises from memory:</strong> Scope, price, timing, and exceptions must be written in the opportunity record.</li>
+<li><strong>Accepted scope before build:</strong> Trial fulfillment begins only after the custom quote and trial scope are accepted in writing. Paid service begins only after conversion authorization and the required payment clears.</li>
+<li><strong>Handoff before setup:</strong> Technical work does not begin until the sales handoff is complete.</li>
+<li><strong>Template first:</strong> Use an approved 1APP industry template before building anything custom.</li>
+<li><strong>Test before launch:</strong> No workflow, phone route, calendar, AI agent, or payment flow goes live without documented QA.</li>
+<li><strong>Least privilege:</strong> Each user receives only the access required for their role.</li>
+<li><strong>Client language is 1APP language:</strong> Refer only to 1APP and its features in all documentation and communication.</li>
+<li><strong>No unsupported claims:</strong> Never guarantee leads, revenue, rankings, response rates, or results.</li>
+<li><strong>Protect recurring revenue:</strong> Onboarding, adoption, support, reporting, and renewal are revenue functions.</li>
+</ol>
+<h2>3. Roles and Decision Rights</h2>
+<h3>Justin Roffey — Sales and Business Development</h3>
+<p>Justin owns:</p>
+<ul>
+<li>Prospecting strategy and daily sales activity.</li>
+<li>Lead qualification and discovery.</li>
+<li>Audit/demo booking and follow-up.</li>
+<li>Custom automation quotes and commercial conversations.</li>
+<li>Opportunity accuracy and next actions.</li>
+<li>Sales-to-fulfillment handoff completeness.</li>
+<li>Commercial relationship management.</li>
+</ul>
+<p>Justin may not unilaterally:</p>
+<ul>
+<li>Discount approved pricing.</li>
+<li>Promise custom features or integrations.</li>
+<li>Change contract terms.</li>
+<li>Commit to a launch date before fulfillment review.</li>
+<li>Promise results or guarantees not in the approved offer.</li>
+</ul>
+<h3>Tony DeCarlo — Technology, Implementation, and Fulfillment</h3>
+<p>Tony owns:</p>
+<ul>
+<li>Technical discovery and feasibility.</li>
+<li>1APP account provisioning.</li>
+<li>Industry template selection and configuration.</li>
+<li>Phone, calendar, CRM, workflow, AI, and integration setup.</li>
+<li>Data import quality.</li>
+<li>Testing, launch approval, and rollback plans.</li>
+<li>Technical support and incident response.</li>
+<li>Fulfillment documentation and process improvement.</li>
+</ul>
+<p>Tony may not unilaterally:</p>
+<ul>
+<li>Change pricing or payment terms.</li>
+<li>Expand client scope without a written change request.</li>
+<li>Provide free custom work because a request feels small.</li>
+<li>Launch an untested configuration.</li>
+</ul>
+<h3>Joint Approval Required</h3>
+<p>Tony and Justin must both approve:</p>
+<ul>
+<li>Custom pricing or discounts.</li>
+<li>Refunds, credits, or waived setup fees.</li>
+<li>Non-standard contract terms.</li>
+<li>Custom development or integrations.</li>
+<li>Public case studies and testimonials.</li>
+<li>Client suspension or termination.</li>
+<li>Changes to pricing rules, the automation catalogue, commission plans, or trial promises.</li>
+</ul>
+<h3>Future Team Roles</h3>
+<ul>
+<li><strong>Sales Associate:</strong> Prospecting, qualification, follow-up, approved demos, and clean CRM records.</li>
+<li><strong>Onboarding Coordinator:</strong> Form completion, missing information, access collection, scheduling, and status updates.</li>
+<li><strong>Implementation Specialist:</strong> Approved template setup, configuration, testing, and documentation.</li>
+<li><strong>Support Specialist:</strong> Ticket triage, standard fixes, client communication, and escalation.</li>
+<li><strong>Customer Success Manager:</strong> Adoption, reviews, renewals, referrals, and expansion.</li>
+</ul>
+<h2>4. Current Offer Control</h2>
+<p>1APP does not sell locked-in tiers. It sells a custom set of automations selected after a free quote/demo.</p>
+<p><strong>Public offer:</strong></p>
+<ul>
+<li>Custom automation starting as low as <strong>$99/month</strong>.</li>
+<li><strong>14-day free trial</strong>.</li>
+<li><strong>No credit card required</strong> to begin the trial.</li>
+<li>The free trial covers <strong>one approved starter automation</strong> designed to prove one measurable result.</li>
+<li>Final pricing is quote-based and depends on the automations, setup, usage, and support required.</li>
+</ul>
+<p>Rules:</p>
+<ul>
+<li>Diagnose the business problem before quoting.</li>
+<li>Build each quote from named automation line items, not a generic tier.</li>
+<li>State the total monthly price clearly; <strong>$99/month is the starting point, not a universal price or guarantee</strong>.</li>
+<li>Quote any one-time setup fee separately based on the actual implementation required.</li>
+<li>A starter trial must use an approved template, target launch within <strong>1–3 business days after Ready-to-Build</strong>, require no more than <strong>four hours of Tony&#x27;s hands-on setup time</strong>, and include one revision round.</li>
+<li>Eligible starters include missed-call text-back, booking confirmations/reminders, basic form or chat follow-up, review requests, one simple lead-follow-up sequence, or one basic pipeline.</li>
+<li>AI voice, custom integrations/APIs, accounting/estimate/payment connections, data cleanup/imports, custom websites or landing pages, multiple locations/calendars/departments, complex routing, and full community-platform implementations require a paid setup project and separate delivery schedule.</li>
+<li>Initial capacity is capped at <strong>four live trials</strong> and <strong>two new trial launches per week</strong> unless Tony approves a written exception.</li>
+<li>The quote must define trial scope, trial start trigger, trial end date, post-trial price, included usage, client responsibilities, and exclusions.</li>
+<li>No recurring charge may begin during the free trial unless the client separately and expressly authorizes it in writing.</li>
+<li>No credit card may be required as a condition of starting the advertised trial.</li>
+<li>Quote all prices in the approved currency and identify applicable taxes.</li>
+<li>The client-approved quote or signed order form controls final scope and price.</li>
+<li>Associates may present the starting price and approved automation catalogue but may not invent prices.</li>
+<li>Any discount must include an approver, reason, expiry date, and value received in return.</li>
+</ul>
+<h3>Quote Line-Item Standard</h3>
+<p>Each selected automation must identify:</p>
+<ol>
+<li>Automation name.</li>
+<li>Business problem and desired outcome.</li>
+<li>Trigger and actions.</li>
+<li>Included channels and integrations.</li>
+<li>Setup requirements and dependencies.</li>
+<li>Included usage or volume assumption.</li>
+<li>Monthly price allocation or bundled quote treatment.</li>
+<li>One-time setup charge, if any.</li>
+<li>Trial inclusion and success measure.</li>
+<li>Explicit exclusions.</li>
+<li>Trial path: <strong>Starter Trial Eligible</strong> or <strong>Paid Implementation Required</strong>.</li>
+<li>Launch-slot availability and the one-revision limit when a starter trial is offered.</li>
+</ol>
+<h2>5. Systems of Record</h2>
+<p>1APP must contain:</p>
+<ul>
+<li>Contact record.</li>
+<li>Business record.</li>
+<li>Opportunity and pipeline stage.</li>
+<li>Lead source and campaign.</li>
+<li>Owner and assigned associate.</li>
+<li>Quote ID/version, selected automations, setup fee, recurring amount, trial dates, and billing cadence.</li>
+<li>Discovery notes and problem statement.</li>
+<li>Decision-maker and target launch date.</li>
+<li>Next action and due date.</li>
+<li>Handoff form.</li>
+<li>Onboarding status.</li>
+<li>Support history.</li>
+<li>Renewal, cancellation, and commission records.</li>
+</ul>
+<h2>Standard Opportunity Stages</h2>
+<ol>
+<li><strong>New Lead</strong></li>
+<li><strong>Contacted</strong></li>
+<li><strong>Free Quote/Demo Booked</strong></li>
+<li><strong>Automation Audit Completed</strong></li>
+<li><strong>Custom Quote Sent</strong></li>
+<li><strong>Quote Accepted — Trial Setup</strong></li>
+<li><strong>Trial Live</strong></li>
+<li><strong>Trial Review / Conversion</strong></li>
+<li><strong>Won — Paid Active</strong></li>
+<li><strong>Lost / Trial Ended</strong></li>
+</ol>
+<p>Contact rules:</p>
+<ul>
+<li>Search before creating.</li>
+<li>Use update-or-create behaviour to prevent duplicate records.</li>
+<li>Use email and phone as primary matching fields.</li>
+<li>Never overwrite verified client data with lower-quality imported data.</li>
+<li>Record consent, communication preferences, and opt-outs.</li>
+</ul>
+<p>---</p>
+<h1>SOP-01 — Lead Capture and Assignment</h1>
+<p><strong>Owner:</strong> Sales <strong>Trigger:</strong> A lead enters through a form, call, referral, campaign, social message, event, or manual prospecting. <strong>Internal target:</strong> Inbound leads acknowledged within 5 minutes during business hours; all other leads within one business day.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Search 1APP for an existing contact and business.</li>
+<li>Update the existing record or create one clean record.</li>
+<li>Record lead source, campaign, referrer, niche, location, and date received.</li>
+<li>Assign one owner. Never allow shared ownership without a named primary owner.</li>
+<li>Apply the correct tags.</li>
+<li>Create an opportunity in <strong>New Lead</strong>.</li>
+<li>Create the first follow-up task with a due date.</li>
+<li>Send the approved acknowledgement when consent and channel rules permit.</li>
+<li>If an associate sourced the lead, record the associate before the first sales meeting.</li>
+</ol>
+<h2>Completion Standard</h2>
+<ul>
+<li>One deduplicated contact.</li>
+<li>One opportunity.</li>
+<li>Source, owner, and next action recorded.</li>
+<li>First response sent or attempted.</li>
+</ul>
+<h2>Escalate When</h2>
+<ul>
+<li>Two associates claim the same lead.</li>
+<li>The lead requests a custom feature before discovery.</li>
+<li>The lead is outside the approved geography or niche.</li>
+</ul>
+<p>---</p>
+<h1>SOP-02 — Lead Qualification</h1>
+<p><strong>Owner:</strong> Justin or assigned sales associate <strong>Trigger:</strong> Two-way contact with a prospect. <strong>Goal:</strong> Decide whether to book an audit/demo, nurture, or disqualify.</p>
+<h2>Qualification Questions</h2>
+<ol>
+<li>How do new leads currently contact the business?</li>
+<li>What happens when a call is missed?</li>
+<li>How quickly does the business respond to new leads?</li>
+<li>How are appointments, estimates, reminders, and follow-ups handled?</li>
+<li>Where are leads or admin tasks falling through the cracks?</li>
+<li>What is that costing in lost jobs, time, or customer experience?</li>
+<li>Who decides on a system like this?</li>
+<li>What needs to change, and by when?</li>
+<li>Is the business willing to review a custom quote, with service starting as low as $99 per month after the trial?</li>
+</ol>
+<h2>Qualified Lead Standard</h2>
+<p>A qualified lead has:</p>
+<ul>
+<li>A real operating business.</li>
+<li>A measurable lead, follow-up, booking, review, payment, or admin problem.</li>
+<li>A decision-maker involved or accessible.</li>
+<li>Willingness to review and approve a custom quote and evaluate the solution through the 14-day trial.</li>
+<li>A reason to act within 90 days.</li>
+<li>A use case 1APP can deliver reliably.</li>
+</ul>
+<h2>Disqualify or Nurture When</h2>
+<ul>
+<li>The prospect wants guaranteed leads or revenue.</li>
+<li>The business has no active customers or ability to pay.</li>
+<li>The request is primarily custom software development.</li>
+<li>The prospect refuses to identify a business problem.</li>
+<li>The required outcome is outside 1APP&#x27;s approved capabilities.</li>
+</ul>
+<h2>Completion Standard</h2>
+<ul>
+<li>Opportunity moves to <strong>Contacted</strong>.</li>
+<li>Qualification fields are complete.</li>
+<li>Audit/demo is booked, a nurture date is set, or a loss reason is recorded.</li>
+</ul>
+<p>---</p>
+<h1>SOP-03 — Audit and Demo</h1>
+<p><strong>Owner:</strong> Justin; Tony joins for technical risk or custom scope <strong>Trigger:</strong> Qualified meeting booked. <strong>Standard length:</strong> 15–30 minutes.</p>
+<h2>Before the Meeting</h2>
+<ol>
+<li>Review the website, reviews, lead sources, services, and locations.</li>
+<li>Confirm the decision-maker is invited.</li>
+<li>Prepare one likely leak and one relevant 1APP workflow.</li>
+<li>Open the opportunity record before the meeting.</li>
+</ol>
+<h2>Meeting Flow</h2>
+<ol>
+<li><strong>Set the contract:</strong> Confirm time, agenda, and that either side can say no.</li>
+<li><strong>Current state:</strong> Map lead intake, missed calls, booking, estimates, follow-up, reviews, and payments.</li>
+<li><strong>Implication:</strong> Quantify lost opportunities and wasted owner/admin time.</li>
+<li><strong>Future state:</strong> Confirm what success must look like.</li>
+<li><strong>Demonstrate:</strong> Show only the 1APP features tied to those problems.</li>
+<li><strong>Recommend:</strong> Select the smallest useful automation set and explain why each item is included.</li>
+<li><strong>Advance:</strong> Agree on a dated next step.</li>
+</ol>
+<h2>Demo Rules</h2>
+<ul>
+<li>Never feature-dump.</li>
+<li>Never show another client&#x27;s data.</li>
+<li>Never guarantee performance.</li>
+<li>Never promise an integration or timeline without Tony&#x27;s approval.</li>
+<li>Record exact client language for the custom quote.</li>
+</ul>
+<h2>Completion Standard</h2>
+<ul>
+<li>Opportunity moves to <strong>Free Quote/Demo Booked</strong>, then <strong>Automation Audit Completed</strong> after attendance.</li>
+<li>Pain, impact, decision process, recommended automations, objections, and next action are recorded.</li>
+</ul>
+<p>---</p>
+<h1>SOP-04 — Custom Quote, Scope, and Close</h1>
+<p><strong>Owner:</strong> Justin <strong>Trigger:</strong> Demo completed with confirmed fit. <strong>Internal target:</strong> Standard custom quote sent within one business day.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Restate the client&#x27;s current problem in their own language.</li>
+<li>Define the desired business outcome.</li>
+<li>Recommend the smallest automation set that solves the priority problem.</li>
+<li>List every automation as a named line item with outcome, scope, and exclusion.</li>
+<li>Show the total monthly price, any setup fee, taxes, and the price that begins after the trial.</li>
+<li>State the 14-day starter-trial scope, eligibility, start trigger, end date, success measure, one-revision limit, and no-credit-card requirement.</li>
+<li>State client responsibilities and required access.</li>
+<li>Use only approved terms, timelines, and claims.</li>
+<li>Define the next step: quote approval and trial onboarding.</li>
+<li>Record objections and a dated follow-up.</li>
+</ol>
+<h2>Standard Closing Rule</h2>
+<p>Do not ask, “What do you think?” Ask:</p>
+<blockquote><p>Based on the problems we mapped, I recommend testing [one approved starter automation] during the 14-day free trial. The trial begins after it is live and tested, requires no credit card, and measures [success measure]. The full paid solution is [price] per month after written continuation approval, with [setup fee or “no setup fee”] clearly listed. Advanced or custom work is quoted separately. Is there anything specific preventing us from approving the starter-trial scope and beginning onboarding?</p></blockquote>
+<h2>Exceptions</h2>
+<ul>
+<li>No discount without joint approval.</li>
+<li>No free custom work.</li>
+<li>No launch date is final until Tony completes the handoff review.</li>
+<li>Any custom request requires a change request or separate statement of work.</li>
+</ul>
+<h2>Completion Standard</h2>
+<ul>
+<li>Opportunity moves to <strong>Custom Quote Sent</strong>.</li>
+<li>A trial moves forward only after the quote and trial scope are accepted in writing.</li>
+<li>A paid win is recorded only after the client converts and the first required payment clears.</li>
+<li>Lost opportunities require a structured loss reason and future follow-up date when appropriate.</li>
+</ul>
+<p>---</p>
+<h1>SOP-05 — Quote Acceptance, Trial Activation, and Paid Conversion</h1>
+<p><strong>Owner:</strong> Justin for commercial confirmation; Tony for fulfillment release <strong>Trigger:</strong> Prospect accepts the custom quote and 14-day trial scope.</p>
+<h2>Trial Activation Procedure</h2>
+<ol>
+<li>Confirm written acceptance of the quote, trial scope, post-trial monthly price, and any separately quoted setup work.</li>
+<li>Verify selected automations, quote version, taxes, trial dates, success measures, and sales attribution.</li>
+<li>Confirm the trial path is marked <strong>Starter Trial Eligible</strong> or <strong>Paid Implementation Required</strong>.</li>
+<li>For a starter trial, verify one approved template, one measurable result, a 1–3-business-day target after Ready-to-Build, no more than four hours of Tony&#x27;s hands-on setup time, one revision round, and an available launch slot.</li>
+<li>For advanced/custom work, approve the paid setup project and separate delivery schedule before work begins.</li>
+<li>Confirm that no credit card is required to start the advertised starter trial.</li>
+<li>Move the opportunity to <strong>Quote Accepted — Trial Setup</strong>.</li>
+<li>Create the onboarding opportunity in <strong>Trial / Form Sent</strong>.</li>
+<li>Send the client welcome message and onboarding form.</li>
+<li>Create the sales-to-fulfillment handoff task.</li>
+<li>Do not start fulfillment until the handoff passes review.</li>
+<li>Start the 14-day trial clock only when Tony confirms the approved starter automation is live, tested, and usable—not when the quote is accepted, access is provided, or the job enters the queue.</li>
+</ol>
+<h2>Paid Conversion Procedure</h2>
+<ol>
+<li>Review agreed success measures with the client before the trial ends.</li>
+<li>Obtain written confirmation that the client wants to continue.</li>
+<li>Collect recurring billing authorization through the approved secure process.</li>
+<li>Confirm the quoted monthly amount, taxes, billing date, and any setup balance.</li>
+<li>Verify the first required payment clears.</li>
+<li>Move the sales opportunity to <strong>Won — Paid Active</strong>.</li>
+<li>Update the client record from Trial to Active.</li>
+</ol>
+<h2>Completion Standard</h2>
+<ul>
+<li>Accepted quote and trial scope attached.</li>
+<li>Trial start and end dates recorded.</li>
+<li>Handoff form issued and accepted.</li>
+<li>Paid conversion is recorded only after authorization and cleared payment.</li>
+</ul>
+<p>---</p>
+<h1>SOP-06 — Sales-to-Fulfillment Handoff</h1>
+<p><strong>Owner:</strong> Justin completes; Tony accepts or rejects <strong>Trigger:</strong> Custom quote and trial scope accepted in writing. <strong>Internal target:</strong> Sales submits within two business hours; fulfillment reviews within one business day.</p>
+<h2>Required Handoff Fields</h2>
+<ul>
+<li>Client and business contact information.</li>
+<li>Decision-maker and day-to-day contact.</li>
+<li>Quote ID/version, selected automations, setup fee, post-trial recurring fee, billing cadence, and taxes.</li>
+<li>Trial scope, success measures, start trigger, and end date.</li>
+<li>Exact problem being solved.</li>
+<li>Agreed deliverables and exclusions.</li>
+<li>Services, locations, hours, and emergency rules.</li>
+<li>Required phone, calendar, CRM, AI, reputation, payment, and website components.</li>
+<li>Existing data and systems to be imported or connected.</li>
+<li>Promises made during sales.</li>
+<li>Target launch date and reason.</li>
+<li>Associate attribution and commission status.</li>
+<li>Open questions and known risks.</li>
+</ul>
+<h2>Acceptance Test</h2>
+<p>Tony marks the handoff:</p>
+<ul>
+<li><strong>Accepted:</strong> Complete and deliverable.</li>
+<li><strong>Returned:</strong> Missing required information.</li>
+<li><strong>Scope Review:</strong> Custom work, unclear promise, or technical risk.</li>
+</ul>
+<p>No setup begins while the handoff is Returned or in Scope Review.</p>
+<p>---</p>
+<h1>SOP-07 — Client Onboarding Intake</h1>
+<p><strong>Owner:</strong> Onboarding coordinator; Tony accountable <strong>Trigger:</strong> Welcome message and onboarding form sent. <strong>Internal target:</strong> Follow up after two business days if incomplete.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Send the secure onboarding form.</li>
+<li>Collect business identity, contacts, hours, services, service areas, booking rules, escalation rules, branding, review link, and approved messaging.</li>
+<li>Collect only information required for setup.</li>
+<li>Use secure access-sharing methods. Never request passwords by email, text, chat, or notes.</li>
+<li>Review the form for contradictions or missing safety rules.</li>
+<li>Conduct a short clarification call only when needed.</li>
+<li>Move onboarding to <strong>Info Review</strong> or <strong>Needs Client Info</strong>.</li>
+</ol>
+<h2>Completion Standard</h2>
+<ul>
+<li>All required fields complete.</li>
+<li>Client approvals recorded.</li>
+<li>Brand assets received.</li>
+<li>Access dependencies available.</li>
+<li>Risks and missing items resolved.</li>
+</ul>
+<p>---</p>
+<h1>SOP-08 — 1APP Account Provisioning</h1>
+<p><strong>Owner:</strong> Tony or implementation specialist <strong>Trigger:</strong> Handoff accepted and onboarding intake complete.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Create the client account using the approved naming convention.</li>
+<li>Apply the closest approved industry template.</li>
+<li>Set business name, legal name, address, timezone, currency, locale, and contact details.</li>
+<li>Create users using named accounts only.</li>
+<li>Assign least-privilege permissions.</li>
+<li>Enable only the automations and supporting features included in the accepted quote.</li>
+<li>Record the template version and setup date.</li>
+<li>Create one designated test contact clearly labelled <strong>1APP TEST — DO NOT MARKET</strong>.</li>
+<li>Move onboarding to <strong>1APP Setup</strong>.</li>
+</ol>
+<h2>Naming Standard</h2>
+<ul>
+<li>Account: <code>[Legal Business Name]</code></li>
+<li>Calendar: <code>[Business Name] — [Appointment Type]</code></li>
+<li>Workflow: <code>[CLIENT] — [FUNCTION] — v#</code></li>
+<li>Campaign: <code>[CLIENT] — [AUDIENCE] — [PURPOSE] — YYYY-MM</code></li>
+<li>Test contact: <code>1APP TEST — [Business Name]</code></li>
+</ul>
+<h2>Completion Standard</h2>
+<ul>
+<li>Account settings verified.</li>
+<li>Correct quoted automation scope enabled.</li>
+<li>Users and permissions documented.</li>
+<li>Template version recorded.</li>
+</ul>
+<p>---</p>
+<h1>SOP-09 — Configuration by Quoted Automation</h1>
+<p><strong>Owner:</strong> Implementation specialist; Tony accountable <strong>Trigger:</strong> Account provisioned.</p>
+<p>Configure only the named automations and supporting components included in the accepted quote. Available automation categories include:</p>
+<ul>
+<li>Missed-call text-back.</li>
+<li>AI voice agent.</li>
+<li>Appointment booking, confirmations, and reminders.</li>
+<li>CRM and lead pipeline.</li>
+<li>Two-way text, email, and approved messaging channels.</li>
+<li>Google review automation.</li>
+<li>Lead nurture and follow-up sequences.</li>
+<li>Invoice, payment reminder, and text-to-pay workflows.</li>
+<li>Email marketing and re-engagement.</li>
+<li>Website and landing-page lead capture.</li>
+<li>Social media planning.</li>
+<li>Reporting and analytics.</li>
+</ul>
+<p>For every quoted automation, document:</p>
+<ol>
+<li>Trigger.</li>
+<li>Actions and timing.</li>
+<li>Entry and stop conditions.</li>
+<li>Required data and access.</li>
+<li>Human owner and escalation path.</li>
+<li>Success measure for the 14-day trial.</li>
+<li>Usage assumption.</li>
+<li>Test cases and rollback method.</li>
+</ol>
+<h2>Configuration Rules</h2>
+<ul>
+<li>Every workflow needs a trigger, goal, stop condition, owner, and rollback method.</li>
+<li>AI agents need approved purpose, tone, knowledge, booking rules, escalation rules, prohibited claims, and human handoff.</li>
+<li>Calendars need timezone, availability, duration, buffers, assignment, confirmations, rescheduling, and cancellation rules.</li>
+<li>Payment features require written client authorization and a test transaction when practical.</li>
+<li>No dormant or unused features are activated “just in case.”</li>
+</ul>
+<p>---</p>
+<h1>SOP-10 — Data Import and Migration</h1>
+<p><strong>Owner:</strong> Tony or implementation specialist <strong>Trigger:</strong> Client supplies data for import.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Obtain written authorization and confirm data ownership.</li>
+<li>Create an encrypted working copy in the approved client folder.</li>
+<li>Map source fields to 1APP fields.</li>
+<li>Normalize phone numbers, emails, names, tags, and consent status.</li>
+<li>Remove obvious duplicates without destroying the source file.</li>
+<li>Import a small test batch.</li>
+<li>Verify matching, ownership, tags, and workflow exclusions.</li>
+<li>Import the approved full batch.</li>
+<li>Reconcile source count, imported count, rejected count, and duplicate count.</li>
+<li>Store an import report and securely dispose of temporary copies when no longer required.</li>
+</ol>
+<h2>Hard Rules</h2>
+<ul>
+<li>Imported contacts do not enter marketing workflows by default.</li>
+<li>Consent and opt-out status must be preserved.</li>
+<li>Never import sensitive payment credentials or passwords.</li>
+<li>Never delete the client&#x27;s source data.</li>
+</ul>
+<p>---</p>
+<h1>SOP-11 — Quality Assurance and Launch Approval</h1>
+<p><strong>Owner:</strong> Tester completes; Tony approves <strong>Trigger:</strong> Configuration marked ready for testing.</p>
+<h2>Required Tests</h2>
+<ol>
+<li>User login and permissions.</li>
+<li>Inbound call routing.</li>
+<li>Missed-call text-back.</li>
+<li>Two-way text and email.</li>
+<li>Web form and chat lead creation.</li>
+<li>Contact deduplication.</li>
+<li>Pipeline creation and stage movement.</li>
+<li>Calendar availability and timezone.</li>
+<li>Booking, confirmation, reminder, reschedule, and cancellation.</li>
+<li>AI greeting, knowledge, qualification, booking, human transfer, prohibited claims, and failure behaviour.</li>
+<li>Review request timing and stop conditions.</li>
+<li>Payment or invoice workflow when included.</li>
+<li>Opt-out keywords and suppression.</li>
+<li>Internal alerts and task creation.</li>
+<li>Mobile app login and core client actions.</li>
+</ol>
+<h2>Defect Levels</h2>
+<ul>
+<li><strong>Blocker:</strong> Wrong recipient, privacy/security issue, payment error, broken opt-out, incorrect AI safety response, or core workflow failure. Launch stops.</li>
+<li><strong>Major:</strong> A purchased feature does not work reliably. Fix before launch.</li>
+<li><strong>Minor:</strong> Cosmetic or low-impact issue. May launch only with Tony&#x27;s approval and a dated fix task.</li>
+</ul>
+<h2>Completion Standard</h2>
+<ul>
+<li>Every required test has evidence and a pass/fail result.</li>
+<li>Blockers and major defects are zero.</li>
+<li>Rollback plan is documented.</li>
+<li>Tony signs launch approval.</li>
+</ul>
+<p>---</p>
+<h1>SOP-12 — Client Training and Go-Live</h1>
+<p><strong>Owner:</strong> Tony or assigned trainer <strong>Trigger:</strong> QA approved.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Schedule a 30–45 minute launch session.</li>
+<li>Confirm administrator and day-to-day users.</li>
+<li>Teach only the actions required in week one:</li>
+</ol>
+<ul>
+<li>Log in.</li>
+<li>View and respond to conversations.</li>
+<li>Manage opportunities.</li>
+<li>View and manage appointments.</li>
+<li>Pause or escalate automation.</li>
+<li>Get support.</li>
+</ul>
+<ol>
+<li>Review what 1APP automates and what remains the client&#x27;s responsibility.</li>
+<li>Run one live acceptance test with the client.</li>
+<li>Obtain written go-live approval.</li>
+<li>Enable live workflows in a controlled sequence.</li>
+<li>Monitor for at least one business day.</li>
+<li>Send launch confirmation, training link, support process, and next check-in date.</li>
+<li>Move onboarding to <strong>Launched</strong>.</li>
+</ol>
+<h2>Completion Standard</h2>
+<ul>
+<li>Client can complete the five week-one actions.</li>
+<li>Acceptance test passed.</li>
+<li>Approval recorded.</li>
+<li>Monitoring owner assigned.</li>
+</ul>
+<p>---</p>
+<h1>SOP-13 — Post-Launch Success</h1>
+<p><strong>Owner:</strong> Customer success; Tony handles technical escalation <strong>Trigger:</strong> Client goes live.</p>
+<h2>Cadence</h2>
+<ul>
+<li><strong>Day 1:</strong> Verify messages, calls, bookings, and alerts.</li>
+<li><strong>Day 7:</strong> Adoption and issue check.</li>
+<li><strong>Day 14:</strong> Review early results and adjust configuration.</li>
+<li><strong>Day 30:</strong> First value review.</li>
+<li><strong>Monthly:</strong> Automated performance summary and health review.</li>
+<li><strong>Quarterly:</strong> Business review for clients with multiple automations, material recurring revenue, or elevated risk.</li>
+</ul>
+<h2>14-Day Starter-Trial Cadence</h2>
+<ul>
+<li><strong>Day 1:</strong> Confirm the automation is live and start the official trial clock.</li>
+<li><strong>Day 3:</strong> Confirm the client has seen the first value event or resolve activation blockers.</li>
+<li><strong>Day 7:</strong> Adoption and issue review.</li>
+<li><strong>Day 10:</strong> Schedule the conversion review, summarize value evidence, and restate the approved post-trial quote.</li>
+<li><strong>Day 12:</strong> Confirm continue, modify through a paid change request, or end decision.</li>
+<li><strong>Day 14:</strong> Convert to paid active after written authorization and cleared required payment, or complete trial offboarding.</li>
+</ul>
+<h2>First Value Metrics</h2>
+<p>Use metrics relevant to the signed outcome:</p>
+<ul>
+<li>Missed calls answered by text.</li>
+<li>Lead response time.</li>
+<li>Leads captured.</li>
+<li>Appointments booked.</li>
+<li>No-shows reduced.</li>
+<li>Follow-up attempts completed.</li>
+<li>Reviews requested and received.</li>
+<li>Estimates or invoices followed up.</li>
+<li>Owner/admin hours saved.</li>
+</ul>
+<p>Do not claim causation unless the data supports it.</p>
+<h2>Health Status</h2>
+<ul>
+<li><strong>Green:</strong> Active use, stable workflows, desired result visible, bills current.</li>
+<li><strong>Yellow:</strong> Low adoption, unresolved issue, missed check-in, or weak results.</li>
+<li><strong>Red:</strong> Core failure, cancellation risk, payment failure, security concern, or client escalation.</li>
+</ul>
+<p>---</p>
+<h1>SOP-14 — Support Ticket Management</h1>
+<p><strong>Owner:</strong> Support specialist; Tony is technical escalation <strong>Trigger:</strong> Client requests help or monitoring detects an issue.</p>
+<h2>Ticket Priorities</h2>
+<table><thead><tr><th>Priority</th><th>Definition</th><th>Internal acknowledgement target</th></tr></thead><tbody><tr><td>P1</td><td>Security/privacy risk, service unavailable, messages sent incorrectly, or payment-impacting failure</td><td>1 hour during business hours</td></tr><tr><td>P2</td><td>Purchased core feature materially impaired with no reasonable workaround</td><td>4 business hours</td></tr><tr><td>P3</td><td>Normal defect or configuration question</td><td>1 business day</td></tr><tr><td>P4</td><td>Training request, enhancement, or low-impact change</td><td>2 business days</td></tr></tbody></table>
+<p>These are internal operating targets, not contractual promises unless included in the signed agreement.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Create a ticket for every request.</li>
+<li>Record client, issue, impact, start time, screenshots, and reproduction steps.</li>
+<li>Assign priority based on impact, not emotion.</li>
+<li>Acknowledge and provide the next update time.</li>
+<li>Reproduce safely using test data.</li>
+<li>Apply the smallest controlled fix.</li>
+<li>Test the fix and affected workflows.</li>
+<li>Explain the resolution in plain language.</li>
+<li>Record root cause and prevention action.</li>
+<li>Close only after client confirmation or documented validation.</li>
+</ol>
+<h2>Escalation</h2>
+<ul>
+<li>P1 goes directly to Tony.</li>
+<li>Billing, refund, or contract disputes go to Tony and Justin.</li>
+<li>Feature requests are not treated as defects.</li>
+<li>Repeated issues require a problem record and permanent corrective action.</li>
+</ul>
+<p>---</p>
+<h1>SOP-15 — Change Requests and Scope Control</h1>
+<p><strong>Owner:</strong> Tony assesses; Justin prices and closes <strong>Trigger:</strong> Client asks for work outside the signed scope.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Record the request without promising delivery.</li>
+<li>Clarify desired outcome, urgency, users, systems, and success criteria.</li>
+<li>Classify:</li>
+</ol>
+<ul>
+<li>Included configuration.</li>
+<li>Paid add-on.</li>
+<li>Custom project.</li>
+<li>Product request.</li>
+<li>Unsupported request.</li>
+</ul>
+<ol>
+<li>Tony estimates technical risk, effort, testing, and support impact.</li>
+<li>Justin prepares price and terms.</li>
+<li>Obtain written approval and payment when required.</li>
+<li>Schedule work and define acceptance criteria.</li>
+<li>Build, test, document, release, and update the client record.</li>
+</ol>
+<h2>Hard Rule</h2>
+<p>“It will only take five minutes” is not approval to perform free out-of-scope work.</p>
+<p>---</p>
+<h1>SOP-16 — Billing, Failed Payments, and Collections</h1>
+<p><strong>Owner:</strong> Finance/commercial owner <strong>Trigger:</strong> Invoice issued, recurring charge due, or payment fails.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Reconcile active clients, accepted quotes, selected automations, recurring charges, taxes, discounts, and commissions monthly.</li>
+<li>Do not charge recurring fees during the advertised 14-day free trial without separate, express written authorization.</li>
+<li>Do not require a credit card to start the advertised trial.</li>
+<li>Issue invoices and receipts through approved 1APP billing processes.</li>
+<li>On failed payment, notify the client promptly and provide a secure update-payment path.</li>
+<li>Retry and follow up according to the signed agreement and approved billing schedule.</li>
+<li>Escalate unresolved payment to Justin.</li>
+<li>Restrict or suspend service only when authorized by the signed terms and after written notice.</li>
+<li>Restore service only after payment status is verified.</li>
+<li>Record all credits, refunds, write-offs, and reasons.</li>
+</ol>
+<h2>Commission Control</h2>
+<ul>
+<li>Pay commission only on collected, cleared revenue.</li>
+<li>Use the signed associate agreement in force on the deal date.</li>
+<li>Reverse commission on refunds or chargebacks when the agreement permits.</li>
+<li>Reconcile lead attribution before payout.</li>
+<li>Preserve a payout ledger and approval record.</li>
+</ul>
+<p>---</p>
+<h1>SOP-17 — Cancellation and Offboarding</h1>
+<p><strong>Owner:</strong> Justin owns commercial conversation; Tony owns technical offboarding <strong>Trigger:</strong> Client requests cancellation or 1APP terminates under signed terms.</p>
+<h2>Save Attempt</h2>
+<ol>
+<li>Acknowledge without arguing.</li>
+<li>Identify the root cause: results, adoption, service, price, business closure, or competitor.</li>
+<li>Review usage, outcomes, unresolved issues, and contract terms.</li>
+<li>Offer a fix only when it addresses the real problem.</li>
+<li>Do not offer discounts automatically.</li>
+</ol>
+<h2>Offboarding Procedure</h2>
+<ol>
+<li>Confirm effective date, final charges, and data-export terms in writing.</li>
+<li>Disable new marketing and automation at the agreed time.</li>
+<li>Export client-owned data covered by the agreement.</li>
+<li>Revoke users, connected services, credentials, and phone/payment access as applicable.</li>
+<li>Archive the configuration and support history according to retention rules.</li>
+<li>Record cancellation reason and competitive destination.</li>
+<li>Calculate final commission adjustments.</li>
+<li>Confirm completion to the client.</li>
+</ol>
+<h2>Completion Standard</h2>
+<ul>
+<li>No active automation remains after the authorized cutoff.</li>
+<li>Access is revoked.</li>
+<li>Data handling is documented.</li>
+<li>Billing and commission records are reconciled.</li>
+</ul>
+<p>---</p>
+<h1>SOP-18 — Security, Privacy, and Access</h1>
+<p><strong>Owner:</strong> Tony <strong>Trigger:</strong> New user, client setup, integration, incident, role change, or offboarding.</p>
+<h2>Rules</h2>
+<ol>
+<li>Require multi-factor authentication wherever supported.</li>
+<li>Use named accounts; never share administrator logins.</li>
+<li>Store credentials only in an approved protected credential system.</li>
+<li>Never place passwords, API keys, recovery codes, or payment credentials in chat, email, forms, tickets, or SOPs.</li>
+<li>Apply least-privilege access.</li>
+<li>Review administrator access monthly.</li>
+<li>Remove access immediately when a person leaves or changes role.</li>
+<li>Use test data for QA whenever possible.</li>
+<li>Collect and retain only necessary client information.</li>
+<li>Record suspected security or privacy incidents immediately.</li>
+</ol>
+<h2>Incident First Response</h2>
+<ol>
+<li>Stop further exposure without destroying evidence.</li>
+<li>Notify Tony immediately.</li>
+<li>Record what happened, when, systems affected, and people affected.</li>
+<li>Revoke or rotate affected access through approved secure processes.</li>
+<li>Preserve logs.</li>
+<li>Assess notification and legal obligations with qualified counsel when required.</li>
+<li>Document corrective action before closure.</li>
+</ol>
+<p>---</p>
+<h1>SOP-19 — Workflow Change Management</h1>
+<p><strong>Owner:</strong> Tony <strong>Trigger:</strong> Any change to a live workflow, AI agent, calendar, phone route, payment flow, or integration.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Create a change record with reason, owner, risk, affected clients, and desired result.</li>
+<li>Capture the current version and rollback method.</li>
+<li>Build or edit outside the live path when possible.</li>
+<li>Test normal, error, duplicate, opt-out, and edge-case behaviour.</li>
+<li>Obtain approval based on risk.</li>
+<li>Release during a monitored window.</li>
+<li>Verify live behaviour.</li>
+<li>Roll back immediately if a blocker appears.</li>
+<li>Update the version number, documentation, and client record.</li>
+</ol>
+<h2>Approval Levels</h2>
+<ul>
+<li>Low-risk copy or timing change: Implementation owner plus peer check.</li>
+<li>Workflow logic or routing change: Tony approval.</li>
+<li>Billing, AI safety, privacy, or multi-client template change: Tony approval plus documented business review.</li>
+</ul>
+<p>---</p>
+<h1>SOP-20 — Associate Onboarding and Governance</h1>
+<p><strong>Owner:</strong> Justin; Tony certifies technical competence where required <strong>Trigger:</strong> New referral associate, sales associate, or certified partner.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Confirm the correct signed associate agreement.</li>
+<li>Verify identity, payment details, tax responsibility acknowledgement, and contact information through approved processes.</li>
+<li>Provide approved brand, offer, pricing, and messaging materials.</li>
+<li>Train on ICP, qualification, CRM stages, claims, scope, and handoff.</li>
+<li>Require role-play and a passing score before independent demos.</li>
+<li>Restrict access according to level.</li>
+<li>Review the first three opportunities and first three calls.</li>
+<li>Track lead attribution, pipeline hygiene, complaints, and conversion.</li>
+<li>Review standing monthly.</li>
+</ol>
+<h2>Immediate Violations</h2>
+<ul>
+<li>Unauthorized discounts.</li>
+<li>False or guaranteed claims.</li>
+<li>Misrepresentation of ownership or employment.</li>
+<li>Unapproved use of brand assets.</li>
+<li>Hidden lead activity outside 1APP.</li>
+<li>Mishandling client data or credentials.</li>
+<li>Circumventing lead ownership or commission rules.</li>
+</ul>
+<p>Serious violations trigger immediate suspension pending review.</p>
+<p>---</p>
+<h1>SOP-21 — Weekly Operating Rhythm</h1>
+<h2>Monday — Pipeline and Capacity</h2>
+<p>Owners: Tony and Justin</p>
+<ul>
+<li>Review every opportunity without a next action.</li>
+<li>Review demos this week and custom quotes outstanding.</li>
+<li>Review accepted trials, paid conversions, and launch capacity.</li>
+<li>Review onboarding blockers and client dependencies.</li>
+<li>Confirm one weekly revenue target and one delivery target.</li>
+</ul>
+<h2>Wednesday — Fulfillment and Risk</h2>
+<ul>
+<li>Review every client in Needs Client Info, 1APP Setup, Testing, and Launched.</li>
+<li>Review open P1/P2 tickets.</li>
+<li>Review changes scheduled for release.</li>
+<li>Review capacity for the next ten business days.</li>
+</ul>
+<h2>Friday — Numbers and Learning</h2>
+<ul>
+<li>Leads created and contacted.</li>
+<li>Audits booked, attended, and completed.</li>
+<li>Custom quotes, trials started, paid conversions, losses, setup revenue, and new recurring revenue.</li>
+<li>Time from quote acceptance to accepted handoff.</li>
+<li>Time from accepted handoff to trial go-live.</li>
+<li>QA defects and support volume.</li>
+<li>At-risk clients, churn, referrals, and expansion.</li>
+<li>One process failure and one improvement action.</li>
+</ul>
+<p>---</p>
+<h1>SOP-22 — Monthly Management Review</h1>
+<p><strong>Owners:</strong> Tony and Justin</p>
+<p>Review:</p>
+<ol>
+<li>New recurring revenue, total recurring revenue, setup revenue, churned revenue, and collected cash.</li>
+<li>Pipeline conversion by stage and source.</li>
+<li>Acquisition cost and payback by channel.</li>
+<li>Trial activation rate, trial-to-paid conversion, and trial losses by reason.</li>
+<li>Average time to launch and hours per implementation.</li>
+<li>Support tickets per client and top root causes.</li>
+<li>Client health distribution.</li>
+<li>Gross margin by automation and quote size.</li>
+<li>Associate production, quality, and payout accuracy.</li>
+<li>Template defects and requested improvements.</li>
+<li>Decisions, owners, and due dates.</li>
+</ol>
+<h2>Core Targets to Establish After 90 Days of Data</h2>
+<ul>
+<li>Speed to lead.</li>
+<li>Qualified lead rate.</li>
+<li>Demo show rate.</li>
+<li>Demo-to-quote rate.</li>
+<li>Quote acceptance rate.</li>
+<li>Trial activation rate.</li>
+<li>Trial-to-paid conversion rate.</li>
+<li>Average setup revenue.</li>
+<li>New recurring revenue per month.</li>
+<li>Median days to launch.</li>
+<li>QA first-pass rate.</li>
+<li>Support tickets per client.</li>
+<li>30-day activation rate.</li>
+<li>Gross revenue retention.</li>
+<li>Referral rate.</li>
+</ul>
+<p>Do not invent benchmarks before enough 1APP data exists. Establish the baseline, then improve it monthly.</p>
+<p>---</p>
+<h2>Open Decisions Requiring Tony and Justin</h2>
+<p>These items were inconsistent or not finalized across existing 1APP documents and should be resolved before this manual becomes contractual:</p>
+<ol>
+<li>Approved internal price-building method for each automation and bundle combination.</li>
+<li>Final setup-fee rules and whether setup fees are waived, deferred, or payable for trial clients.</li>
+<li>What happens by default at trial expiry if the client does not respond.</li>
+<li>Refund window and cancellation notice after paid conversion.</li>
+<li>Service suspension timeline after failed payment.</li>
+<li>Included usage allowances and overage handling.</li>
+<li>Support business hours and any contractual response targets.</li>
+<li>Data retention and export period after trial or paid cancellation.</li>
+<li>The Level 1 referral bonus summary, which conflicts in an older associate document.</li>
+<li>How associate commission is calculated on custom automation quotes.</li>
+<li>Final commission approval and payout date each month.</li>
+</ol>
+<h2>Version History</h2>
+<table><thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Approved by</th></tr></thead><tbody><tr><td>1.0</td><td>2026-09-09</td><td>Initial consolidated SOP system</td><td>Pending Tony/Justin review</td></tr><tr><td>1.1</td><td>2026-09-09</td><td>Replaced fixed tiers with custom per-automation quotes starting at $99/month and added the 14-day no-credit-card trial process</td><td>Pending Tony/Justin review</td></tr><tr><td>1.2</td><td>2026-09-22</td><td>Limited the free trial to one approved starter automation; added eligibility, delivery, capacity, revision, paid-project, and trial-start rules</td><td>Pending Tony/Justin review</td></tr></tbody></table></body></html>

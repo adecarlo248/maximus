@@ -1,0 +1,304 @@
+<!doctype html><html><head><meta charset="utf-8"><title>1APP Client Onboarding &amp; Technical Handoff</title><meta name="author" content="1APP Technologies Inc."><style>
+@page { size: Letter; margin: .64in .68in .7in;
+  @bottom-left { content: "1APP Technologies Inc. • Internal Working Draft"; font-size: 7pt; color:#667085; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font-size: 7pt; color:#667085; }
+}
+* { box-sizing:border-box; }
+body { font-family:Arial,Helvetica,sans-serif; color:#172033; font-size:9.2pt; line-height:1.38; }
+h1 { color:#0a2d62; font-size:21pt; line-height:1.08; border-bottom:3px solid #1d63ff; padding-bottom:9px; margin:0 0 13px; }
+h2 { color:#0a2d62; font-size:14pt; margin:18px 0 6px; page-break-after:avoid; }
+h3 { color:#164b8f; font-size:11pt; margin:13px 0 5px; page-break-after:avoid; }
+p { margin:0 0 7px; }
+ul,ol { margin:0 0 8px 18px; padding:0; }
+li { margin:2px 0; }
+blockquote { margin:9px 0 11px; padding:9px 12px; border-left:4px solid #29a7ff; background:#eef6ff; }
+code { font-family:Consolas,monospace; font-size:8.4pt; background:#eef2f7; padding:1px 3px; }
+table { width:100%; border-collapse:collapse; margin:8px 0 12px; page-break-inside:auto; font-size:8.4pt; }
+thead { display:table-header-group; }
+tr { page-break-inside:avoid; }
+th { background:#0a2d62; color:white; text-align:left; padding:5px 6px; border:1px solid #0a2d62; }
+td { padding:5px 6px; border:1px solid #ced7e5; vertical-align:top; }
+tr:nth-child(even) td { background:#f7f9fc; }
+.notice { background:#fff5dd; border:1px solid #efc46b; color:#624300; padding:8px 10px; margin-bottom:13px; font-size:8.2pt; }
+</style></head><body><div class="notice"><strong>Internal working draft.</strong> Owners must approve pricing, commission, scope, and legal terms before client or associate use.</div><h1>1APP Client Onboarding &amp; Technical Handoff</h1>
+<p><strong>Rule:</strong> Technical work does not begin until the accepted quote and this handoff agree. Do not place passwords, one-time codes, card information, API keys, private keys, or other secrets in this document. Mark secure access as required and use the approved protected access process.</p>
+<h2>1. Deal control</h2>
+<ul>
+<li>Client/business: ______________________________________________</li>
+<li>Primary contact: ______________________________________________</li>
+<li>Phone: _____________________ Email: ____________________________</li>
+<li>Website: ______________________________________________________</li>
+<li>Service area/timezone: ________________________________________</li>
+<li>Sales owner: __________________ Sourcing associate: ____________</li>
+<li>Quote ID/version: _____________________________________________</li>
+<li>Quote accepted date: __________________________________________</li>
+<li>Setup fee: $________________ Monthly recurring service: $________</li>
+<li>Usage/add-on assumptions: _____________________________________</li>
+<li>Offer path: [ ] Revenue Reactivation Sprint  [ ] Paid Implementation Required</li>
+<li>Sprint fee tier: [ ] A [ ] B [ ] C [ ] D [ ] E   Avg. completed job: $____________</li>
+<li>Sprint fee basis: [ ] Collected revenue % [ ] Gross-profit % [ ] Flat kept-appointment fee [ ] Hybrid</li>
+<li>Agreed success fee: __________% or $____________ flat   Hard cap per sale: $____________</li>
+<li>Attribution window: ______ days   Campaign/contact cohort ID: __________________________</li>
+<li>Estimated Tony hands-on setup time: ______ hours</li>
+<li>Sprint/build launch slot confirmed by Tony: [ ] Yes  Week of: __________</li>
+<li>Paid changes explained: [ ] Yes</li>
+<li>Sprint outbound start trigger: approved cohort + lawful-contact attestation + approved copy + campaign ID + test pass</li>
+<li>Target outbound start: __________ Target outbound close: ________ Attribution end: ________</li>
+<li>Decision-maker approved scope: [ ] Yes [ ] No</li>
+<li>Tony accepted handoff/build queue: [ ] Yes [ ] No</li>
+</ul>
+<h2>2. Business operating profile</h2>
+<ul>
+<li>Business hours: _______________________________________________</li>
+<li>After-hours policy: ___________________________________________</li>
+<li>Main services: ________________________________________________</li>
+<li>Services not offered: _________________________________________</li>
+<li>Urgent/emergency definitions: _________________________________</li>
+<li>Escalation contact and method: _________________________________</li>
+<li>Average lead volume: calls ____ forms ____ messages ____ /week</li>
+<li>Current lead response process: _________________________________</li>
+<li>Current booking/estimate/payment tools: ________________________</li>
+<li>Primary problem in client&#x27;s words: _____________________________</li>
+<li>Current baseline and source/date: ______________________________</li>
+<li>Financial mechanism: [ ] Money saved [ ] Capacity recovered [ ] Revenue influenced [ ] Cash-flow improvement [ ] Risk/visibility</li>
+<li>Value scenario and assumptions: _______________________________</li>
+<li>Primary success measure: ______________________________________</li>
+<li>Supporting measure(s): ________________________________________</li>
+<li>Variables outside 1APP&#x27;s control: ______________________________</li>
+<li>Evidence/attribution method: __________________________________</li>
+</ul>
+<h2>3. Automation selection</h2>
+<p>Check every item included in the accepted quote.</p>
+<ul>
+<li>[ ] Missed-call text-back</li>
+<li>[ ] Appointment booking and reminders</li>
+<li>[ ] Website form / chat lead capture</li>
+<li>[ ] CRM and opportunity pipeline</li>
+<li>[ ] New-lead follow-up sequence</li>
+<li>[ ] Estimate / quote follow-up</li>
+<li>[ ] Review request automation</li>
+<li>[ ] Reactivation / nurture campaign</li>
+<li>[ ] Invoice / payment reminders</li>
+<li>[ ] AI voice receptionist</li>
+<li>[ ] Reporting and analytics</li>
+<li>[ ] Email marketing</li>
+<li>[ ] Social content planner</li>
+<li>[ ] Landing page / website work</li>
+<li>[ ] Custom automation / integration</li>
+</ul>
+<h2>4. Requirements by selected automation</h2>
+<h3>A. Missed-call text-back</h3>
+<ul>
+<li>[ ] Business number identified: ________________________________</li>
+<li>[ ] Numbers/call types included: _______________________________</li>
+<li>[ ] Business-hours message approved.</li>
+<li>[ ] After-hours message approved.</li>
+<li>[ ] Booking link/action: _______________________________________</li>
+<li>[ ] Reply owner: ______________________________________________</li>
+<li>[ ] Escalation/urgent rules: __________________________________</li>
+<li>[ ] Stop/opt-out rules confirmed.</li>
+<li>[ ] Test contacts supplied.</li>
+</ul>
+<p>Approved message: _________________________________________________________________</p>
+<h3>B. Appointment booking and reminders</h3>
+<ul>
+<li>[ ] Calendar owner(s): ________________________________________</li>
+<li>[ ] Calendar connection required through secure process.</li>
+<li>[ ] Appointment type(s): ______________________________________</li>
+<li>[ ] Duration: ______ Buffer: ______ Minimum notice: ____________</li>
+<li>[ ] Availability and timezone: _________________________________</li>
+<li>[ ] Location/service-area rules: _______________________________</li>
+<li>[ ] Assignment/round-robin rules: ______________________________</li>
+<li>[ ] Confirmation copy approved.</li>
+<li>[ ] Reminder timing/copy approved.</li>
+<li>[ ] Cancellation/reschedule rules approved.</li>
+<li>[ ] Test booking completed.</li>
+</ul>
+<h3>C. Website form / chat lead capture</h3>
+<ul>
+<li>[ ] Website/domain: ___________________________________________</li>
+<li>[ ] Website editing access required through secure process.</li>
+<li>[ ] Form/chat placement: ______________________________________</li>
+<li>[ ] Approved fields: [ ] First name [ ] Last name [ ] Email [ ] Phone [ ] Service [ ] Postal code [ ] Other: __________</li>
+<li>[ ] Consent/privacy language approved.</li>
+<li>[ ] Lead source/UTM/click-ID capture required.</li>
+<li>[ ] Contact owner and notification route: ______________________</li>
+<li>[ ] Success/thank-you action: __________________________________</li>
+<li>[ ] End-to-end test required.</li>
+</ul>
+<h3>D. CRM and opportunity pipeline</h3>
+<ul>
+<li>[ ] Users and roles: __________________________________________</li>
+<li>[ ] Pipeline stages approved: __________________________________</li>
+<li>[ ] Required fields: __________________________________________</li>
+<li>[ ] Lead sources: _____________________________________________</li>
+<li>[ ] Assignment rules: _________________________________________</li>
+<li>[ ] Duplicate/matching rules: __________________________________</li>
+<li>[ ] Task and notification rules: _______________________________</li>
+<li>[ ] Import required: [ ] No [ ] Yes — secure file/access process</li>
+<li>[ ] Reporting requirements: ___________________________________</li>
+</ul>
+<h3>E. New-lead follow-up</h3>
+<ul>
+<li>[ ] Trigger(s): _______________________________________________</li>
+<li>[ ] Channels: [ ] SMS [ ] Email [ ] Call task [ ] Other: _______</li>
+<li>[ ] Consent basis and opt-out process confirmed.</li>
+<li>[ ] Business-hour window: _____________________________________</li>
+<li>[ ] Sequence timing: __________________________________________</li>
+<li>[ ] Message copy approved.</li>
+<li>[ ] Owner notification/escalation: _____________________________</li>
+<li>[ ] Stop conditions: [ ] Reply [ ] Booking [ ] Opt-out [ ] Disqualified [ ] Won/Lost [ ] Other: _______</li>
+</ul>
+<h3>F. Estimate / quote follow-up</h3>
+<ul>
+<li>[ ] Estimate system/source: ___________________________________</li>
+<li>[ ] Secure connection/access required.</li>
+<li>[ ] Sent signal: ______________________________________________</li>
+<li>[ ] Accepted/declined signal: __________________________________</li>
+<li>[ ] Estimate link field/source: ________________________________</li>
+<li>[ ] Payment/deposit process: __________________________________</li>
+<li>[ ] Immediate message approved.</li>
+<li>[ ] Follow-up timing/copy approved.</li>
+<li>[ ] Manual call task timing: __________________________________</li>
+<li>[ ] Stop conditions: [ ] Reply [ ] Accepted [ ] Paid [ ] Booked [ ] Declined [ ] Opt-out</li>
+</ul>
+<h3>G. Review request automation</h3>
+<ul>
+<li>[ ] Google/review link: ________________________________________</li>
+<li>[ ] Eligible job-completion trigger: ___________________________</li>
+<li>[ ] Timing: ___________________________________________________</li>
+<li>[ ] Request copy approved.</li>
+<li>[ ] Exclusions/complaint route: ________________________________</li>
+<li>[ ] Stop conditions and duplicate prevention confirmed.</li>
+</ul>
+<h3>H. Reactivation / nurture</h3>
+<ul>
+<li>[ ] Audience/segment definition: _______________________________</li>
+<li>[ ] Clean contact list available through secure process.</li>
+<li>[ ] Client signed lawful-contact-basis attestation for every included record.</li>
+<li>[ ] Consent/implied-consent basis and date/source are documented by client.</li>
+<li>[ ] Opt-out and suppression lists are available and will be applied before launch.</li>
+<li>[ ] Active opportunities, current customers under active service, recent estimates, and contacts engaged in the last 90 days are excluded unless Tony approves otherwise in writing.</li>
+<li>[ ] Regulated-industry review completed where applicable.</li>
+<li>[ ] Offer/message theme: _______________________________________</li>
+<li>[ ] Sequence and send window: __________________________________</li>
+<li>[ ] 14-day outbound window: Start __________ End __________</li>
+<li>[ ] Approved contact count: __________ Batch size/cadence: __________</li>
+<li>[ ] Sender identification and STOP language approved.</li>
+<li>[ ] Reply owner: ______________________________________________</li>
+<li>[ ] Human takeover/escalation rules: ___________________________</li>
+<li>[ ] Booking link/calendar and qualification rules: _____________</li>
+<li>[ ] Stop conditions: [ ] Reply [ ] Booking [ ] Opt-out [ ] Human takeover [ ] Sale [ ] Other: _______</li>
+<li>[ ] Campaign success event: [ ] Kept qualified appointment [ ] Deposit collected [ ] Full payment collected [ ] Other: _______</li>
+<li>[ ] Fee basis: [ ] Collected revenue [ ] Disclosed gross profit [ ] Flat kept-appointment fee [ ] Hybrid</li>
+<li>[ ] Success fee/rate: __________________ Hard cap per sale: $__________</li>
+<li>[ ] Attribution window: ______ days from first Sprint response/booking.</li>
+<li>[ ] Campaign ID/tag applied before first message: _______________</li>
+<li>[ ] Baseline and reconciliation source: _________________________</li>
+<li>[ ] Outcome owner and reporting cadence: ________________________</li>
+<li>[ ] Refund/cancellation reversal rule accepted.</li>
+<li>[ ] Client will report kept appointments, signed work, deposits, collected payments, refunds, and cancellations within ______ business days.</li>
+<li>[ ] Day-14 outbound close and end-of-window results review booked.</li>
+</ul>
+<h3>I. Invoice / payment reminders</h3>
+<ul>
+<li>[ ] Billing system: ___________________________________________</li>
+<li>[ ] Secure connection/access required.</li>
+<li>[ ] Outstanding/paid/overdue signals: __________________________</li>
+<li>[ ] Secure payment link source: ________________________________</li>
+<li>[ ] Reminder timing/copy: _____________________________________</li>
+<li>[ ] Exceptions/disputes/escalation: ____________________________</li>
+<li>[ ] Stop condition: payment/approved exception verified.</li>
+</ul>
+<h3>J. AI voice receptionist</h3>
+<ul>
+<li>[ ] Dedicated/forwarded number: _______________________________</li>
+<li>[ ] Inbound use case: _________________________________________</li>
+<li>[ ] Greeting and AI disclosure approved where required.</li>
+<li>[ ] Services/FAQ/knowledge approved.</li>
+<li>[ ] Qualification questions approved.</li>
+<li>[ ] Booking rules: ____________________________________________</li>
+<li>[ ] Transfer destinations and hours: ___________________________</li>
+<li>[ ] Emergency/safety rules: ___________________________________</li>
+<li>[ ] Prohibited claims/topics: __________________________________</li>
+<li>[ ] Fallback/human escalation: _________________________________</li>
+<li>[ ] Recording/transcription notice and consent reviewed.</li>
+<li>[ ] Test scenarios supplied: normal, urgent, unknown, hostile, silence, transfer, booking.</li>
+</ul>
+<h3>K. Reporting and analytics</h3>
+<ul>
+<li>[ ] Metrics: [ ] Leads [ ] Response time [ ] Bookings [ ] Shows [ ] Quotes [ ] Paid jobs [ ] Reviews [ ] Revenue [ ] Other: _______</li>
+<li>[ ] Data sources: _____________________________________________</li>
+<li>[ ] Metric definitions approved.</li>
+<li>[ ] Dashboard audience: _______________________________________</li>
+<li>[ ] Reporting cadence: ________________________________________</li>
+<li>[ ] Data-quality owner: _______________________________________</li>
+</ul>
+<h3>L. Email marketing / social planner / web work</h3>
+<ul>
+<li>[ ] Audience/channel: _________________________________________</li>
+<li>[ ] Brand assets and approved claims received.</li>
+<li>[ ] Content approver: _________________________________________</li>
+<li>[ ] Cadence: __________________________________________________</li>
+<li>[ ] Website/platform access required through secure process.</li>
+<li>[ ] Tracking and CTA: _________________________________________</li>
+<li>[ ] Publishing requires written approval.</li>
+</ul>
+<h3>M. Custom automation / integration</h3>
+<p><strong>Custom request name:</strong> _________________________________________</p>
+<p><strong>Business problem:</strong> _________________________________________________________________</p>
+<p><strong>Trigger:</strong> _____________________________________________________</p>
+<p><strong>Required actions/data flow:</strong> _________________________________________________________________</p>
+<p><strong>Systems involved:</strong> ____________________________________________</p>
+<p><strong>Expected volume/frequency:</strong> ___________________________________</p>
+<p><strong>Success condition:</strong> ___________________________________________</p>
+<p><strong>Failure/exception handling:</strong> __________________________________</p>
+<p><strong>Security/privacy constraints:</strong> _________________________________</p>
+<p><strong>Known dependencies:</strong> _________________________________________</p>
+<ul>
+<li>[ ] Tony feasibility review required.</li>
+<li>[ ] Separate discovery/spike required.</li>
+<li>[ ] Separate statement of work required.</li>
+<li>[ ] Custom price/timeline approved by Tony and Justin.</li>
+</ul>
+<h2>5. Brand, content, and approvals</h2>
+<ul>
+<li>[ ] Logo and brand colours received.</li>
+<li>[ ] Sender names, emails, and phone numbers approved.</li>
+<li>[ ] Client approved every customer-facing message.</li>
+<li>[ ] Privacy/consent/opt-out language approved.</li>
+<li>[ ] No unsupported guarantees or claims.</li>
+<li>[ ] Business address and required identification confirmed.</li>
+<li>[ ] Client named the person responsible for replies and escalations.</li>
+</ul>
+<h2>6. Access and client dependencies</h2>
+<p>Record the system and access owner—never the credential.</p>
+<table><thead><tr><th>System</th><th>Access needed</th><th>Client owner</th><th>Secure request sent</th><th>Received/tested</th></tr></thead><tbody><tr><td>Website/domain</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Calendar</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Business phone</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Email sending</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Billing/estimate system</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Google Business/review</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Ads/analytics</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr><tr><td>Other</td><td></td><td></td><td>[ ]</td><td>[ ]</td></tr></tbody></table>
+<h2>7. Handoff gate</h2>
+<ul>
+<li>[ ] Accepted quote matches selected automations.</li>
+<li>[ ] Setup fee and monthly price match the quote.</li>
+<li>[ ] Offer scope and success measures are written.</li>
+<li>[ ] If this is a Revenue Reactivation Sprint, the dormant cohort, lawful-contact attestation, fee tier/basis/cap, success event, attribution window, campaign ID, outcome owner, and reconciliation method are complete.</li>
+<li>[ ] Sprint fees are tied only to the written success event and collected revenue/gross profit where applicable—not quotes, verbal commitments, or uncollected contract value.</li>
+<li>[ ] Advanced/custom work is separated into a paid setup project.</li>
+<li>[ ] Sprint outbound messaging does not start until the approved cohort, lawful-contact attestation, approved copy, campaign ID, stop logic, and test pass are complete.</li>
+<li>[ ] All required client content is received or assigned with due dates.</li>
+<li>[ ] All secure access is received/tested or assigned with due dates.</li>
+<li>[ ] Customer-facing copy is approved.</li>
+<li>[ ] Technical unknowns are clearly flagged.</li>
+<li>[ ] Dependencies and exclusions are acknowledged.</li>
+<li>[ ] No launch date was promised before technical acceptance.</li>
+<li>[ ] Rod reviewed this handoff with the client.</li>
+</ul>
+<h2>8. Tony&#x27;s technical acceptance</h2>
+<ul>
+<li>[ ] Accepted — build may enter queue.</li>
+<li>[ ] Rejected — missing information listed below.</li>
+<li>[ ] Technical discovery/change request required.</li>
+</ul>
+<p>Missing/risk notes: _________________________________________________________________</p>
+<p>Internal build estimate after acceptance: ________________________</p>
+<p>Sales handoff completed by: __________________ Date: _____________</p>
+<p>Client scope confirmed by: ___________________ Date: _____________</p>
+<p>Technical acceptance by Tony: _________________ Date: _____________</p></body></html>

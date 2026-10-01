@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>1APP — Services & Pricing</title>
+  <style>
+    @page { size: letter; margin: 1.5cm 1.8cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; font-size: 10pt; color: #1a1a2e; background: #fff; }
+
+    /* HEADER */
+    .header {
+      background: #0a1628;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .header-brand h1 { font-size: 28pt; font-weight: 900; color: #d4a017; letter-spacing: -1px; line-height: 1; }
+    .header-brand p { font-size: 9pt; color: #aab4c4; margin-top: 3px; }
+    .header-contact { text-align: right; font-size: 8.5pt; color: #aab4c4; line-height: 1.8; }
+    .header-contact a { color: #d4a017; text-decoration: none; }
+
+    /* TAGLINE BAR */
+    .tagline {
+      background: #d4a017;
+      color: #0a1628;
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-align: center;
+      padding: 7px;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0a1628;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      border-bottom: 2px solid #d4a017;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* SERVICES */
+    .services { margin-bottom: 18px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .service-card {
+      border: 1px solid #dde2ea;
+      border-top: 3px solid #d4a017;
+      border-radius: 4px;
+      padding: 10px 12px;
+    }
+    .service-card h3 { font-size: 9.5pt; font-weight: 700; color: #0a1628; margin-bottom: 4px; }
+    .service-card p { font-size: 8.5pt; color: #555; line-height: 1.5; }
+
+    /* PRICING */
+    .pricing { margin-bottom: 18px; }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .plan {
+      border: 1px solid #dde2ea;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .plan.featured { border-color: #d4a017; border-width: 2px; }
+    .plan-header {
+      background: #0a1628;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .plan.featured .plan-header { background: #d4a017; }
+    .plan-name { font-size: 9.5pt; font-weight: 800; color: #fff; }
+    .plan.featured .plan-name { color: #0a1628; }
+    .plan-tagline { font-size: 7pt; color: #aab4c4; margin-top: 1px; }
+    .plan.featured .plan-tagline { color: #0a1628; opacity: 0.75; }
+    .plan-price-box { background: #f8f9fb; padding: 6px 10px; text-align: center; border-bottom: 1px solid #eaecf0; }
+    .plan.featured .plan-price-box { background: #fffbf0; }
+    .plan-price { font-size: 13pt; font-weight: 900; color: #d4a017; }
+    .plan.featured .plan-price { color: #0a1628; }
+    .plan-price-sub { font-size: 7pt; color: #888; }
+    .plan-setup { font-size: 7pt; color: #555; margin-top: 1px; }
+    .plan-features { padding: 8px 10px; }
+    .plan-features ul { list-style: none; }
+    .plan-features ul li {
+      font-size: 7.8pt;
+      color: #333;
+      padding: 1.8px 0;
+      padding-left: 13px;
+      position: relative;
+      line-height: 1.35;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .plan-features ul li:last-child { border-bottom: none; }
+    .plan-features ul li::before { content: "✓"; position: absolute; left: 0; color: #d4a017; font-weight: 700; }
+    .plan-features ul li.inherited::before { content: "+"; color: #0a1628; }
+
+    /* ADD-ONS */
+    .addons { margin-bottom: 18px; }
+    .addons-table { width: 100%; border-collapse: collapse; }
+    .addons-table th {
+      background: #0a1628;
+      color: #fff;
+      padding: 7px 10px;
+      text-align: left;
+      font-size: 9pt;
+    }
+    .addons-table th:last-child { color: #d4a017; }
+    .addons-table td { padding: 7px 10px; font-size: 8.5pt; border-bottom: 1px solid #eaecf0; }
+    .addons-table tr:nth-child(even) td { background: #f8f9fb; }
+    .addon-name { font-weight: 700; color: #0a1628; }
+    .addon-desc { color: #666; font-size: 8pt; margin-top: 1px; }
+    .addon-price { font-weight: 700; color: #d4a017; white-space: nowrap; }
+
+    /* WHY + CTA */
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .why ul { list-style: none; }
+    .why ul li {
+      font-size: 9pt; color: #333;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .why ul li:last-child { border-bottom: none; }
+    .why ul li::before { content: "✓"; position: absolute; left: 0; color: #d4a017; font-weight: 700; }
+    .cta-box {
+      background: #0a1628;
+      border-radius: 5px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+    .cta-box h3 { color: #d4a017; font-size: 11pt; font-weight: 800; margin-bottom: 6px; }
+    .cta-box p { color: #aab4c4; font-size: 8.5pt; line-height: 1.6; margin-bottom: 10px; }
+    .cta-url { color: #fff; font-size: 10pt; font-weight: 700; }
+
+    /* FOOTER */
+    .footer {
+      background: #0a1628;
+      color: #aab4c4;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8pt;
+    }
+    .footer strong { color: #d4a017; }
+    .footer a { color: #d4a017; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">
+      <h1>1APP</h1>
+      <p>AI Automation for Tradespeople &amp; Service Businesses</p>
+    </div>
+    <div class="header-contact">
+      <a href="https://use1app.com">use1app.com</a><br/>
+      adecarlo@use1app.com<br/>
+      Peterborough, Ontario, Canada<br/>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/1app-free-demo">Book a Free Demo →</a>
+    </div>
+  </div>
+
+  <!-- TAGLINE -->
+  <div class="tagline">Stop losing jobs to missed calls. We build it. We connect it. You show up to more booked jobs.</div>
+
+  <!-- SERVICES -->
+  <div class="services">
+    <div class="section-title">Our Services</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Missed Call Text Back</h3>
+        <p>Instant automated text the moment you miss a call — keeps the lead warm before they call your competitor.</p>
+      </div>
+      <div class="service-card">
+        <h3>AI Voice Receptionist</h3>
+        <p>24/7 AI agent answers calls, qualifies leads, and books appointments directly into your calendar.</p>
+      </div>
+      <div class="service-card">
+        <h3>Automated Booking Calendar</h3>
+        <p>Customers self-book online. Confirmations fire immediately. No phone tag, no back-and-forth.</p>
+      </div>
+      <div class="service-card">
+        <h3>Lead Follow-Up Sequences</h3>
+        <p>Multi-step SMS and email sequences that follow up with every new lead automatically until they book.</p>
+      </div>
+      <div class="service-card">
+        <h3>Appointment Reminders</h3>
+        <p>Automatic 24-hour and 1-hour reminders via SMS and email. Fewer no-shows, fuller schedule.</p>
+      </div>
+      <div class="service-card">
+        <h3>Google Review Requests</h3>
+        <p>Automated review requests sent after every completed job. Build your rating without lifting a finger.</p>
+      </div>
+      <div class="service-card">
+        <h3>2-Way Text &amp; Email</h3>
+        <p>Manage all customer conversations — SMS, email, Facebook Messenger, web chat — in one inbox.</p>
+      </div>
+      <div class="service-card">
+        <h3>CRM &amp; Pipeline</h3>
+        <p>Track every lead and customer from first contact to booked job. Never lose a follow-up again.</p>
+      </div>
+      <div class="service-card">
+        <h3>Invoicing &amp; Payments</h3>
+        <p>Send invoices and collect payments by text. Get paid faster without chasing customers down.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing">
+    <div class="section-title">Plans &amp; Pricing</div>
+    <div class="plans-grid">
+
+      <!-- STANDARD -->
+      <div class="plan">
+        <div class="plan-header">
+          <div class="plan-name">Standard</div>
+          <div class="plan-tagline">Never Miss a Lead</div>
+        </div>
+        <div class="plan-price-box">
+          <div class="plan-price">$299<span style="font-size:9pt;font-weight:400">/mo</span></div>
+          <div class="plan-price-sub">or $3,000/year (save $588)</div>
+          <div class="plan-setup">+ $499 one-time setup fee</div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li>Missed Call Text Back</li>
+            <li>Booking Calendar</li>
+            <li>Appointment Confirmations</li>
+            <li>24hr &amp; 1hr Reminders</li>
+            <li>Lead Follow-Up Sequence</li>
+            <li>Review Request Automation</li>
+            <li>2-Way Text &amp; Email Inbox</li>
+            <li>GMB Messaging</li>
+            <li>Web Chat Widget</li>
+            <li>Facebook Messenger</li>
+            <li>Reputation Management</li>
+            <li>Text To Pay</li>
+            <li>Managed Setup &amp; Onboarding</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GROWTH -->
+      <div class="plan featured">
+        <div class="plan-header">
+          <div class="plan-name">Growth</div>
+          <div class="plan-tagline">Most Popular</div>
+        </div>
+        <div class="plan-price-box">
+          <div class="plan-price">$499<span style="font-size:9pt;font-weight:400">/mo</span></div>
+          <div class="plan-price-sub">or $4,500/year (save $1,188)</div>
+          <div class="plan-setup">+ $999 one-time setup fee</div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li>Everything in Standard</li>
+            <li class="inherited">AI Voice &amp; SMS Messaging</li>
+            <li class="inherited">Full CRM &amp; Pipeline</li>
+            <li class="inherited">Opportunities Tracking</li>
+            <li class="inherited">Email Marketing</li>
+            <li class="inherited">GMB Call Tracking</li>
+            <li class="inherited">Advanced Workflows</li>
+            <li class="inherited">Reporting Dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- REVENUE ENGINE -->
+      <div class="plan">
+        <div class="plan-header">
+          <div class="plan-name">Revenue Engine</div>
+          <div class="plan-tagline">Full Autopilot</div>
+        </div>
+        <div class="plan-price-box">
+          <div class="plan-price">$799<span style="font-size:9pt;font-weight:400">/mo</span></div>
+          <div class="plan-price-sub">or $7,500/year (save $2,088)</div>
+          <div class="plan-setup">+ $1,499 one-time setup fee</div>
+        </div>
+        <div class="plan-features">
+          <ul>
+            <li>Everything in Growth</li>
+            <li class="inherited">Social Planner &amp; Posting</li>
+            <li class="inherited">Invoicing &amp; Payments</li>
+            <li class="inherited">Form &amp; Survey Builder</li>
+            <li class="inherited">Funnels &amp; Websites</li>
+            <li class="inherited">Membership Portal</li>
+            <li class="inherited">SMS &amp; Email Templates</li>
+            <li class="inherited">Affiliate Manager</li>
+            <li class="inherited">Full Campaign &amp; Trigger Suite</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="addons">
+    <div class="section-title">Add-On Services</div>
+    <table class="addons-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="addon-name">Website Build</div></td>
+          <td><div class="addon-desc">Custom business website — mobile-optimized, fast-loading, conversion-focused, built on your domain</div></td>
+          <td><div class="addon-price">$800–$1,500 one-time</div></td>
+        </tr>
+        <tr>
+          <td><div class="addon-name">Social Media Management</div></td>
+          <td><div class="addon-desc">Monthly content creation and scheduled posting to Facebook, Instagram, and Google Business Profile</div></td>
+          <td><div class="addon-price">$300–$500/mo</div></td>
+        </tr>
+        <tr>
+          <td><div class="addon-name">Custom Workflow Build</div></td>
+          <td><div class="addon-desc">One-off automation for a specific business process — estimate follow-up, invoice reminders, re-engagement</div></td>
+          <td><div class="addon-price">From $300 one-time</div></td>
+        </tr>
+        <tr>
+          <td><div class="addon-name">Google &amp; Meta Ads Management</div></td>
+          <td><div class="addon-desc">Paid ad campaign setup and management for Google Search and Facebook/Instagram — ad spend billed separately</div></td>
+          <td><div class="addon-price">$500/mo + ad spend</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BOTTOM ROW -->
+  <div class="bottom-row">
+    <div class="why">
+      <div class="section-title">Why 1APP</div>
+      <ul>
+        <li>Built specifically for trades &amp; service businesses</li>
+        <li>Fully managed — we build it, you use it</li>
+        <li>No long-term contracts — cancel anytime</li>
+        <li>Canadian company — based in Peterborough, Ontario</li>
+        <li>Results visible within the first 30 days</li>
+        <li>Free demo — see it live before you commit</li>
+        <li>Ongoing support included with every plan</li>
+      </ul>
+    </div>
+    <div class="cta-box">
+      <h3>Book Your Free Demo</h3>
+      <p>We'll walk you through the full system live, show you exactly how it works for your type of business, and answer every question — no pressure, no obligation.</p>
+      <div class="cta-url">use1app.com</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div><strong>1APP Technologies Inc.</strong> — Peterborough, Ontario, Canada</div>
+    <div>All prices in CAD. Setup fee finalized after signup.</div>
+    <div><a href="https://use1app.com">use1app.com</a></div>
+  </div>
+
+</body>
+</html>

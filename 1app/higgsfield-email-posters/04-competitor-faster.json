@@ -1,0 +1,23 @@
+[
+  {
+    "created_at": "2026-08-11T23:02:06.822623Z",
+    "display_name": "GPT Image 2",
+    "id": "d3f963ff-8a29-4717-8414-b1a554e43db1",
+    "job_type": "gpt_image_2",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260811_230206_d3f963ff-8a29-4717-8414-b1a554e43db1_min.webp",
+    "params": {
+      "aspect_ratio": "3:4",
+      "height": 2336,
+      "medias": [],
+      "model": "videotape-alpha",
+      "prompt": "Create a finished vertical 3:4 B2B SaaS email advertising poster for 1APP. Dark navy, electric blue, white, high contrast, aggressive modern tech advertising, local business owner audience, smartphone CRM dashboard visuals, missed call notification, calendar booking, SMS automation, clean premium layout. Include the brand text 1APP at the top. Use only the provided poster text. Text must be large, minimal, crisp, spelled correctly. No fake logos, no watermarks, no random extra text. Exact poster text: 1APP. YOUR COMPETITOR ANSWERS FASTER. The first business to respond usually wins. Missed call text-back. Online booking. Automatic follow-up. START YOUR 30-DAY FREE TRIAL.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 1744
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260811_230206_d3f963ff-8a29-4717-8414-b1a554e43db1.png",
+    "status": "completed"
+  }
+]
