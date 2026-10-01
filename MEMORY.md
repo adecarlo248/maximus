@@ -356,3 +356,30 @@ Recommended starting point: Option 1 with 2-3 pilot reps ($200-500 setup + $50-1
 - | HVAC | 9PZ17iQFwEDlNdsYpSjr | ✅ Built | | Electrical | qnKlsusoBKTHqLYIpdDK | ✅ Built | | Landscaping | YJTZd59YCy0mHJih0K6j | ✅ Built | | General Contractor | Dmsp8q1GLGI9B32BzvO7 | ✅ Built | [score=0.890 recalls=0 avg=0.620 source=memory/2026-07-21.md:35-38]
 <!-- openclaw-memory-promotion:memory:memory/2026-07-21.md:15:15 -->
 - **GHL MCP Config:** [score=0.880 recalls=0 avg=0.620 source=memory/2026-07-21.md:15-15]
+
+## Promoted From Short-Term Memory (2026-08-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-30.md:1:6 -->
+- ## 1APP Website Update — 2026-06-30 - Copied Higgsfield preview site from https://preview--wild-reef-575.higgsfield.app/ into the use1app.com GitHub Pages repo and pushed to github.com/adecarlo248/1APP. - Restored previous site button/link targets: GHL free demo booking link, phone click-to-call, Justin/Tony email mailto links, privacy policy, and terms links. - Enlarged 1APP logo from h-9 to h-12 and added a runtime patch to preserve links/logo after React hydration. [score=0.905 recalls=7 avg=0.387 source=memory/2026-06-30.md:1-6]
+
+## Promoted From Short-Term Memory (2026-08-07)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-07-30.md:1:8 -->
+- # 2026-07-30 ## 1APP SEO Blog Cron - Published next 1APP blog calendar post: `1APP vs. Hiring a Receptionist: The Real Cost Comparison` at `/blog/1app-vs-receptionist-cost/`. - Updated `/blog/index.html` first card and `sitemap.xml` with `2026-07-30` lastmod. - Committed and pushed to GitHub repo `adecarlo248/1APP`: `87e6300 SEO blog: 1APP vs. Hiring a Receptionist (2026-07-30)`. - Mirrored post HTML and sitemap into OpenClaw workspace and wrote `use1app.com/last-blog-run.txt` success line. [score=0.917 recalls=7 avg=0.446 source=memory/2026-07-30.md:1-8]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-29.md:1:13 -->
+- # 2026-07-29 ## 1APP SEO Blog Cron - Published next 1APP blog calendar post: `Automated Follow Up for Lawn Care Business: Automate the Busy Season` at `/blog/ai-automation-lawn-care-business/`. - Updated `/blog/index.html` first card and `sitemap.xml` with `2026-07-29` lastmod. - Committed and pushed to GitHub repo `adecarlo248/1APP`: `4d3eecf SEO blog: Automated Follow Up for Lawn Care Business (2026-07-29)`. - Mirrored post HTML and sitemap into OpenClaw workspace and wrote `use1app.com/last-blog-run.txt` success line. ## 1APP Mobile App Store Setup - Tony received the D-U-N-S number and purchased Apple Developer enrollment. - Next step discussed: create/enroll a Google Play Console **Organization** developer account for the 1APP whitelabel Android app, using the D-U-N-S number and paying Google's one-time US$25 registration fee. - Tony signed up for both Google Play Console and Apple Developer for the 1APP whitelabel mobile app; Apple purchase/enrollment still pending verification. [score=0.908 recalls=6 avg=0.414 source=memory/2026-07-29.md:1-13]
+
+## Promoted From Short-Term Memory (2026-08-08)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-07-31.md:1:8 -->
+- # 2026-07-31 ## 1APP SEO Blog Cron - Published next 1APP blog calendar post: `The 5 Best AI Tools for Small Business in 2026` at `/blog/best-ai-tools-small-business-2026/`. - Updated `/blog/index.html` first card and `sitemap.xml` with `2026-07-31` lastmod. - Committed and pushed to GitHub repo `adecarlo248/1APP`: `8c34dd6 SEO blog: The 5 Best AI Tools for Small Business in 2026 (2026-07-31)`. - Mirrored post HTML and sitemap into OpenClaw workspace and wrote `use1app.com/last-blog-run.txt` success line. [score=0.889 recalls=6 avg=0.456 source=memory/2026-07-31.md:1-8]
+
+## Promoted From Short-Term Memory (2026-08-09)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-08-01.md:1:9 -->
+- # 2026-08-01 ## 1APP SEO Blog Cron - Blocked: checked `/home/maximus/.openclaw/workspace/campaigns/1app-blog-seo-system.md` against `/mnt/c/Users/tony/Desktop/claude-learning-lab/use1app.com/blog/`; all 17 calendar slugs already have directories, including the final listed post `/blog/gohighlevel-trades-businesses/`. - No new post was created, committed, pushed, mirrored, or marked SUCCESS because the calendar has no remaining unpublished directory target. - Watchdog recovery: found the 1APP blog status was BLOCKED because `/blog/ai-automation-small-business-canada/` existed as an empty directory but had no `index.html`; sitemap also lacked `2026-08-01`. - Published recovery post: `AI Automation for Small Business in Canada: What You Need to Know` at `/blog/ai-automation-small-business-canada/`. - Updated `/blog/index.html`, `sitemap.xml`, mirrored files to workspace cache, wrote SUCCESS status, and pushed commit `10a3c4b SEO blog: AI Automation for Small Business in Canada (2026-08-01)` to `adecarlo248/1APP`. [score=0.861 recalls=5 avg=0.444 source=memory/2026-08-01.md:1-9]
+
+## Promoted From Short-Term Memory (2026-08-10)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-26.md:1:6 -->
+- ## 1APP Website Legal Pages - Added `privacy-policy.html` and `terms-and-conditions.html` to the 1APP website, styled to match the existing site and linked from the footer. - Updated `sitemap.xml` to include both legal pages. - Pushed changes to GitHub repo `adecarlo248/1APP`, commit `a0104fd`. [score=0.859 recalls=5 avg=0.434 source=memory/2026-06-26.md:1-6]

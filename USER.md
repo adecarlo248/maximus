@@ -46,6 +46,7 @@ Tony is a Primerica life insurance and financial services rep in Canada, buildin
 - 10+ FNAs per week
 - RVP promotion as fast as possible
 - Build a team that duplicates his systems
+- Build and scale **1app** with Justin Roffey as a separate Ontario corporation/partnership: Tony owns setup, technology, implementation, and fulfillment; Justin owns sales/business development; target 100–200+ business clients using a branded GoHighLevel app model
 
 ## Primerica Language He Uses
 

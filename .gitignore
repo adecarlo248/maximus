@@ -1,0 +1,42 @@
+# Python virtualenvs (771MB — never commit)
+.venv/
+.venv-*/
+venv/
+venv-*/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# Nested git repos — each has its own remote and is already in sync there.
+# Committing them here would create broken gitlinks (there is no .gitmodules).
+1app/oneapp-quotes/
+higgsfield-oneapp-quotes/
+oneapp-clientflow/
+use1app.com/
+littlenestnaturals/
+tonysbusinesssolutions/
+tonys-business-solutions/
+
+# OpenClaw runtime state — regenerated, not work product
+memory/.dreams/
+.openclaw/workspace-state.json
+*.migrated.*
+
+# Scratch / transient
+tmp/
+video_frames/
+chroma_db/
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+.git-credentials
+
+# OS noise
+.DS_Store
+Thumbs.db
