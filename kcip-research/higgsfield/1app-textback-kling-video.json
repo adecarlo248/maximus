@@ -1,0 +1,37 @@
+[
+  {
+    "id": "7a538e16-3c80-4684-9313-2592c47040d0",
+    "status": "completed",
+    "display_name": "Kling v3.0",
+    "job_set_type": "kling3_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260728_173410_7a538e16-3c80-4684-9313-2592c47040d0.mp4",
+    "created_at": 1785260050.268484,
+    "params": {
+      "width": 720,
+      "height": 720,
+      "prompt": "Use the provided image as a locked advertising poster. Preserve the exact composition and all typography exactly as shown. Do not invent, rewrite, translate, replace, blur, distort, morph, or add any text. No new captions, no logos added, no UI changes. Create a polished 5-second promotional video with only subtle motion: gentle camera push-in, slight parallax on the electrician/background, soft glow sweep on the gold button, tiny notification card pop animation while keeping all text perfectly legible and unchanged. Professional clean social ad look. If text cannot be preserved, keep the image static instead of altering it.",
+      "medias": [
+        {
+          "data": {
+            "id": "fdba2fb7-e919-4c8c-85d4-3aa555b931f5",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/fdba2fb7-e919-4c8c-85d4-3aa555b931f5.png",
+            "type": "media_input"
+          },
+          "role": "start_image"
+        }
+      ],
+      "duration": 5,
+      "aspect_ratio": "1:1",
+      "multi_shots": false,
+      "multi_prompt": [],
+      "sound": "off",
+      "cfg_scale": 0.5,
+      "mode": "std",
+      "kling_elements": [],
+      "kling_element_ids": [],
+      "multi_shot_mode": "custom",
+      "reference_elements": [],
+      "enhance_prompt": false
+    }
+  }
+]

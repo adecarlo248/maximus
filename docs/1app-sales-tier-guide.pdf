@@ -1,0 +1,282 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 8529 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 750 Tm
+(1APP — Sales & Contracts Cheat Sheet) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Source: MEMORY.md#L84-L104) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Purpose: One-page guide for sales associates and contracts teams explaining what each Tier) Tj
+0 -14 Td
+(sells, who it's for, key benefits, pricing \(finalized\), onboarding checklist, contract) Tj
+0 -14 Td
+(essentials, upsell path, and quick scripts.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(OVERVIEW \(pricing [certain]\)) Tj
+0 -14 Td
+(- Tier 1 — "Never Miss a Lead" — $197/mo) Tj
+0 -14 Td
+(- Tier 2 — "Always Open" — $397/mo) Tj
+0 -14 Td
+(- Tier 3 — "Full Autopilot" — $597/mo) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(TIER 1 — Never Miss a Lead \($197/mo\)) Tj
+0 -14 Td
+(- Elevator: Stop losing leads from missed calls and slow follow-up.) Tj
+0 -14 Td
+(- What we deliver:) Tj
+0 -14 Td
+(  - Missed Call Text Back — automated 3-step SMS follow-up that re-engages missed callers) Tj
+0 -14 Td
+(  - Booking calendar + booking widget \(connect & basic calendar setup\)) Tj
+0 -14 Td
+(  - Confirmation + reminder sequence \(24hr and 1hr SMS/email reminders\)) Tj
+0 -14 Td
+(  - Basic reporting: bookings + SMS activity) Tj
+0 -14 Td
+(- Ideal client: Small local biz with high missed-call volume \(trades, service pros\)) Tj
+0 -14 Td
+(- Key benefit to sell: More booked appointments from leads you already pay to get.) Tj
+0 -14 Td
+(- Common objections & replies:) Tj
+0 -14 Td
+(  - "We already have someone answering": "This works 24/7 on missed calls and boosts) Tj
+0 -14 Td
+(bookings without adding headcount.") Tj
+0 -14 Td
+(  - "Not sure of ROI": "Typical clients see a measurable bump in booked estimates within) Tj
+0 -14 Td
+(30 days — we only charge $197/mo to capture that missed revenue.") Tj
+0 -14 Td
+(- Onboarding checklist \(sales -> ops handoff\):) Tj
+0 -14 Td
+(  1. Confirm phone number & calendar availability) Tj
+0 -14 Td
+(  2. Add client to sub-account and assign phone number) Tj
+0 -14 Td
+(  3. Configure 3-step SMS sequence and booking widget) Tj
+0 -14 Td
+(  4. Test missed-call flow and booking confirmation) Tj
+0 -14 Td
+(  5. Activate reporting and confirm first-week check-in) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(TIER 2 — Always Open \($397/mo\)) Tj
+0 -14 Td
+(- Elevator: All of Tier 1, plus a 24/7 AI voice receptionist that answers, qualifies, and) Tj
+0 -14 Td
+(books appointments.) Tj
+0 -14 Td
+(- What we deliver \(everything in Tier 1 plus\):) Tj
+0 -14 Td
+(  - AI Voice Agent \(24/7\) — answers calls, asks qualifying questions, books calendar slots) Tj
+0 -14 Td
+(  - Voice → calendar integration and lead handoff) Tj
+0 -14 Td
+(  - Improved call capture & qualification) Tj
+0 -14 Td
+(- Ideal client: Businesses that want live-call coverage without hiring staff \(higher call) Tj
+0 -14 Td
+(volume, value-per-lead > $40\)) Tj
+0 -14 Td
+(- Key benefit to sell: More qualified appointments and fewer missed revenue opportunities) Tj
+0 -14 Td
+(— works like hiring a 24/7 front desk at a fraction of the cost.) Tj
+0 -14 Td
+(- Upsell triggers from Tier 1: client mentions inbound calls outside business hours or) Tj
+0 -14 Td
+(staff burnout handling calls.) Tj
+0 -14 Td
+(- Onboarding checklist \(adds to Tier 1\):) Tj
+0 -14 Td
+(  1. Script & qualification questions with client) Tj
+0 -14 Td
+(  2. Voice agent persona selection + brief voice test) Tj
+0 -14 Td
+(  3. Map booking rules, service types, and call routing) Tj
+0 -14 Td
+(  4. Test live call flow with 3–5 calls during setup week) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(TIER 3 — Full Autopilot \($597/mo\)) Tj
+0 -14 Td
+(- Elevator: Everything in Tier 2 plus review automation, nurture sequences, and monthly) Tj
+0 -14 Td
+(performance reporting.) Tj
+0 -14 Td
+(- What we deliver \(everything in Tier 2 plus\):) Tj
+0 -14 Td
+(  - Review request automation \(reputation & Google reviews flow\)) Tj
+0 -14 Td
+(  - Lead nurture sequences \(48h follow-up, longer nurture for no-shows\)) Tj
+0 -14 Td
+(  - Monthly performance report with recommendations) Tj
+0 -14 Td
+(  - Priority support \(faster turnarounds for configuration changes\)) Tj
+0 -14 Td
+(- Ideal client: Businesses ready to convert repeat customers and scale lead conversion) Tj
+0 -14 Td
+(with automated reputation & nurture systems) Tj
+0 -14 Td
+(- Key benefit to sell: Automates the full lead → appointment → review lifecycle so growth) Tj
+0 -14 Td
+(compounds without extra staff.) Tj
+0 -14 Td
+(- Upsell path: Add social planner, website build, or ad management as separate packages.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(CONTRACT BASICS \(recommended default — please confirm\)) Tj
+0 -14 Td
+(- Billing: Monthly subscription billed in advance \(auto-renew\) — price per above.) Tj
+0 -14 Td
+(- Minimum term: Month-to-month with 30-day cancellation \(recommended; we can offer annual) Tj
+0 -14 Td
+(discount on request\).) Tj
+0 -14 Td
+(- Setup: One-time onboarding included in first month \(complex setups may carry a quoted) Tj
+0 -14 Td
+(setup fee\).) Tj
+0 -14 Td
+(- SLA / turnaround: Standard config within 3–7 business days; voice agent rollout and) Tj
+0 -14 Td
+(testing within 7–14 days depending on complexity.) Tj
+0 -14 Td
+(- Deliverables: Confirmed list of connected phone number, booking calendar, SMS sequences,) Tj
+0 -14 Td
+(voice agent script \(if Tier 2+\), and access to reporting.) Tj
+0 -14 Td
+(- Payment methods: Card on file; invoices on request.) Tj
+0 -14 Td
+(- Data & privacy: Client retains ownership of leads; we store call logs and SMS metadata) Tj
+0 -14 Td
+(for service delivery. \(Add a privacy/data clause in formal contract.\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(SIMPLE CONTRACT CLAUSES TO INCLUDE \(ops / legal can formalize\)) Tj
+0 -14 Td
+(- Service description: Summarize selected Tier and included features) Tj
+0 -14 Td
+(- Billing: monthly price, billing date, auto-renew, late fees) Tj
+0 -14 Td
+(- Term & termination: month-to-month, 30-day notice) Tj
+0 -14 Td
+(- Setup & scope changes: scope changes may require additional fees and a timeline) Tj
+0 -14 Td
+(- Support: standard vs priority \(Tier 3 gets priority\)) Tj
+0 -14 Td
+(- Liability & limitations: typical SaaS liability cap and data handling note) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(SELLING & ONBOARDING FLOW \(for sales associates\)) Tj
+0 -14 Td
+(1. Qualify call: Ask about missed call volume, average job value, current booking process,) Tj
+0 -14 Td
+(and priority hours.) Tj
+0 -14 Td
+(2. Recommend Tier: If high missed calls and no answer tech → Tier 1; if high inbound need) Tj
+0 -14 Td
+(or value-per-lead justifies automation → Tier 2; if they want reviews & automation → Tier) Tj
+0 -14 Td
+(3.) Tj
+0 -14 Td
+(3. Pitch hooks: "You stop losing money from missed calls", "This books more appointments) Tj
+0 -14 Td
+(without hiring", "We increase qualified leads and automate reviews".) Tj
+0 -14 Td
+(4. Close & contract: Send simple scope summary + signup link; collect card info and) Tj
+0 -14 Td
+(desired go-live date.) Tj
+0 -14 Td
+(5. Handoff: Fill the onboarding checklist and create a support ticket with the ops team.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(QUICK SCRIPT \(30–60s\)) Tj
+0 -14 Td
+(- "We fix missed revenue: for $197/month we automate missed-call follow-up and book) Tj
+0 -14 Td
+(appointments for you. If you want 24/7 call answering that qualifies and books for you,) Tj
+0 -14 Td
+(the next step up is $397/month. The full package at $597/month adds review requests and) Tj
+0 -14 Td
+(automated nurture so bookings and reputation grow without you needing extra staff. Which) Tj
+0 -14 Td
+(one sounds like it fits the problem you're trying to solve?") Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(FAQ \(sales-friendly\)) Tj
+0 -14 Td
+(- Q: How fast do we see bookings? A: Many clients see increased booked appointments in 2–4) Tj
+0 -14 Td
+(weeks after activation.) Tj
+0 -14 Td
+(- Q: Is there a long-term contract? A: Default is month-to-month with 30-day cancellation) Tj
+0 -14 Td
+(— we can offer annual discounts if they want to lock in savings.) Tj
+0 -14 Td
+(- Q: Do we build websites? A: Website builds are a separate one-time service — mention as) Tj
+0 -14 Td
+(an upsell.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(NEXT STEPS / NOTES) Tj
+0 -14 Td
+(- This is a draft ready for ops/legal to convert into formal contract language. Confirm) Tj
+0 -14 Td
+(desired setup fee and minimum term and I’ll update the legal-ready contract clause.) Tj
+0 -14 Td
+(- Saved to: docs/1app-sales-tier-guide.md) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+(If you want this exported as a customer-facing sheet or a condensed one-page sell-sheet) Tj
+0 -14 Td
+(for WhatsApp, tell me which format and I’ll generate it.) Tj
+
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+8892
+%%EOF

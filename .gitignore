@@ -40,3 +40,6 @@ chroma_db/
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Accidental shell-redirect artifacts from GHL build scripts
+2026-*T*Z

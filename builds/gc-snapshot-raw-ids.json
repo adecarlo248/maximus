@@ -1,0 +1,291 @@
+{
+  "custom_fields": [
+    {
+      "name": "Permit Number",
+      "type": "TEXT",
+      "id": "rMuoULwQFrekzuFrrLIr"
+    },
+    {
+      "name": "Architect Name",
+      "type": "TEXT",
+      "id": "nU7NvWSZQ04k1eD2GI03"
+    },
+    {
+      "name": "Estimate Amount",
+      "type": "FLOAT",
+      "id": "BskoJWAYJqmW0GNUtXPG"
+    },
+    {
+      "name": "Contract Amount",
+      "type": "FLOAT",
+      "id": "y0Pe0X6DG72dAr0KYzOE"
+    },
+    {
+      "name": "Deposit Amount",
+      "type": "FLOAT",
+      "id": "OMghGXBl5IMdsjvLKR76"
+    },
+    {
+      "name": "Current Draw/Milestone",
+      "type": "TEXT",
+      "id": "YS3wqN8Eh4briTAMITCu"
+    },
+    {
+      "name": "Project Manager Assigned",
+      "type": "TEXT",
+      "id": "kDfHlYFcdsKtV81j7Vio"
+    },
+    {
+      "name": "Site Foreman",
+      "type": "TEXT",
+      "id": "jN5fsvXalE3WLwxG9Ed2"
+    },
+    {
+      "name": "Project Start Date",
+      "type": "DATE",
+      "id": "sKCLfA0RVWgZVOUMyAPQ"
+    },
+    {
+      "name": "Project End Date",
+      "type": "DATE",
+      "id": "bHNUOxlGwHJvNBGmVuSx"
+    },
+    {
+      "name": "Referral Source Name",
+      "type": "TEXT",
+      "id": "mMXT6CLEiyy4FiQ7BX9a"
+    }
+  ],
+  "pipelines": [
+    {
+      "name": "GC - Residential Remodel/Addition",
+      "id": "ZnLBq9Px5m0S9IEMf9F5",
+      "stages": {
+        "New Lead": "8c0a94ed-5e2b-4a67-a6b4-4c0aa122271d",
+        "Initial Consult Scheduled": "96da601f-52aa-4e12-88f7-577c0a200033",
+        "Site Visit Complete": "c6f0062a-ce4e-405c-820a-2b1f0aab363d",
+        "Scope Development": "3a385719-3f2f-4678-b455-32f7baa865bd",
+        "Estimate Sent": "81831a2a-98ce-495d-b2a3-55f9de0375cb",
+        "Follow-Up Active": "922d2ae3-f611-4cdf-bb8e-c1958991a7f4",
+        "Contract Signed / Deposit Paid": "fa5aea92-90e3-407f-b2cd-7f61df503d80",
+        "Permit Applied": "80a8fa54-1ef9-4fa4-8129-142ea3d7f3d8",
+        "Permit Approved": "8c34397c-a06d-4203-9c2e-cbda4fe880eb",
+        "Construction Started": "ea47a0d7-3621-4e17-bff1-bce2d8715f51",
+        "Framing Complete": "53f20922-d9ee-4639-8ab6-1b9a05207496",
+        "Rough-Ins Complete": "0faf09dc-2faa-4e0e-a283-b4c6633a36a5",
+        "Drywall/Finishes": "ede90ad9-5f2b-4819-8dfd-2cb70f303081",
+        "Punch List": "3babe077-9bfd-4e09-9533-9bdea4d9fb8e",
+        "Substantial Completion": "60e90050-2be1-4641-be3c-8dca0527ee98",
+        "Final Inspection Passed": "27f8a958-02b7-4dc3-9c7a-0a8e8b3363bb",
+        "Final Invoice": "a7d071eb-ec42-430c-b1c1-cc9546bf7426",
+        "Paid in Full": "ca576a98-2f58-4232-b59e-8bb6632bb566",
+        "Review + Referral": "f1dc6845-4e36-422f-956f-6194d1c5cec2"
+      }
+    },
+    {
+      "name": "GC - Custom New Build",
+      "id": "WIOR6uU1LrwGhqJCIjFO",
+      "stages": {
+        "New Inquiry": "2d16d998-2627-4db5-a5d8-8f0ccf4a1b3e",
+        "Discovery Meeting": "8c341d24-aa22-4d1d-9b51-b8c2b71b109b",
+        "Design Phase": "860c91c9-5fe2-4ad2-88da-15a3bcc39cc0",
+        "Quote Submitted": "74e667c6-92e4-40c1-b389-799195f3d7a4",
+        "Contract Signed / Deposit": "cb4cc801-e5ec-44f9-9194-fbe84321a1c8",
+        "Permit Applied": "451a7301-2b20-486b-91b0-583d66b3842f",
+        "Permit Approved": "5222f714-cf0c-489c-96d9-9233739bd1cb",
+        "Site Prep": "bd48e984-0df8-4afe-87d0-c914aba6350f",
+        "Foundation": "4f8169ec-711f-49fc-b6d8-e56095c27cc4",
+        "Framing": "5e0d8e4d-9709-4328-82db-683cb01e78c1",
+        "Rough-Ins": "86a35b9a-b0f0-4e6c-87aa-fdad8b754df8",
+        "Insulation/Drywall": "edc6f6e1-bd67-4051-9f3b-5f06fb58b7a8",
+        "Finishes": "ff05410b-772d-473c-9e26-b80d6c1f589d",
+        "Exterior Complete": "95f91346-1771-487d-a35d-eba4070c2dbe",
+        "Final Inspection": "f814cfc4-9d81-437a-a4b0-a4518637e826",
+        "Certificate of Occupancy": "fa1f3fa5-5da1-49c3-b622-0f078a9055f2",
+        "Final Invoice": "b95353ce-b1d0-43f8-a6dc-fcfba491f900",
+        "Paid": "57dc4486-2803-414b-a5ec-5e7425491085",
+        "Review + Referral": "a49cbc60-28ec-4eaa-8180-aa3bb6c725c7"
+      }
+    },
+    {
+      "name": "GC - Commercial / Tenant Improvement",
+      "id": "HrFIAtLtJFCm9tD2AFXv",
+      "stages": {
+        "New Prospect": "dec89845-255b-4a0b-a430-75ab907d713e",
+        "RFQ/RFP Received": "08c1e3b4-a323-4d8a-ba24-ef07640f44d7",
+        "Site Walk": "25074d0f-299b-4831-84b8-20f1bf9ddd3c",
+        "Proposal Submitted": "84ab8652-545a-4bb8-b719-70bc6fdbd01d",
+        "Contract Awarded": "c2b0ad12-e2e2-4eae-ac15-4a51b8c8969c",
+        "Permit Applied": "ada2494b-83b4-4030-851a-e1a9b15f5067",
+        "Mobilization": "c515c70b-17e3-45b6-800c-dfc4aa9233d8",
+        "Construction Phase": "3cc21066-bbb5-41e3-9b5b-30683271b479",
+        "Inspections": "566925d2-ac10-4c2c-9c98-60a91a6ed851",
+        "Substantial Completion": "31170510-a7b9-4b6f-b0cb-ed5edc7cd8cd",
+        "Deficiency List": "5674abec-b114-400e-8870-62653b5d0f82",
+        "Final Acceptance": "f846886b-b13d-46d0-824a-99a4427f3d59",
+        "Invoice Sent": "198ab373-fba7-4a70-8c86-5097ad5d1a07",
+        "Paid": "09ea57c1-72c6-4986-84fe-62f80346f870",
+        "Warranty Period": "1a87510e-0dee-4cd6-9b29-b0582aa2ab0d"
+      }
+    },
+    {
+      "name": "GC - Lead Triage",
+      "id": "UAnCMs7gda84kSJHqGwr",
+      "stages": {
+        "New Lead": "b6670913-78c5-4b6a-8ac3-956db68b6f07",
+        "Qualified": "b5d01fe5-2626-4b6e-b7a1-a5c13e907322",
+        "Not Qualified - Nurture": "4261a08a-a02a-4ea9-9555-6202622bd1bd",
+        "Referred Out": "c93b83f4-d6d4-47f7-8954-59034764a509",
+        "Lost": "33a50f11-24fc-491d-b5d0-622bbb100aa8"
+      }
+    }
+  ],
+  "calendars": [],
+  "tags": [
+    {
+      "name": "new-lead",
+      "id": "uvRHFXOXEk6MeCQMMelY"
+    },
+    {
+      "name": "residential-remodel",
+      "id": "dxZ34YmJXylSONPoWvJU"
+    },
+    {
+      "name": "home-addition",
+      "id": "9o935VW6Nqp2M4kiO8pK"
+    },
+    {
+      "name": "new-build",
+      "id": "6SUyXKbWArJ5ZbSEKYVF"
+    },
+    {
+      "name": "basement-finish",
+      "id": "xKxEbrPB6f1iUz98udNR"
+    },
+    {
+      "name": "kitchen-reno",
+      "id": "4kjyI7PJDzcRvkgeTeXY"
+    },
+    {
+      "name": "bathroom-reno",
+      "id": "qtN3lAX2ezhyyMAlztD1"
+    },
+    {
+      "name": "commercial-ti",
+      "id": "Yetu8DZuREeZFZYvFQR2"
+    },
+    {
+      "name": "exterior-reno",
+      "id": "PZipSQFFeqIsS5WRNerA"
+    },
+    {
+      "name": "permit-required",
+      "id": "OsIqGnLZXEaKWWOKL1GQ"
+    },
+    {
+      "name": "permit-pending",
+      "id": "9az7ulXC5ZRHzBNCweTe"
+    },
+    {
+      "name": "permit-approved",
+      "id": "Yo0wmy5CAM3pWYESZG2E"
+    },
+    {
+      "name": "architect-involved",
+      "id": "XavkkuEGLxRExz6IYiE6"
+    },
+    {
+      "name": "estimate-sent",
+      "id": "z7Z1Fpbv87JXbIbqS3cS"
+    },
+    {
+      "name": "deposit-paid",
+      "id": "8gfMWRkl1fkLEOZLMSDt"
+    },
+    {
+      "name": "contract-signed",
+      "id": "4rtEXTmgzMPKVLzB6Z6J"
+    },
+    {
+      "name": "construction-active",
+      "id": "Wvzj3iMvsl1oKcnI7uZ9"
+    },
+    {
+      "name": "punch-list",
+      "id": "ygAVczEcwvGSjhiKkkAj"
+    },
+    {
+      "name": "job-complete",
+      "id": "BAnrC3jwTSWeUkpAl99Y"
+    },
+    {
+      "name": "review-requested",
+      "id": "iNJp2LXNZrY8fS3I89lN"
+    },
+    {
+      "name": "review-received",
+      "id": "PShyoRXKIwCpFAr0v0sk"
+    },
+    {
+      "name": "referral",
+      "id": "4vX7Ixh8T2vm9QqRshWR"
+    },
+    {
+      "name": "referral-source",
+      "id": "I4diFGSziSNVpYbzeK9w"
+    },
+    {
+      "name": "cold-lead",
+      "id": "q0etWQp7pvtKpn4vyq3B"
+    },
+    {
+      "name": "no-show",
+      "id": "8ZpHUJgW38nwX5uNaw2q"
+    },
+    {
+      "name": "google-lead",
+      "id": "tWiRw1iAiMhwUaPjNsR1"
+    },
+    {
+      "name": "houzz-lead",
+      "id": "0ze2v8nPCgh3XBReXBnN"
+    },
+    {
+      "name": "real-estate-agent",
+      "id": "JUBDfg1EHhjOHe2Faq8k"
+    },
+    {
+      "name": "repeat-client",
+      "id": "k3TwWkzRhu8RSht7ZoEq"
+    },
+    {
+      "name": "high-value-lead",
+      "id": "070a95DnTf7dcPqfihUv"
+    },
+    {
+      "name": "change-order-pending",
+      "id": "yt8r5CtF4NIy2jfMrNRw"
+    },
+    {
+      "name": "financing-needed",
+      "id": "VPzkg8khMiVtiw4k41Ee"
+    }
+  ],
+  "errors": [
+    "Custom field 'Lead Source' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Project Type' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Project Category' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Project Budget' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Project Timeline' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Permit Required' \u2192 400: {\"message\":\"Either options or picklistOptionsImage should exists and should not be empty\",\"error\":\"Bad Request\",\"statusCode\":400}",
+    "Custom field 'Permit Status' \u2192 422: {\"message\":[\"dataType must be one of the following values: TEXT, LARGE_TEXT, NUMERICAL, PHONE, MONETORY, CHECKBOX, SINGLE_OPTIONS, MULTIPLE_OPTIONS, FLOAT, TIME, DATE, TEXTBOX_LIST, FILE_UPLOAD, SIGNA",
+    "Custom field 'Architect/Designer Involved' \u2192 400: {\"message\":\"Either options or picklistOptionsImage should exists and should not be empty\",\"error\":\"Bad Request\",\"statusCode\":400}",
+    "Custom field 'Deposit Paid' \u2192 400: {\"message\":\"Either options or picklistOptionsImage should exists and should not be empty\",\"error\":\"Bad Request\",\"statusCode\":400}",
+    "Custom field 'Review Requested' \u2192 400: {\"message\":\"Either options or picklistOptionsImage should exists and should not be empty\",\"error\":\"Bad Request\",\"statusCode\":400}",
+    "Custom field 'Review Received' \u2192 400: {\"message\":\"Either options or picklistOptionsImage should exists and should not be empty\",\"error\":\"Bad Request\",\"statusCode\":400}",
+    "Calendar 'Initial Consultation - GC' \u2192 422: {\"message\":[\"openHours.0.must be a valid day of week\"],\"error\":\"Unprocessable Entity\",\"statusCode\":422,\"traceId\":\"aa18cfe8-de24-4940-8641-f8d58025daf8\"}",
+    "Calendar 'Site Visit / Assessment' \u2192 422: {\"message\":[\"openHours.0.must be a valid day of week\"],\"error\":\"Unprocessable Entity\",\"statusCode\":422,\"traceId\":\"f9000d42-764c-4c5f-822b-99a1012feb83\"}",
+    "Calendar 'Design Review Meeting' \u2192 422: {\"message\":[\"openHours.0.must be a valid day of week\"],\"error\":\"Unprocessable Entity\",\"statusCode\":422,\"traceId\":\"9b7a4be2-8463-495c-ada5-968c828de450\"}",
+    "Calendar 'Commercial Site Walk' \u2192 422: {\"message\":[\"openHours.0.must be a valid day of week\"],\"error\":\"Unprocessable Entity\",\"statusCode\":422,\"traceId\":\"bc8fa633-2efa-46c5-84d4-defd92055018\"}"
+  ]
+}

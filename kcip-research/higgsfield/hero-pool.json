@@ -1,0 +1,26 @@
+{
+  "id": "52b2e533-3d45-4ed4-922f-6916ade50122",
+  "status": "completed",
+  "display_name": "GPT Image 2",
+  "job_set_type": "gpt_image_2",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3Dr1Dl2FjX7WHiBrAdENyFDrig5/hf_20260728_150709_52b2e533-3d45-4ed4-922f-6916ade50122.png",
+  "created_at": 1785251229.02113,
+  "params": {
+    "width": 2688,
+    "height": 1520,
+    "prompt": "Premium cinematic brochure background for a Canadian custom inground pool and landscaping company. Luxury backyard pool at golden hour, modern stone patio, warm cottage country atmosphere, subtle blue and gold highlights, high-end local service business aesthetic, empty space for text overlay, no people, no text, no logos, no signs.",
+    "medias": [],
+    "aspect_ratio": "16:9",
+    "quality": "high",
+    "resolution": "2k",
+    "model": "videotape-alpha",
+    "reference_elements": []
+  }
+}
+,
+      "resolution": "2k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

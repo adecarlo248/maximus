@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Hub Sauce Co — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">HUB<span>SAUCE</span></div>
+    <nav>
+      <button id="view-menu" class="btn ghost">Menu</button>
+      <button id="view-order" class="btn">Order Now</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bold flavours. Fast ordering.</h1>
+      <p class="tag">The Hub Sauce Co — handcrafted hot sauces & condiments.</p>
+      <button id="start-order" class="btn neon">Build your order</button>
+    </section>
+
+    <section class="menu grid" id="menu">
+      <!-- products inserted by JS -->
+    </section>
+
+    <aside class="cart" id="cart">
+      <h3>Your Order</h3>
+      <div id="cart-items" class="cart-items">Empty — add something spicy 🔥</div>
+      <div class="cart-footer">
+        <div class="total">Total: $<span id="total">0.00</span></div>
+        <button id="checkout" class="btn full">Checkout</button>
+      </div>
+    </aside>
+  </main>
+
+  <div class="modal" id="checkout-modal" aria-hidden="true">
+    <div class="modal-body">
+      <button class="close" id="close-modal">✕</button>
+      <h2>Checkout — quick & clean</h2>
+      <form id="checkout-form">
+        <label>Full name<input name="name" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Phone (optional)<input name="phone" type="tel"></label>
+        <label>Notes / Delivery instructions<textarea name="notes"></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn neon full">Place order</button>
+        </div>
+      </form>
+      <div id="order-confirm" class="hidden">
+        <h3>Order received ✨</h3>
+        <p id="order-summary"></p>
+        <button id="new-order" class="btn">New order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

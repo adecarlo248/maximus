@@ -1,0 +1,832 @@
+[
+  {
+    "category": "Car Dealers",
+    "path": "/directory/cartruck-dealers",
+    "url": "https://www.thecbrb.ca/directory/cartruck-dealers"
+  },
+  {
+    "category": "Cleaning Services",
+    "path": "/directory/cleaning-services",
+    "url": "https://www.thecbrb.ca/directory/cleaning-services"
+  },
+  {
+    "category": "General Contractors",
+    "path": "/directory/general-contractors",
+    "url": "https://www.thecbrb.ca/directory/general-contractors"
+  },
+  {
+    "category": "Health Services & Wellness Centres",
+    "path": "/directory/health-services-wellness-centres",
+    "url": "https://www.thecbrb.ca/directory/health-services-wellness-centres"
+  },
+  {
+    "category": "Realtors",
+    "path": "/directory/realtors",
+    "url": "https://www.thecbrb.ca/directory/realtors"
+  },
+  {
+    "category": "Restaurants",
+    "path": "/directory/restaurants",
+    "url": "https://www.thecbrb.ca/directory/restaurants"
+  },
+  {
+    "category": "Schools",
+    "path": "/directory/schools",
+    "url": "https://www.thecbrb.ca/directory/schools"
+  },
+  {
+    "category": "Accommodation Services",
+    "path": "/directory/accommodation-services",
+    "url": "https://www.thecbrb.ca/directory/accommodation-services"
+  },
+  {
+    "category": "Accountants",
+    "path": "/directory/accountants",
+    "url": "https://www.thecbrb.ca/directory/accountants"
+  },
+  {
+    "category": "Acupuncture Clinics",
+    "path": "/directory/acupuncture-clinic",
+    "url": "https://www.thecbrb.ca/directory/acupuncture-clinic"
+  },
+  {
+    "category": "Agriculture and Farming Services",
+    "path": "/directory/agriculture-and-farming-services",
+    "url": "https://www.thecbrb.ca/directory/agriculture-and-farming-services"
+  },
+  {
+    "category": "Animal/Pest Control Services",
+    "path": "/directory/animalpest-control-services",
+    "url": "https://www.thecbrb.ca/directory/animalpest-control-services"
+  },
+  {
+    "category": "Appliance Stores",
+    "path": "/directory/appliance-stores",
+    "url": "https://www.thecbrb.ca/directory/appliance-stores"
+  },
+  {
+    "category": "Architectural Services",
+    "path": "/directory/architectural-services",
+    "url": "https://www.thecbrb.ca/directory/architectural-services"
+  },
+  {
+    "category": "Arts/Crafts Studios",
+    "path": "/directory/artscrafts-studios",
+    "url": "https://www.thecbrb.ca/directory/artscrafts-studios"
+  },
+  {
+    "category": "Art Galleries/Schools",
+    "path": "/directory/art-galleriesschools",
+    "url": "https://www.thecbrb.ca/directory/art-galleriesschools"
+  },
+  {
+    "category": "Audio/Visual Retail Stores",
+    "path": "/directory/audiovisual-retail-stores",
+    "url": "https://www.thecbrb.ca/directory/audiovisual-retail-stores"
+  },
+  {
+    "category": "Audiologists/Hearing Clinics",
+    "path": "/directory/audiologistshearing-clinics",
+    "url": "https://www.thecbrb.ca/directory/audiologistshearing-clinics"
+  },
+  {
+    "category": "Auto Body/Repair Shops",
+    "path": "/directory/auto-bodyrepair-shop",
+    "url": "https://www.thecbrb.ca/directory/auto-bodyrepair-shop"
+  },
+  {
+    "category": "Automotive Products Suppliers",
+    "path": "/directory/automotive-products-suppliers",
+    "url": "https://www.thecbrb.ca/directory/automotive-products-suppliers"
+  },
+  {
+    "category": "Auto Warranty/Insurance Companies",
+    "path": "/directory/auto-warrantyinsurance-companies",
+    "url": "https://www.thecbrb.ca/directory/auto-warrantyinsurance-companies"
+  },
+  {
+    "category": "Aviation Services",
+    "path": "/directory/aviation-services",
+    "url": "https://www.thecbrb.ca/directory/aviation-services"
+  },
+  {
+    "category": "B2B Services",
+    "path": "/directory/b2b-services",
+    "url": "https://www.thecbrb.ca/directory/b2b-services"
+  },
+  {
+    "category": "Bakeries",
+    "path": "/directory/bakeries",
+    "url": "https://www.thecbrb.ca/directory/bakeries"
+  },
+  {
+    "category": "Balloon Stores",
+    "path": "/directory/balloon-stores",
+    "url": "https://www.thecbrb.ca/directory/balloon-stores"
+  },
+  {
+    "category": "Beauty Salons & Cosmetic Stores",
+    "path": "/directory/beauty-salons-cosmetic-stores",
+    "url": "https://www.thecbrb.ca/directory/beauty-salons-cosmetic-stores"
+  },
+  {
+    "category": "Bed and Breakfasts",
+    "path": "/directory/bed-and-breakfasts",
+    "url": "https://www.thecbrb.ca/directory/bed-and-breakfasts"
+  },
+  {
+    "category": "Bicycle/Scooter Shops",
+    "path": "/directory/bicyclescooter-shops",
+    "url": "https://www.thecbrb.ca/directory/bicyclescooter-shops"
+  },
+  {
+    "category": "Blinds Shop/Upholstery Services",
+    "path": "/directory/blinds-shopupholstery-services",
+    "url": "https://www.thecbrb.ca/directory/blinds-shopupholstery-services"
+  },
+  {
+    "category": "Book Stores",
+    "path": "/directory/book-stores",
+    "url": "https://www.thecbrb.ca/directory/book-stores"
+  },
+  {
+    "category": "Business Development Services",
+    "path": "/directory/business-development-services",
+    "url": "https://www.thecbrb.ca/directory/business-development-services"
+  },
+  {
+    "category": "Butcher Shops",
+    "path": "/directory/butcher-shops",
+    "url": "https://www.thecbrb.ca/directory/butcher-shops"
+  },
+  {
+    "category": "Breweries/Wineries",
+    "path": "/directory/brewerieswineries",
+    "url": "https://www.thecbrb.ca/directory/brewerieswineries"
+  },
+  {
+    "category": "Call Centers",
+    "path": "/directory/call-centers",
+    "url": "https://www.thecbrb.ca/directory/call-centers"
+  },
+  {
+    "category": "Candy Stores",
+    "path": "/directory/candy-stores",
+    "url": "https://www.thecbrb.ca/directory/candy-stores"
+  },
+  {
+    "category": "Campgrounds",
+    "path": "/directory/campgrounds",
+    "url": "https://www.thecbrb.ca/directory/campgrounds"
+  },
+  {
+    "category": "Candle Stores",
+    "path": "/directory/candle-stores",
+    "url": "https://www.thecbrb.ca/directory/candle-stores"
+  },
+  {
+    "category": "Cannabis Stores",
+    "path": "/directory/cannabis-stores",
+    "url": "https://www.thecbrb.ca/directory/cannabis-stores"
+  },
+  {
+    "category": "Car Detailing Services",
+    "path": "/directory/car-detailing-services",
+    "url": "https://www.thecbrb.ca/directory/car-detailing-services"
+  },
+  {
+    "category": "Car Rental Agencies",
+    "path": "/directory/car-rental-agencies",
+    "url": "https://www.thecbrb.ca/directory/car-rental-agencies"
+  },
+  {
+    "category": "Caterers",
+    "path": "/directory/caterers",
+    "url": "https://www.thecbrb.ca/directory/caterers"
+  },
+  {
+    "category": "Cemeteries",
+    "path": "/directory/cemeteries",
+    "url": "https://www.thecbrb.ca/directory/cemeteries"
+  },
+  {
+    "category": "Charities",
+    "path": "/directory/charities",
+    "url": "https://www.thecbrb.ca/directory/charities"
+  },
+  {
+    "category": "Chiropractors",
+    "path": "/directory/chiropractors",
+    "url": "https://www.thecbrb.ca/directory/chiropractors"
+  },
+  {
+    "category": "Clothing Stores",
+    "path": "/directory/clothing-stores",
+    "url": "https://www.thecbrb.ca/directory/clothing-stores"
+  },
+  {
+    "category": "Coaching Services",
+    "path": "/directory/coaching-services",
+    "url": "https://www.thecbrb.ca/directory/coaching-services"
+  },
+  {
+    "category": "Computer Services/Phone Repair",
+    "path": "/directory/computer-servicesphone-repair",
+    "url": "https://www.thecbrb.ca/directory/computer-servicesphone-repair"
+  },
+  {
+    "category": "Convention Centres",
+    "path": "/directory/convention-centres",
+    "url": "https://www.thecbrb.ca/directory/convention-centres"
+  },
+  {
+    "category": "Cottage Rentals",
+    "path": "/directory/cottage-rentals",
+    "url": "https://www.thecbrb.ca/directory/cottage-rentals"
+  },
+  {
+    "category": "Consultants",
+    "path": "/directory/consultants",
+    "url": "https://www.thecbrb.ca/directory/consultants"
+  },
+  {
+    "category": "Cremation Services",
+    "path": "/directory/cremation-services",
+    "url": "https://www.thecbrb.ca/directory/cremation-services"
+  },
+  {
+    "category": "Daycare Centres",
+    "path": "/directory/daycare-centres",
+    "url": "https://www.thecbrb.ca/directory/daycare-centres"
+  },
+  {
+    "category": "Dance Schools",
+    "path": "/directory/dance-schools",
+    "url": "https://www.thecbrb.ca/directory/dance-schools"
+  },
+  {
+    "category": "Delivery Services",
+    "path": "/directory/delivery-services",
+    "url": "https://www.thecbrb.ca/directory/delivery-services"
+  },
+  {
+    "category": "Dental Clinics",
+    "path": "/directory/dental-clinics",
+    "url": "https://www.thecbrb.ca/directory/dental-clinics"
+  },
+  {
+    "category": "Distribution Services",
+    "path": "/directory/distribution-services",
+    "url": "https://www.thecbrb.ca/directory/distribution-services"
+  },
+  {
+    "category": "Driving Schools",
+    "path": "/directory/driving-schools",
+    "url": "https://www.thecbrb.ca/directory/driving-schools"
+  },
+  {
+    "category": "DJ Services",
+    "path": "/directory/dj-services",
+    "url": "https://www.thecbrb.ca/directory/dj-services"
+  },
+  {
+    "category": "E-Commerce Services",
+    "path": "/directory/e-commerce-services",
+    "url": "https://www.thecbrb.ca/directory/e-commerce-services"
+  },
+  {
+    "category": "Electricians",
+    "path": "/directory/electricians",
+    "url": "https://www.thecbrb.ca/directory/electricians"
+  },
+  {
+    "category": "Engraving Services",
+    "path": "/directory/engraving-services",
+    "url": "https://www.thecbrb.ca/directory/engraving-services"
+  },
+  {
+    "category": "Entertainment Stores",
+    "path": "/directory/entertainment-stores",
+    "url": "https://www.thecbrb.ca/directory/entertainment-stores"
+  },
+  {
+    "category": "Escape Rooms",
+    "path": "/directory/escape-rooms",
+    "url": "https://www.thecbrb.ca/directory/escape-rooms"
+  },
+  {
+    "category": "Equestrian Facilities",
+    "path": "/directory/equestrians",
+    "url": "https://www.thecbrb.ca/directory/equestrians"
+  },
+  {
+    "category": "Event Planners",
+    "path": "/directory/event-planners",
+    "url": "https://www.thecbrb.ca/directory/event-planners"
+  },
+  {
+    "category": "Excavation Contractors",
+    "path": "/directory/excavation-contractors",
+    "url": "https://www.thecbrb.ca/directory/excavation-contractors"
+  },
+  {
+    "category": "Family Experiences",
+    "path": "/directory/family-experiences",
+    "url": "https://www.thecbrb.ca/directory/family-experiences"
+  },
+  {
+    "category": "Fashion Designers",
+    "path": "/directory/fashion-designers",
+    "url": "https://www.thecbrb.ca/directory/fashion-designers"
+  },
+  {
+    "category": "Financial Services Providers",
+    "path": "/directory/financial-services-providers",
+    "url": "https://www.thecbrb.ca/directory/financial-services-providers"
+  },
+  {
+    "category": "Fingerprinting Services",
+    "path": "/directory/fingerprinting-services",
+    "url": "https://www.thecbrb.ca/directory/fingerprinting-services"
+  },
+  {
+    "category": "Film/TV Studios",
+    "path": "/directory/television-and-radio-broadcast-and-production-services",
+    "url": "https://www.thecbrb.ca/directory/television-and-radio-broadcast-and-production-services"
+  },
+  {
+    "category": "Fireplace Stores",
+    "path": "/directory/fireplace-stores",
+    "url": "https://www.thecbrb.ca/directory/fireplace-stores"
+  },
+  {
+    "category": "Flea Markets",
+    "path": "/directory/flea-markets",
+    "url": "https://www.thecbrb.ca/directory/flea-markets"
+  },
+  {
+    "category": "Florist/Plant Nurseries",
+    "path": "/directory/floristplant-nurseries",
+    "url": "https://www.thecbrb.ca/directory/floristplant-nurseries"
+  },
+  {
+    "category": "Food Manufacturers/Markets",
+    "path": "/directory/food-manufacturersmarkets",
+    "url": "https://www.thecbrb.ca/directory/food-manufacturersmarkets"
+  },
+  {
+    "category": "Freight & Logistics Services",
+    "path": "/directory/freight-logistics-services",
+    "url": "https://www.thecbrb.ca/directory/freight-logistics-services"
+  },
+  {
+    "category": "Funeral Homes",
+    "path": "/directory/funeral-homes",
+    "url": "https://www.thecbrb.ca/directory/funeral-homes"
+  },
+  {
+    "category": "Furniture Repair Shops & Stores",
+    "path": "/directory/furniture-repair-shops-stores",
+    "url": "https://www.thecbrb.ca/directory/furniture-repair-shops-stores"
+  },
+  {
+    "category": "Game & Entertainment Centres",
+    "path": "/directory/game-entertainment-centres",
+    "url": "https://www.thecbrb.ca/directory/game-entertainment-centres"
+  },
+  {
+    "category": "Garden Centers",
+    "path": "/directory/garden-centers",
+    "url": "https://www.thecbrb.ca/directory/garden-centers"
+  },
+  {
+    "category": "Gift Shops",
+    "path": "/directory/gift-shops",
+    "url": "https://www.thecbrb.ca/directory/gift-shops"
+  },
+  {
+    "category": "Golf Courses",
+    "path": "/directory/golf-courses",
+    "url": "https://www.thecbrb.ca/directory/golf-courses"
+  },
+  {
+    "category": "Golf Instructors",
+    "path": "/directory/golf-instructors",
+    "url": "https://www.thecbrb.ca/directory/golf-instructors"
+  },
+  {
+    "category": "Gun Shops/Shooting Ranges",
+    "path": "/directory/gun-shopsshooting-ranges",
+    "url": "https://www.thecbrb.ca/directory/gun-shopsshooting-ranges"
+  },
+  {
+    "category": "Grocery Stores",
+    "path": "/directory/grocery-stores",
+    "url": "https://www.thecbrb.ca/directory/grocery-stores"
+  },
+  {
+    "category": "Gyms",
+    "path": "/directory/gyms",
+    "url": "https://www.thecbrb.ca/directory/gyms"
+  },
+  {
+    "category": "Hair Salons & Barbers",
+    "path": "/directory/hair-salons-barbers",
+    "url": "https://www.thecbrb.ca/directory/hair-salons-barbers"
+  },
+  {
+    "category": "Helicopter Services",
+    "path": "/directory/helicopter-services",
+    "url": "https://www.thecbrb.ca/directory/helicopter-services"
+  },
+  {
+    "category": "Home Builders",
+    "path": "/directory/home-builders",
+    "url": "https://www.thecbrb.ca/directory/home-builders"
+  },
+  {
+    "category": "Home Improvement Stores/Services",
+    "path": "/directory/home-improvement-storesservices",
+    "url": "https://www.thecbrb.ca/directory/home-improvement-storesservices"
+  },
+  {
+    "category": "Home & Building Inspectors",
+    "path": "/directory/home-building-inspectors",
+    "url": "https://www.thecbrb.ca/directory/home-building-inspectors"
+  },
+  {
+    "category": "Hotels/Motels",
+    "path": "/directory/hotelsmotels",
+    "url": "https://www.thecbrb.ca/directory/hotelsmotels"
+  },
+  {
+    "category": "Human Resources/Employment Agencies",
+    "path": "/directory/human-resourcesemployment-agencies",
+    "url": "https://www.thecbrb.ca/directory/human-resourcesemployment-agencies"
+  },
+  {
+    "category": "HVAC Contractors",
+    "path": "/directory/hvac-contractors",
+    "url": "https://www.thecbrb.ca/directory/hvac-contractors"
+  },
+  {
+    "category": "Indoor Playgrounds",
+    "path": "/directory/indoor-playgrounds",
+    "url": "https://www.thecbrb.ca/directory/indoor-playgrounds"
+  },
+  {
+    "category": "Insurance Agencies",
+    "path": "/directory/insurance-agencies",
+    "url": "https://www.thecbrb.ca/directory/insurance-agencies"
+  },
+  {
+    "category": "Interior Designers",
+    "path": "/directory/interior-designers",
+    "url": "https://www.thecbrb.ca/directory/interior-designers"
+  },
+  {
+    "category": "Immigration & Naturalization Services",
+    "path": "/directory/immigration-naturalization-services",
+    "url": "https://www.thecbrb.ca/directory/immigration-naturalization-services"
+  },
+  {
+    "category": "Jewelry and Accessory Stores",
+    "path": "/directory/jewelry-and-accessory-stores",
+    "url": "https://www.thecbrb.ca/directory/jewelry-and-accessory-stores"
+  },
+  {
+    "category": "Landscapers",
+    "path": "/directory/landscapers",
+    "url": "https://www.thecbrb.ca/directory/landscapers"
+  },
+  {
+    "category": "Lawyers & Legal Services",
+    "path": "/directory/lawyers-legal-services",
+    "url": "https://www.thecbrb.ca/directory/lawyers-legal-services"
+  },
+  {
+    "category": "Libraries",
+    "path": "/directory/libraries",
+    "url": "https://www.thecbrb.ca/directory/libraries"
+  },
+  {
+    "category": "Limo/Transportation Services",
+    "path": "/directory/limotransportation-services",
+    "url": "https://www.thecbrb.ca/directory/limotransportation-services"
+  },
+  {
+    "category": "Liquor Stores",
+    "path": "/directory/liquor-stores",
+    "url": "https://www.thecbrb.ca/directory/liquor-stores"
+  },
+  {
+    "category": "Loan Agencies",
+    "path": "/directory/loan-agencies",
+    "url": "https://www.thecbrb.ca/directory/loan-agencies"
+  },
+  {
+    "category": "Locksmith Services",
+    "path": "/directory/locksmith-services",
+    "url": "https://www.thecbrb.ca/directory/locksmith-services"
+  },
+  {
+    "category": "Manufacturers/Suppliers",
+    "path": "/directory/manufacturerssuppliers",
+    "url": "https://www.thecbrb.ca/directory/manufacturerssuppliers"
+  },
+  {
+    "category": "Martial Arts Schools",
+    "path": "/directory/martial-arts-schools",
+    "url": "https://www.thecbrb.ca/directory/martial-arts-schools"
+  },
+  {
+    "category": "Mattress Stores",
+    "path": "/directory/mattress-stores",
+    "url": "https://www.thecbrb.ca/directory/mattress-stores"
+  },
+  {
+    "category": "Medical Laboratories",
+    "path": "/directory/medical-laboratories",
+    "url": "https://www.thecbrb.ca/directory/medical-laboratories"
+  },
+  {
+    "category": "Mentoring Services",
+    "path": "/directory/mentoring-services",
+    "url": "https://www.thecbrb.ca/directory/mentoring-services"
+  },
+  {
+    "category": "Monument Services",
+    "path": "/directory/monument-services",
+    "url": "https://www.thecbrb.ca/directory/monument-services"
+  },
+  {
+    "category": "Mortgage Brokers/Services",
+    "path": "/directory/mortgage-brokersservices",
+    "url": "https://www.thecbrb.ca/directory/mortgage-brokersservices"
+  },
+  {
+    "category": "Motorcycle & Powersports Dealers",
+    "path": "/directory/motorcycle-powersports-dealers",
+    "url": "https://www.thecbrb.ca/directory/motorcycle-powersports-dealers"
+  },
+  {
+    "category": "Movie Theaters",
+    "path": "/directory/movie-theaters",
+    "url": "https://www.thecbrb.ca/directory/movie-theaters"
+  },
+  {
+    "category": "Moving, Shipping & Junk Removal Services",
+    "path": "/directory/moving-shipping-junk-removal-services",
+    "url": "https://www.thecbrb.ca/directory/moving-shipping-junk-removal-services"
+  },
+  {
+    "category": "Museums",
+    "path": "/directory/museums",
+    "url": "https://www.thecbrb.ca/directory/museums"
+  },
+  {
+    "category": "Music Schools/Lessons",
+    "path": "/directory/music-schoolslessons",
+    "url": "https://www.thecbrb.ca/directory/music-schoolslessons"
+  },
+  {
+    "category": "Nail Salons",
+    "path": "/directory/nail-salons",
+    "url": "https://www.thecbrb.ca/directory/nail-salons"
+  },
+  {
+    "category": "Non-Profit Organizations",
+    "path": "/directory/non-profit-organizations",
+    "url": "https://www.thecbrb.ca/directory/non-profit-organizations"
+  },
+  {
+    "category": "Optometrist",
+    "path": "/directory/optometrist",
+    "url": "https://www.thecbrb.ca/directory/optometrist"
+  },
+  {
+    "category": "Organization Services",
+    "path": "/directory/organization-services",
+    "url": "https://www.thecbrb.ca/directory/organization-services"
+  },
+  {
+    "category": "Orthodontists",
+    "path": "/directory/orthodontist",
+    "url": "https://www.thecbrb.ca/directory/orthodontist"
+  },
+  {
+    "category": "Painting Services",
+    "path": "/directory/painting-services",
+    "url": "https://www.thecbrb.ca/directory/painting-services"
+  },
+  {
+    "category": "Party Equipment Rental Services",
+    "path": "/directory/party-equipment-rental-services",
+    "url": "https://www.thecbrb.ca/directory/party-equipment-rental-services"
+  },
+  {
+    "category": "Pawn Shops",
+    "path": "/directory/pawn-shops",
+    "url": "https://www.thecbrb.ca/directory/pawn-shops"
+  },
+  {
+    "category": "Pharmacies",
+    "path": "/directory/pharmacies",
+    "url": "https://www.thecbrb.ca/directory/pharmacies"
+  },
+  {
+    "category": "Plumbing Services",
+    "path": "/directory/plumbing-services",
+    "url": "https://www.thecbrb.ca/directory/plumbing-services"
+  },
+  {
+    "category": "Pet Services",
+    "path": "/directory/pet-services",
+    "url": "https://www.thecbrb.ca/directory/pet-services"
+  },
+  {
+    "category": "Photographers/Videographers",
+    "path": "/directory/photographersvideographers",
+    "url": "https://www.thecbrb.ca/directory/photographersvideographers"
+  },
+  {
+    "category": "Physiotherapy Centres",
+    "path": "/directory/physiotherapy-centres",
+    "url": "https://www.thecbrb.ca/directory/physiotherapy-centres"
+  },
+  {
+    "category": "Printing Services",
+    "path": "/directory/printing-services",
+    "url": "https://www.thecbrb.ca/directory/printing-services"
+  },
+  {
+    "category": "Private Investigators",
+    "path": "/directory/private-investigators",
+    "url": "https://www.thecbrb.ca/directory/private-investigators"
+  },
+  {
+    "category": "Property Management Services",
+    "path": "/directory/property-management-services",
+    "url": "https://www.thecbrb.ca/directory/property-management-services"
+  },
+  {
+    "category": "Psychotherapist",
+    "path": "/directory/psychotherapist",
+    "url": "https://www.thecbrb.ca/directory/psychotherapist"
+  },
+  {
+    "category": "Public Safety Services",
+    "path": "/directory/public-safety-services",
+    "url": "https://www.thecbrb.ca/directory/public-safety-services"
+  },
+  {
+    "category": "R&D Laboratories",
+    "path": "/directory/rd-laboratories",
+    "url": "https://www.thecbrb.ca/directory/rd-laboratories"
+  },
+  {
+    "category": "Recording Studios",
+    "path": "/directory/recording-studios",
+    "url": "https://www.thecbrb.ca/directory/recording-studios"
+  },
+  {
+    "category": "Religious Facilities",
+    "path": "/directory/religious-facilities",
+    "url": "https://www.thecbrb.ca/directory/religious-facilities"
+  },
+  {
+    "category": "Retirement Homes",
+    "path": "/directory/retirement-homes",
+    "url": "https://www.thecbrb.ca/directory/retirement-homes"
+  },
+  {
+    "category": "Roofing Contractors",
+    "path": "/directory/roofing-contractors",
+    "url": "https://www.thecbrb.ca/directory/roofing-contractors"
+  },
+  {
+    "category": "Security Services",
+    "path": "/directory/security-services",
+    "url": "https://www.thecbrb.ca/directory/security-services"
+  },
+  {
+    "category": "Shoe Stores",
+    "path": "/directory/shoe-stores",
+    "url": "https://www.thecbrb.ca/directory/shoe-stores"
+  },
+  {
+    "category": "Shopping Malls",
+    "path": "/directory/shopping-malls",
+    "url": "https://www.thecbrb.ca/directory/shopping-malls"
+  },
+  {
+    "category": "Skate Sharpening Services",
+    "path": "/directory/skate-sharpening-services",
+    "url": "https://www.thecbrb.ca/directory/skate-sharpening-services"
+  },
+  {
+    "category": "Social Services Organizations",
+    "path": "/directory/social-services-organization",
+    "url": "https://www.thecbrb.ca/directory/social-services-organization"
+  },
+  {
+    "category": "Software Companies",
+    "path": "/directory/software-companies",
+    "url": "https://www.thecbrb.ca/directory/software-companies"
+  },
+  {
+    "category": "Soundproofing Services",
+    "path": "/directory/soundproofing-services",
+    "url": "https://www.thecbrb.ca/directory/soundproofing-services"
+  },
+  {
+    "category": "Sports Clubs",
+    "path": "/directory/sports-clubs",
+    "url": "https://www.thecbrb.ca/directory/sports-clubs"
+  },
+  {
+    "category": "Sporting Goods Stores",
+    "path": "/directory/sporting-goods-stores",
+    "url": "https://www.thecbrb.ca/directory/sporting-goods-stores"
+  },
+  {
+    "category": "Storage Facilities/Services",
+    "path": "/directory/storage-facilitiesservices",
+    "url": "https://www.thecbrb.ca/directory/storage-facilitiesservices"
+  },
+  {
+    "category": "Student Housing Centres",
+    "path": "/directory/student-housing-centres",
+    "url": "https://www.thecbrb.ca/directory/student-housing-centres"
+  },
+  {
+    "category": "Tattoo/Piercing Shops",
+    "path": "/directory/tattoopiercing-shops",
+    "url": "https://www.thecbrb.ca/directory/tattoopiercing-shops"
+  },
+  {
+    "category": "Telecommunications Contractors",
+    "path": "/directory/telecommunications-contractors",
+    "url": "https://www.thecbrb.ca/directory/telecommunications-contractors"
+  },
+  {
+    "category": "Tourist Attractions",
+    "path": "/directory/tourist-attractions",
+    "url": "https://www.thecbrb.ca/directory/tourist-attractions"
+  },
+  {
+    "category": "Towing Services",
+    "path": "/directory/towing-services",
+    "url": "https://www.thecbrb.ca/directory/towing-services"
+  },
+  {
+    "category": "Toy Stores",
+    "path": "/directory/toy-stores",
+    "url": "https://www.thecbrb.ca/directory/toy-stores"
+  },
+  {
+    "category": "Travel Agencies/Services",
+    "path": "/directory/travel-agenciesservices",
+    "url": "https://www.thecbrb.ca/directory/travel-agenciesservices"
+  },
+  {
+    "category": "Truck Stops",
+    "path": "/directory/truck-stops",
+    "url": "https://www.thecbrb.ca/directory/truck-stops"
+  },
+  {
+    "category": "Tutoring Services",
+    "path": "/directory/tutoring-services",
+    "url": "https://www.thecbrb.ca/directory/tutoring-services"
+  },
+  {
+    "category": "Vape Stores",
+    "path": "/directory/vape-stores",
+    "url": "https://www.thecbrb.ca/directory/vape-stores"
+  },
+  {
+    "category": "Veterinarians",
+    "path": "/directory/veterinarians",
+    "url": "https://www.thecbrb.ca/directory/veterinarians"
+  },
+  {
+    "category": "Web Design / Marketing Services",
+    "path": "/directory/web-design-marketing-services",
+    "url": "https://www.thecbrb.ca/directory/web-design-marketing-services"
+  },
+  {
+    "category": "Wedding",
+    "path": "/directory/wedding",
+    "url": "https://www.thecbrb.ca/directory/wedding"
+  },
+  {
+    "category": "Wig Stores",
+    "path": "/directory/wig-stores",
+    "url": "https://www.thecbrb.ca/directory/wig-stores"
+  },
+  {
+    "category": "Windows & Doors Contractors",
+    "path": "/directory/windows-and-doors",
+    "url": "https://www.thecbrb.ca/directory/windows-and-doors"
+  }
+]

@@ -1,0 +1,289 @@
+from pathlib import Path
+from weasyprint import HTML
+
+out_dir = Path('gohighlevel-partnership-brief')
+out_dir.mkdir(exist_ok=True)
+html_path = out_dir / 'gohighlevel-partnership-brief-expanded.html'
+pdf_path = out_dir / 'gohighlevel-partnership-brief-expanded.pdf'
+
+html = r'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tony's Business Solutions — GoHighLevel Partnership Brief</title>
+<meta name="author" content="Tony's Business Solutions">
+<style>
+  @page { size: Letter; margin: 0.55in; @bottom-right { content: "Tony's Business Solutions · " counter(page); color:#7b8794; font-size:9px; } }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; margin:0; color:#172033; background:#fff; font-size:11.2pt; line-height:1.45; }
+  h1,h2,h3 { margin:0 0 10px 0; line-height:1.1; color:#101828; }
+  h1 { font-size:36pt; letter-spacing:-1.4px; }
+  h2 { font-size:24pt; letter-spacing:-0.6px; margin-top:2px; }
+  h3 { font-size:14pt; margin-top:16px; }
+  p { margin:0 0 10px 0; }
+  ul { margin:8px 0 0 18px; padding:0; }
+  li { margin:4px 0; }
+  .page { page-break-after: always; min-height:9.1in; position:relative; }
+  .no-break { page-break-inside: avoid; }
+  .eyebrow { text-transform:uppercase; letter-spacing:2.2px; color:#0e6cf5; font-size:9pt; font-weight:800; margin-bottom:10px; }
+  .muted { color:#667085; }
+  .small { font-size:9pt; color:#667085; }
+  .cover { background:linear-gradient(135deg,#071225 0%,#0b2347 47%,#0e6cf5 100%); color:#fff; padding:0.62in; margin:-0.55in; min-height:10.95in; display:flex; flex-direction:column; justify-content:space-between; }
+  .cover h1,.cover h2 { color:#fff; }
+  .cover h1 { font-size:43pt; max-width:7.2in; }
+  .cover .subtitle { font-size:16pt; max-width:7.4in; color:#e7f0ff; margin-top:18px; }
+  .cover .meta { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
+  .meta-card { border:1px solid rgba(255,255,255,.28); border-radius:16px; padding:18px; background:rgba(255,255,255,.08); }
+  .meta-card b { display:block; color:#fff; font-size:12pt; margin-top:4px; }
+  .brand { font-weight:900; letter-spacing:2px; font-size:10pt; color:#cfe2ff; }
+  .card { border:1px solid #d9e2ef; border-radius:16px; padding:16px; margin:10px 0; background:#fff; }
+  .blue-card { background:#eff6ff; border-color:#bfdbfe; }
+  .green-card { background:#ecfdf3; border-color:#bbf7d0; }
+  .amber-card { background:#fffbeb; border-color:#fde68a; }
+  .red-card { background:#fef2f2; border-color:#fecaca; }
+  .dark-card { background:#101828; color:#fff; border:0; }
+  .dark-card h3 { color:#fff; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+  .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+  .grid-4 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .pill { display:inline-block; padding:5px 9px; border-radius:99px; background:#e8f1ff; color:#0e55c7; font-size:9pt; font-weight:800; margin:2px 3px 2px 0; }
+  .big-number { font-size:25pt; font-weight:900; color:#0e6cf5; letter-spacing:-1px; }
+  .check { color:#12b76a; font-weight:900; }
+  .x { color:#e11d48; font-weight:900; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:10pt; }
+  th { background:#0b2347; color:white; text-align:left; padding:9px; }
+  td { border-bottom:1px solid #e5e7eb; padding:8px 9px; vertical-align:top; }
+  tr:nth-child(even) td { background:#f8fafc; }
+  .flow { display:flex; align-items:stretch; gap:8px; margin:10px 0; }
+  .flow div { flex:1; padding:12px; border-radius:13px; background:#f1f5f9; border:1px solid #d8e1ed; text-align:center; font-weight:800; }
+  .arrow { flex:0!important; background:white!important; border:0!important; color:#0e6cf5; font-size:18pt; padding:10px 0!important; }
+  .section-label { background:#0e6cf5; color:white; padding:5px 8px; border-radius:8px; font-size:8.5pt; font-weight:900; text-transform:uppercase; letter-spacing:.7px; display:inline-block; margin-bottom:9px; }
+  .quote { border-left:5px solid #0e6cf5; padding-left:14px; font-size:14pt; font-weight:800; color:#101828; }
+  .footnotes { font-size:8.2pt; color:#667085; }
+  .toc li { margin:8px 0; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div>
+    <div class="brand">TONY'S BUSINESS SOLUTIONS · PARTNERSHIP BRIEF</div>
+    <h1>Building a Software & Automation Business for the Trades</h1>
+    <p class="subtitle">A plain-English guide to how we can package GoHighLevel, AI, automations, payments, and done-for-you service into a recurring revenue business for contractors.</p>
+    <div class="meta">
+      <div class="meta-card"><span class="small" style="color:#cfe2ff">Prepared for</span><b>Justin Roffey<br>Peterborough Waterproofing</b></div>
+      <div class="meta-card"><span class="small" style="color:#cfe2ff">Prepared by</span><b>Tony DeCarlo<br>tonysbusinesssolutions.ca</b></div>
+    </div>
+  </div>
+  <div class="small" style="color:#dbeafe">Version 2 — expanded GoHighLevel capability brief · Built for a non-technical business owner</div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Executive summary</div>
+  <h2>The big idea, in plain English</h2>
+  <p class="quote">We do not need to build software from scratch to start a software business. We can private-label proven technology, package it for trades businesses, and sell it with setup, support, and automation services wrapped around it.</p>
+  <div class="grid-2">
+    <div class="card blue-card"><h3>What clients buy</h3><p>A front-office operating system: missed-call text-back, lead capture, booking, quote follow-up, AI call/chat assistance, review collection, payment links, and reporting.</p></div>
+    <div class="card green-card"><h3>What we own</h3><p>The brand, offer, client relationships, workflows, trade-specific templates, onboarding process, automations, and service delivery.</p></div>
+    <div class="card amber-card"><h3>What GoHighLevel provides</h3><p>The core platform: CRM, phone/SMS/email, websites, forms, calendars, AI tools, payments, funnels, reviews, workflows, reporting, and SaaS/white-label infrastructure.</p></div>
+    <div class="card"><h3>Where Make, Parseur & Helcim fit</h3><p>They become specialist bridges for back-office jobs GHL does not handle perfectly by itself — parsing emails, matching payments, connecting accounting, and custom client workflows.</p></div>
+  </div>
+  <div class="card dark-card"><h3>The recommended strategy</h3><p><b>Start with GoHighLevel SaaS mode now.</b> Build proprietary trades systems on top of it. Sell and validate demand. Only build custom software later if revenue proves exactly what the market wants.</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">What GoHighLevel is</div>
+  <h2>The engine behind the business</h2>
+  <p>GoHighLevel is an AI-powered business operating system. In simple terms, it replaces a messy pile of separate tools with one connected system under one login.</p>
+  <div class="flow no-break">
+    <div>Lead comes in</div><div class="arrow">→</div><div>System responds</div><div class="arrow">→</div><div>Job gets booked</div><div class="arrow">→</div><div>Follow-up happens</div>
+  </div>
+  <div class="grid-3">
+    <div class="card"><span class="section-label">Capture</span><p>Websites, funnels, forms, surveys, chat widgets, QR codes, call tracking, social DMs, ad lead syncing.</p></div>
+    <div class="card"><span class="section-label">Nurture</span><p>SMS, email, calls, voicemail, WhatsApp, Messenger, Instagram DM, workflows, reminders, smart lists.</p></div>
+    <div class="card"><span class="section-label">Close</span><p>Calendars, pipelines, proposals, estimates, invoices, payment links, order forms, upsells, memberships.</p></div>
+    <div class="card"><span class="section-label">Retain</span><p>Review requests, review widgets, referral tracking, loyalty programs, reactivation campaigns, newsletters.</p></div>
+    <div class="card"><span class="section-label">AI</span><p>Voice AI, Conversation AI, Content AI, Reviews AI, Funnel AI, Email AI, Ask AI, AI-assisted setup and replies.</p></div>
+    <div class="card"><span class="section-label">Scale</span><p>Sub-accounts, snapshots, white-labeling, SaaS mode, usage rebilling, API access, reporting, mobile app.</p></div>
+  </div>
+  <p class="small">HighLevel publicly describes itself as powering 1M+ businesses and lists these as core feature categories across its official site and pricing pages.</p>
+</section>
+
+<section class="page">
+  <div class="eyebrow">What it does for contractors</div>
+  <h2>Contractors do not need “AI.” They need fewer missed jobs.</h2>
+  <p>Most trades owners do not care about software features. They care about booked estimates, faster follow-up, cleaner communication, more reviews, and less chaos.</p>
+  <div class="grid-2">
+    <div class="card blue-card"><h3>1. Never miss a lead</h3><p>When a call is missed, the system can text the caller instantly, ask what they need, and push them toward booking instead of letting them call the next contractor.</p></div>
+    <div class="card"><h3>2. Book estimates automatically</h3><p>Online calendars let customers book available time slots. Reminders reduce no-shows. Owners stop playing phone tag from job sites.</p></div>
+    <div class="card"><h3>3. Follow up on quotes</h3><p>If someone gets an estimate and does not answer, automated text/email follow-ups keep the job alive without the owner remembering every detail.</p></div>
+    <div class="card"><h3>4. Answer after hours</h3><p>Voice AI or Conversation AI can answer common questions, collect details, qualify urgency, and route or book the lead.</p></div>
+    <div class="card"><h3>5. Collect better reviews</h3><p>When a job is done, the system asks happy customers for reviews and can help reply to reviews professionally.</p></div>
+    <div class="card green-card"><h3>6. Keep everything in one place</h3><p>Every lead, text, call, email, appointment, note, and pipeline stage sits in one customer record instead of scattered across phones, sticky notes, and inboxes.</p></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Capability map</div>
+  <h2>What GoHighLevel can include</h2>
+  <table>
+    <tr><th>Capability</th><th>Plain-English meaning</th><th>Trades example</th></tr>
+    <tr><td><b>CRM & Pipelines</b></td><td>Customer database and deal/job stages.</td><td>New lead → estimate booked → quote sent → won/lost → review requested.</td></tr>
+    <tr><td><b>Phone, SMS & Email</b></td><td>Call, text, and email from the same customer record.</td><td>Missed-call text-back, estimate reminders, seasonal reactivation.</td></tr>
+    <tr><td><b>Calendars</b></td><td>Online booking with reminders and availability rules.</td><td>Free estimate calendar for waterproofing, roofing, HVAC, plumbing.</td></tr>
+    <tr><td><b>Workflows</b></td><td>“If this happens, then do that” automation.</td><td>If estimate booked → send confirmation → remind 24h before → follow up after.</td></tr>
+    <tr><td><b>Websites/Funnels</b></td><td>Pages that capture leads and route them into the CRM.</td><td>Landing page for basement waterproofing estimates.</td></tr>
+    <tr><td><b>Forms/Surveys/Quizzes</b></td><td>Structured lead intake.</td><td>Ask service needed, city, urgency, photos, best callback time.</td></tr>
+    <tr><td><b>AI Voice & Chat</b></td><td>AI that talks or texts with leads using business rules.</td><td>After-hours receptionist that qualifies the lead and books the estimate.</td></tr>
+    <tr><td><b>Reviews/Reputation</b></td><td>Automated review requests and review widgets.</td><td>Text every completed customer asking for a Google review.</td></tr>
+    <tr><td><b>Payments/Invoicing</b></td><td>Invoices, payment links, text-to-pay, integrations.</td><td>Send deposit or balance-due links; use Helcim externally where needed.</td></tr>
+    <tr><td><b>Reporting</b></td><td>Dashboards for leads, bookings, calls, pipeline, campaigns.</td><td>Show owner how many calls were saved and estimates booked.</td></tr>
+    <tr><td><b>Social/Ads</b></td><td>Social planner and ad manager tools.</td><td>Run lead ads and push new leads into automated follow-up.</td></tr>
+    <tr><td><b>Courses/Communities</b></td><td>Member portals and paid content.</td><td>Less central for trades, but useful if we later sell training or client portals.</td></tr>
+  </table>
+</section>
+
+<section class="page">
+  <div class="eyebrow">SaaS mode</div>
+  <h2>How we sell it as our own platform</h2>
+  <p>The Agency Pro plan is the key upgrade because it unlocks SaaS mode, automated sub-account creation, advanced API access, and markup on phone/email usage.</p>
+  <div class="grid-2">
+    <div class="card green-card"><h3>White-label positioning</h3><p>The customer sees our brand and offer. We sell “Tony’s Business Solutions” as the trades growth platform, not “here is a GoHighLevel login.”</p></div>
+    <div class="card blue-card"><h3>Sub-accounts</h3><p>Each client gets their own workspace: phone number, contacts, calendar, automations, pipeline, and reports.</p></div>
+    <div class="card"><h3>Snapshots</h3><p>We can package our best setup as a reusable template and deploy it into new client accounts instead of rebuilding from scratch every time.</p></div>
+    <div class="card"><h3>Automated billing</h3><p>SaaS mode supports subscription-style onboarding and rebilling/markup for usage like phone, email, and AI, depending on settings and plan.</p></div>
+  </div>
+  <div class="card amber-card"><h3>Plain-English analogy</h3><p>GoHighLevel is the engine and frame. We build the truck body for trades companies, paint our logo on it, maintain it, and sell it to the market we understand.</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Pricing reality</div>
+  <h2>Platform costs and margin levers</h2>
+  <table>
+    <tr><th>Plan / cost item</th><th>What it means</th><th>Why it matters</th></tr>
+    <tr><td><b>Starter — $97 USD/mo</b></td><td>3 sub-accounts, core features.</td><td>Good to learn, not enough for a serious agency model.</td></tr>
+    <tr><td><b>Unlimited — $297 USD/mo</b></td><td>Unlimited sub-accounts, rebill phone/email at no markup, basic API.</td><td>Solid agency base, but not full SaaS mode.</td></tr>
+    <tr><td><b>Agency Pro — $497 USD/mo</b></td><td>SaaS mode, automated sub-account creation, usage markup, advanced API.</td><td>The plan that matches the software-membership business model.</td></tr>
+    <tr><td><b>AI Employee — $50 or $97 USD/mo per location</b></td><td>Optional AI bundle for each client account.</td><td>Useful for Voice AI/Conversation AI clients; needs pricing built into our tiers.</td></tr>
+    <tr><td><b>Phone/SMS/email usage</b></td><td>Usage-based wallet costs.</td><td>Needs monitoring and markup rules so usage does not eat margin.</td></tr>
+    <tr><td><b>Optional add-ons</b></td><td>White-label app, SEO, listings, WhatsApp, WordPress, dedicated IPs, etc.</td><td>Sell only when useful; do not overload early clients.</td></tr>
+  </table>
+  <p class="small">All plan prices are USD from HighLevel’s public pricing page. CAD cost changes with exchange rate. Usage pricing changes over time and should be confirmed inside the account before quoting clients.</p>
+</section>
+
+<section class="page">
+  <div class="eyebrow">The stack</div>
+  <h2>Where GoHighLevel, Make, Parseur, and Helcim fit</h2>
+  <p>We should not pretend GoHighLevel is perfect for everything. The smart version is using GHL as the front-office hub, then connecting specialist tools where needed.</p>
+  <div class="flow no-break">
+    <div>Customer lead</div><div class="arrow">→</div><div>GoHighLevel</div><div class="arrow">→</div><div>Make / Parseur</div><div class="arrow">→</div><div>Helcim / QBO / client systems</div>
+  </div>
+  <div class="grid-2">
+    <div class="card blue-card"><h3>GoHighLevel = front office</h3><p>Lead capture, CRM, texting, calls, AI receptionist, calendars, pipeline, review requests, reminders, client dashboard.</p></div>
+    <div class="card"><h3>Make = automation bridge</h3><p>Connects apps that do not natively talk to each other. Example: payment received → update invoice status → notify owner → update GHL pipeline.</p></div>
+    <div class="card"><h3>Parseur = email/document parser</h3><p>Reads structured emails or documents and pulls key details into workflows. Example: e-transfer email or form submission → extract amount/name/invoice info.</p></div>
+    <div class="card green-card"><h3>Helcim = payments where it fits</h3><p>Useful when a client wants lower-fee payment processing or e-transfer/card workflows outside GHL’s native payment setup. We bridge it back into the system.</p></div>
+  </div>
+  <div class="card dark-card"><h3>Strategic point</h3><p>This stack lets us deliver custom-feeling systems without paying to build custom software from zero.</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Offer structure</div>
+  <h2>Simple packages contractors can understand</h2>
+  <table>
+    <tr><th>Package</th><th>Best for</th><th>Core promise</th><th>Possible price</th></tr>
+    <tr><td><b>Lead Rescue</b></td><td>Solo/small shops</td><td>Stop missed calls and web leads from going cold.</td><td>$197/mo + setup</td></tr>
+    <tr><td><b>Booked While Busy</b></td><td>Owners in the field</td><td>Capture, qualify, and book estimates while the owner is working.</td><td>$397/mo + setup</td></tr>
+    <tr><td><b>Full Follow-Up Engine</b></td><td>Growing shops</td><td>Lead-to-review system: booking, quote follow-up, reviews, reporting.</td><td>$597/mo + setup</td></tr>
+    <tr><td><b>Custom Autopilot</b></td><td>$1M+ operations</td><td>Custom workflows: payments, invoicing, routing, dashboards, staff coverage.</td><td>$1,200–$1,500/mo + setup</td></tr>
+  </table>
+  <div class="card amber-card"><h3>Important</h3><p>The packages should be sold around business outcomes, not feature lists. A contractor buys “book more estimates and stop losing leads,” not “CRM with workflow automation.”</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Build vs buy</div>
+  <h2>Why building from scratch should come later</h2>
+  <div class="grid-2">
+    <div class="card red-card"><h3>Building our own software now</h3><ul><li><span class="x">✕</span> High development cost before revenue</li><li><span class="x">✕</span> Long timeline before selling</li><li><span class="x">✕</span> Requires developers, hosting, security, maintenance</li><li><span class="x">✕</span> Risk of building features clients do not actually buy</li><li><span class="x">✕</span> Harder to support while still selling</li></ul></div>
+    <div class="card green-card"><h3>Starting with GoHighLevel</h3><ul><li><span class="check">✓</span> Sell in weeks, not years</li><li><span class="check">✓</span> Proven platform already operating at scale</li><li><span class="check">✓</span> AI, phones, calendars, CRM, reviews already built</li><li><span class="check">✓</span> Revenue funds future custom development</li><li><span class="check">✓</span> We learn exactly what trades clients will pay for</li></ul></div>
+  </div>
+  <div class="card dark-card"><h3>The smart sequence</h3><p>1) Sell GHL-based systems. 2) Build repeatable trades snapshots and SOPs. 3) Use Justin’s network to validate demand. 4) Track what clients repeatedly ask for. 5) Only then consider custom software, funded by real revenue.</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Partnership fit</div>
+  <h2>Why this partnership makes sense</h2>
+  <div class="grid-2">
+    <div class="card blue-card"><h3>Justin brings</h3><ul><li>Capital to grow properly</li><li>Trades credibility</li><li>Network access</li><li>Operational knowledge of what contractors actually need</li><li>A live proof-of-concept through Peterborough Waterproofing</li></ul></div>
+    <div class="card green-card"><h3>Tony brings</h3><ul><li>Technical build and automation skills</li><li>GoHighLevel, Make, Parseur, Helcim workflow experience</li><li>Packaging, onboarding, and client delivery</li><li>Sales positioning for trades businesses</li><li>Ability to turn one client build into a repeatable offer</li></ul></div>
+  </div>
+  <div class="card"><h3>The unfair advantage</h3><p>Most software companies have technology but no trust in the trades. This partnership combines both: Justin has trust and access; Tony has the system-building capability. That is the leverage.</p></div>
+  <div class="card amber-card"><h3>What we should avoid</h3><p>Do not overbuild before selling. Do not promise magic AI. Do not custom-build every client from scratch. The money is in repeatable systems with enough customization to feel tailored.</p></div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">90-day launch plan</div>
+  <h2>How we turn this into a real business</h2>
+  <div class="grid-2">
+    <div class="card"><h3>Days 1–15: Package</h3><ul><li>Lock the GHL plan/SaaS setup</li><li>Name the platform/offers</li><li>Finalize three core packages</li><li>Build the trades snapshot</li><li>Create demo account and case-study story</li></ul></div>
+    <div class="card"><h3>Days 16–30: Pilot</h3><ul><li>Select 3–5 warm trades contacts</li><li>Offer pilot setup</li><li>Install missed-call, booking, reminders, reviews</li><li>Track calls saved, estimates booked, reviews requested</li></ul></div>
+    <div class="card"><h3>Days 31–60: Systemize</h3><ul><li>Document onboarding checklist</li><li>Build reusable templates</li><li>Create support process</li><li>Define usage billing rules</li><li>Collect testimonials/results</li></ul></div>
+    <div class="card green-card"><h3>Days 61–90: Scale</h3><ul><li>Launch into Justin’s network</li><li>Use case study + demo</li><li>Prioritize bigger shops</li><li>Hire/contract help only after repeat demand</li><li>Refine pricing based on service load</li></ul></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Capability appendix</div>
+  <h2>Full GoHighLevel capability checklist</h2>
+  <div class="grid-2">
+    <div class="card"><h3>Lead capture</h3><p><span class="pill">Websites</span><span class="pill">Funnels</span><span class="pill">Landing pages</span><span class="pill">Forms</span><span class="pill">Surveys</span><span class="pill">Quizzes</span><span class="pill">Chat widget</span><span class="pill">QR codes</span><span class="pill">Call tracking</span><span class="pill">Ad manager</span></p></div>
+    <div class="card"><h3>Communication</h3><p><span class="pill">SMS</span><span class="pill">MMS</span><span class="pill">Email</span><span class="pill">Inbound calls</span><span class="pill">Outbound calls</span><span class="pill">Ringless voicemail</span><span class="pill">WhatsApp add-on</span><span class="pill">Messenger</span><span class="pill">Instagram DMs</span></p></div>
+    <div class="card"><h3>Sales operations</h3><p><span class="pill">CRM</span><span class="pill">Pipelines</span><span class="pill">Lead scoring</span><span class="pill">Calendars</span><span class="pill">Appointment reminders</span><span class="pill">Estimates</span><span class="pill">Proposals</span><span class="pill">Invoices</span><span class="pill">Text-to-pay</span></p></div>
+    <div class="card"><h3>Automation & AI</h3><p><span class="pill">Workflows</span><span class="pill">Conversation AI</span><span class="pill">Voice AI</span><span class="pill">Content AI</span><span class="pill">Review AI</span><span class="pill">Funnel AI</span><span class="pill">Email AI</span><span class="pill">Ask AI</span><span class="pill">AI assistant</span></p></div>
+    <div class="card"><h3>Retention</h3><p><span class="pill">Review requests</span><span class="pill">Review widgets</span><span class="pill">Video reviews</span><span class="pill">Referral/affiliate manager</span><span class="pill">Loyalty programs</span><span class="pill">Reactivation campaigns</span><span class="pill">Newsletters</span></p></div>
+    <div class="card"><h3>Agency/SaaS</h3><p><span class="pill">Sub-accounts</span><span class="pill">Snapshots</span><span class="pill">SaaS mode</span><span class="pill">White label</span><span class="pill">Rebilling</span><span class="pill">Reselling</span><span class="pill">API access</span><span class="pill">Custom dashboards</span><span class="pill">Mobile app</span></p></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Decision page</div>
+  <h2>The recommendation</h2>
+  <div class="card dark-card"><h3>Move forward, but move in the right order.</h3><p>Use GoHighLevel as the platform, not the entire business. The business is the trades-specific packaging, onboarding, automations, service, and relationships.</p></div>
+  <div class="grid-3">
+    <div class="card blue-card"><div class="big-number">1</div><h3>Launch on GHL SaaS</h3><p>Fastest path to revenue and proof.</p></div>
+    <div class="card green-card"><div class="big-number">2</div><h3>Build our own IP</h3><p>Snapshots, scripts, SOPs, dashboards, automations, integrations.</p></div>
+    <div class="card amber-card"><div class="big-number">3</div><h3>Custom build later</h3><p>Only after customers reveal what is worth owning.</p></div>
+  </div>
+  <h3>Suggested next conversation</h3>
+  <ol>
+    <li>What role does Justin want: investor, partner, advisor, or referral/channel partner?</li>
+    <li>How much capital is available for the first 90 days?</li>
+    <li>Which 5 trades contacts should be first pilot targets?</li>
+    <li>What result will make this a clear “yes” after 90 days?</li>
+  </ol>
+  <p class="quote">Start selling the system now. Let revenue decide what we build later.</p>
+</section>
+
+<section class="page">
+  <div class="eyebrow">Sources & notes</div>
+  <h2>Research notes used for this brief</h2>
+  <div class="card"><h3>Primary sources reviewed</h3>
+    <ul class="footnotes">
+      <li>HighLevel official homepage: AI-powered business operating system, 1M+ businesses, core feature categories.</li>
+      <li>HighLevel public pricing page: Starter $97/mo, Unlimited $297/mo, Agency Pro $497/mo; core features; optional add-ons; payment providers.</li>
+      <li>HighLevel SaaSPRENEUR page: white-label/SaaS business model, recurring subscription revenue, usage revenue, SaaS plan positioning.</li>
+      <li>HighLevel support: Pricing & Billing guide — wallets, usage charges, AI Employee, phone/email rebilling, add-ons.</li>
+      <li>HighLevel support: AI Products Pricing — AI Employee Growth/Unlimited, Conversation AI, Voice AI, Review/Content AI, usage notes.</li>
+      <li>HighLevel support: LC Phone pricing guide — Canada/US SMS, phone numbers, calls, A2P notes.</li>
+      <li>HighLevel support: LC Email guide — email provider, pricing, ramp-up model, deliverability notes.</li>
+    </ul>
+  </div>
+  <div class="card amber-card"><h3>Important business note</h3><p>All pricing, AI limits, usage charges, exchange rates, and third-party integrations can change. Before sending final quotes to clients, confirm current costs inside the HighLevel account and payment processor accounts.</p></div>
+  <div class="card"><h3>Prepared for</h3><p><b>Justin Roffey — Peterborough Waterproofing</b><br>Prepared by Tony DeCarlo — Tony’s Business Solutions<br>tonysbusinesssolutions.ca</p></div>
+</section>
+
+</body></html>'''
+
+html_path.write_text(html, encoding='utf-8')
+HTML(filename=str(html_path)).write_pdf(str(pdf_path))
+print(pdf_path)

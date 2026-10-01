@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="1APP / Tony DeCarlo" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KCIP x 1APP Meeting Takeaway</title>
+<style>
+  @page { size: Letter; margin: 0.34in; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Arial, Helvetica, sans-serif; color:#0f172a; background:#eef3fb; }
+  .page { width:8.5in; min-height:11in; margin:0 auto 20px; padding:0.42in; background:#fff; position:relative; overflow:hidden; box-shadow:0 12px 28px rgba(15,23,42,.12); page-break-after: always; }
+  .page:last-child { page-break-after:auto; }
+  .blob { position:absolute; border-radius:999px; filter: blur(0px); opacity:.12; }
+  .b1 { width:360px; height:360px; background:#2563eb; top:-160px; right:-120px; }
+  .b2 { width:240px; height:240px; background:#f59e0b; bottom:-110px; left:-80px; }
+  .header { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; position:relative; z-index:2; }
+  .logoBox { display:flex; align-items:center; justify-content:flex-end; min-width:112px; }
+  .logo { width:96px; height:96px; border-radius:22px; object-fit:cover; box-shadow:0 8px 18px rgba(2,26,60,.16); }
+  .eyebrow { font-size:10px; letter-spacing:1.8px; color:#2563eb; text-transform:uppercase; font-weight:900; }
+  h1 { font-size:34px; line-height:1.02; margin:10px 0 10px; color:#021a3c; letter-spacing:-1.1px; max-width:620px; }
+  h2 { font-size:18px; margin:18px 0 10px; color:#021a3c; letter-spacing:-.25px; }
+  h3 { font-size:13px; margin:0 0 5px; color:#021a3c; }
+  p { font-size:11.5px; line-height:1.42; margin:0 0 8px; }
+  ul { margin:6px 0 0 16px; padding:0; }
+  li { font-size:10.8px; line-height:1.35; margin-bottom:4px; }
+  .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:14px; margin-top:16px; position:relative; z-index:2; }
+  .card { border:1px solid #dbe5f1; border-radius:18px; padding:14px; background:rgba(255,255,255,.92); break-inside:avoid; }
+  .dark { background:linear-gradient(135deg,#021a3c,#083a78); color:white; border:0; box-shadow:0 12px 24px rgba(2,26,60,.20); }
+  .dark h2,.dark h3 { color:white; }
+  .gold { background:linear-gradient(135deg,#fff8eb,#ffffff); border-color:#f3d69b; }
+  .quote { font-size:15px; line-height:1.28; font-weight:800; color:#10234d; margin-bottom:0; }
+  .dark .quote { color:#fff; }
+  .chips { margin-top:10px; }
+  .chip { display:inline-block; padding:6px 9px; border-radius:999px; background:#eef6ff; color:#0b63ce; font-size:9.5px; font-weight:900; margin:0 4px 5px 0; }
+  .chip.warn { background:#fff0dc; color:#9a5a00; }
+  .chip.good { background:#dcfce7; color:#047857; }
+  .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+  .metric { padding:12px; border-radius:16px; background:#f8fafc; border:1px solid #e2e8f0; min-height:105px; }
+  .metric b { display:block; font-size:24px; color:#2563eb; margin-bottom:4px; letter-spacing:-1px; }
+  .label { font-size:9px; color:#64748b; text-transform:uppercase; font-weight:900; letter-spacing:.7px; }
+  .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:10px; }
+  .step { border-radius:16px; padding:11px 9px; background:#f8fafc; border:1px solid #dbe5f1; min-height:104px; position:relative; }
+  .step:not(:last-child):after { content:'›'; position:absolute; right:-9px; top:35px; width:18px; height:18px; border-radius:50%; background:#2563eb; color:white; display:flex; align-items:center; justify-content:center; font-weight:900; }
+  .num { width:24px; height:24px; border-radius:9px; display:flex; align-items:center; justify-content:center; background:#021a3c; color:#fff; font-size:11px; font-weight:900; margin-bottom:7px; }
+  .split { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .thirds { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+  .table { border:1px solid #dbe5f1; border-radius:18px; overflow:hidden; margin-top:8px; }
+  .row { display:grid; grid-template-columns:1fr 1.35fr .9fr; border-bottom:1px solid #e2e8f0; }
+  .row:last-child { border-bottom:0; }
+  .cell { padding:9px 10px; font-size:10.4px; line-height:1.3; }
+  .head .cell { background:#021a3c; color:white; font-weight:900; text-transform:uppercase; letter-spacing:.5px; font-size:9px; }
+  .price { font-size:30px; font-weight:900; color:#fff; letter-spacing:-1px; line-height:1; margin:4px 0; }
+  .addGrid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .addon { border-radius:16px; padding:12px; border:1px solid #dbe5f1; background:#fff; break-inside:avoid; }
+  .addon .tag { display:inline-block; color:#995f00; background:#fff2d9; font-weight:900; border-radius:999px; padding:4px 7px; font-size:9px; margin-bottom:6px; }
+  .callout { border-radius:20px; padding:16px; background:linear-gradient(135deg,#021a3c,#0b63ce); color:white; margin-top:12px; position:relative; z-index:2; }
+  .callout h2,.callout h3 { color:white; margin-top:0; }
+  .footer { position:absolute; left:.42in; right:.42in; bottom:.25in; padding-top:8px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; color:#64748b; font-size:8.7px; }
+  .check { color:#059669; font-weight:900; }
+  .x { color:#dc2626; font-weight:900; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="header">
+    <div>
+      <div class="eyebrow">KCIP x 1APP growth takeaway</div>
+      <h1>You have the reputation. Now you need the machine that captures every serious lead.</h1>
+      <p class="quote">KCIP’s work looks strong. The leak is not craftsmanship — it’s speed-to-lead, booking, follow-up, and keeping every quote organized while the crew is busy doing the work.</p>
+    </div>
+    <div class="logoBox"><img class="logo" src="../1app-logo.jpg" alt="1APP logo" /></div>
+  </div>
+
+  <div class="hero">
+    <div class="card">
+      <h2>What we found</h2>
+      <p>KCIP has a strong local story: established since 2017, custom inground pools, liners, revamps, concrete, turf, putting greens, armour stone, cabanas, lighting, sport courts, and visible community proof.</p>
+      <div class="chips">
+        <span class="chip good">Community proof</span><span class="chip good">High-ticket backyard projects</span><span class="chip good">Visual before/after work</span><span class="chip warn">Shopify site mismatch</span><span class="chip warn">Generic quote path</span><span class="chip warn">Likely manual follow-up</span>
+      </div>
+    </div>
+    <div class="card dark">
+      <h2>Recommended base service</h2>
+      <div class="label" style="color:#cbd5e1;">Best fit for KCIP</div>
+      <div class="price">1APP Growth</div>
+      <p><b>$499/month + setup starting at $999</b></p>
+      <p>AI Voice/SMS, missed-call text back, CRM pipeline, booking calendar, 2-way text/email, web chat, reminders, and quote follow-up.</p>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><b>1</b><div class="label">main bottleneck</div><p>Leads arrive when the owner/crew is unavailable — calls, messages, quote requests, Facebook, and website traffic.</p></div>
+    <div class="metric"><b>5–10h</b><div class="label">admin time to recover</div><p>Less phone tag, manual reminders, quote chasing, and digging through messages.</p></div>
+    <div class="metric"><b>24/7</b><div class="label">lead response</div><p>AI Voice/SMS keeps KCIP responsive after hours, during jobs, and while driving.</p></div>
+  </div>
+
+  <h2>The system we would build</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><h3>Lead comes in</h3><p>Website, phone, missed call, Facebook, Google, web chat, or referral.</p></div>
+    <div class="step"><div class="num">2</div><h3>Instant response</h3><p>AI/SMS captures service type, town, urgency, timeline, and photos.</p></div>
+    <div class="step"><div class="num">3</div><h3>Estimate booked</h3><p>Qualified prospects book into controlled estimate blocks.</p></div>
+    <div class="step"><div class="num">4</div><h3>Pipeline tracked</h3><p>New lead → contacted → booked → quoted → won/lost.</p></div>
+    <div class="step"><div class="num">5</div><h3>Follow-up runs</h3><p>Reminders, quote follow-up, reviews, referrals, and seasonal campaigns.</p></div>
+  </div>
+
+  <div class="callout">
+    <h3>The meeting line</h3>
+    <p style="font-size:14px; margin:0;"><b>“You already have the skill, crew, and reputation. 1APP gives KCIP the always-on front office — instant response, booked estimates, organized follow-up, and repeat-customer reminders — so good leads do not disappear while you’re on site.”</b></p>
+  </div>
+
+  <div class="footer"><span>Prepared for KCIP meeting · Tony DeCarlo / 1APP</span><span>Goal: capture more estimate opportunities + save owner time</span></div>
+</section>
+
+<section class="page">
+  <div class="blob b1"></div>
+  <div class="header">
+    <div>
+      <div class="eyebrow">Competitive opportunity</div>
+      <h1>Competitors are selling trust. KCIP can win with trust plus speed.</h1>
+    </div>
+    <div class="logoBox"><img class="logo" src="../1app-logo.jpg" alt="1APP logo" /></div>
+  </div>
+
+  <div class="table">
+    <div class="row head"><div class="cell">Competitor</div><div class="cell">What they’re doing well</div><div class="cell">KCIP opening</div></div>
+    <div class="row"><div class="cell"><b>Peterborough Pool & Patio</b></div><div class="cell"><span class="check">✓</span> Strong public proof: 388 reviews / 4.9 stars shown publicly.<br><span class="check">✓</span> “Now booking for 2026” urgency.<br><span class="check">✓</span> Talks permits, install season, pool + patio integration.</div><div class="cell">KCIP can compete by responding faster and turning quote interest into booked appointments instantly.</div></div>
+    <div class="row"><div class="cell"><b>Hubble Landscaping</b></div><div class="cell"><span class="check">✓</span> Premium “complete pool package” positioning.<br><span class="check">✓</span> Sells stress-free backyard transformation.<br><span class="x">×</span> No obvious instant booking found in public copy.</div><div class="cell">KCIP already offers the full backyard ecosystem — it needs a cleaner guided sales journey.</div></div>
+    <div class="row"><div class="cell"><b>One Landscape</b></div><div class="cell"><span class="check">✓</span> 25+ years, 25+ team, BBB positioning.<br><span class="check">✓</span> Review ecosystem and strong trust language.</div><div class="cell">KCIP should automate review requests and referrals after every finished project.</div></div>
+  </div>
+
+  <h2>Workflows that make sense for KCIP</h2>
+  <div class="split">
+    <div class="card"><h3>1. Missed-call text back</h3><p>When a call is missed, KCIP instantly texts: “Thanks for calling KCIP — are you looking for pool service, liner/revamp, new pool install, concrete/turf, or landscaping?”</p><p><b>Result:</b> fewer lost leads while the crew is on job sites.</p></div>
+    <div class="card"><h3>2. AI Voice receptionist</h3><p>Answers overflow and after-hours calls, qualifies the job, captures details, and routes urgent pool issues differently from major backyard projects.</p><p><b>Result:</b> Scott stops being the bottleneck for first response.</p></div>
+    <div class="card"><h3>3. Estimate booking calendar</h3><p>Replace vague “Free Quote” with “Book Your Backyard Estimate” and controlled estimate windows.</p><p><b>Result:</b> less phone tag, more booked consultations.</p></div>
+    <div class="card"><h3>4. Quote follow-up</h3><p>After an estimate, unclosed quotes get smart follow-up at 1 day, 3 days, 7 days, and 14 days with proof, photos, and easy reply options.</p><p><b>Result:</b> more quotes turn into deposits.</p></div>
+    <div class="card"><h3>5. Seasonal reminders</h3><p>Spring openings, inspections, leak checks, fall closings, liner replacement reminders, and “book next season early” campaigns.</p><p><b>Result:</b> repeat revenue without manual chasing.</p></div>
+    <div class="card"><h3>6. Review + referral engine</h3><p>Completed jobs trigger review requests, referral prompts, and private save paths for unhappy customers.</p><p><b>Result:</b> stronger local proof against bigger competitors.</p></div>
+  </div>
+
+  <div class="footer"><span>Sources reviewed: KCIP website, public Facebook/search snippets, competitor public websites/search snippets.</span><span>Recommended first build: 1APP Growth</span></div>
+</section>
+
+<section class="page">
+  <div class="blob b2"></div>
+  <div class="header">
+    <div>
+      <div class="eyebrow">Base system + add-ons</div>
+      <h1>Do not undercharge custom work. Keep the base clean, then scope the extras.</h1>
+      <p class="quote">Website rebuilds, QuickBooks automation, and Revenue Engine features are not “little extras.” They add build time, testing, cleanup, and support.</p>
+    </div>
+    <div class="logoBox"><img class="logo" src="../1app-logo.jpg" alt="1APP logo" /></div>
+  </div>
+
+  <div class="hero">
+    <div class="card dark">
+      <h2>Base: 1APP Growth</h2>
+      <div class="price">$499/mo</div>
+      <p><b>Setup starts at $999</b></p>
+      <ul>
+        <li>AI Voice/SMS messaging</li>
+        <li>Missed-call text back</li>
+        <li>2-way text and email inbox</li>
+        <li>CRM + opportunity pipeline</li>
+        <li>Estimate booking calendar</li>
+        <li>Web chat / form capture connection</li>
+        <li>Appointment reminders + quote follow-up</li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <h2>Setup fee increases when we add:</h2>
+      <ul>
+        <li>Website rebuild or major redesign</li>
+        <li>QuickBooks/invoicing automation</li>
+        <li>Multiple custom pipelines</li>
+        <li>Advanced forms/surveys</li>
+        <li>Large contact import or cleanup</li>
+        <li>More than 3–5 custom workflows</li>
+        <li>Revenue Engine-level reporting, social, funnels, or campaigns</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Optional add-on menu</h2>
+  <div class="addGrid">
+    <div class="addon"><span class="tag">Website</span><h3>Website revamp / rebuild</h3><p>Turn the Shopify brochure into a proper trades lead machine: stronger homepage, project gallery, service pages, reviews, booking CTAs, quote intake, and local SEO structure.</p><p><b>Suggested setup add:</b> +$1,500–$3,500+</p></div>
+    <div class="addon"><span class="tag">Accounting</span><h3>QuickBooks automation</h3><p>Connect won jobs, customers, estimates, invoices, and payment reminders where possible so admin does not become double-entry hell.</p><p><b>Suggested setup add:</b> +$750–$2,000+</p></div>
+    <div class="addon"><span class="tag">Upgrade</span><h3>Revenue Engine</h3><p>Add heavier tools: Social Planner, invoices, form builder, survey builder, trigger links, templates, advanced workflows, funnels/websites/blogs, campaigns, and reporting.</p><p><b>Suggested plan:</b> $799/mo + higher setup</p></div>
+    <div class="addon"><span class="tag">Growth</span><h3>Seasonal campaigns</h3><p>Spring openings, fall closings, inspections, leak checks, liner replacements, and early booking campaigns for next season.</p><p><b>Suggested setup add:</b> +$500–$1,250</p></div>
+  </div>
+
+  <h2>What “2-way text and email” means</h2>
+  <div class="card">
+    <p><b>It means KCIP can send and receive customer texts/emails from one shared business inbox instead of everything living on Scott’s personal phone, random email threads, Facebook DMs, and voicemail.</b></p>
+    <div class="thirds">
+      <div><h3>Lead replies</h3><p>Customer texts back “Can you come Tuesday?” and it lands in <b>KCIP’s inbox</b>.</p></div>
+      <div><h3>Team sees it</h3><p>The full conversation stays attached to the customer record and job opportunity.</p></div>
+      <div><h3>Automation behaves</h3><p>Follow-ups can pause when a real person replies, so it does not feel robotic.</p></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>Simple close</h3>
+    <p style="font-size:14px; margin:0;"><b>“Let’s start with Growth so your lead response, estimate booking, and follow-up are handled. If you want the website rebuilt or accounting connected, we scope that separately because that’s custom infrastructure — not a basic setup.”</b></p>
+  </div>
+
+  <div class="footer"><span>KCIP add-on menu · Prepared for Tony DeCarlo / 1APP</span><span>Keep base simple. Charge separately for custom build work.</span></div>
+</section>
+
+</body>
+</html>

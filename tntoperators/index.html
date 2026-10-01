@@ -3,1446 +3,1488 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TNT Operators | We Build. You Shine.</title>
-  <meta name="description" content="TNT Operators turns your audience into a revenue machine. We handle everything — product creation, platform setup, sales funnels, fulfillment. You stay the face." />
+  <title>TNT Operators | The Operator Behind Creator-Led Businesses</title>
+  <meta name="description" content="TNT Operators partners with serious creators to build premium digital products, storefronts, funnels, fulfillment systems, and revenue infrastructure while the creator stays the face of the brand." />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
     :root {
-      --gold: #f5a623;
-      --gold-dark: #c47d0e;
-      --gold-glow: rgba(245, 166, 35, 0.25);
-      --gold-subtle: rgba(245, 166, 35, 0.08);
-      --dark: #080808;
-      --dark2: #0e0e0e;
-      --dark3: #141414;
-      --dark4: #1a1a1a;
-      --border: rgba(245, 166, 35, 0.15);
-      --border-bright: rgba(245, 166, 35, 0.4);
-      --text: #f0ece4;
-      --muted: #7a7060;
-      --white: #ffffff;
+      --bg: #06111f;
+      --bg-2: #0a1628;
+      --bg-3: #0d1d34;
+      --panel: rgba(12, 27, 49, 0.72);
+      --panel-strong: rgba(10, 23, 41, 0.9);
+      --line: rgba(123, 211, 255, 0.16);
+      --line-strong: rgba(123, 211, 255, 0.34);
+      --text: #ecf8ff;
+      --muted: #96acc0;
+      --blue: #45c7ff;
+      --blue-2: #1d8fff;
+      --blue-3: #7bd3ff;
+      --glow: rgba(69, 199, 255, 0.26);
+      --green: #5ef2b4;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--dark);
+      background:
+        radial-gradient(circle at top left, rgba(29, 143, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(69, 199, 255, 0.14), transparent 24%),
+        linear-gradient(180deg, #04101d 0%, #071321 35%, #091727 100%);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    /* ===== ANIMATED BACKGROUND ===== */
-    .bg-layer {
+    .bg {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       pointer-events: none;
+      overflow: hidden;
       z-index: 0;
-      background:
-        radial-gradient(ellipse at 15% 10%, rgba(245,166,35,0.05) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 85%, rgba(245,166,35,0.04) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 50%, rgba(245,166,35,0.02) 0%, transparent 70%);
     }
 
-    /* ===== NAV ===== */
+    .bg::before,
+    .bg::after {
+      content: '';
+      position: absolute;
+      inset: auto;
+      width: 44rem;
+      height: 44rem;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.42;
+      animation: drift 18s ease-in-out infinite;
+    }
+
+    .bg::before {
+      top: -12rem;
+      left: -10rem;
+      background: radial-gradient(circle, rgba(29,143,255,0.4), rgba(29,143,255,0.05) 58%, transparent 74%);
+    }
+
+    .bg::after {
+      right: -14rem;
+      top: 20rem;
+      background: radial-gradient(circle, rgba(69,199,255,0.34), rgba(69,199,255,0.05) 56%, transparent 72%);
+      animation-delay: -8s;
+    }
+
+    .bg-grid,
+    .bg-wave,
+    .bg-wave-2,
+    .bg-aurora,
+    .bg-beam,
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+    }
+
+    .bg-grid {
+      background-image:
+        linear-gradient(rgba(123, 211, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123, 211, 255, 0.055) 1px, transparent 1px);
+      background-size: 86px 86px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.78), transparent 88%);
+    }
+
+    .bg-wave,
+    .bg-wave-2 {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.26;
+    }
+
+    .bg-wave {
+      background-image:
+        radial-gradient(circle at 20% 30%, transparent 0 24%, rgba(69,199,255,0.12) 24.2% 24.7%, transparent 25%),
+        radial-gradient(circle at 68% 56%, transparent 0 18%, rgba(123,211,255,0.14) 18.2% 18.6%, transparent 19%);
+      animation: floatSlow 20s ease-in-out infinite;
+    }
+
+    .bg-wave-2 {
+      background-image: linear-gradient(120deg, transparent 16%, rgba(69,199,255,0.13) 50%, transparent 84%);
+      transform: skewY(-8deg);
+      animation: sweep 14s linear infinite;
+    }
+
+    .bg-aurora {
+      background:
+        conic-gradient(from 215deg at 50% 8%, transparent 0 18%, rgba(69,199,255,0.13) 25%, transparent 36%, rgba(29,143,255,0.16) 48%, transparent 62%),
+        radial-gradient(ellipse at 52% 8%, rgba(123,211,255,0.18), transparent 32%);
+      opacity: 0.78;
+      mix-blend-mode: screen;
+    }
+
+    .bg-beam {
+      background:
+        linear-gradient(104deg, transparent 0 42%, rgba(123,211,255,0.08) 48%, transparent 56%),
+        linear-gradient(72deg, transparent 0 28%, rgba(29,143,255,0.07) 38%, transparent 50%);
+      filter: blur(1px);
+      animation: beamShift 16s ease-in-out infinite alternate;
+    }
+
+    .bg-noise {
+      opacity: 0.08;
+      background-image: radial-gradient(rgba(255,255,255,0.55) 0.65px, transparent 0.65px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(180deg, black, transparent 84%);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: rgba(8,8,8,0.92);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-      padding: 0 5%;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 13, 24, 0.7);
+      border-bottom: 1px solid rgba(123, 211, 255, 0.1);
+    }
+
+    .nav-inner {
+      min-height: 132px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      gap: 24px;
     }
 
-    .nav-logo {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.6rem;
+    .logo,
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      flex: 0 1 auto;
+    }
+
+    .logo {
+      padding: 12px 18px 12px 14px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(10, 24, 42, 0.92), rgba(7, 18, 32, 0.82));
+      border: 1px solid rgba(123,211,255,0.18);
+      box-shadow: 0 0 0 1px rgba(69,199,255,0.05) inset, 0 18px 44px rgba(0, 0, 0, 0.26);
+      overflow: hidden;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.26), transparent);
+      opacity: 0.7;
+    }
+
+    .brand-mark {
+      width: 74px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(69,199,255,0.24), transparent 58%),
+        linear-gradient(160deg, rgba(10, 30, 52, 0.98), rgba(5, 14, 26, 0.95));
+      border: 1px solid rgba(123,211,255,0.22);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        inset 0 -12px 30px rgba(0,0,0,0.2),
+        0 12px 32px rgba(0,0,0,0.24);
+      flex: 0 0 auto;
+    }
+
+    .brand-mark::before {
+      content: '';
+      width: 58px;
+      height: 42px;
+      background-image: url('tnt-operators-logo-v2.png');
+      background-repeat: no-repeat;
+      background-size: 158px 42px;
+      background-position: left center;
+      filter: brightness(1.16) saturate(1.1) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.26));
+    }
+
+    .brand-wordmark {
+      display: grid;
+      gap: 2px;
+      line-height: 0.92;
+    }
+
+    .brand-wordmark-top,
+    .brand-wordmark-bottom {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .brand-wordmark-top {
+      font-size: 1.9rem;
       font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--white);
+      color: #f4fbff;
     }
 
-    .nav-logo span { color: var(--gold); }
+    .brand-wordmark-bottom {
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: #9fc3dd;
+    }
+
+    .footer-brand {
+      gap: 12px;
+    }
+
+    .footer-brand .brand-mark {
+      width: 60px;
+      height: 48px;
+      border-radius: 15px;
+    }
+
+    .footer-brand .brand-mark::before {
+      width: 47px;
+      height: 34px;
+      background-size: 128px 34px;
+    }
+
+    .footer-brand .brand-wordmark-top {
+      font-size: 1.34rem;
+    }
+
+    .footer-brand .brand-wordmark-bottom {
+      font-size: 0.82rem;
+    }
 
     .nav-links {
-      display: flex;
-      gap: 2.5rem;
       list-style: none;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-links a {
-      font-size: 0.88rem;
-      font-weight: 500;
       color: var(--muted);
-      letter-spacing: 0.5px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn,
+    button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #03111e;
+      box-shadow: 0 14px 36px rgba(29, 143, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(29, 143, 255, 0.4);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--line-strong);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(69, 199, 255, 0.15) inset;
+    }
+
+    section {
+      position: relative;
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(69, 199, 255, 0.08);
+      color: var(--blue-3);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--dark) !important;
-      padding: 0.5rem 1.4rem;
-      border-radius: 4px;
-      font-weight: 700 !important;
-      color: #000 !important;
-      transition: background 0.2s, box-shadow 0.2s !important;
+    .eyebrow::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 18px rgba(69, 199, 255, 0.8);
+      animation: pulse 2.4s infinite;
     }
 
-    .nav-cta:hover {
-      background: #ffc044 !important;
-      box-shadow: 0 0 20px var(--gold-glow) !important;
+    .section-title,
+    .hero-title,
+    .about-name {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
     }
 
-    /* ===== SECTIONS ===== */
-    section { position: relative; z-index: 1; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
-
-    /* ===== HERO ===== */
-    #hero {
-      min-height: 100vh;
+    .hero {
+      padding-top: 72px;
+      min-height: calc(100vh - 76px);
       display: flex;
       align-items: center;
-      padding-top: 70px;
-      overflow: hidden;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
       align-items: center;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--gold-subtle);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--gold);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.7); }
     }
 
     .hero-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.5px;
-      color: var(--white);
-      margin-bottom: 1.5rem;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      margin-bottom: 20px;
+      max-width: 12ch;
     }
 
     .hero-title .highlight {
-      color: var(--gold);
-      position: relative;
-      display: inline-block;
-    }
-
-    .hero-title .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: 2px; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      border-radius: 2px;
+      color: var(--blue);
+      text-shadow: 0 0 26px rgba(69, 199, 255, 0.25);
     }
 
     .hero-sub {
-      font-size: 1.1rem;
-      color: #a09880;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      max-width: 500px;
+      max-width: 650px;
+      color: #c8d7e5;
+      font-size: 1.08rem;
+      margin-bottom: 28px;
     }
 
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.85rem 2rem;
-      border-radius: 5px;
-      letter-spacing: 0.3px;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary:hover {
-      background: #ffc044;
-      box-shadow: 0 0 30px var(--gold-glow);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.85rem 2rem;
-      border-radius: 5px;
-      border: 1px solid var(--border-bright);
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .hero-stat-num {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 0.2rem;
-    }
-
-    /* Hero visual */
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-card-stack {
-      position: relative;
-      width: 380px;
-      height: 420px;
-    }
-
-    .hero-card {
-      position: absolute;
-      width: 320px;
-      background: var(--dark3);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-    }
-
-    .hero-card-back {
-      top: 30px; right: 0;
-      opacity: 0.5;
-      transform: rotate(6deg);
-    }
-
-    .hero-card-mid {
-      top: 15px; right: 15px;
-      opacity: 0.75;
-      transform: rotate(3deg);
-    }
-
-    .hero-card-front {
-      top: 0; left: 0;
-      border-color: var(--border-bright);
-      box-shadow: 0 8px 40px rgba(245,166,35,0.12);
-    }
-
-    .card-tag {
-      display: inline-block;
-      background: var(--gold-subtle);
-      color: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-
-    .card-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .card-creator {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .creator-avatar {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), #c47d0e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #000;
-    }
-
-    .creator-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .creator-niche {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .card-revenue {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .revenue-num {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .revenue-label {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .revenue-badge {
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.25);
-      color: #4ade80;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 100px;
-    }
-
-    /* ===== HOW IT WORKS ===== */
-    #how {
-      padding: 100px 0;
-      background: var(--dark2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 20px; height: 2px;
-      background: var(--gold);
-      border-radius: 1px;
-    }
-
-    .section-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .section-sub {
-      font-size: 1rem;
-      color: #8a8070;
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 3.5rem;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: calc(12.5% + 28px);
-      right: calc(12.5% + 28px);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-bright), var(--border-bright), transparent);
-    }
-
-    .step-card {
-      background: var(--dark3);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-
-    .step-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 4px 30px var(--gold-glow);
-    }
-
-    .step-num {
-      width: 56px; height: 56px;
-      background: var(--dark4);
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-      background: var(--dark);
-    }
-
-    .step-icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .step-title {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .step-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ===== OPPORTUNITIES ===== */
-    #opportunities {
-      padding: 100px 0;
-    }
-
-    .opps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .opp-card {
-      background: var(--dark2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .opp-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .opp-card:hover {
-      border-color: var(--border-bright);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-      transform: translateY(-3px);
-    }
-
-    .opp-card:hover::before { opacity: 1; }
-
-    .opp-icon {
-      width: 48px; height: 48px;
-      background: var(--gold-subtle);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .opp-title {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .opp-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-
-    .opp-examples {
+    .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 14px;
+      margin-bottom: 28px;
     }
 
-    .opp-tag {
-      background: var(--dark4);
-      border: 1px solid var(--border);
-      color: #9a9080;
-      font-size: 0.72rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-weight: 500;
-    }
-
-    /* ===== WHAT WE DO ===== */
-    #services {
-      padding: 100px 0;
-      background: var(--dark2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .services-layout {
+    .hero-trust {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
     }
 
-    .services-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .service-item {
-      display: flex;
-      gap: 1.2rem;
-      padding: 1.5rem;
-      background: var(--dark3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: border-color 0.2s;
-      align-items: flex-start;
-    }
-
-    .service-item:hover { border-color: var(--gold); }
-
-    .service-icon-wrap {
-      width: 42px; height: 42px;
-      min-width: 42px;
-      background: var(--gold-subtle);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .service-text-title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-
-    .service-text-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* Split visual */
-    .split-visual {
-      position: sticky;
-      top: 100px;
-    }
-
+    .trust-card,
+    .glass-card,
+    .step-card,
+    .opp-card,
+    .who-card,
+    .service-card,
+    .about-card,
+    .numbers-card,
+    .apply-card,
     .split-box {
-      background: var(--dark3);
-      border: 1px solid var(--border-bright);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 12px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,166,35,0.05);
+      background: linear-gradient(180deg, rgba(16, 33, 57, 0.78), rgba(9, 22, 39, 0.72));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
     }
 
-    .split-box-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
+    .trust-card {
+      border-radius: 18px;
+      padding: 18px 18px 16px;
     }
 
-    .split-box-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
+    .trust-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      color: var(--blue);
+      margin-bottom: 4px;
     }
 
-    .split-badge {
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.2);
-      color: #4ade80;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-      letter-spacing: 0.5px;
-    }
-
-    .responsibility-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-
-    .resp-col {
-      flex: 1;
-      text-align: center;
-    }
-
-    .resp-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 0.4rem 0;
-      margin-bottom: 0.8rem;
-      border-radius: 4px;
-    }
-
-    .resp-label.you { color: var(--gold); border-bottom: 2px solid var(--gold); }
-    .resp-label.them { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
-
-    .resp-item {
-      font-size: 0.8rem;
-      color: var(--text);
-      padding: 0.5rem 0.75rem;
-      background: var(--dark4);
-      border-radius: 6px;
-      margin-bottom: 0.4rem;
-      border: 1px solid var(--border);
-      text-align: left;
-    }
-
-    .resp-item::before {
-      margin-right: 0.5rem;
-    }
-
-    .you .resp-item::before { content: '✓'; color: var(--gold); }
-    .them .resp-item::before { content: '✓'; color: #60a5fa; }
-
-    .split-footer {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .split-rev {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    .split-rev-sub {
-      font-size: 0.72rem;
+    .trust-label {
       color: var(--muted);
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.08em;
     }
 
-    /* ===== WHO IS THIS FOR ===== */
-    #who {
-      padding: 100px 0;
-    }
-
-    .who-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .who-card {
-      background: var(--dark2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2rem;
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .who-card:hover {
-      border-color: var(--border-bright);
-      box-shadow: 0 4px 24px rgba(245,166,35,0.08);
-    }
-
-    .who-emoji {
-      font-size: 2rem;
-      line-height: 1;
-      margin-top: 0.1rem;
-    }
-
-    .who-name {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-
-    .who-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ===== NUMBERS ===== */
-    #numbers {
-      padding: 80px 0;
-      background: var(--gold);
+    .hero-visual {
       position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbital {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(123, 211, 255, 0.12);
+      animation: spin 18s linear infinite;
+    }
+
+    .orbital.one { width: 520px; height: 520px; }
+    .orbital.two { width: 420px; height: 420px; animation-direction: reverse; animation-duration: 14s; }
+    .orbital.three { width: 300px; height: 300px; animation-duration: 10s; }
+
+    .orbital::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-3), var(--blue-2));
+      box-shadow: 0 0 24px rgba(69,199,255,0.7);
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .glass-card {
+      position: relative;
+      width: min(100%, 450px);
+      border-radius: 28px;
+      padding: 28px;
       overflow: hidden;
     }
 
-    #numbers::before {
+    .glass-card::before {
       content: '';
       position: absolute;
-      top: -50%; left: -10%;
-      width: 60%;
-      height: 200%;
-      background: rgba(0,0,0,0.1);
-      transform: skewX(-20deg);
+      inset: 0;
+      background: linear-gradient(135deg, rgba(123,211,255,0.12), transparent 42%, rgba(69,199,255,0.08));
       pointer-events: none;
     }
 
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .number-item-num {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 3rem;
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(94, 242, 180, 0.08);
+      border: 1px solid rgba(94, 242, 180, 0.24);
+      color: var(--green);
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #000;
-      line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 18px;
     }
 
-    .number-item-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: rgba(0,0,0,0.65);
-      letter-spacing: 0.3px;
+    .visual-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
-    /* ===== APPLY ===== */
-    #apply {
-      padding: 120px 0;
-      text-align: center;
+    .visual-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
     }
 
-    .apply-inner {
+    .visual-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(123, 211, 255, 0.08);
+    }
+
+    .visual-icon,
+    .opp-icon,
+    .who-icon,
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(69,199,255,0.18), rgba(29,143,255,0.12));
+      border: 1px solid rgba(123,211,255,0.18);
+      font-size: 1.1rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .visual-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(123,211,255,0.12);
+    }
+
+    .kpi strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.45rem;
+      color: var(--blue);
+    }
+
+    .kpi span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.02rem;
       max-width: 700px;
-      margin: 0 auto;
     }
 
-    .apply-inner .section-label { justify-content: center; }
-    .apply-inner .section-title { margin-bottom: 1rem; }
-    .apply-inner .section-sub { margin: 0 auto 2.5rem; text-align: center; }
+    .steps-grid,
+    .opps-grid,
+    .who-grid {
+      display: grid;
+      gap: 20px;
+    }
 
-    .apply-form {
-      background: var(--dark2);
-      border: 1px solid var(--border-bright);
-      border-radius: 16px;
-      padding: 2.5rem;
-      text-align: left;
-      margin-top: 2rem;
+    .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .opps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .who-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .step-card,
+    .opp-card,
+    .who-card,
+    .service-card,
+    .numbers-card,
+    .apply-card,
+    .about-card,
+    .split-box {
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before,
+    .opp-card::before,
+    .service-card::before,
+    .split-box::before,
+    .apply-card::before,
+    .about-card::before,
+    .numbers-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(123,211,255,0.08), transparent 45%, rgba(69,199,255,0.04));
+      pointer-events: none;
+    }
+
+    .step-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.16em;
+      color: var(--blue-3);
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card-copy,
+    .opp-desc,
+    .who-desc,
+    .service-copy,
+    .about-copy {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .opp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .opp-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(69, 199, 255, 0.08);
+      border: 1px solid rgba(69, 199, 255, 0.12);
+      color: #d7f3ff;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .services-layout,
+    .about-layout,
+    .numbers-layout,
+    .apply-layout {
+      display: grid;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .services-layout,
+    .about-layout,
+    .apply-layout {
+      grid-template-columns: 1.02fr 0.98fr;
+    }
+
+    .services-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+    }
+
+    .service-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .split-box-header,
+    .about-intro {
+      margin-bottom: 22px;
+    }
+
+    .mini-label {
+      color: var(--blue-3);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .split-title,
+    .about-name {
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      margin-bottom: 8px;
+    }
+
+    .split-copy,
+    .about-role,
+    .small-copy {
+      color: var(--muted);
+    }
+
+    .responsibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .responsibility-col {
+      border-radius: 20px;
+      padding: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(123, 211, 255, 0.1);
+    }
+
+    .responsibility-col h4 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .responsibility-col ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #d3ebff;
+      font-size: 0.95rem;
+    }
+
+    .responsibility-col li::before {
+      content: '✓';
+      color: var(--blue);
+      margin-right: 10px;
+    }
+
+    .split-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(123, 211, 255, 0.12);
+      flex-wrap: wrap;
+    }
+
+    .split-rev {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      color: var(--blue);
+    }
+
+    .who-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .numbers-layout { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .numbers-card strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .numbers-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 100%;
+    }
+
+    .about-badge {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      right: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(6, 17, 31, 0.78);
+      border: 1px solid rgba(123, 211, 255, 0.18);
+      backdrop-filter: blur(12px);
+      color: #d9f2ff;
+      font-weight: 600;
+    }
+
+    .about-badge span { color: var(--blue); }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-role {
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .about-copy-wrap {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .apply-note-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+      color: #d8efff;
+    }
+
+    .apply-note-list li::before {
+      content: '•';
+      color: var(--blue);
+      margin-right: 10px;
+    }
+
+    .form-card {
+      border-radius: 28px;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(8, 20, 36, 0.92), rgba(8, 20, 36, 0.8));
+      border: 1px solid rgba(123, 211, 255, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 16px;
     }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .form-group.full { margin-bottom: 1.5rem; }
 
     label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #8a8070;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    input, select, textarea {
-      background: var(--dark3);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
+      display: block;
+      margin-bottom: 8px;
+      color: #dff4ff;
       font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(123, 211, 255, 0.16);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
-    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input::placeholder,
+    textarea::placeholder { color: #7994aa; }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(69, 199, 255, 0.42);
+      box-shadow: 0 0 0 4px rgba(69, 199, 255, 0.1);
+      background: rgba(255,255,255,0.06);
     }
 
-    select option { background: var(--dark3); }
-
-    textarea { resize: vertical; min-height: 100px; }
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
 
     .form-submit {
       width: 100%;
-      background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-      transition: all 0.2s;
-      margin-top: 0.5rem;
-    }
-
-    .form-submit:hover {
-      background: #ffc044;
-      box-shadow: 0 0 30px var(--gold-glow);
+      padding: 16px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #04111f;
+      font-weight: 800;
+      box-shadow: 0 14px 32px rgba(29, 143, 255, 0.26);
     }
 
     .form-note {
       text-align: center;
-      font-size: 0.78rem;
       color: var(--muted);
-      margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
-    /* ===== FOOTER ===== */
     footer {
-      background: var(--dark2);
-      border-top: 1px solid var(--border);
-      padding: 3rem 5%;
+      padding: 34px 0 46px;
+      border-top: 1px solid rgba(123, 211, 255, 0.1);
+      background: rgba(4, 12, 22, 0.5);
+    }
+
+    .footer-inner {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
-      position: relative;
-      z-index: 1;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .footer-logo {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--white);
+    .footer-copy { color: var(--muted); font-size: 0.92rem; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.7); }
     }
 
-    .footer-logo span { color: var(--gold); }
-
-    .footer-copy {
-      font-size: 0.8rem;
-      color: var(--muted);
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 30px) scale(1.08); }
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 900px) {
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes sweep {
+      from { transform: translateX(-12%) skewY(-8deg); }
+      to { transform: translateX(12%) skewY(-8deg); }
+    }
+
+    @keyframes beamShift {
+      from { transform: translateX(-2%) translateY(0); opacity: 0.62; }
+      to { transform: translateX(2%) translateY(-2%); opacity: 0.9; }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-inner,
+      .services-layout,
+      .about-layout,
+      .apply-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .opps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .numbers-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-trust { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero-visual { min-height: 500px; }
+    }
+
+    @media (max-width: 780px) {
+      nav { position: sticky; }
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .nav-inner { min-height: 78px; padding: 8px 0; align-items: center; gap: 10px; }
       .nav-links { display: none; }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-
-      .hero-card-stack { display: none; }
-
-      .steps-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .steps-grid::before { display: none; }
-
-      .opps-grid { grid-template-columns: 1fr; }
-
-      .services-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .split-visual { position: static; }
-
-      .who-grid { grid-template-columns: 1fr; }
-
-      .numbers-grid { grid-template-columns: 1fr 1fr; }
-
-      .form-row { grid-template-columns: 1fr; }
-
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      nav .btn-primary { flex: 0 0 auto; padding: 10px 12px; font-size: 0.78rem; max-width: 148px; }
+      section { padding: 84px 0; }
+      .hero { min-height: auto; }
+      .hero-title { max-width: none; }
+      .hero-trust,
+      .steps-grid,
+      .opps-grid,
+      .who-grid,
+      .numbers-layout,
+      .responsibility-grid,
+      .form-row,
+      .visual-kpis { grid-template-columns: 1fr; }
+      .glass-card { width: 100%; }
+      .hero-visual { min-height: 420px; }
+      .orbital.one { width: 360px; height: 360px; }
+      .orbital.two { width: 280px; height: 280px; }
+      .orbital.three { width: 210px; height: 210px; }
+      .logo { padding: 7px 8px; gap: 8px; border-radius: 18px; min-width: 0; max-width: 54vw; }
+      .brand-mark { width: 48px; height: 40px; border-radius: 13px; }
+      .brand-mark::before { width: 37px; height: 27px; background-size: 102px 27px; }
+      .brand-wordmark { min-width: 0; }
+      .brand-wordmark-top { font-size: 1.1rem; letter-spacing: 0.08em; }
+      .brand-wordmark-bottom { font-size: 0.66rem; letter-spacing: 0.08em; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
-    @media (max-width: 600px) {
-      .steps-grid { grid-template-columns: 1fr; }
-      .numbers-grid { grid-template-columns: 1fr 1fr; }
-      .hero-ctas { flex-direction: column; }
+    @media (max-width: 420px) {
+      .container { width: min(var(--max), calc(100% - 18px)); }
+      .nav-inner { min-height: 70px; gap: 8px; }
+      .logo { padding: 6px 7px; gap: 7px; border-radius: 16px; max-width: 52vw; }
+      .brand-mark { width: 40px; height: 34px; border-radius: 11px; }
+      .brand-mark::before { width: 31px; height: 23px; background-size: 86px 23px; }
+      .brand-wordmark-top { font-size: 0.92rem; }
+      .brand-wordmark-bottom { font-size: 0.55rem; }
+      nav .btn-primary { max-width: 132px; padding: 9px 10px; font-size: 0.72rem; }
     }
-
-    /* ===== DIVIDER ===== */
-    .gold-divider {
-      width: 60px; height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      border-radius: 2px;
-      margin-bottom: 2rem;
-    }
-
   </style>
 </head>
 <body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-beam"></div>
+    <div class="bg-wave"></div>
+    <div class="bg-wave-2"></div>
+    <div class="bg-noise"></div>
+  </div>
 
-  <div class="bg-layer"></div>
-
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo"><span>TNT</span> OPERATORS</div>
-    <ul class="nav-links">
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#opportunities">Opportunities</a></li>
-      <li><a href="#services">What We Do</a></li>
-      <li><a href="#who">Who We Work With</a></li>
-      <li><a href="#apply" class="nav-cta">Apply Now</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-eyebrow">Shadow Operator System</div>
-        <h1 class="hero-title">
-          You Built the Audience.<br>
-          We'll Build the <span class="highlight">Empire.</span>
-        </h1>
-        <p class="hero-sub">
-          TNT Operators is your behind-the-scenes business partner. We turn your audience into a 
-          full revenue machine — products, funnels, platform, fulfillment. You stay the face. We run the engine.
-        </p>
-        <div class="hero-ctas">
-          <a href="#apply" class="btn-primary">Apply to Work With Us →</a>
-          <a href="#how" class="btn-secondary">See How It Works</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="hero-stat-num">$0</div>
-            <div class="hero-stat-label">Upfront to You</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">30–50%</div>
-            <div class="hero-stat-label">Revenue Split</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">14 Days</div>
-            <div class="hero-stat-label">Avg. Launch Time</div>
-          </div>
-        </div>
+  <div class="page">
+    <nav>
+      <div class="container nav-inner">
+        <a href="#hero" class="logo" aria-label="TNT Operators home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-wordmark-top">TNT</span>
+            <span class="brand-wordmark-bottom">OPERATORS</span>
+          </span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#opportunities">Opportunities</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#who">Who We Work With</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#apply" class="btn-primary">Apply for a Partnership</a>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card-stack">
-          <div class="hero-card hero-card-back"></div>
-          <div class="hero-card hero-card-mid"></div>
-          <div class="hero-card hero-card-front">
-            <div class="card-tag">Live on Whop</div>
-            <div class="card-title">Financial Freedom Blueprint</div>
-            <div class="card-creator">
-              <div class="creator-avatar">JM</div>
-              <div>
-                <div class="creator-name">@jm.finance</div>
-                <div class="creator-niche">Personal Finance • 87K Followers</div>
-              </div>
-            </div>
-            <div class="card-revenue">
-              <div>
-                <div class="revenue-num">$8,420</div>
-                <div class="revenue-label">This Month</div>
-              </div>
-              <div class="revenue-badge">↑ 34% MoM</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- HOW IT WORKS -->
-  <section id="how">
-    <div class="container">
-      <div class="section-label">The Process</div>
-      <h2 class="section-title">From Audience to Income<br>in 4 Simple Steps</h2>
-      <p class="section-sub">You focus on what you do best — creating content and building your audience. We handle everything else.</p>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <div class="step-title">We Find the Opportunity</div>
-          <p class="step-desc">We analyze your audience, your content, and your niche to identify the exact product your followers are already willing to pay for.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <div class="step-title">We Build the Product</div>
-          <p class="step-desc">Using AI-powered tools, we create your digital product — ebook, course, membership, or toolkit — written in your voice, built around your expertise.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <div class="step-title">We Launch the Store</div>
-          <p class="step-desc">We set up your Whop storefront, write the sales page, set up payment processing, and build the funnel. Ready to sell in days, not months.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">04</div>
-          <div class="step-title">We Scale Together</div>
-          <p class="step-desc">Once the product is live, we optimize pricing, add affiliates, build email sequences, and identify the next revenue stream — ongoing, no extra charge.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OPPORTUNITIES -->
-  <section id="opportunities">
-    <div class="container">
-      <div class="section-label">What We Build</div>
-      <h2 class="section-title">Revenue Opportunities<br>We Create for Creators</h2>
-      <p class="section-sub">Every creator has untapped revenue sitting in their audience. We identify it, build it, and launch it.</p>
-      <div class="opps-grid">
-
-        <div class="opp-card">
-          <div class="opp-icon">📚</div>
-          <div class="opp-title">Digital Products & Ebooks</div>
-          <p class="opp-desc">Your knowledge packaged into premium PDFs, guides, or playbooks. One-time sale, zero fulfillment. Pure margin.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">Guides</span>
-            <span class="opp-tag">Playbooks</span>
-            <span class="opp-tag">Frameworks</span>
-            <span class="opp-tag">Swipe Files</span>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-icon">🎓</div>
-          <div class="opp-title">Online Courses</div>
-          <p class="opp-desc">Turn your expertise into a structured video course. High perceived value, high ticket, and your audience already trusts you to teach them.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">Mini Courses</span>
-            <span class="opp-tag">Full Programs</span>
-            <span class="opp-tag">Masterclasses</span>
-            <span class="opp-tag">Workshops</span>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-icon">🏛️</div>
-          <div class="opp-title">Paid Communities</div>
-          <p class="opp-desc">Recurring monthly revenue. Your most engaged followers pay to be in a room together with exclusive content, Q&As, and accountability.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">Membership Groups</span>
-            <span class="opp-tag">Masterminds</span>
-            <span class="opp-tag">Inner Circles</span>
-            <span class="opp-tag">Cohorts</span>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-icon">🛠️</div>
-          <div class="opp-title">Templates & Toolkits</div>
-          <p class="opp-desc">Ready-to-use resources your audience can plug in immediately. Fast to build, fast to buy, and they sell on autopilot for months.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">Notion Templates</span>
-            <span class="opp-tag">Spreadsheets</span>
-            <span class="opp-tag">Prompt Packs</span>
-            <span class="opp-tag">Canva Kits</span>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-icon">🤝</div>
-          <div class="opp-title">Coaching & Consulting Offers</div>
-          <p class="opp-desc">Your highest-ticket opportunity. We build the offer, the intake system, and the onboarding process — you deliver the value and collect the premium.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">1:1 Coaching</span>
-            <span class="opp-tag">Group Coaching</span>
-            <span class="opp-tag">Done-For-You</span>
-            <span class="opp-tag">Consulting Calls</span>
-          </div>
-        </div>
-
-        <div class="opp-card">
-          <div class="opp-icon">📦</div>
-          <div class="opp-title">Physical Products & Merch</div>
-          <p class="opp-desc">Brand extension for creators with loyal fanbases. We set up the store, sourcing strategy, and order flow — you promote it to an audience that already loves you.</p>
-          <div class="opp-examples">
-            <span class="opp-tag">Branded Merch</span>
-            <span class="opp-tag">Physical Guides</span>
-            <span class="opp-tag">Product Bundles</span>
-            <span class="opp-tag">POD</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES / SPLIT -->
-  <section id="services">
-    <div class="container">
-      <div class="services-layout">
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
         <div>
-          <div class="section-label">What We Handle</div>
-          <h2 class="section-title">You Create.<br>We Operate.</h2>
-          <p class="section-sub">The full back-end of your business — built, launched, and managed. Zero cost to you until you're making money.</p>
-          <div class="gold-divider"></div>
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-icon-wrap">🤖</div>
-              <div>
-                <div class="service-text-title">AI-Powered Product Creation</div>
-                <p class="service-text-desc">We use cutting-edge AI tools to build your product in your voice — ebooks, courses, templates — at a fraction of the usual time and cost.</p>
-              </div>
+          <div class="eyebrow">Private Operator Partner</div>
+          <h1 class="hero-title">We build the business behind <span class="highlight">creator empires.</span></h1>
+          <p class="hero-sub">TNT Operators partners with serious creators to turn trust, attention, and expertise into premium digital products, polished storefronts, sales systems, and fulfillment. You stay the face. We build the engine behind the brand.</p>
+          <div class="hero-cta-row">
+            <a href="#apply" class="btn-primary">Apply for a Creator Partnership</a>
+            <a href="#how" class="btn-secondary">See How It Works</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-card">
+              <div class="trust-number">$0</div>
+              <div class="trust-label">Upfront Cost to You</div>
             </div>
-            <div class="service-item">
-              <div class="service-icon-wrap">🏪</div>
-              <div>
-                <div class="service-text-title">Whop Store Setup & Optimization</div>
-                <p class="service-text-desc">Full storefront setup on Whop — the most powerful digital product platform. Sales page copy, pricing, access control, and community features.</p>
-              </div>
+            <div class="trust-card">
+              <div class="trust-number">Custom</div>
+              <div class="trust-label">Revenue Split Per Deal</div>
             </div>
-            <div class="service-item">
-              <div class="service-icon-wrap">📣</div>
-              <div>
-                <div class="service-text-title">Launch Strategy & Sales Funnels</div>
-                <p class="service-text-desc">We plan your product launch, write the promotional content, build the funnel, and set up email/SMS follow-up to maximize first-week revenue.</p>
-              </div>
-            </div>
-            <div class="service-item">
-              <div class="service-icon-wrap">📈</div>
-              <div>
-                <div class="service-text-title">Ongoing Scaling & Optimization</div>
-                <p class="service-text-desc">After launch, we monitor performance, optimize pricing, add affiliates, and identify the next product to add to your growing business.</p>
-              </div>
-            </div>
-            <div class="service-item">
-              <div class="service-icon-wrap">🎧</div>
-              <div>
-                <div class="service-text-title">Customer Support Systems</div>
-                <p class="service-text-desc">We set up the support infrastructure so buyers are happy and refund rates stay low — so you never have to deal with customer complaints.</p>
-              </div>
+            <div class="trust-card">
+              <div class="trust-number">Premium</div>
+              <div class="trust-label">Launch Experience</div>
             </div>
           </div>
         </div>
 
-        <div class="split-visual">
-          <div class="split-box">
-            <div class="split-box-header">
-              <div class="split-box-title">The Partnership Split</div>
-              <div class="split-badge">Rev Share Deal</div>
+        <div class="hero-visual">
+          <div class="orbital one"></div>
+          <div class="orbital two"></div>
+          <div class="orbital three"></div>
+          <div class="glass-card">
+            <div class="status-pill">Selective Partnerships • Operator-Led Builds</div>
+            <div class="visual-title">Built for creators whose audience is too valuable for amateur funnels.</div>
+            <div class="visual-list">
+              <div class="visual-item">
+                <div class="visual-icon">⚙️</div>
+                <div>
+                  <div class="card-title">Premium offer architecture</div>
+                  <div class="card-copy">We turn your expertise into a clear, credible offer your audience can understand, trust, and buy.</div>
+                </div>
+              </div>
+              <div class="visual-item">
+                <div class="visual-icon">🚀</div>
+                <div>
+                  <div class="card-title">Launch-ready infrastructure</div>
+                  <div class="card-copy">Storefront, sales page, pricing, delivery, and follow-up — built to feel sharp from the first click.</div>
+                </div>
+              </div>
+              <div class="visual-item">
+                <div class="visual-icon">🤝</div>
+                <div>
+                  <div class="card-title">Aligned partnership</div>
+                  <div class="card-copy">No bloated retainers. No agency handoff. The model is simple: if the business wins, we win together.</div>
+                </div>
+              </div>
             </div>
-
-            <div class="responsibility-row">
-              <div class="resp-col you">
-                <div class="resp-label you">TNT Operators</div>
-                <div class="resp-item">✓ Build the product</div>
-                <div class="resp-item">✓ Set up Whop store</div>
-                <div class="resp-item">✓ Write sales copy</div>
-                <div class="resp-item">✓ Build the funnel</div>
-                <div class="resp-item">✓ Scale & optimize</div>
-                <div class="resp-item">✓ Customer support</div>
-              </div>
-              <div class="resp-col them">
-                <div class="resp-label them">You (The Creator)</div>
-                <div class="resp-item">✓ Your audience</div>
-                <div class="resp-item">✓ Your brand & face</div>
-                <div class="resp-item">✓ Promote the launch</div>
-                <div class="resp-item">✓ Create content</div>
-                <div class="resp-item">✓ Community presence</div>
-                <div class="resp-item">✓ Keep growing</div>
-              </div>
-            </div>
-
-            <div class="split-footer">
-              <div>
-                <div class="split-rev">30–50% Rev Share</div>
-                <div class="split-rev-sub">We only eat when you eat</div>
-              </div>
-              <a href="#apply" class="btn-primary" style="font-size:0.85rem; padding: 0.65rem 1.3rem;">Apply Now →</a>
+            <div class="visual-kpis">
+              <div class="kpi"><strong>$0</strong><span>Upfront</span></div>
+              <div class="kpi"><strong>Direct</strong><span>Operator Access</span></div>
+              <div class="kpi"><strong>Custom</strong><span>Partnership Model</span></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHO IS THIS FOR -->
-  <section id="who">
-    <div class="container">
-      <div class="section-label">Ideal Partners</div>
-      <h2 class="section-title">Who We Work With</h2>
-      <p class="section-sub">We partner with creators across every niche who have one thing in common: an engaged audience that's ready to buy.</p>
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-emoji">💰</div>
-          <div>
-            <div class="who-name">Finance & Money Creators</div>
-            <p class="who-desc">Budgeting coaches, debt-free journey accounts, investing educators — audiences that are literally motivated to spend money to make money.</p>
-          </div>
+    <section id="how">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">The Process</div>
+          <h2 class="section-title">From audience to product business in 4 decisive moves</h2>
+          <p class="section-sub">You keep building attention. We build the backend that turns that attention into a real, sellable offer with a clean customer experience.</p>
         </div>
-        <div class="who-card">
-          <div class="who-emoji">💪</div>
-          <div>
-            <div class="who-name">Fitness & Health Creators</div>
-            <p class="who-desc">Personal trainers, nutrition coaches, transformation accounts — they have passionate followers who pay for plans, programs, and accountability.</p>
-          </div>
-        </div>
-        <div class="who-card">
-          <div class="who-emoji">🏠</div>
-          <div>
-            <div class="who-name">Real Estate & Business Creators</div>
-            <p class="who-desc">Investors, entrepreneurs, side hustle accounts — audiences pre-sold on investing in their own growth and education.</p>
-          </div>
-        </div>
-        <div class="who-card">
-          <div class="who-emoji">🎨</div>
-          <div>
-            <div class="who-name">Lifestyle & Mindset Creators</div>
-            <p class="who-desc">Productivity gurus, morning routine accounts, self-improvement creators — niche communities with high trust and high purchase intent.</p>
-          </div>
-        </div>
-        <div class="who-card">
-          <div class="who-emoji">📱</div>
-          <div>
-            <div class="who-name">Social Media & Marketing Creators</div>
-            <p class="who-desc">Content strategists, growth hackers, personal branding coaches — audiences that already understand the value of paying for an edge.</p>
-          </div>
-        </div>
-        <div class="who-card">
-          <div class="who-emoji">🍳</div>
-          <div>
-            <div class="who-name">Niche Community Builders</div>
-            <p class="who-desc">Food, travel, faith, parenting, gaming — if your audience is engaged and specific, there's a product waiting to be built for them.</p>
-          </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">01</div>
+            <h3 class="card-title">We identify the money angle</h3>
+            <p class="card-copy">We study your audience, content, positioning, and trust signals to find the product opportunity that actually fits your brand.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">02</div>
+            <h3 class="card-title">We build the offer</h3>
+            <p class="card-copy">We package your knowledge into a digital product, course, membership, toolkit, or coaching offer that feels premium and specific.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">03</div>
+            <h3 class="card-title">We launch the storefront</h3>
+            <p class="card-copy">We set up the store, sales page, pricing, access, and funnel flow so buyers get a clean experience from checkout to delivery.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">04</div>
+            <h3 class="card-title">We improve the machine</h3>
+            <p class="card-copy">Once live, we tighten pricing, follow-up, messaging, and next-product opportunities so the business keeps getting stronger.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NUMBERS -->
-  <section id="numbers">
-    <div class="container">
-      <div class="numbers-grid">
-        <div>
-          <div class="number-item-num">$23.9M+</div>
-          <div class="number-item-label">Generated by Operators in This System</div>
+    <section id="opportunities">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Build</div>
+          <h2 class="section-title">What a serious creator can turn into revenue</h2>
+          <p class="section-sub">If your audience trusts your taste, knowledge, or results, there is usually a clean product path hiding in plain sight. We turn that into a structured offer.</p>
         </div>
-        <div>
-          <div class="number-item-num">14 Days</div>
-          <div class="number-item-label">Average Time From Deal to Launch</div>
-        </div>
-        <div>
-          <div class="number-item-num">$0</div>
-          <div class="number-item-label">Upfront Cost to Creators</div>
-        </div>
-        <div>
-          <div class="number-item-num">Whop</div>
-          <div class="number-item-label">World's #1 Digital Product Platform</div>
+        <div class="opps-grid">
+          <article class="opp-card">
+            <div class="opp-icon">📚</div>
+            <h3 class="card-title">Digital Products & Ebooks</h3>
+            <p class="opp-desc">Your knowledge packaged into polished guides, playbooks, and premium PDFs. One-time sale. Clean fulfillment. Strong margins.</p>
+            <div class="opp-tags"><span>Guides</span><span>Playbooks</span><span>Frameworks</span><span>Swipe Files</span></div>
+          </article>
+          <article class="opp-card">
+            <div class="opp-icon">🎓</div>
+            <h3 class="card-title">Online Courses</h3>
+            <p class="opp-desc">Turn your expertise into a structured course offer with clear positioning, delivery, and premium perceived value.</p>
+            <div class="opp-tags"><span>Mini Courses</span><span>Full Programs</span><span>Masterclasses</span><span>Workshops</span></div>
+          </article>
+          <article class="opp-card">
+            <div class="opp-icon">🏛️</div>
+            <h3 class="card-title">Paid Communities</h3>
+            <p class="opp-desc">Recurring monthly revenue through private groups, inner circles, masterminds, and accountability-based memberships.</p>
+            <div class="opp-tags"><span>Memberships</span><span>Masterminds</span><span>Inner Circles</span><span>Cohorts</span></div>
+          </article>
+          <article class="opp-card">
+            <div class="opp-icon">🛠️</div>
+            <h3 class="card-title">Templates & Toolkits</h3>
+            <p class="opp-desc">Plug-and-play assets your audience can use immediately — fast to build, easy to buy, and strong for evergreen sales.</p>
+            <div class="opp-tags"><span>Notion Templates</span><span>Spreadsheets</span><span>Resource Libraries</span><span>Canva Kits</span></div>
+          </article>
+          <article class="opp-card">
+            <div class="opp-icon">🤝</div>
+            <h3 class="card-title">Coaching & Consulting Offers</h3>
+            <p class="opp-desc">We build the offer, intake flow, positioning, and onboarding so you can deliver a high-ticket experience without the chaos.</p>
+            <div class="opp-tags"><span>1:1 Coaching</span><span>Group Coaching</span><span>Done-For-You</span><span>Consulting Calls</span></div>
+          </article>
+          <article class="opp-card">
+            <div class="opp-icon">📦</div>
+            <h3 class="card-title">Physical Products & Merch</h3>
+            <p class="opp-desc">For the right audience, we can extend the brand with merch, bundles, or physical offers backed by a tighter storefront experience.</p>
+            <div class="opp-tags"><span>Branded Merch</span><span>Physical Guides</span><span>Bundles</span><span>POD</span></div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- APPLY -->
-  <section id="apply">
-    <div class="container">
-      <div class="apply-inner">
-        <div class="section-label">Ready to Build?</div>
-        <h2 class="section-title">Let's See If We're a Fit</h2>
-        <p class="section-sub">We take on a limited number of creator partnerships at a time. Fill out the form below and we'll be in touch within 48 hours.</p>
-        <div class="apply-form">
+    <section id="services">
+      <div class="container services-layout">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">What We Handle</div>
+            <h2 class="section-title">You create. We operate.</h2>
+            <p class="section-sub">The back-end of your business gets built, launched, and managed with a cleaner operator system — without forcing you to become a funnel guy overnight.</p>
+          </div>
+          <div class="services-stack">
+            <article class="service-card">
+              <div class="service-icon">🤖</div>
+              <div>
+                <h3 class="service-title">Premium Product Creation</h3>
+                <p class="service-copy">We turn your knowledge, frameworks, and content into a product that feels useful, polished, and true to your voice.</p>
+              </div>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🏪</div>
+              <div>
+                <h3 class="service-title">Storefront Setup & Optimization</h3>
+                <p class="service-copy">We build the storefront, structure pricing, tighten copy, and set up the access flow so the buying experience feels legitimate and premium.</p>
+              </div>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">📣</div>
+              <div>
+                <h3 class="service-title">Launch Strategy & Sales Funnels</h3>
+                <p class="service-copy">Offer messaging, launch planning, funnel flow, and follow-up systems designed to make the first launch cleaner and stronger.</p>
+              </div>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">📈</div>
+              <div>
+                <h3 class="service-title">Ongoing Scaling & Optimization</h3>
+                <p class="service-copy">After launch, we keep improving the offer, positioning, revenue flow, and next-product opportunities instead of leaving you with a dead asset.</p>
+              </div>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">🎧</div>
+              <div>
+                <h3 class="service-title">Customer Support Systems</h3>
+                <p class="service-copy">We help set up the support structure so buyers stay happy, expectations stay clear, and the brand feels reliable.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="split-box">
+          <div class="split-box-header">
+            <div class="mini-label">The Partnership Model</div>
+            <h3 class="split-title">Built like operators, not consultants</h3>
+            <p class="split-copy">This is not a deck, a strategy call, or a handoff. We build the business infrastructure and stay aligned through revenue share.</p>
+          </div>
+          <div class="responsibility-grid">
+            <div class="responsibility-col">
+              <h4>TNT Operators</h4>
+              <ul>
+                <li>Build the product</li>
+                <li>Set up the storefront</li>
+                <li>Write the sales copy</li>
+                <li>Build the funnel</li>
+                <li>Improve and optimize</li>
+                <li>Support the systems</li>
+              </ul>
+            </div>
+            <div class="responsibility-col">
+              <h4>You, the Creator</h4>
+              <ul>
+                <li>Your audience</li>
+                <li>Your brand and face</li>
+                <li>Promote the launch</li>
+                <li>Create content</li>
+                <li>Show up in community</li>
+                <li>Keep growing the brand</li>
+              </ul>
+            </div>
+          </div>
+          <div class="split-footer">
+            <div>
+              <div class="split-rev">Custom rev share</div>
+              <div class="small-copy">Aligned upside. Clean responsibilities.</div>
+            </div>
+            <a href="#apply" class="btn-primary">Apply for a Partnership</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Ideal Partners</div>
+          <h2 class="section-title">Who we work with</h2>
+          <p class="section-sub">We partner across multiple niches, but the filter is strict: real audience trust, clear expertise, and a product opportunity worth building properly.</p>
+        </div>
+        <div class="who-grid">
+          <article class="who-card">
+            <div class="who-icon">💰</div>
+            <div>
+              <h3 class="card-title">Finance & Money Creators</h3>
+              <p class="who-desc">Budgeting coaches, debt-free journey accounts, and investing educators with audiences already motivated to spend to improve their financial life.</p>
+            </div>
+          </article>
+          <article class="who-card">
+            <div class="who-icon">💪</div>
+            <div>
+              <h3 class="card-title">Fitness & Health Creators</h3>
+              <p class="who-desc">Trainers, nutrition coaches, and transformation creators with followers who pay for structure, accountability, and outcomes.</p>
+            </div>
+          </article>
+          <article class="who-card">
+            <div class="who-icon">🏠</div>
+            <div>
+              <h3 class="card-title">Real Estate & Business Creators</h3>
+              <p class="who-desc">Entrepreneurs, investors, and side-hustle brands with audiences that already understand paying for leverage and education.</p>
+            </div>
+          </article>
+          <article class="who-card">
+            <div class="who-icon">🎨</div>
+            <div>
+              <h3 class="card-title">Lifestyle & Mindset Creators</h3>
+              <p class="who-desc">Self-improvement, productivity, and routine-based creators with niche communities built on trust and identity.</p>
+            </div>
+          </article>
+          <article class="who-card">
+            <div class="who-icon">📱</div>
+            <div>
+              <h3 class="card-title">Social Media & Marketing Creators</h3>
+              <p class="who-desc">Growth, branding, and content strategy creators whose audience already understands the value of buying an edge.</p>
+            </div>
+          </article>
+          <article class="who-card">
+            <div class="who-icon">🍳</div>
+            <div>
+              <h3 class="card-title">Niche Community Builders</h3>
+              <p class="who-desc">Food, travel, faith, parenting, gaming, and other focused communities where a clear problem or passion can become a strong product.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="numbers">
+      <div class="container">
+        <div class="numbers-layout">
+          <div class="numbers-card"><strong>$0</strong><span>Upfront cost to you</span></div>
+          <div class="numbers-card"><strong>Custom</strong><span>Revenue share agreed together</span></div>
+          <div class="numbers-card"><strong>Full</strong><span>Back-end built and managed by us</span></div>
+          <div class="numbers-card"><strong>Premium</strong><span>Positioning, product, and buyer experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-layout">
+        <div class="about-photo-wrap">
+          <img src="tony.jpg" alt="Tony DeCarlo — TNT Operators" class="about-photo" />
+        </div>
+        <div class="about-card">
+          <div class="about-intro">
+            <div class="eyebrow">The Operator Behind TNT</div>
+            <div class="about-name">Tony DeCarlo</div>
+            <div class="about-role">Founder & Lead Operator</div>
+          </div>
+          <div class="about-copy-wrap">
+            <p class="about-copy">I’m a financial educator, entrepreneur, and the person who actually runs this.</p>
+            <p class="about-copy">I’ve been helping families get out of debt and build real wealth, which gave me an edge most operators don’t have: I understand money creators, trust-based offers, and what audiences actually need.</p>
+            <p class="about-copy">I got into the Shadow Operator model through Iman Gadzhi’s Monetise program — the same system behind $23.9M+ in tracked creator sales. I built TNT to partner with creators who already have attention but haven’t built the business engine behind it yet.</p>
+            <p class="about-copy">I work across niches — finance, fitness, trades, real estate, spirituality, and beyond. If your audience trusts you and there’s money being left on the table, there’s usually a product waiting to be built.</p>
+            <p class="about-copy">I keep the partner list intentionally small. No faceless agency model. No outsourcing to random people you’ve never met. You deal with me directly.</p>
+          </div>
+          <a href="#apply" class="btn-primary">Apply to Partner With Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="container apply-layout">
+        <div class="apply-card">
+          <div class="eyebrow">Ready to Build?</div>
+          <h2 class="section-title">If your audience is real, the business behind it should be real too.</h2>
+          <p class="section-sub">We’re selective because the work is hands-on. We only partner with creators who have trust, attention, and real monetization upside. If that’s you, apply below and we’ll review it personally within 48 hours.</p>
+          <ul class="apply-note-list">
+            <li>Personally reviewed by TNT Operators</li>
+            <li>Built for serious creators, not tire-kickers</li>
+            <li>No agency fluff. No pressure. Just fit and upside.</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
           <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="b6317384-5b4d-4a6c-8a04-3de60fb30fde" />
-          <input type="hidden" name="subject" value="New TNT Operators Application" />
-          <input type="hidden" name="from_name" value="TNT Operators Website" />
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" name="first_name" placeholder="Tony" required />
+            <input type="hidden" name="access_key" value="b6317384-5b4d-4a6c-8a04-3de60fb30fde" />
+            <input type="hidden" name="subject" value="New TNT Operators Application" />
+            <input type="hidden" name="from_name" value="TNT Operators Website" />
+
+            <div class="form-row">
+              <div>
+                <label for="first_name">First Name</label>
+                <input id="first_name" type="text" name="first_name" placeholder="First Name" required />
+              </div>
+              <div>
+                <label for="last_name">Last Name</label>
+                <input id="last_name" type="text" name="last_name" placeholder="Last Name" required />
+              </div>
             </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" name="last_name" placeholder="DeCarlo" required />
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@email.com" required />
             </div>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@email.com" required />
-          </div>
-          <div class="form-group">
-            <label>Your Primary Platform & Handle</label>
-            <input type="text" name="platform_handle" placeholder="Instagram @yourhandle / YouTube @yourchannel" required />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Follower Count</label>
-              <select name="follower_count" required>
-                <option value="">Select range...</option>
-                <option>1K – 10K</option>
-                <option>10K – 50K</option>
-                <option>50K – 250K</option>
-                <option>250K – 1M</option>
-                <option>1M+</option>
-              </select>
+
+            <div>
+              <label for="platform_handle">Your Primary Platform & Handle</label>
+              <input id="platform_handle" type="text" name="platform_handle" placeholder="Instagram @yourhandle / YouTube @yourchannel" required />
             </div>
-            <div class="form-group">
-              <label>Your Niche</label>
-              <select name="niche" required>
-                <option value="">Select niche...</option>
-                <option>Finance / Money</option>
-                <option>Fitness / Health</option>
-                <option>Business / Entrepreneurship</option>
-                <option>Real Estate</option>
-                <option>Lifestyle / Mindset</option>
-                <option>Social Media / Marketing</option>
-                <option>Other</option>
-              </select>
+
+            <div class="form-row">
+              <div>
+                <label for="follower_count">Follower Count</label>
+                <select id="follower_count" name="follower_count" required>
+                  <option value="">Select range...</option>
+                  <option>1K – 10K</option>
+                  <option>10K – 50K</option>
+                  <option>50K – 250K</option>
+                  <option>250K – 1M</option>
+                  <option>1M+</option>
+                </select>
+              </div>
+              <div>
+                <label for="niche">Your Niche</label>
+                <select id="niche" name="niche" required>
+                  <option value="">Select niche...</option>
+                  <option>Finance / Money</option>
+                  <option>Fitness / Health</option>
+                  <option>Business / Entrepreneurship</option>
+                  <option>Real Estate</option>
+                  <option>Lifestyle / Mindset</option>
+                  <option>Social Media / Marketing</option>
+                  <option>Other</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="form-group full">
-            <label>Do you have an existing digital product? If so, describe it.</label>
-            <textarea name="existing_product" placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven't actively promoted it..."></textarea>
-          </div>
-          <button class="form-submit" type="submit">Submit Application →</button>
-          <p class="form-note">We review every application personally. No spam, no sales calls unless you want one.</p>
+
+            <div>
+              <label for="existing_product">Do you have an existing digital product? If so, describe it.</label>
+              <textarea id="existing_product" name="existing_product" placeholder="E.g. I sell a $27 ebook on budgeting. It gets occasional sales but I haven’t actively promoted it..."></textarea>
+            </div>
+
+            <button class="form-submit" type="submit">Apply to Work With TNT Operators</button>
+            <p class="form-note">Every application is reviewed personally. If it’s a fit, we’ll reach out fast.</p>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo"><span>TNT</span> OPERATORS</div>
-    <div class="footer-copy">© 2026 TNT Operators. We Build. You Shine.</div>
-  </footer>
-
+    <footer>
+      <div class="container footer-inner">
+        <div class="footer-brand" aria-label="TNT Operators">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-wordmark-top">TNT</span>
+            <span class="brand-wordmark-bottom">OPERATORS</span>
+          </span>
+        </div>
+        <div class="footer-copy">© 2026 TNT Operators. We Build. You Shine.</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

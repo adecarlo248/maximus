@@ -1,0 +1,3709 @@
+[
+  {
+    "id": "IS36H3T6KWwxUG9FK2uV",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": null,
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "ON",
+    "businessName": null,
+    "customFields": [],
+    "tags": [],
+    "dateAdded": "2026-06-18T15:42:28.418Z",
+    "additionalEmails": [],
+    "phone": "+14167508475",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-06-18T15:43:12.433Z",
+    "city": "TORONTO",
+    "dateOfBirth": null,
+    "firstNameLowerCase": null,
+    "lastNameLowerCase": null,
+    "firstName": null,
+    "lastName": null,
+    "contactName": "(416) 750-8475",
+    "email": null,
+    "assignedTo": "SIahZlAPwTJ5j64lpSYW",
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": "M1P 3J2",
+    "businessId": null,
+    "searchAfter": [
+      1781797348418,
+      "IS36H3T6KWwxUG9FK2uV"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "Other",
+      "medium": "other"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "Pep8vXZVZS2ptyryJuAg",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:55.235Z",
+    "additionalEmails": [],
+    "phone": "+16139121923",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-05-11T17:05:45.910Z",
+    "city": "Ottawa",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "gehan",
+    "lastNameLowerCase": "abdou",
+    "firstName": "Gehan",
+    "lastName": "Abdou",
+    "contactName": "gehan abdou",
+    "email": null,
+    "assignedTo": "SIahZlAPwTJ5j64lpSYW",
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302835235,
+      "Pep8vXZVZS2ptyryJuAg"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "5lYLUSB34SgZgexcAGUp",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:53.977Z",
+    "additionalEmails": [],
+    "phone": "+16137318969",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-05-11T17:08:02.555Z",
+    "city": "Ottawa",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "huda",
+    "lastNameLowerCase": "abdelkadir",
+    "firstName": "Huda",
+    "lastName": "Abdelkadir",
+    "contactName": "huda abdelkadir",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302833977,
+      "5lYLUSB34SgZgexcAGUp"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "FZF5VNEFGGFKQwbjQeLd",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:53.212Z",
+    "additionalEmails": [],
+    "phone": "+16138296797",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16139070758"
+      }
+    ],
+    "dateUpdated": "2026-05-11T17:16:50.866Z",
+    "city": "Ottawa",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "wahib",
+    "lastNameLowerCase": "abdallah",
+    "firstName": "Wahib",
+    "lastName": "Abdallah",
+    "contactName": "wahib abdallah",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302833212,
+      "FZF5VNEFGGFKQwbjQeLd"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "F8WNTJ5N2ckeDhRF7CrZ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:52.749Z",
+    "additionalEmails": [],
+    "phone": "+16132375156",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-05-11T17:11:15.318Z",
+    "city": "Ottawa",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "manal",
+    "lastNameLowerCase": "abaid",
+    "firstName": "Manal",
+    "lastName": "Abaid",
+    "contactName": "manal abaid",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302832749,
+      "F8WNTJ5N2ckeDhRF7CrZ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "MrupbiXW9u4wMSl93Uoe",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:52.145Z",
+    "additionalEmails": [],
+    "phone": "+19054179797",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:52.145Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "divya",
+    "lastNameLowerCase": "masih",
+    "firstName": "Divya",
+    "lastName": "Masih",
+    "contactName": "divya masih",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302832145,
+      "MrupbiXW9u4wMSl93Uoe"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "Y7YSKph8an1fpQXz68T3",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:51.710Z",
+    "additionalEmails": [],
+    "phone": "+16135909758",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138371732"
+      }
+    ],
+    "dateUpdated": "2026-05-11T17:22:21.643Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "maxime",
+    "lastNameLowerCase": "marion",
+    "firstName": "Maxime",
+    "lastName": "Marion",
+    "contactName": "maxime marion",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302831710,
+      "Y7YSKph8an1fpQXz68T3"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "S083xXYA6N7IPiZ1bnek",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:51.150Z",
+    "additionalEmails": [],
+    "phone": "+16138341127",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16134210686"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:51.150Z",
+    "city": "Orleans,",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "marc",
+    "lastNameLowerCase": "madore",
+    "firstName": "Marc",
+    "lastName": "Madore",
+    "contactName": "marc madore",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302831150,
+      "S083xXYA6N7IPiZ1bnek"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "qWQwDP2xos64yvIyxRIc",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:50.739Z",
+    "additionalEmails": [],
+    "phone": "+19059378495",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19056822568"
+      }
+    ],
+    "dateUpdated": "2026-05-11T17:26:18.771Z",
+    "city": "Thorold",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "chyvonne",
+    "lastNameLowerCase": "bennett",
+    "firstName": "Chyvonne",
+    "lastName": "Bennett",
+    "contactName": "chyvonne bennett",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {
+      "SMS": {
+        "message": "TWILIO_ERROR_CODE: 30006",
+        "status": "active"
+      }
+    },
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302830739,
+      "qWQwDP2xos64yvIyxRIc"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "Sa1qPWguvHk0YMpbS8ud",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:50.551Z",
+    "additionalEmails": [],
+    "phone": "+16132334203",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137289728"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:50.551Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "yufeng",
+    "lastNameLowerCase": "li",
+    "firstName": "Yufeng",
+    "lastName": "Li",
+    "contactName": "yufeng li",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302830551,
+      "Sa1qPWguvHk0YMpbS8ud"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "OhSpmmCOSM2hwQpDJCAq",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:50.038Z",
+    "additionalEmails": [],
+    "phone": "+12892965360",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:50.038Z",
+    "city": "Thorold",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "tanvi",
+    "lastNameLowerCase": "arora",
+    "firstName": "Tanvi",
+    "lastName": "Arora",
+    "contactName": "tanvi arora",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302830038,
+      "OhSpmmCOSM2hwQpDJCAq"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "GRPUi0z26fbhiHehu2IX",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:49.568Z",
+    "additionalEmails": [],
+    "phone": "+16138342644",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138308604"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:49.568Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "cheryl",
+    "lastNameLowerCase": "lacasse",
+    "firstName": "Cheryl",
+    "lastName": "Lacasse",
+    "contactName": "cheryl lacasse",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302829568,
+      "GRPUi0z26fbhiHehu2IX"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "9RA11D1k2zDjDKRxvgjJ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:49.409Z",
+    "additionalEmails": [],
+    "phone": "+12893624582",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:49.409Z",
+    "city": "Thorold",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "abiodun",
+    "lastNameLowerCase": "adekunle",
+    "firstName": "Abiodun",
+    "lastName": "Adekunle",
+    "contactName": "abiodun adekunle",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302829409,
+      "9RA11D1k2zDjDKRxvgjJ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "sqkhX3ZJoxh3PWJPzUFb",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:49.151Z",
+    "additionalEmails": [],
+    "phone": "+16138347082",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16135262630"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:49.151Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "lili",
+    "lastNameLowerCase": "kheirallah",
+    "firstName": "Lili",
+    "lastName": "Kheirallah",
+    "contactName": "lili kheirallah",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302829151,
+      "sqkhX3ZJoxh3PWJPzUFb"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "3qkQfCTXF6AJtUgiRUNe",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:48.370Z",
+    "additionalEmails": [],
+    "phone": "+16135734772",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16135906378"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:48.370Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "ismail",
+    "lastNameLowerCase": "jarfaoui hassani",
+    "firstName": "Ismail",
+    "lastName": "Jarfaoui Hassani",
+    "contactName": "ismail jarfaoui hassani",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302828370,
+      "3qkQfCTXF6AJtUgiRUNe"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "s5BTWXXleWnfsycOnv4M",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:47.782Z",
+    "additionalEmails": [],
+    "phone": "+14163159000",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14167035162"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:47.782Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "ogheneochuko",
+    "lastNameLowerCase": "ejabena",
+    "firstName": "Ogheneochuko",
+    "lastName": "Ejabena",
+    "contactName": "ogheneochuko ejabena",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302827782,
+      "s5BTWXXleWnfsycOnv4M"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "SVXss1kXzQUL68EKQgRg",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:47.773Z",
+    "additionalEmails": [],
+    "phone": "+16135263490",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138240743"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:47.773Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "arkaydius",
+    "lastNameLowerCase": "jardine",
+    "firstName": "Arkaydius",
+    "lastName": "Jardine",
+    "contactName": "arkaydius jardine",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302827773,
+      "SVXss1kXzQUL68EKQgRg"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "S2WGzNSldMNGNpR7toC4",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:47.442Z",
+    "additionalEmails": [],
+    "phone": "+16135909060",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16136562195"
+      },
+      {
+        "phone": "+16138372970"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:50.095Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "fiona",
+    "lastNameLowerCase": "lee",
+    "firstName": "Fiona",
+    "lastName": "Lee",
+    "contactName": "fiona lee",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302827442,
+      "S2WGzNSldMNGNpR7toC4"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "rl0yJE89xADPn3m4JyYV",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:47.298Z",
+    "additionalEmails": [],
+    "phone": "+14162856466",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:47.298Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "samaneh",
+    "lastNameLowerCase": "eivani",
+    "firstName": "Samaneh",
+    "lastName": "Eivani",
+    "contactName": "samaneh eivani",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302827298,
+      "rl0yJE89xADPn3m4JyYV"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "kZMJ9Gjf12sJ5P50bmod",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:47.149Z",
+    "additionalEmails": [],
+    "phone": "+16138248565",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16132332749"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:47.149Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "peter",
+    "lastNameLowerCase": "horan",
+    "firstName": "Peter",
+    "lastName": "Horan",
+    "contactName": "peter horan",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302827149,
+      "kZMJ9Gjf12sJ5P50bmod"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "2MH28Rs8uqpp9uUsCcWu",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:46.859Z",
+    "additionalEmails": [],
+    "phone": "+13655971899",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19058824811"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:46.859Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "janet",
+    "lastNameLowerCase": "edralin",
+    "firstName": "Janet",
+    "lastName": "Edralin",
+    "contactName": "janet edralin",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302826859,
+      "2MH28Rs8uqpp9uUsCcWu"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "zTzHoBv5zA8MlNqYX3NN",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:46.539Z",
+    "additionalEmails": [],
+    "phone": "+16138347833",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137374125"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:46.539Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "adhem",
+    "lastNameLowerCase": "hashim",
+    "firstName": "Adhem",
+    "lastName": "Hashim",
+    "contactName": "adhem hashim",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302826539,
+      "zTzHoBv5zA8MlNqYX3NN"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "DaAA6qvl6hO8xlsXLaB1",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:46.407Z",
+    "additionalEmails": [],
+    "phone": "+19058812432",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19057384581"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:46.407Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "sandra",
+    "lastNameLowerCase": "dockman",
+    "firstName": "Sandra",
+    "lastName": "Dockman",
+    "contactName": "sandra dockman",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302826407,
+      "DaAA6qvl6hO8xlsXLaB1"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "dWQjWSygTt0tRip7kQYG",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:46.095Z",
+    "additionalEmails": [],
+    "phone": "+16138417448",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:46.095Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "carine",
+    "lastNameLowerCase": "hajjar",
+    "firstName": "Carine",
+    "lastName": "Hajjar",
+    "contactName": "carine hajjar",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302826095,
+      "dWQjWSygTt0tRip7kQYG"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "PUOc2wpx1dZx4LTt8E59",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:45.404Z",
+    "additionalEmails": [],
+    "phone": "+16137442686",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137463819"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:45.404Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "mausmi",
+    "lastNameLowerCase": "grover",
+    "firstName": "Mausmi",
+    "lastName": "Grover",
+    "contactName": "mausmi grover",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302825404,
+      "PUOc2wpx1dZx4LTt8E59"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "BQgv6c9PVQ8EvIjgwfeG",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:45.031Z",
+    "additionalEmails": [],
+    "phone": "+12898431097",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19057092436"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:45.031Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "miriam",
+    "lastNameLowerCase": "disenhouse",
+    "firstName": "Miriam",
+    "lastName": "Disenhouse",
+    "contactName": "miriam disenhouse",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302825031,
+      "BQgv6c9PVQ8EvIjgwfeG"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "hKVlAgGCz7Fcs5ChT0z0",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:45.028Z",
+    "additionalEmails": [],
+    "phone": "+13434882926",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138902248"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:45.028Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "fouad",
+    "lastNameLowerCase": "gharib",
+    "firstName": "Fouad",
+    "lastName": "Gharib",
+    "contactName": "fouad gharib",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302825028,
+      "hKVlAgGCz7Fcs5ChT0z0"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "oXDQDNytijB711uO9Yi2",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:44.544Z",
+    "additionalEmails": [],
+    "phone": "+16132608972",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:44.544Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "kunal",
+    "lastNameLowerCase": "gaur",
+    "firstName": "Kunal",
+    "lastName": "Gaur",
+    "contactName": "kunal gaur",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302824544,
+      "oXDQDNytijB711uO9Yi2"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "Gr05BTkTmHio9fheO9LY",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:44.428Z",
+    "additionalEmails": [],
+    "phone": "+19056956038",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14162264310"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:44.428Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "saeid",
+    "lastNameLowerCase": "darvishi",
+    "firstName": "Saeid",
+    "lastName": "Darvishi",
+    "contactName": "saeid darvishi",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302824428,
+      "Gr05BTkTmHio9fheO9LY"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "HYtuQUgCyiMG7XaZDLqC",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:43.924Z",
+    "additionalEmails": [],
+    "phone": "+19058969359",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:43.924Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "sowjanya",
+    "lastNameLowerCase": "damala",
+    "firstName": "Sowjanya",
+    "lastName": "Damala",
+    "contactName": "sowjanya damala",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302823924,
+      "HYtuQUgCyiMG7XaZDLqC"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "36bxHEJzeqvZcPrm2xRk",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:43.817Z",
+    "additionalEmails": [],
+    "phone": "+16138413237",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+18195251853"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:43.817Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "anna",
+    "lastNameLowerCase": "gaidamasciuc",
+    "firstName": "Anna",
+    "lastName": "Gaidamasciuc",
+    "contactName": "anna gaidamasciuc",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302823817,
+      "36bxHEJzeqvZcPrm2xRk"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "CwzTgMNEDKro8Go6424T",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:43.233Z",
+    "additionalEmails": [],
+    "phone": "+16138344317",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138243795"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:43.233Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "marc-antoine",
+    "lastNameLowerCase": "gagnon",
+    "firstName": "Marc-Antoine",
+    "lastName": "Gagnon",
+    "contactName": "marc-antoine gagnon",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302823233,
+      "CwzTgMNEDKro8Go6424T"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "6VsWb9sQPpGsMeTZwgm4",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:43.077Z",
+    "additionalEmails": [],
+    "phone": "+14162370712",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:43.077Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "milovan",
+    "lastNameLowerCase": "cujic",
+    "firstName": "Milovan",
+    "lastName": "Cujic",
+    "contactName": "milovan cujic",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302823077,
+      "6VsWb9sQPpGsMeTZwgm4"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "dazyecepiOTlKCDuMGlh",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:42.097Z",
+    "additionalEmails": [],
+    "phone": "+16135907822",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138419311"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:42.097Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "richard",
+    "lastNameLowerCase": "freeman",
+    "firstName": "Richard",
+    "lastName": "Freeman",
+    "contactName": "richard freeman",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302822097,
+      "dazyecepiOTlKCDuMGlh"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "bDALZ2yqEFG2drYYBSs5",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:41.653Z",
+    "additionalEmails": [],
+    "phone": "+19057079558",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19057310435"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:41.653Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "esther",
+    "lastNameLowerCase": "cheng",
+    "firstName": "Esther",
+    "lastName": "Cheng",
+    "contactName": "esther cheng",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302821653,
+      "bDALZ2yqEFG2drYYBSs5"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "P0ulY5hfVHHMKny8MP76",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:41.641Z",
+    "additionalEmails": [],
+    "phone": "+16138345635",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137445014"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:41.641Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "arielle",
+    "lastNameLowerCase": "follett",
+    "firstName": "Arielle",
+    "lastName": "Follett",
+    "contactName": "arielle follett",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302821641,
+      "P0ulY5hfVHHMKny8MP76"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "sq2YcCbM8UqydDSedwmI",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:41.263Z",
+    "additionalEmails": [],
+    "phone": "+13438808344",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16132332378"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:41.263Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "nicola",
+    "lastNameLowerCase": "ferrazza",
+    "firstName": "Nicola",
+    "lastName": "Ferrazza",
+    "contactName": "nicola ferrazza",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302821263,
+      "sq2YcCbM8UqydDSedwmI"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "zm16dbPpV4UH3uzyuaQd",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:40.952Z",
+    "additionalEmails": [],
+    "phone": "+13655970690",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19057719297"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:40.952Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "chunan",
+    "lastNameLowerCase": "chen",
+    "firstName": "Chunan",
+    "lastName": "Chen",
+    "contactName": "chunan chen",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302820952,
+      "zm16dbPpV4UH3uzyuaQd"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "TNLDMhawn1KsDwSgjFKX",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:40.793Z",
+    "additionalEmails": [],
+    "phone": "+18195959394",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:40.793Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "arlene",
+    "lastNameLowerCase": "farmer",
+    "firstName": "Arlene",
+    "lastName": "Farmer",
+    "contactName": "arlene farmer",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302820793,
+      "TNLDMhawn1KsDwSgjFKX"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "FEloPy2S6ppDEESYUvjk",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:40.619Z",
+    "additionalEmails": [],
+    "phone": "+19052019477",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14164638456"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:40.619Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "siang",
+    "lastNameLowerCase": "chee",
+    "firstName": "Siang",
+    "lastName": "Chee",
+    "contactName": "siang chee",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302820619,
+      "FEloPy2S6ppDEESYUvjk"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "Qca8EzZWIN9BQxrOir6F",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:40.025Z",
+    "additionalEmails": [],
+    "phone": "+16138347840",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138375845"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:40.025Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "david",
+    "lastNameLowerCase": "ethier",
+    "firstName": "David",
+    "lastName": "Ethier",
+    "contactName": "david ethier",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302820025,
+      "Qca8EzZWIN9BQxrOir6F"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "taVGEG3Mz2K6OfUbYYDQ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:39.593Z",
+    "additionalEmails": [],
+    "phone": "+14164933136",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:39.593Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "peter",
+    "lastNameLowerCase": "chan",
+    "firstName": "Peter",
+    "lastName": "Chan",
+    "contactName": "peter chan",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302819593,
+      "taVGEG3Mz2K6OfUbYYDQ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "OPmgm6s3AmDCBPxqyVxZ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:39.561Z",
+    "additionalEmails": [],
+    "phone": "+16138300330",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138378764"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:39.561Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "bassem",
+    "lastNameLowerCase": "el khalili",
+    "firstName": "Bassem",
+    "lastName": "El Khalili",
+    "contactName": "bassem el khalili",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302819561,
+      "OPmgm6s3AmDCBPxqyVxZ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "ZSSA624M7LILQO8LZ3tP",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:38.621Z",
+    "additionalEmails": [],
+    "phone": "+12895974818",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19057317695"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:38.621Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "angela",
+    "lastNameLowerCase": "castillo",
+    "firstName": "Angela",
+    "lastName": "Castillo",
+    "contactName": "angela castillo",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302818621,
+      "ZSSA624M7LILQO8LZ3tP"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "d8R1enJ9xhxRVqRW7FtQ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:38.412Z",
+    "additionalEmails": [],
+    "phone": "+16138414072",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16136568789"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:38.412Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "nathalie",
+    "lastNameLowerCase": "dolan",
+    "firstName": "Nathalie",
+    "lastName": "Dolan",
+    "contactName": "nathalie dolan",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302818412,
+      "d8R1enJ9xhxRVqRW7FtQ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "jHRUhMlUGzEkzb3oUl0y",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:37.600Z",
+    "additionalEmails": [],
+    "phone": "+12895970839",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19056699895"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:37.600Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "vivian",
+    "lastNameLowerCase": "cai",
+    "firstName": "Vivian",
+    "lastName": "Cai",
+    "contactName": "vivian cai",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302817600,
+      "jHRUhMlUGzEkzb3oUl0y"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "fXY1PMXrSES45oENIcE8",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:37.498Z",
+    "additionalEmails": [],
+    "phone": "+16138302424",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16134252039"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:37.498Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "sara",
+    "lastNameLowerCase": "diyoyi tshimanga",
+    "firstName": "Sara",
+    "lastName": "Diyoyi Tshimanga",
+    "contactName": "sara diyoyi tshimanga",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302817498,
+      "fXY1PMXrSES45oENIcE8"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "0KsEWBw8Jh3DUuvWC1YG",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:37.288Z",
+    "additionalEmails": [],
+    "phone": "+19057092569",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19056695478"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:37.288Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "fernandez",
+    "lastNameLowerCase": "bowen",
+    "firstName": "Fernandez",
+    "lastName": "Bowen",
+    "contactName": "fernandez bowen",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302817288,
+      "0KsEWBw8Jh3DUuvWC1YG"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "v1VF5ETNg1ZF3etaZZWw",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:36.235Z",
+    "additionalEmails": [],
+    "phone": "+16138245070",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138344356"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:36.235Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "lisa",
+    "lastNameLowerCase": "cruickshank",
+    "firstName": "Lisa",
+    "lastName": "Cruickshank",
+    "contactName": "lisa cruickshank",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302816235,
+      "v1VF5ETNg1ZF3etaZZWw"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "pI5Cq1aO8DBLzgahnpmO",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:35.346Z",
+    "additionalEmails": [],
+    "phone": "+19053320944",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+12893371709"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:35.346Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "davinca",
+    "lastNameLowerCase": "cleare",
+    "firstName": "Davinca",
+    "lastName": "Cleare",
+    "contactName": "davinca cleare",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302815346,
+      "pI5Cq1aO8DBLzgahnpmO"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "YmaZbYuibF9i2vUr23AW",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:34.882Z",
+    "additionalEmails": [],
+    "phone": "+18197724146",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:34.882Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "arao",
+    "lastNameLowerCase": "claudio",
+    "firstName": "Arao",
+    "lastName": "Claudio",
+    "contactName": "arao claudio",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302814882,
+      "YmaZbYuibF9i2vUr23AW"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "rVJS5G4EG3wBZnrpoj2J",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:34.347Z",
+    "additionalEmails": [],
+    "phone": "+16136562184",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137472568"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:34.347Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "sylvia",
+    "lastNameLowerCase": "brin",
+    "firstName": "Sylvia",
+    "lastName": "Brin",
+    "contactName": "sylvia brin",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302814347,
+      "rVJS5G4EG3wBZnrpoj2J"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "wMWbNWhOiYX2JpS8CmE9",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:34.242Z",
+    "additionalEmails": [],
+    "phone": "+19057470206",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19058825781"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:34.242Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "jirah",
+    "lastNameLowerCase": "boa",
+    "firstName": "Jirah",
+    "lastName": "Boa",
+    "contactName": "jirah boa",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302814242,
+      "wMWbNWhOiYX2JpS8CmE9"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "WS6MJi2bI0fEBbpQpFPg",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:33.692Z",
+    "additionalEmails": [],
+    "phone": "+14168502992",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14167481443"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:33.692Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "mitchell",
+    "lastNameLowerCase": "blass",
+    "firstName": "Mitchell",
+    "lastName": "Blass",
+    "contactName": "mitchell blass",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302813692,
+      "WS6MJi2bI0fEBbpQpFPg"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "gqspLVDMWr0bi1m9DKDH",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:33.168Z",
+    "additionalEmails": [],
+    "phone": "+19057318300",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19056691356"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:33.168Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "harvey",
+    "lastNameLowerCase": "beitchman",
+    "firstName": "Harvey",
+    "lastName": "Beitchman",
+    "contactName": "harvey beitchman",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302813168,
+      "gqspLVDMWr0bi1m9DKDH"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "mApKDzUxklXtlwCCma6r",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:33.155Z",
+    "additionalEmails": [],
+    "phone": "+16135905958",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138378827"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:33.155Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "camille",
+    "lastNameLowerCase": "boutin",
+    "firstName": "Camille",
+    "lastName": "Boutin",
+    "contactName": "camille boutin",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302813155,
+      "mApKDzUxklXtlwCCma6r"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "UkcRtvCJojsSL2Qt1eDa",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:32.702Z",
+    "additionalEmails": [],
+    "phone": "+19057077712",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:32.702Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "abraham",
+    "lastNameLowerCase": "beer",
+    "firstName": "Abraham",
+    "lastName": "Beer",
+    "contactName": "abraham beer",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302812702,
+      "UkcRtvCJojsSL2Qt1eDa"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "NlvO5vAK6GbntMitmjAq",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:32.591Z",
+    "additionalEmails": [],
+    "phone": "+16138305407",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16134249379"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:32.591Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "gregory",
+    "lastNameLowerCase": "bouskill",
+    "firstName": "Gregory",
+    "lastName": "Bouskill",
+    "contactName": "gregory bouskill",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302812591,
+      "NlvO5vAK6GbntMitmjAq"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "qJaZrpxBIVgvyBDVl30E",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:32.215Z",
+    "additionalEmails": [],
+    "phone": "+16134248833",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138240012"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:32.215Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "wendy",
+    "lastNameLowerCase": "black",
+    "firstName": "Wendy",
+    "lastName": "Black",
+    "contactName": "wendy black",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302812215,
+      "qJaZrpxBIVgvyBDVl30E"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "tgvNXDRlpRFgLqolDLb9",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:31.982Z",
+    "additionalEmails": [],
+    "phone": "+19058819181",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14166862741"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:31.982Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "parvin",
+    "lastNameLowerCase": "bayatikholozini",
+    "firstName": "Parvin",
+    "lastName": "Bayatikholozini",
+    "contactName": "parvin bayatikholozini",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302811982,
+      "tgvNXDRlpRFgLqolDLb9"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "ftryYUk4p8QSx2CYXeKQ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:31.671Z",
+    "additionalEmails": [],
+    "phone": "+18196634548",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16137472026"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:31.671Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "alma",
+    "lastNameLowerCase": "bimbabou maboulou",
+    "firstName": "Alma",
+    "lastName": "Bimbabou Maboulou",
+    "contactName": "alma bimbabou maboulou",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302811671,
+      "ftryYUk4p8QSx2CYXeKQ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "VRvAznXoeFSCD3NPFPDo",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:31.412Z",
+    "additionalEmails": [],
+    "phone": "+14166990388",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16477294184"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:31.412Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "dylan",
+    "lastNameLowerCase": "bavan",
+    "firstName": "Dylan",
+    "lastName": "Bavan",
+    "contactName": "dylan bavan",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302811412,
+      "VRvAznXoeFSCD3NPFPDo"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "IcIMJR9X2Nzd2AAt8aiF",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:31.141Z",
+    "additionalEmails": [],
+    "phone": "+16135658779",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:31.141Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "reynaldo",
+    "lastNameLowerCase": "babol",
+    "firstName": "Reynaldo",
+    "lastName": "Babol",
+    "contactName": "reynaldo babol",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302811141,
+      "IcIMJR9X2Nzd2AAt8aiF"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "JSYDlS5RKlT2Wja0AMTw",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:30.835Z",
+    "additionalEmails": [],
+    "phone": "+14162361421",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:30.835Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "paul",
+    "lastNameLowerCase": "bar",
+    "firstName": "Paul",
+    "lastName": "Bar",
+    "contactName": "paul bar",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302810835,
+      "JSYDlS5RKlT2Wja0AMTw"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "vOeeDY13IaLF3DSEgA7Z",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:30.082Z",
+    "additionalEmails": [],
+    "phone": "+19054829573",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14162215242"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:30.082Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "jimmy",
+    "lastNameLowerCase": "bai",
+    "firstName": "Jimmy",
+    "lastName": "Bai",
+    "contactName": "jimmy bai",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302810082,
+      "vOeeDY13IaLF3DSEgA7Z"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "fwryLHB2T8Re7skTUloZ",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:29.956Z",
+    "additionalEmails": [],
+    "phone": "+16134249266",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+16138242690"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:29.956Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "jeffrey",
+    "lastNameLowerCase": "appotive",
+    "firstName": "Jeffrey",
+    "lastName": "Appotive",
+    "contactName": "jeffrey appotive",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302809956,
+      "fwryLHB2T8Re7skTUloZ"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "3BHXkuffciCZ0jnwQiCO",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:29.420Z",
+    "additionalEmails": [],
+    "phone": "+14168405993",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+19054555839"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:29.420Z",
+    "city": "Georgetown",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "gurinder",
+    "lastNameLowerCase": "matharu",
+    "firstName": "Gurinder",
+    "lastName": "Matharu",
+    "contactName": "gurinder matharu",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302809420,
+      "3BHXkuffciCZ0jnwQiCO"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "n7DWy9R2ctUhCDHTh6DV",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "no sponsor",
+      "hot lead"
+    ],
+    "dateAdded": "2026-04-27T15:13:29.360Z",
+    "additionalEmails": [],
+    "phone": "+19057737768",
+    "companyName": null,
+    "additionalPhones": [],
+    "dateUpdated": "2026-04-27T15:13:29.360Z",
+    "city": "Thornhill",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "kazem",
+    "lastNameLowerCase": "bagheri",
+    "firstName": "Kazem",
+    "lastName": "Bagheri",
+    "contactName": "kazem bagheri",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302809360,
+      "n7DWy9R2ctUhCDHTh6DV"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "XUybXZ8jT39Lpw0JI8mc",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:28.866Z",
+    "additionalEmails": [],
+    "phone": "+19058736695",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+12898919793"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:28.866Z",
+    "city": "Georgetown",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "kelly",
+    "lastNameLowerCase": "malone",
+    "firstName": "Kelly",
+    "lastName": "Malone",
+    "contactName": "kelly malone",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302808866,
+      "XUybXZ8jT39Lpw0JI8mc"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  },
+  {
+    "id": "faUz9DVvFrFvaXi6EzJ4",
+    "phoneLabel": null,
+    "country": "CA",
+    "address": null,
+    "source": "FSRA Registry",
+    "type": "lead",
+    "locationId": "uCTPFCelHwnHwznw4Wy7",
+    "website": null,
+    "dnd": false,
+    "state": "Ontario",
+    "businessName": null,
+    "customFields": [],
+    "tags": [
+      "fsra lead",
+      "expired license"
+    ],
+    "dateAdded": "2026-04-27T15:13:28.385Z",
+    "additionalEmails": [],
+    "phone": "+19052377776",
+    "companyName": null,
+    "additionalPhones": [
+      {
+        "phone": "+14162227557"
+      }
+    ],
+    "dateUpdated": "2026-04-27T15:13:28.385Z",
+    "city": "Orleans",
+    "dateOfBirth": null,
+    "firstNameLowerCase": "negin",
+    "lastNameLowerCase": "afshari",
+    "firstName": "Negin",
+    "lastName": "Afshari",
+    "contactName": "negin afshari",
+    "email": null,
+    "assignedTo": null,
+    "followers": [],
+    "validEmail": null,
+    "dndSettings": {},
+    "postalCode": null,
+    "businessId": null,
+    "searchAfter": [
+      1777302808385,
+      "faUz9DVvFrFvaXi6EzJ4"
+    ],
+    "timezone": null,
+    "inboundDndSettings": {},
+    "attributionSource": {
+      "sessionSource": "CRM UI",
+      "medium": "csv_import"
+    },
+    "lastAttributionSource": {}
+  }
+]

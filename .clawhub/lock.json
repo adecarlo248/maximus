@@ -36,6 +36,34 @@
     "sales-mastery": {
       "version": "1.0.0",
       "installedAt": 1776092808233
+    },
+    "stripe-api": {
+      "version": "1.0.10",
+      "installedAt": 1778685897053
+    },
+    "ffmpeg": {
+      "version": "1.0.0",
+      "installedAt": 1778928653179
+    },
+    "ffmpeg-video-editor": {
+      "version": "1.0.0",
+      "installedAt": 1778928653323
+    },
+    "higgsfield-generate": {
+      "version": "1.0.0",
+      "installedAt": 1784657767049
+    },
+    "higgsfield-product-photoshoot": {
+      "version": "1.0.0",
+      "installedAt": 1784658076884
+    },
+    "higgsfield-soul-id": {
+      "version": "1.0.0",
+      "installedAt": 1784658085535
+    },
+    "oo-higgsfield-ai": {
+      "version": "1.0.0",
+      "installedAt": 1784658089765
     }
   }
 }

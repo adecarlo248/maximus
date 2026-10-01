@@ -1,0 +1,82 @@
+{
+  "custom_fields_fixed": [
+    {
+      "name": "Lead Source",
+      "type": "SINGLE_OPTIONS",
+      "id": "sdikFvcJDDJGQgR9FImA"
+    },
+    {
+      "name": "Project Type",
+      "type": "SINGLE_OPTIONS",
+      "id": "lwGpoE3O1uleuoqHsQOY"
+    },
+    {
+      "name": "Project Category",
+      "type": "SINGLE_OPTIONS",
+      "id": "EDjdbNCd4uIQMGrGkTmf"
+    },
+    {
+      "name": "Project Budget",
+      "type": "SINGLE_OPTIONS",
+      "id": "GqjR32BzDGfKo79Dwdbj"
+    },
+    {
+      "name": "Project Timeline",
+      "type": "SINGLE_OPTIONS",
+      "id": "ECGgS38vnTxXeI6VgpUe"
+    },
+    {
+      "name": "Permit Status",
+      "type": "SINGLE_OPTIONS",
+      "id": "JyNFltqRnRBuv6SaEmEE"
+    },
+    {
+      "name": "Permit Required",
+      "type": "CHECKBOX",
+      "id": "DK1PSy8blGqr9c3GQXIh"
+    },
+    {
+      "name": "Architect/Designer Involved",
+      "type": "CHECKBOX",
+      "id": "BNvMmildBflOtR3Chh6l"
+    },
+    {
+      "name": "Deposit Paid",
+      "type": "CHECKBOX",
+      "id": "iYeVwu2k85PCL4Ni0tBk"
+    },
+    {
+      "name": "Review Requested",
+      "type": "CHECKBOX",
+      "id": "svxfr3LLAGteXTnr54Ng"
+    },
+    {
+      "name": "Review Received",
+      "type": "CHECKBOX",
+      "id": "M8iJ0NUKXyougAc2MR4U"
+    }
+  ],
+  "calendars": [
+    {
+      "name": "Initial Consultation - GC",
+      "id": "OxAzGYFD7lGi0WWPS3kF",
+      "slot_duration_mins": 60
+    },
+    {
+      "name": "Site Visit / Assessment",
+      "id": "IpiRZWK6Nx2mAvyx5Qim",
+      "slot_duration_mins": 90
+    },
+    {
+      "name": "Design Review Meeting",
+      "id": "96rZggpWJ7kOjKtUXxyO",
+      "slot_duration_mins": 60
+    },
+    {
+      "name": "Commercial Site Walk",
+      "id": "ki76mqi5OCGxje9tTfFV",
+      "slot_duration_mins": 90
+    }
+  ],
+  "errors": []
+}
