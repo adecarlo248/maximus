@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Little Nest Naturals" />
+  <meta name="description" content="Printable Little Nest Naturals Christmas giveaway advertisement" />
+  <title>Little Nest Naturals Christmas Giveaway</title>
+  <style>
+    @page { size: Letter portrait; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { width: 8.5in; height: 11in; margin: 0; padding: 0; }
+    body { color: #17251b; font-family: "DejaVu Sans", Arial, sans-serif; }
+
+    .poster {
+      position: relative;
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      background: #f4d7c5 url("christmas-background.png") center center / cover no-repeat;
+    }
+
+    .wash {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(255,248,241,.18), rgba(255,255,255,0) 68%);
+    }
+
+    .content {
+      position: absolute;
+      top: .34in;
+      right: .40in;
+      bottom: .30in;
+      left: .40in;
+      z-index: 2;
+    }
+
+    .brand {
+      position: absolute;
+      top: .02in;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4.8in;
+      text-align: center;
+      color: #6b3d29;
+      text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    }
+
+    .brand-main {
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .55in;
+      font-weight: 700;
+      font-style: italic;
+      line-height: .86;
+      letter-spacing: -.02em;
+    }
+
+    .brand-main::before, .brand-main::after {
+      content: "❧";
+      color: #56634c;
+      font-size: .28in;
+      padding: 0 .14in;
+      vertical-align: .05in;
+    }
+
+    .brand-sub {
+      margin-top: .08in;
+      font-size: .13in;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .free-entry {
+      position: absolute;
+      top: .92in;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      padding: .10in .40in .08in;
+      color: #fff;
+      background: #1f3829;
+      border-radius: .06in;
+      box-shadow: 0 .08in .16in rgba(47,31,21,.22);
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .35in;
+      font-weight: 900;
+      letter-spacing: .06em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .headline {
+      position: absolute;
+      top: 1.48in;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6.65in;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .headline .enter {
+      display: block;
+      color: #7f4430;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .38in;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .headline h1 {
+      margin: .05in 0 0;
+      color: #17251b;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .76in;
+      font-weight: 900;
+      letter-spacing: -.035em;
+      line-height: .91;
+      text-shadow: 0 .02in 0 rgba(255,255,255,.75);
+    }
+
+    .headline .giftbox {
+      display: block;
+      width: 5.75in;
+      margin: .09in auto 0;
+      color: #6b201d;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .36in;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1;
+      text-transform: none;
+    }
+
+    .headline .tagline {
+      display: block;
+      width: 5.5in;
+      margin: .10in auto 0;
+      color: #29362c;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .19in;
+      font-style: italic;
+      text-transform: none;
+    }
+
+    .value-badge {
+      position: absolute;
+      top: .89in;
+      right: .06in;
+      width: 1.36in;
+      height: 1.36in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: #1e3a29;
+      border: .06in solid #bb7146;
+      border-radius: 50%;
+      box-shadow: 0 .09in .22in rgba(40,29,20,.28), inset 0 0 0 .025in rgba(255,255,255,.78);
+      transform: rotate(2deg);
+    }
+
+    .value-badge strong {
+      display: block;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .43in;
+      line-height: .8;
+    }
+
+    .value-badge span {
+      display: block;
+      margin-top: .10in;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .17in;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .qr-card {
+      position: absolute;
+      right: .24in;
+      bottom: 1.34in;
+      width: 3.34in;
+      min-height: 4.02in;
+      padding: .22in .25in .19in;
+      text-align: center;
+      background: rgba(255,251,244,.96);
+      border: .02in solid rgba(107,61,41,.16);
+      border-radius: .16in;
+      box-shadow: 0 .12in .30in rgba(55,38,27,.23);
+    }
+
+    .qr-card h2 {
+      margin: 0 0 .04in;
+      color: #6b3d29;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .40in;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .qr-card .instruction {
+      margin: 0 0 .10in;
+      color: #1d3123;
+      font-size: .17in;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .qr {
+      display: block;
+      width: 2.48in;
+      height: 2.48in;
+      margin: 0 auto .10in;
+      padding: .08in;
+      background: #fff;
+      border: .025in solid #d3c0ab;
+      border-radius: .08in;
+    }
+
+    .qr-card .fields {
+      margin: 0;
+      color: #29362c;
+      font-size: .15in;
+      font-weight: 700;
+    }
+
+    .draw-date {
+      position: absolute;
+      left: 50%;
+      bottom: .50in;
+      transform: translateX(-50%);
+      width: 5.7in;
+      padding: .10in .30in;
+      text-align: center;
+      color: #5e3426;
+      background: rgba(242,200,183,.90);
+      border-radius: 999px;
+      box-shadow: 0 .05in .12in rgba(71,45,32,.15);
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .24in;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .website {
+      position: absolute;
+      left: 50%;
+      bottom: .10in;
+      transform: translateX(-50%);
+      color: #19291e;
+      font-family: "Liberation Serif", Georgia, serif;
+      font-size: .19in;
+      font-weight: 700;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+
+    .website::before, .website::after {
+      content: "—  ♥  —";
+      color: #6b3d29;
+      padding: 0 .15in;
+    }
+
+    .fine-print {
+      position: absolute;
+      left: .10in;
+      bottom: 1.12in;
+      width: 3.25in;
+      color: #37271f;
+      font-size: .105in;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(255,255,255,.65);
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <div class="wash"></div>
+    <div class="content">
+      <header class="brand" aria-label="Little Nest Naturals">
+        <div class="brand-main">little nest</div>
+        <div class="brand-sub">naturals</div>
+      </header>
+
+      <div class="free-entry">Free Entry</div>
+
+      <section class="headline">
+        <span class="enter">Enter Our</span>
+        <h1>Christmas<br />Giveaway</h1>
+        <span class="giftbox">Win a Little Nest Naturals Christmas Gift Box</span>
+        <span class="tagline">Natural care for everyone in the nest.</span>
+      </section>
+
+      <aside class="value-badge" aria-label="184 dollar value">
+        <strong>$184</strong>
+        <span>Value</span>
+      </aside>
+
+      <section class="qr-card">
+        <h2>Scan to Enter</h2>
+        <p class="instruction">Open your camera and scan</p>
+        <img class="qr" src="little-nest-giveaway-qr.png" alt="QR code for the Little Nest Naturals giveaway entry form" />
+        <p class="fields">Name · Phone Number · Email</p>
+      </section>
+
+      <p class="fine-print">Marketing consent is optional and collected separately on the entry form.</p>
+      <div class="draw-date">Winner drawn November 16</div>
+      <div class="website">littlenestnaturals.ca</div>
+    </div>
+  </main>
+</body>
+</html>
