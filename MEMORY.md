@@ -384,3 +384,13 @@ Recommended starting point: Option 1 with 2-3 pilot reps ($200-500 setup + $50-1
 
 <!-- openclaw-memory-promotion:memory:memory/2026-06-26.md:1:6 -->
 - ## 1APP Website Legal Pages - Added `privacy-policy.html` and `terms-and-conditions.html` to the 1APP website, styled to match the existing site and linked from the footer. - Updated `sitemap.xml` to include both legal pages. - Pushed changes to GitHub repo `adecarlo248/1APP`, commit `a0104fd`. [score=0.859 recalls=5 avg=0.434 source=memory/2026-06-26.md:1-6]
+## 1APP — Advertising Validation and Wave/Make Integration (2026-10-13)
+
+- CAD $5,000 advertising decision: protect the budget behind a CAD $1,000, 10-day Meta validation test for Ontario roofing/waterproofing contractors. Spend $750 on prospecting and $250 on retargeting; promote the 14-Day Revenue Reactivation Sprint; optimize for held, Sprint-qualified diagnostics. Release the other $4,000 only after acceptable unit economics are proven.
+- Core ad angle: "Before you pay for more leads, work the ones you already paid for." CTA: "See If Your Contact List Qualifies."
+- Wave architecture: 1APP runs the customer journey; Wave keeps the books; Make.com connects the gaps.
+- Native 1APP/HighLevel Wave capabilities verified: OAuth connection, Wave income-account mapping, invoice sync to Wave, and Wave contact import into 1APP.
+- Make.com can extend the setup using official Wave modules for customers, invoices, products/services, transactions, accounts, sales taxes, income/expenses, and GraphQL, plus official GoHighLevel modules for events, contacts, opportunities, tasks, campaigns, notes, and API calls.
+- Recommended Make workflows: customer upsert/dedupe, opportunity-to-invoice automation, invoice-status handoff back to 1APP, approved collections follow-up, exception routing, and reconciliation reporting.
+- Current Make MCP connection is online but exposes zero callable scenarios/tools. Make UI remains usable; MCP scenario exposure must be enabled before Maximus can inspect/run scenarios directly.
+- Detailed guide: `1app/1APP-Wave-Make-Integration-Guide.md`.
